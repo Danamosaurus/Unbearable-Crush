@@ -26,7 +26,7 @@ init python:
    DefineImages("sprites", composite=True)
 
    layerorder = ['hair', 'base', 'arms', 'tail','mouth','eyes','brow',]
-   DefineImages('images/sprites', composite=True, overrideLayerOrder=layerorder, offsets=(0, 100), zooms={'Kan':0.5,'Rin':0.5,'Kyou':0.5, 'Maya': 0.5, 'Youk':0.5, 'Char':0.5}, sides=['Kan', 'Rin', 'Kyou','Maya','Youk','Char'])
+   DefineImages('images/sprites', composite=True, overrideLayerOrder=layerorder, offsets=(0, 100), zooms={'Kan':.85,'Rin':.85,'Kyou':.85, 'Maya': .85, 'Youk':.85, 'Char':.7}, sides=['Kan', 'Rin', 'Kyou','Maya','Youk','Char'])
    hide_sides = []
 
 

@@ -114,8 +114,20 @@ screen say(who, what):
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
     if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
-
+        if who == 'Kanna':
+            add SideImage() xalign -0.1 yalign .5 yanchor 0
+        elif who == 'Kyousuke':
+            add SideImage() xalign -0.1 yalign .5 yanchor 0
+        elif who == 'Maya':
+            add SideImage() xalign -0.1 yalign .5 yanchor 0
+        elif who == 'Charlotte':
+            add SideImage() xalign -0.15 yalign .5 yanchor 0
+        elif who == 'Ringo':
+            add SideImage() xalign -0.1 yalign .5 yanchor 0
+        elif who == 'Youko':
+            add SideImage() xalign -0.1 yalign .5 yanchor 0
+        elif not who in hide_sides:
+            add SideImage() xalign 1.26 yalign -1.75 yanchor 0
 
 ## Make the namebox available for styling through the Character object.
 init python:
