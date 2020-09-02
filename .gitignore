@@ -62,3 +62,4 @@ game/devlog.txt
 *.rpymc
 steamuploader.config
 raws/
+*.psd
