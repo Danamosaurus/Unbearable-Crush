@@ -16,6 +16,11 @@ init:
     define Kyou = Character("Kyousuke", image = "Kyou",voice_tag = "Kyousuke",who_color="#ffffff",what_prefix = '"', what_suffix = '"')
     define na = Character()
 
+
+    #Backgrounds
+    image room = "bgs/room.png"
+    image roomwposter = "bgs/roomwposter.png"
+
 init python:
 #Dynamic Sprite System-Each category represents a folder in the Images section. These will be auto-defined.
    # Automatically define the BGs, CGs, and some UI elements

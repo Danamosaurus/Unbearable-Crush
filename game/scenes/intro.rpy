@@ -42,7 +42,7 @@ label start:
     "Ringo snags the charm and teleports to Kanna’s bedroom."
 
     #ART BG Kanna's Bedroom
-    scene Kanna_room
+    scene room
 
     #ART #SFX Ringo Entrance
     #The lights are out, welcoming in the dark of night. Kanna is cocooned in various blankets, sleeping peacefully. Her window is open, and the blue glow of the moon gently illuminates her room.
@@ -104,7 +104,7 @@ label start:
     Rin  "..."
     Rin "{i}sigh{/i} Tell me about this guy you like."
 
-    # Anim Have Kanna's sprite jump or appear suddenly, as if she's super happy.
+    #Animation have Kanna's sprite suddenly become very happy.
 
     Kan "Really?"
     Rin "I just wanna know why you like him, that’s all."
