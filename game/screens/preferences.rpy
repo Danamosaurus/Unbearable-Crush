@@ -35,7 +35,7 @@ screen preferences():
         background "gui/preferences/background.png"
 
         at save_load_screen_animation
-        
+
         ### Display window section
         fixed:
 
