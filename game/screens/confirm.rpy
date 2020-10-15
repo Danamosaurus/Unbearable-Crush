@@ -89,12 +89,12 @@ screen confirm(message, yes_action, no_action):
         if message == DELETE_SAVE:
 
             add "gui/confirm/delete_title.png":
-                pos (625, 409)
+                pos (625, 460)
 
         elif message == OVERWRITE_SAVE:
 
             add "gui/confirm/overwrite_title.png":
-                pos (578, 409)
+                pos (578, 460)
 
         elif message == LOADING:
 
@@ -104,12 +104,12 @@ screen confirm(message, yes_action, no_action):
         elif message == QUIT:
 
             add "gui/confirm/quit_title.png":
-                pos (751, 410)
+                pos (751, 460)
 
         elif message == MAIN_MENU:
 
             add "gui/confirm/return_menu_title.png":
-                pos (609, 411)
+                pos (609, 460)
 
         else:
 

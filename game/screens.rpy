@@ -320,24 +320,24 @@ transform fade_transform:
         linear 0.3 alpha 1
     on hide:
         linear 0.3 alpha 0
-
-screen quick_menu():
-
-    ## Ensure this appears on top of other screens.
-    zorder 100
-
-    if quick_menu:
-
-        hbox:
-            style_prefix "quick"
-
-            xalign 0.9
-            yalign .95
-
-            textbutton _("<") action Rollback()
-            textbutton _(">") action Preference("auto-forward", "toggle")
-            textbutton _(">>") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("LOG") action ShowMenu('history')
+#
+# screen quick_menu():
+#
+#     ## Ensure this appears on top of other screens.
+#     zorder 100
+#
+#     if quick_menu:
+#
+#         hbox:
+#             style_prefix "quick"
+#
+#             xalign 0.9
+#             yalign .95
+#
+#             textbutton _("<") action Rollback()
+#             textbutton _(">") action Preference("auto-forward", "toggle")
+#             textbutton _(">>") action Skip() alternate Skip(fast=True, confirm=True)
+#             textbutton _("LOG") action ShowMenu('history')
 
             ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
