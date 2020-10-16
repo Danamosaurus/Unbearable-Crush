@@ -1,3 +1,7 @@
+
+# Update the day shown on the upper corner... to nothing!
+$ game_day = ""
+
 #ART BG Shrine evening
 
 "We see the silhouettes of two teenagers standy by the shrine."

@@ -1,6 +1,10 @@
 #ART BG Shrine evening
 label start:
     show screen flower_menu_button with easeinright
+
+    # Update the day shown on the upper corner... to nothing!
+    $ game_day = ""
+
     # show screen quick_menu
     "A young high school girl stands by the shrine. She appears to be praying, and placing some sort of charm at the shrine. Hanging it along the top rail where hundreds of other charms swing lazily in the wind."
 

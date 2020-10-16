@@ -1,5 +1,8 @@
 label chapter5:
 
+    # Update the day shown on the upper corner... to nothing!
+    $ game_day = "Day 5"
+
     # CODE Scene Hallway
 
     #We open to the familiar hallway, Ringo is alone, thinking about his next actions. He plans to investigate Kyousuke, and confront Youko when Charlotte inevitably shows up. Kanna is hanging back, eating lunch with her casual group of friends.

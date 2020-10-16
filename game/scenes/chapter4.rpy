@@ -1,4 +1,8 @@
 label chapter4:
+
+    # Update the day shown on the upper corner... to nothing!
+    $ game_day = "Day 4"
+
     scene hallway
 
     Kan "Hm mm mm mm hmmm."

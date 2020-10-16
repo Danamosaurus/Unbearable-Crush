@@ -1,3 +1,6 @@
+# Update the day shown on the upper corner... to nothing!
+$ game_day = ""
+
 #ART BG mall interior
 
 Kyou "Geez, how long is she gonna make me wait?"

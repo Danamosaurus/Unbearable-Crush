@@ -1,5 +1,8 @@
 label chapter2:
 
+    # Update the day shown on the upper corner... to nothing!
+    $ game_day = "Day 2"
+
     scene Bedroom
 
     Rin "Wakey wakey!"

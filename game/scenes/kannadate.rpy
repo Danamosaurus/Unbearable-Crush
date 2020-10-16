@@ -1,3 +1,6 @@
+# Update the day shown on the upper corner... to nothing!
+$ game_day = ""
+
 #Note in the locker (Meet me at the rooftop or meet me at the school’s entrance?)
 
 Kan "Oh my god, Kyousuke! I can't believe you picked me!"

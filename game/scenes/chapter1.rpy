@@ -1,4 +1,8 @@
 label chapter1:
+
+    # Update the day shown on the upper corner... to nothing!
+    $ game_day = "Day 1"
+    
     scene Hallway
 
     "Girl2" "Hey, Who's the creep?"

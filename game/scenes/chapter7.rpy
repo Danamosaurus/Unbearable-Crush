@@ -1,5 +1,8 @@
-
 label chapter7:
+
+    # Update the day shown on the upper corner... to nothing!
+    $ game_day = "Day 7"
+
     scene Hallway
 
     Char "You're telling me Kanna has a spirit?"

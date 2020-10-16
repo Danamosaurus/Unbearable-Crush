@@ -1,4 +1,8 @@
 label chapter3:
+
+    # Update the day shown on the upper corner... to nothing!
+    $ game_day = "Day 3"
+
     scene Hallway
     Kan "What did you learn about Kyousuke? What does his hair smell like? I bet it's something masculine, like a lumberjack."
     Rin "Close. It smelled like tree bark and was as sticky as tree sap. Oh, and he's super boring."

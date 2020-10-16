@@ -26,21 +26,23 @@ style textbox_day_style:
 screen say(who, what):
 
     ### Day at top
-    frame:
+    if not game_day == "":
 
-        pos (0,39)
-        xysize (378, 75)
+        frame:
 
-        margin (0,0)
-        padding (0,0)
+            pos (0,39)
+            xysize (378, 75)
 
-        background "gui/textbox/day_bar.png"
+            margin (0,0)
+            padding (0,0)
 
-        text "[game_day]":
+            background "gui/textbox/day_bar.png"
 
-            pos (15, -8)
+            text "[game_day]":
 
-            style "textbox_day_style"
+                pos (15, -8)
+
+                style "textbox_day_style"
 
     ### Textbox
     frame:
@@ -188,7 +190,7 @@ screen say(who, what):
 
             idle "gui/textbox/heart_idle.png"
             hover "gui/textbox/heart_hover.png"
-            selected_idle "gui/textbox/heart_selected.png"
-            selected_hover "gui/textbox/heart_selected.png"
+            selected_idle "gui/textbox/heart_hover.png"
+            selected_hover "gui/textbox/heart_hover.png"
 
-            action NullAction()
+            action Show("circle_menu")
