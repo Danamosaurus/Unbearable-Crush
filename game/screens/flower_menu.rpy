@@ -220,6 +220,14 @@ screen circle_menu:
             add "gui/circle_menu/background.png":
                 pos(1920,0)
 
+                at transform:
+
+                    alpha 0.0
+
+                    pause 0.5
+
+                    alpha 1.0
+
         ### Invisible button that closes this screen.
         button:
 
