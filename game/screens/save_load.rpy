@@ -15,17 +15,7 @@ define load_save_screen_number_width = [26, 34, 36, 38, 35, 37, 34, 36, 36]
 
 transform save_load_screen_animation:
 
-    on hide:
-
-        alpha 1.0
-
-        parallel:
-            ease 0.5 alpha 0.0
-
-        parallel:
-            easein 0.5 yoffset 100.0
-
-    on show:
+    on show, replace:
 
         yoffset 100
         alpha 0.0
@@ -35,6 +25,16 @@ transform save_load_screen_animation:
 
         parallel:
             easein 0.5 yoffset 0.0
+    #
+    # on hide:
+    #
+    #     alpha 1.0
+    #
+    #     parallel:
+    #         ease 0.5 alpha 0.0
+    #
+    #     parallel:
+    #         easein 0.5 yoffset 100.0
 
 ## Load and Save screens #######################################################
 ##
