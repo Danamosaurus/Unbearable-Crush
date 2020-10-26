@@ -180,7 +180,7 @@ screen say(who, what):
             selected_idle "gui/textbox/history_selected.png"
             selected_hover "gui/textbox/history_selected.png"
 
-            action ShowMenu('history')
+            action Show('history')
 
         ## Heart Button
         imagebutton:

@@ -44,7 +44,9 @@ screen flower_menu_button():
     key "mouseup_3" action [
             # RightClickFlower(),
             # Hide('flower_menu_button'),
-            Show("circle_menu", dissolve )
+            FileTakeScreenshot(),
+            ShowMenu("circle_menu"),
+
     ]
 
 screen circle_menu:
@@ -98,9 +100,9 @@ screen circle_menu:
 
             xysize (1.0, 1.0)
 
-            key "mouseup_3" action [ Hide('circle_menu'), Show('flower_menu_button') ]
+            key "mouseup_3" action [ Hide('circle_menu'), Show('flower_menu_closing') ]
 
-            action Hide('circle_menu', dissolve)
+            action [ Hide('circle_menu'), Show('flower_menu_closing') ]
 
         ### Buttons
 
@@ -157,4 +159,11 @@ screen circle_menu:
             idle "gui/circle_menu/quit_idle.png"
             hover "gui/circle_menu/quit_hover.png"
 
-            action [ Hide('circle_menu'), MainMenu(confirm=True) ]
+            action [ MainMenu(confirm=True) ]
+
+
+screen flower_menu_closing():
+
+    modal True
+
+    timer 0.45 action [ Return(), Show('flower_menu_button') ]
