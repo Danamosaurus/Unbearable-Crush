@@ -1,5 +1,8 @@
 label chapter5:
 
+    # Update the day shown on the upper corner... to nothing!
+    $ game_day = "Day 5"
+
     # CODE Scene Hallway
 
     #We open to the familiar hallway, Ringo is alone, thinking about his next actions. He plans to investigate Kyousuke, and confront Youko when Charlotte inevitably shows up. Kanna is hanging back, eating lunch with her casual group of friends.
@@ -33,7 +36,7 @@ label chapter5:
 
     #ART Enter Charlotte
 
-    "Looking down at Charlotte's shadow, Ringo notices how oddly shaped it is."
+    "There's something strange about Charlotte's shadow…"
     "It looked as if it was rippling."
 
     Maya "Uh, excuse me, we were in the middle of something here."
@@ -62,7 +65,7 @@ label chapter5:
     Maya "You certainly have the forehead of one. Why don't you crawl back into the cave you knuckle-dragged yourself out of, and leave us civilized folk alone."
     Maya "You can chant to all the chalk drawings while you're in there. It'll make you feel better."
 
-    "Ringo looks down again at the shadow, and sees Youko slowly raising out of the shadow."
+    "I look down again at the shadow to see Youko rising out of it."
 
     Char "I see."
     Maya  "Run along now, so Kyousuke and I can get back to cha-"
@@ -162,8 +165,6 @@ label chapter5:
         Kyou "Maya, I don't like you talking this way."
         Kyou "You were kinda being mean like this when that Kanna girl was here."
 
-        "Ringo perks up upon hearing Kanna's name. "
-
         Maya "Kyousuke, you see how unreasonable she's being, right?"
 
         # ART CG? Or perhaps some kind of purple filter over the game screen?
@@ -176,7 +177,7 @@ label chapter5:
         Char "Looks like he doesn't want you here, Maya."
 
         # ART
-        "Ringo waves his paws around in a circle, and very tiny clouds and gold sparkles flutter around Kyousuke's eyes."
+       # "Ringo waves his paws around in a circle, and very tiny clouds and gold sparkles flutter around Kyousuke's eyes."
 
         Kyou "I... I'm sorry, Maya, I didn't mean that. I just want all of us to get along."
         Maya "It's alright, Kyousuke..."
@@ -234,10 +235,10 @@ label chapter5:
     #Whatever choice the player picks, instantly gets replaced by a purple, shining option. The original choices are also gone, and the only option is Youko's magic.
 
     Rin "HEY! You can't do that, that's not even remotely fair!"
+
     Youk "I can, and I just did."
     Youk "I may only overwrite his thought process once a day, but that should be enough for now."
-    Rin " That's complete bullsh..."
-
+##Review this transition
     #Menu:
     #"Carry Charlotte's books for her."
 
@@ -256,7 +257,7 @@ label chapter5:
     #Choice 1.B Charlotte +1
 
     #ART Kanna's room
-    scene bedroom
+    scene roomwposter
 
     Kan "They can overwrite what Kyousuke thinks? How is that fair!?"
     Rin "It's not! He did say he could only do it once a day, though."
@@ -273,8 +274,8 @@ label chapter5:
     #Everyone's scores with Kyousuke so far.
     #Show total scores so far.
     #Possible scores from day 5 .
-    #Charlotte +1 , Maya +1. 	Choice 1.A
-    #Charlotte +1, Maya -1. 	Choice 1.B
+    #Charlotte +1 , Maya +1.     Choice 1.A
+    #Charlotte +1, Maya -1.     Choice 1.B
     #Add/remove points from total accordingly.
 
     jump chapter6

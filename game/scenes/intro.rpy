@@ -19,11 +19,13 @@ label start:
     Kan "Right, so if you could please grant my wish, God, I’d worship you forever! I’ll visit everyday, and pray, and offer food!"
     Kan "You name it, I’ll do it! So please grant this wish. You’re my only hope."
     Kan "Will you do it for me, God?"
+    "..."
     Kan "I’ll, uh...take that as a maybe."
 
     #SFX Footsteps "Kanna turns away from the shrine and begins to go home."
 
     Kan "Oh, and if you’re the god of bad relationships,  you can just pretend this never happened!"
+    "..."
     Kan "Well anyway, goodnight."
 
     #ART
@@ -42,7 +44,7 @@ label start:
     "Ringo snags the charm and teleports to Kanna’s bedroom."
 
     #ART BG Kanna's Bedroom
-    scene Kanna_room
+    scene room
 
     #ART #SFX Ringo Entrance
     #The lights are out, welcoming in the dark of night. Kanna is cocooned in various blankets, sleeping peacefully. Her window is open, and the blue glow of the moon gently illuminates her room.
@@ -102,9 +104,10 @@ label start:
     Kan "..."
     Kan "Stupid bear."
     Rin  "..."
-    Rin "{i}sigh{/i} Tell me about this guy you like."
+    Rin "{i}sigh{/i}"
+    Rin "Tell me about this guy you like."
 
-    # Anim Have Kanna's sprite jump or appear suddenly, as if she's super happy.
+    #Animation have Kanna's sprite suddenly become very happy.
 
     Kan "Really?"
     Rin "I just wanna know why you like him, that’s all."
