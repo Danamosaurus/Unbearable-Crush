@@ -381,3 +381,5 @@ Youko "Beg pardon?"
 Rin "I need him! I'm trying to make that boy go on a date with my wishmaker. You're messing that up, so, begone demon! Lest I smite thee, with the magic of  heaven's door,  or whatever."
 
 Youko "Oh, I'm absolutely trembling."
+
+jump chapter5

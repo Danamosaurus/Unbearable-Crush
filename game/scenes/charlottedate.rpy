@@ -303,3 +303,5 @@ label charlottedate:
 
             #ART the screen slowly begins to fade into white(or black?).
             #End
+            scene black with fade
+return

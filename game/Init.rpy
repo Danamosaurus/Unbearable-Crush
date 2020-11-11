@@ -18,9 +18,10 @@ init:
 
 
     #Backgrounds
-    image room = "bgs/room.png"
+    image room = "bgs/room day.png"
+    image room night = "bgs/room night.png"
     image roomwposter = "bgs/roomwposter.png"
-
+    image white = "bgs/white.png"
 init python:
 #Dynamic Sprite System-Each category represents a folder in the Images section. These will be auto-defined.
    # Automatically define the BGs, CGs, and some UI elements

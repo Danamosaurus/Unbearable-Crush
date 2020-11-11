@@ -222,3 +222,5 @@ label chapter2:
     Kyou "Yep! Oh, but wait, should I ask Maya for the notes? Ahh, but she has her clubs..."
 
     "It’s gonna be a long night."
+
+jump chapter3

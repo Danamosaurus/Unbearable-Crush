@@ -224,3 +224,4 @@ label chapter3:
     Rin  "Will do. Get some sleep, kiddo, we're taking another stab at that partner thing tomorrow."
     Kan  "Yeah! She can't keep Kyousuke all to herself. If it's only her we have to deal with, we can manage, right?"
     Rin  "Right!"
+jump day4

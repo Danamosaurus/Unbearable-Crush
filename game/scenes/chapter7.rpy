@@ -311,4 +311,12 @@ label chapter7:
     Rin "I sure hope you know what you're doing, kid."
 
     #Day 7 ends.
-    #Transition to date scenes.
+    "***#Transition to date scenes."
+    menu:
+        "***Debug: Choose a date scene"
+        "Kanna's Date Scene":
+            jump kannadate
+        "Maya's Date Scene":
+            jump mayadate
+        "Charlotte's Date Scene":
+            jump charlottedate

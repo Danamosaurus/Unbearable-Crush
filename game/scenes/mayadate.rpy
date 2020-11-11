@@ -311,5 +311,5 @@ label mayadate:
     Rin "It's finally time! Oh baby, I've been waiting for this!"
     Rin "Next stop is paradise!"
     Rin "Thank you, Kanna."
-
+    scene black with fade
     #End

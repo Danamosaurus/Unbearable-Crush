@@ -4,7 +4,7 @@ label start:
 
     # Update the day shown on the upper corner... to nothing!
     $ game_day = ""
-
+    scene shrine with dissolve
     # show screen quick_menu
     "A young high school girl stands by the shrine. She appears to be praying, and placing some sort of charm at the shrine. Hanging it along the top rail where hundreds of other charms swing lazily in the wind."
 
