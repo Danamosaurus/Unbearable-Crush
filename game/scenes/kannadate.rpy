@@ -52,7 +52,9 @@ Youko "This Saturday at 1 pm. Don't be late, oh fluffy one."
 Rin "Dammit,  I had Kanna's fridge to rummage through!"
 Rin "Fine! Challenge accepted!"
 Rin "I will succeed! I have to!"
-#Date Time
+
+#Date time
+"**Date Time"
 Rin "*Yawn!*"
 Rin "Why did we have to show up 2 hours early?!"
 Kan "Kyousuke~ Kyousuke~ We're going on a date~"
@@ -88,20 +90,20 @@ Kyou "Sounds easy to me!"
 Rin "(I got a bad feeling about this...)"
 Kyou "One!"
 Kyou "Two!"
-Kyou "Haha! Piece of cake! No wonder it's free!"
-Rin "Dammit! I have to stop this!"
-##Balloon shooting mini game
-#menu:
-#    "Move dart to the left":
-        #do something
-#    "Move dart to the right":
-        #do something
-#    "Move dart upwards":
-        #do something
-#    "Move dart downwards":
-        #do something
-#Repeat x 3
-#If three balloons are hit.
+Kyou "Haha! Piece of cake. No wonder it's free."
+Rin "I have to stop this!"
+menu:
+    "Move dart to the left":
+        "math here"
+    "Move dart to the right":
+        "math here"
+    "Move dart upwards":
+        "math here"
+    "Move dart downwards":
+        "math here"
+        ###Repeat x 3
+        ####If three balloons are hit.:
+"***If 3 balloons are hit, this will play out:"
 Kyou "Three!"
 Youk "Wonderful! Here's your well-deserved prize!"
 Kyou "What the heck is that?"
@@ -110,11 +112,11 @@ Youko "Turn it's head, It'll talk to you!"
 Kyou "Okay..."
 "*Turns!*"
 "Kanna (Doll)" "Ah~ Kyousuke! I love you, I love you, I love you!"
-Kanna (Doll)  "I'm so happy I took  his half-eaten yakisoba bread when he wasn't looking! {i}Kyaaaa !{/i} It tasted like Kyousuke~"
+"Kanna (Doll)" "I'm so happy I took  his half-eaten yakisoba bread when he wasn't looking! {i}Kyaaaa !{/i} It tasted like Kyousuke~"
 Kyou "What?! You took my yakisoba bread and ate it?!"
 Kan "What? No! I didn't take your-"
-Kan (doll) "Did I mention that I took one of Kyousuke's toothbrushes the other day?"
-Kan (doll)  "I started brushing much more frequently, oh yes I did!"
+"Kan (doll)" "Did I mention that I took one of Kyousuke's toothbrushes the other day?"
+"Kan (doll)" "I started brushing much more frequently, oh yes I did!"
 Kyou "I thought my mom threw away my toothbrush?!"
 Kyou "Wait... You know where I live?!"
 Kan "Kyousuke! You're attracting too much attention!"
@@ -123,17 +125,17 @@ Kyou "Sorry Kanna, I have a strict no stalkers policy."
 Kyou "I'm outta here!"
 Kan "No, Kyousuke... please..."
 #Heartbroken ending.
-#If dart does not hit the third balloon:
+"***If dart does not hit the third balloon:"
 Kyou "Dang it, so close!"
 Kyou "I swear the darts are moving on their own!"
 Kan "Maybe you're just imagining things!"
 Kan "Kyousuke! Would you like to move to the haunted house?"
 Kan "Come on!"
 Kyou "Don't ghosts live in haunted houses? Wait Kanna!"
-Youko "Hmph. Not bad, oh fluffy one..."
+Youko "Hmph. Not bad, oh great fluffy one..."
 Youko "But I'm not done yet..."
 #In Haunted House- Courage or Cowardliness?
-#The frog idea came from this: https://www.youtube.com/watch?v=_IHRNX4p6lQ
+####The frog idea came from this: https://www.youtube.com/watch?v=_IHRNX4p6lQ
 Kan "Kyaaaa!! Protect me, Kyousuke!"
 Kyou "No! Protect me! They're everywhere!"
 Kan  "Yes, Kyousuke~ I'm so horrified by them!"
@@ -154,10 +156,22 @@ Kan "They're getting closer, Kyousuke!"
 "Kero! Kero! Kero! Kero!"
 Kan "No! Don't come any closer!"
 Rin "(Oh no! I need to get one of them to do something!)"
-Rin "(Who's the bravest of these two?!"
 menu:
-    "Kanna - correct":
-        #If chose Kanna:
+    Rin "(Who's the bravest of these two?!"
+    "Kanna":
+        "*****If choose Kyousuke:"
+        Rin "Kyousuke! Man up! You got to help your date!"
+        Kyou "Ah..."
+        "Kero! Kero! Kero! Kero!"
+        Kyou "Ahhhhhhhhhhhh!!!"
+        Rin "You idiot! Where are you running to?!"
+        Kan "Kyousuke, wait!"
+        Kan "Oh no, I can't get out!"
+        Rin "Crap, I can't either?!"
+        Kan "Kyaaaaaaaaaaaa!!!"
+        "***Bad End (Kero? Kero?)"
+    "Kyousuke":
+        "*****If chose Kanna:"
         Rin "Kanna! Can you hear me?"
         Kan "Y-yeah I can hear you!"
         Rin "You want to help your Kyousuke, right?!"
@@ -167,16 +181,21 @@ menu:
         Kyou "Is that my guardian angel? Have you come to save us?"
         Kan  "This way, Kyousuke!"
         Rin "Kanna! Move to your..."
-        #Timed choices (Players use their instincts!):
-        #Left!
-        #Right!
-        #Repeat x3
-        #If failed:
+
+        "***Text based mini-game- Timed choices (Players use their instincts!):"
+        menu:
+            "Left!":
+                "***Code does something"
+
+            "Right!":
+                "***Code does something"
+            ###Repeat x3
+        "***If failed:"
         Kan "A dead end!"
         Rin "Crap! We should have gone the other way!"
         Kan "Kyaaaaaaaaaaaa!!!"
-        #Bad End (Kero? Kero?)
-        #If success:
+        "# Bad End (Kero? Kero?)"
+        "***If success:"
         Kyou "Oh no! It's a dead end!"
         Kan "Shoot!"
         "Kero! Kero! Kero! Kero!"
@@ -208,8 +227,8 @@ menu:
         Kyou "Thanks for saving me!"
         Kan "....."
         Kan "Oh my god... is Kyousuke saying thank you to me?"
-        #SFX *Boom* cartoon shooting 'sound effect?' OR the VA can make a cute noise like this in the reference XD.
-        #https://www.youtube.com/watch?v=v8cOqzku9zA
+        ###*Boom* cartoon shooting 'sound effect?' OR the VA can make a cute noise like this in the reference XD.
+        ###https://www.youtube.com/watch?v=v8cOqzku9zA
         Kyou "Seriously though, were those frogs some kind of joke?"
         Kyou "It wasn't a very funny one, frogs are the second scariest thing on the planet."
         Kan "What's the first?"
@@ -218,67 +237,54 @@ menu:
         Kyou "As long as they aren't purple, I don't mind spiders too much."
         Kan "So, Kyousuke it's starting to get late..."
         Kyou "Yeah, I promised my mom that I will be home by dinner."
-    "Kyousuke":
-        #If choose Kyousuke:
-        Rin "Kyousuke! Man up! You got to help your date!"
-        Kyou "Ah..."
-        "Kero! Kero! Kero! Kero!"
-        Kyou "Ahhhhhhhhhhhh!!!"
-        Rin "You idiot! Where are you running to?!"
-        Kan "Kyousuke, wait!"
-        Kan "Oh no, I can't get out!"
-        Rin "Crap, I can't either?!"
-        Kan "Kyaaaaaaaaaaaa!!!"
-        # Bad End (Kero? Kero?)
+        ###If the date was a failure:
+        Kan "I had a lot of fun today!"
+        Kyou "I didn't..."
+        Kan "!"
+        Rin "(Oh no...)"
+        Kyou "I want to be honest with you. You're a really fun girl Kanna, and I enjoyed spending time with you."
+        Kyou "But those frogs were way too much man. If I keep hanging out with you, I'll get flashbacks of being trapped in the haunted house."
+        Kyou "Here, take some yen for a taxi."
+        Kyou "See ya."
+        Kan "Wait what?  Kyousuke No! Come back!"
+        "Kyousuke walks away quickly."
+        Kan "................."
+        Rin ".................."
+        Rin "No..."
+        Rin "Did we..... fail...."
+        Rin "Oh no! Am I being sucked back in the shrine?!"
+        Rin "Kanna!"
+        Kan "................."
+        Rin "At least make another wish! Wish for another guy to like you or something!"
+        Rin "Make another wish! Please, I'm begging you!"
+        Rin "Kannaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!!!!!"
+        Youk "That's too bad..."
+        Youk "I suppose a lifetime stuck in the shrine is a fitting end for the fluffy one?"
+        Youk "Ehehehehahaha!"
+        "BAD END"
 
-#If the date was a failure:
-Kan "I had a lot of fun today!"
-Kyou "I didn't..."
-Kan "!"
-Rin "(Oh no...)"
-Kyou "I want to be honest with you. You're a really fun girl Kanna, and I enjoyed spending time with you."
-Kyou "But those frogs were way too much man. If I keep hanging out with you, I'll get flashbacks of being trapped in the haunted house."
-Kyou "Here, take some yen for a taxi."
-Kyou "See ya."
-Kan "Wait what?  Kyousuke No! Come back!"
-"Kyousuke walks away quickly."
-Kan "................."
-Rin ".................."
-Rin "No..."
-Rin "Did we..... fail...."
-Rin "Oh no! Am I being sucked back in the shrine?!"
-Rin "Kanna!"
-Kan "................."
-Rin "At least make another wish! Wish for another guy to like you or something!"
-Rin "Make another wish! Please, I'm begging you!"
-Rin "Kannaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!!!!!"
-Youk "That's too bad..."
-Youk "I suppose a lifetime stuck in the shrine is a fitting end for the fluffy one?"
-Youk "Ehehehehahaha!"
-#BAD END
-
-#If the date was a success:
-Kan "I had a lot of fun today! Did you, Kyousuke?!"
-Kyou "Huh? Oh, yeah..."
-Rin "(Why is he scratching the back of his head all the sudden?That's unusual...)"
-Kan "Kyousuke... are you okay?"
-Kyou "Huh? Yeah, I'm fine..."
-Kyou "It's just that... there's this school dance coming up soon and..."
-Kan "Are you asking me to go with you?!"
-Kyou "Uhh... yeah. If that's alright. I don't really have a ring or anything to give you though."
-Kyou "Or is it flowers? How does asking people out work?"
-Rin "(Wow... this guy really is hopeless.)"
-Kan "Oh, Kyousuke,you have no idea how HAPPY this makes me!"
-Kan "{i}Cries{/i}"
-Kan "Thank you so much!"
-Kyou "Oh, don't cry..."
-Kyou "Here!"
-#CG? Kyousuke kissing Kanna's forehead to make her stop crying.
-Kyou "Let me take you home!"
-Kan "{i}Sniff Sniff{/i}"
-Kan "It's like a dream come true..."
-Kan "Thank you god for giving me my Kyousuke!"
-Rin "Hey, what about me?"
-Rin "Oh!"
-Rin "My body is glowing?"
-#End
+        ###If the date was a success:
+        Kan "I had a lot of fun today! Did you, Kyousuke?!"
+        Kyou "Huh? Oh, yeah..."
+        Rin "(Why is he scratching the back of his head all the sudden?That's unusual...)"
+        Kan "Kyousuke... are you okay?"
+        Kyou "Huh? Yeah, I'm fine..."
+        Kyou "It's just that... there's this school dance coming up soon and..."
+        Kan "Are you asking me to go with you?!"
+        Kyou "Uhh... yeah. If that's alright. I don't really have a ring or anything to give you though."
+        Kyou "Or is it flowers? How does asking people out work?"
+        Rin "(Wow... this guy really is hopeless.)"
+        Kan "Oh, Kyousuke,you have no idea how HAPPY this makes me!"
+        Kan "{i}Cries{/i}"
+        Kan "Thank you so much!"
+        Kyou "Oh, don't cry..."
+        Kyou "Here!"
+        #CG? Kyousuke kissing Kanna's forehead to make her stop crying.
+        Kyou "Let me take you home!"
+        Kan "{i}Sniff Sniff{/i}"
+        Kan "It's like a dream come true..."
+        Kan "Thank you god for giving me my Kyousuke!"
+        Rin "Hey, what about me?"
+        Rin "Oh!"
+        Rin "My body is glowing?"
+        #End

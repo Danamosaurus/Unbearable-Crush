@@ -51,7 +51,6 @@ label chapter1:
     Kyou "But it’s an all-girls volleyball team. Why would guys be there?"
     Maya "No, Kyousuke, I mean-"
     # SFX School bell rings.
-    "*Ding ding*"
     Maya "Nevermind. I gotta go to class. See you later!"
     "Is that my target? A brainless dork who can’t read a room?"
     "What does Kanna even see in him? And who the hell is this love interest appearing out of nowhere?"

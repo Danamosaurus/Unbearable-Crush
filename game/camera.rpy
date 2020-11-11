@@ -1,11 +1,13 @@
+
+init 1600:
+    if getattr(store, "_3d_layers", None):
+        default _3d_layers = _3d_layers
+    else:
+        default _3d_layers = {"master":_LAYER_Z}
 init -1600 python:
 
     ##########################################################################
     # Camera functions
-
-    # value of _3d_layers isn't included in rollback.
-    # so I copy it many times.
-    _3d_layers = {}
     _camera_x = 0
     _camera_y = 0
     _camera_z = 0
@@ -33,12 +35,8 @@ init -1600 python:
         """
          :doc: camera
 
-         Resets the camera and 3D layers positions. This needs to be called at least once,
-         or 3D layer depth may behave erratically and the 3D camera will not be able to properly save
-         3D layer depth.
+         Resets the camera and 3D layers positions.
          """
-        global _3d_layers
-        _3d_layers = _3d_layers.copy()
         for layer in _3d_layers:
             layer_move(layer, _LAYER_Z)
         camera_move(0, 0, 0)
@@ -52,7 +50,7 @@ init -1600 python:
          """
         camera_move(_camera_x, _camera_y, _camera_z)
 
-    def camera_move(x, y, z, rotate=0, duration=0, warper='linear', subpixel=True, loop=False, x_express=None, y_express=None, z_express=None, rotate_express=None):
+    def camera_move(x, y, z, rotate=0, duration=0, warper='linear', subpixel=True, loop=False, x_express=None, y_express=None, z_express=None, rotate_express=None, **kwargs):
         """
          :doc: camera
 
@@ -79,26 +77,30 @@ init -1600 python:
               If true, the camera move will continually loop until another camera
               action interrupts. This defaults to False.
          `x_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the x coordinate of the camera.
          `y_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the y coordinate of the camera.
          `z_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the z coordinate of the camera.
          `rotate_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the rotation value of the camera.
+         `<layer name>_express`
+             This should be a callable function that is called with the shown 
+             timebase and is given an animation timebase in seconds. The
+             result of this function is added to the coordinate of the given layer.
          """
 
-        camera_moves([(x, y, z, rotate, duration, warper, ),], subpixel=subpixel, loop=loop, x_express=x_express, y_express=y_express, z_express=z_express, rotate_express=rotate_express)
+        camera_moves([(x, y, z, rotate, duration, warper, ),], subpixel=subpixel, loop=loop, x_express=x_express, y_express=y_express, z_express=z_express, rotate_express=rotate_express, **kwargs)
 
-    def camera_relative_move(x, y, z, rotate=0, duration=0, warper='linear', subpixel=True, loop=False, x_express=None, y_express=None, z_express=None, rotate_express=None):
+    def camera_relative_move(x, y, z, rotate=0, duration=0, warper='linear', subpixel=True, loop=False, x_express=None, y_express=None, z_express=None, rotate_express=None, **kwargs):
         """
          :doc: camera
 
@@ -138,11 +140,15 @@ init -1600 python:
              This should be callable, which is called with the shown timebase
              and the animation timebase, in seconds and return a number. The
              result of this is added to the rotate coordinate of the camera.
+         `<layer name>_express`
+             This should be a callable function that is called with the shown 
+             timebase and is given an animation timebase in seconds. The
+             result of this function is added to the coordinate of the given layer.
          """
-        camera_move(x+_camera_x, y+_camera_y, z+_camera_z, rotate+_camera_rotate, duration, warper, subpixel, loop, x_express, y_express, z_express, rotate_express)
+        camera_move(x+_camera_x, y+_camera_y, z+_camera_z, rotate+_camera_rotate, duration, warper, subpixel, loop, x_express, y_express, z_express, rotate_express, **kwargs)
 
 
-    def layer_move(layer, z, duration=0, warper='linear', subpixel=True, loop=False, x_express=None, y_express=None, z_express=None, rotate_express=None):
+    def layer_move(layer, z, duration=0, warper='linear', subpixel=True, loop=False, x_express=None, y_express=None, z_express=None, rotate_express=None, layer_express=None):
         """
          :doc: camera
 
@@ -165,26 +171,30 @@ init -1600 python:
               If true, the layer move will continually loop until another camera
               action interrupts. This defaults to False.
          `x_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the x coordinate of the camera.
          `y_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the y coordinate of the camera.
          `z_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the z coordinate of the camera.
          `rotate_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the rotation value of the camera.
+         `layer_express`
+             This should be a callable function that is called with the shown 
+             timebase and is given an animation timebase in seconds. The
+             result of this function is added to the coordinate of the layer.
          """
 
-        layer_moves(layer, [(z, duration, warper, ),], subpixel=subpixel, loop=loop, x_express=x_express, y_express=y_express, z_express=z_express, rotate_express=rotate_express)
+        layer_moves(layer, [(z, duration, warper, ),], subpixel=subpixel, loop=loop, x_express=x_express, y_express=y_express, z_express=z_express, rotate_express=rotate_express, layer_express=layer_express)
 
-    def camera_moves(check_points, loop=False, subpixel=True, x_express=None, y_express=None, z_express=None, rotate_express=None):
+    def camera_moves(check_points, loop=False, subpixel=True, x_express=None, y_express=None, z_express=None, rotate_express=None, spline=False, **kwargs):
         """
          :doc: camera
 
@@ -199,21 +209,27 @@ init -1600 python:
               If True, transforms caused by the 3D camera will be rendered with
               subpixel precision. This defaults to True.
          `x_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the x coordinate of the camera.
          `y_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the y coordinate of the camera.
          `z_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the z coordinate of the camera.
          `rotate_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the rotation value of the camera.
+         `<layer name>_express`
+             This should be a callable function that is called with the shown 
+             timebase and is given an animation timebase in seconds. The
+             result of this function is added to the coordinate of the given layer.
+         `spline`
+             Enable spline interpolation for the coordinates of the camera. If this is True, warpers are ignored. This defaults to False.
          """
         camera_check_points = {}
         camera_check_points["x"] = []
@@ -225,10 +241,13 @@ init -1600 python:
             camera_check_points["y"].append((y, duration, warper))
             camera_check_points["z"].append((z, duration, warper))
             camera_check_points["rotate"].append((rotate, duration, warper))
-        kwargs = {coordinate+"_loop":loop for coordinate in ["x", "y", "z", "rotate"]}
-        all_moves(camera_check_points=camera_check_points, loop=loop, subpixel=subpixel, x_express=x_express, y_express=y_express, z_express=z_express, rotate_express=rotate_express, **kwargs)
+        kwargs["x_loop"]=loop
+        kwargs["y_loop"]=loop
+        kwargs["z_loop"]=loop
+        kwargs["rotate_loop"]=loop
+        all_moves(camera_check_points=camera_check_points, loop=loop, subpixel=subpixel, x_express=x_express, y_express=y_express, z_express=z_express, rotate_express=rotate_express, camera_spline=spline, **kwargs)
 
-    def layer_moves(layer, check_points, loop=False, subpixel=True, x_express=None, y_express=None, z_express=None, rotate_express=None):
+    def layer_moves(layer, check_points, loop=False, subpixel=True, x_express=None, y_express=None, z_express=None, rotate_express=None, layer_express=None, spline=False):
         """
          :doc: camera
 
@@ -244,26 +263,32 @@ init -1600 python:
          `subpixel`
               If True, the resulting layer moves will be rendered with
               subpixel precision. This defaults to True.
+         `layer_express`
+             This should be a callable function that is called with the shown 
+             timebase and is given an animation timebase in seconds. The
+             result of this function is added to the coordinate of the layer.
          `x_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the x coordinate of the camera.
          `y_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the y coordinate of the camera.
          `z_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the z coordinate of the camera.
          `rotate_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the rotation value of the camera.
+         `spline`
+             Enable spline interpolation for the coordinates of the layer. If this is True, warpers are ignored. This defaults to False.
          """
-        all_moves(layer_check_points={layer:check_points}, subpixel=subpixel, x_express=x_express, y_express=y_express, z_express=z_express, rotate_express=rotate_express, **{layer+"_loop":loop})
+        all_moves(layer_check_points={layer:check_points}, subpixel=subpixel, x_express=x_express, y_express=y_express, z_express=z_express, rotate_express=rotate_express, **{layer+"_loop":loop, layer+"_spline":spline, layer+"_express":layer_express})
 
-    def all_moves(camera_check_points=None, layer_check_points=None, subpixel=True, play=True, x_loop=False, y_loop=False, z_loop=False, rotate_loop=False, x_express=None, y_express=None, z_express=None, rotate_express=None, **kwargs):
+    def all_moves(camera_check_points=None, layer_check_points=None, subpixel=True, play=True, x_loop=False, y_loop=False, z_loop=False, rotate_loop=False, x_express=None, y_express=None, z_express=None, rotate_express=None, camera_spline=False, **kwargs):
         """
          :doc: camera
 
@@ -282,34 +307,42 @@ init -1600 python:
               {
                   'layer name':[(z, duration, warper)...]
               }
-         `loop_x`
+         `x_loop`
               If True, all x coordinate check points will loop continuously. This defaults to False.
-         `loop_y`
+         `y_loop`
               If True, all y coordinate check points will loop continuously. This defaults to False.
-         `loop_z`
+         `z_loop`
               If True, all z coordinate check points will loop continuously. This defaults to False.
-         `loop_rotate`
+         `rotate_loop`
               If True, all rotation check points will loop continuously. This defaults to False.
          `subpixel`
               If True, all transforms caused by this function will be drawn with subpixel precision. This defaults to True.
          `<layer name>_loop`
               If True, all layer move check points for the given layer will loop continuously. This defaults to False.
          `x_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the x coordinate of the camera.
          `y_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the y coordinate of the camera.
          `z_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the z coordinate of the camera.
          `rotate_express`
-             This should be a callable function that is called with the shown
+             This should be a callable function that is called with the shown 
              timebase and is given an animation timebase in seconds. The
              result of this function is added to the rotation value of the camera.
+         `<layer name>_express`
+             This should be a callable function that is called with the shown 
+             timebase and is given an animation timebase in seconds. The
+             result of this function is added to the coordinate of the given layer.
+         `camera_spline`
+             Enable spline interpolation for the coordinates of the camera. If this is True, warpers are ignored. This defaults to False.
+         `<layer name>_spline`
+             Enable spline interpolation for the coordinates of the given layer. If this is True, warpers are ignored. This defaults to False.
          """
         global _camera_x, _camera_y, _camera_z, _camera_rotate, _3d_layers, _last_camera_arguments
         from math import sin, pi
@@ -320,7 +353,7 @@ init -1600 python:
         if layer_check_points is None:
             layer_check_points = {}
         if config.developer:
-            _last_camera_arguments = (camera_check_points, layer_check_points, x_loop, y_loop, z_loop, rotate_loop, x_express, y_express, z_express, rotate_express, kwargs, _camera_x, _camera_y, _camera_z, _camera_rotate, _3d_layers.copy())
+            _last_camera_arguments = (camera_check_points, layer_check_points, x_loop, y_loop, z_loop, rotate_loop, x_express, y_express, z_express, rotate_express, kwargs, _camera_x, _camera_y, _camera_z, _camera_rotate, _3d_layers.copy(), camera_spline)
         start_xanchor = _FOCAL_LENGTH*_camera_x/(renpy.config.screen_width *_LAYER_Z) + .5
         start_yanchor = _FOCAL_LENGTH*_camera_y/(renpy.config.screen_height*_LAYER_Z) + .5
         camera_check_points2 = { 'xanchor':[(start_xanchor, 0, None, )], 'yanchor':[(start_yanchor, 0, None, )], 'z': [(_camera_z, 0, None, )], 'rotate':[(_camera_rotate, 0, None, )] }
@@ -334,6 +367,8 @@ init -1600 python:
             camera_check_points2['yanchor'].append((_FOCAL_LENGTH*c[0]/(renpy.config.screen_height *_LAYER_Z) + .5, c[1], c[2], ))
         camera_check_points2['z'].extend(camera_check_points['z'])
         camera_check_points2['rotate'].extend(camera_check_points['rotate'])
+        if camera_spline:
+            camera_check_points2 = _ready_spline_camera_interpolation(camera_check_points2)
         for layer in _3d_layers:
 
             if layer not in layer_check_points:
@@ -342,9 +377,12 @@ init -1600 python:
             for c in layer_check_points[layer]:
                 layer_check_points2.append((c[0], float(c[1]), c[2]))
             layer_loop = kwargs.get(layer+"_loop", False)
+            layer_express = kwargs.get(layer+"_express", None)
+            if kwargs.get(layer+"_spline", False):
+                layer_check_points2 = _ready_spline_layer_interpolation(layer_check_points2)
 
             if play:
-                renpy.game.context().scene_lists.set_layer_at_list(layer, [Transform(function=renpy.curry(_camera_trans)(camera_check_points=camera_check_points2, layer_check_points=layer_check_points2, subpixel=subpixel, layer=layer, layer_loop=layer_loop, x_loop=x_loop, y_loop=y_loop, z_loop=z_loop, rotate_loop=rotate_loop, x_express=x_express, y_express=y_express, z_express=z_express, rotate_express=rotate_express))])
+                renpy.game.context().scene_lists.set_layer_at_list(layer, [Transform(function=renpy.curry(_camera_trans)(camera_check_points=camera_check_points2, layer_check_points=layer_check_points2, subpixel=subpixel, layer_loop=layer_loop, x_loop=x_loop, y_loop=y_loop, z_loop=z_loop, rotate_loop=rotate_loop, x_express=x_express, y_express=y_express, z_express=z_express, rotate_express=rotate_express, layer_express=layer_express))])
                 layer_z = layer_check_points2[-1][0]
             else:
                 # This is used when the time bar is changed by Action Editor
@@ -362,6 +400,8 @@ init -1600 python:
                     z += z_express(st, st)
                 if rotate_express:
                     rotate += rotate_express(st, st)
+                if layer_express:
+                    layer_z += layer_express(st, st)
                 distance = float(layer_z - z)
                 if distance == 0:
                     distance = .1
@@ -385,12 +425,22 @@ init -1600 python:
             _camera_z         = int(z)
             _camera_rotate    = int(rotate)
 
-    def _camera_trans(tran, st, at, camera_check_points, layer_check_points, layer_loop, x_loop, y_loop, z_loop, rotate_loop, subpixel, layer, x_express, y_express, z_express, rotate_express):
-        # camera_check_points = (z, r, xanchor, yanchor, duration, warper)
+    def _camera_trans(tran, st, at, camera_check_points, layer_check_points, layer_loop, x_loop, y_loop, z_loop, rotate_loop, subpixel, x_express, y_express, z_express, rotate_express, layer_express):
+        if not (layer_loop or x_loop or y_loop or z_loop or rotate_loop or x_express or y_express or z_express or rotate_express or layer_express):
+            for check_point in camera_check_points.items():
+                if check_point[-1][1] and  check_point[-1][1] >= st:
+                    break
+            else:
+                for check_point in layer_check_points.items():
+                    if check_point[-1][1] and  check_point[-1][1] >= st:
+                            break
+                    else:
+                        return
+        # camera_check_points = {xanchor:(value, duration, warper), yanchor, z, rotate}
         # layer_check_points = (layer_z, duration, warper)
         from math import sin, pi
         from random import random
-        tran.xpos    = .5
+        tran.xpos    = .5 
         tran.ypos    = .5
         tran.subpixel = subpixel
         tran.transform_anchor = True
@@ -407,6 +457,8 @@ init -1600 python:
             z += z_express(st, at)
         if rotate_express:
             tran.rotate += rotate_express(st, at)
+        if layer_express:
+            layer_z += layer_express(st, st)
         distance = float(layer_z - z)
         if distance == 0:
             distance = .1
@@ -445,9 +497,38 @@ init -1600 python:
     #     _camera_rotate    = int(tran.rotate)
     #     _3d_layers[layer] = int(layer_z)
 
-init 1600 python:
-    if not _3d_layers:
-        register_3d_layer('master')
+    def _ready_spline_camera_interpolation(camera_check_points):
+        new_camera_check_points = {}
+        new_camera_check_points["rotate"] = camera_check_points["rotate"]
+        new_camera_check_points["xanchor"] = []
+        new_camera_check_points["yanchor"] = []
+        new_camera_check_points["z"] = []
+        MINTIME = 0.1
+        sx = [(t, v) for i, (v, t, w) in enumerate(camera_check_points["xanchor"]) if i+1 == len(camera_check_points["xanchor"]) or t != camera_check_points["xanchor"][i+1][1]]
+        sy = [(t, v) for i, (v, t, w) in enumerate(camera_check_points["yanchor"]) if i+1 == len(camera_check_points["yanchor"]) or t != camera_check_points["yanchor"][i+1][1]]
+        sz = [(t, v) for i, (v, t, w) in enumerate(camera_check_points["z"]) if i+1 == len(camera_check_points["z"]) or t != camera_check_points["z"][i+1][1]]
+        for i in _drange(0, camera_check_points["xanchor"][-1][1], MINTIME):
+            new_camera_check_points["xanchor"].append((_spline(sx, i), i, "linear"))
+        for i in _drange(0, camera_check_points["yanchor"][-1][1], MINTIME):
+            new_camera_check_points["yanchor"].append((_spline(sy, i), i, "linear"))
+        for i in _drange(0, camera_check_points["z"][-1][1], MINTIME):
+            new_camera_check_points["z"].append((_spline(sz, i), i, "linear"))
+        return new_camera_check_points
+
+    def _ready_spline_layer_interpolation(layer_check_points):
+        new_layer_check_points = []
+        MINTIME = 0.1
+        sz = [(t, v) for i, (v, t, w) in enumerate(layer_check_points) if i+1 == len(layer_check_points) or t != layer_check_points[i+1][1]]
+        for i in _drange(0, layer_check_points[-1][1], MINTIME):
+            new_layer_check_points.append((_spline(sz, i), i, "linear"))
+        return new_layer_check_points
+
+    def _drange(begin, end, step):
+        n = begin
+        while n < end:
+            yield n
+            n += step
+        yield end
 
 screen _action_editor(tab="images", layer="master", name="", time=0):
     key "game_menu" action Return()
@@ -485,7 +566,6 @@ screen _action_editor(tab="images", layer="master", name="", time=0):
         on "show" action Show("_rot")
 
     frame:
-        ypos -55
         background "#0006"
         if time:
             at _delay_show(time + 1)
@@ -545,13 +625,13 @@ screen _action_editor(tab="images", layer="master", name="", time=0):
                         if p not in _viewers.transform_viewer.force_float and ((state[name][p] is None and isinstance(d, int)) or isinstance(state[name][p], int)):
                             hbox:
                                 style_group "action_editor"
-                                textbutton "[p]" action [SensitiveIf((name, layer, p) in _viewers.all_keyframes), SelectedIf(_viewers.keyframes_exist((name, layer, p))), Show("_edit_keyframe", k=(name, layer, p), int=True, loop=name+"_"+layer+"_"+p+"_loop")]
+                                textbutton "[p]" action [SensitiveIf((name, layer, p) in _viewers.all_keyframes), SelectedIf(_viewers.keyframes_exist((name, layer, p))), Show("_edit_keyframe", k=(name, layer, p), int=True)]
                                 textbutton "[prop]" action Function(_viewers.transform_viewer.edit_value, f, True, default=prop) alternate Function(_viewers.transform_viewer.reset, name, layer, p)
                                 bar adjustment ui.adjustment(range=_viewers.transform_viewer.int_range*2, value=prop+_viewers.transform_viewer.int_range, page=1, changed=f) xalign 1. yalign .5
                         else:
                             hbox:
                                 style_group "action_editor"
-                                textbutton "[p]" action [SensitiveIf((name, layer, p) in _viewers.all_keyframes), SelectedIf(_viewers.keyframes_exist((name, layer, p))), Show("_edit_keyframe", k=(name, layer, p), loop=name+"_"+layer+"_"+p+"_loop")]
+                                textbutton "[p]" action [SensitiveIf((name, layer, p) in _viewers.all_keyframes), SelectedIf(_viewers.keyframes_exist((name, layer, p))), Show("_edit_keyframe", k=(name, layer, p))]
                                 textbutton "[prop:>.2f]" action Function(_viewers.transform_viewer.edit_value, f, False, default=prop) alternate Function(_viewers.transform_viewer.reset, name, layer, p)
                                 bar adjustment ui.adjustment(range=_viewers.transform_viewer.float_range*2, value=prop+_viewers.transform_viewer.float_range, page=.05, changed=f) xalign 1. yalign .5
             elif tab == "3D Camera" or tab == "2D Camera":
@@ -560,22 +640,22 @@ screen _action_editor(tab="images", layer="master", name="", time=0):
                 else:
                     hbox:
                         style_group "action_editor"
-                        textbutton "x" action [SensitiveIf("_camera_x" in _viewers.all_keyframes), SelectedIf(_viewers.keyframes_exist("_camera_x")), Show("_edit_keyframe", k="_camera_x", loop="_camera_x_loop")]
+                        textbutton "x" action [SensitiveIf("_camera_x" in _viewers.all_keyframes), SelectedIf(_viewers.keyframes_exist("_camera_x")), Show("_edit_keyframe", k="_camera_x")]
                         textbutton "[_camera_x: >5]" action Function(_viewers.camera_viewer.edit_value, _viewers.camera_viewer.x_changed, _viewers.camera_viewer.range_camera_pos, default=_camera_x) alternate [Function(camera_move, _viewers.camera_viewer._camera_x, _camera_y, _camera_z, _camera_rotate), renpy.restart_interaction]
                         bar adjustment ui.adjustment(range=_viewers.camera_viewer.range_camera_pos*2, value=_camera_x+_viewers.camera_viewer.range_camera_pos, page=1, changed=_viewers.camera_viewer.x_changed) xalign 1. yalign .5
                     hbox:
                         style_group "action_editor"
-                        textbutton "y" action [SensitiveIf("_camera_y" in _viewers.all_keyframes), SelectedIf(_viewers.keyframes_exist("_camera_y")), Show("_edit_keyframe", k="_camera_y", loop="_camera_y_loop")]
+                        textbutton "y" action [SensitiveIf("_camera_y" in _viewers.all_keyframes), SelectedIf(_viewers.keyframes_exist("_camera_y")), Show("_edit_keyframe", k="_camera_y")]
                         textbutton "[_camera_y: >5]" action Function(_viewers.camera_viewer.edit_value, _viewers.camera_viewer.y_changed, _viewers.camera_viewer.range_camera_pos, default=_camera_y) alternate [Function(camera_move, _camera_x, _viewers.camera_viewer._camera_y, _camera_z, _camera_rotate), renpy.restart_interaction]
                         bar adjustment ui.adjustment(range=_viewers.camera_viewer.range_camera_pos*2, value=_camera_y+_viewers.camera_viewer.range_camera_pos, page=1, changed=_viewers.camera_viewer.y_changed) xalign 1. yalign .5
                     hbox:
                         style_group "action_editor"
-                        textbutton "z" action [SensitiveIf("_camera_z" in _viewers.all_keyframes), SelectedIf(_viewers.keyframes_exist("_camera_z")), Show("_edit_keyframe", k="_camera_z", loop="_camera_z_loop")]
+                        textbutton "z" action [SensitiveIf("_camera_z" in _viewers.all_keyframes), SelectedIf(_viewers.keyframes_exist("_camera_z")), Show("_edit_keyframe", k="_camera_z")]
                         textbutton "[_camera_z: >5]" action Function(_viewers.camera_viewer.edit_value, _viewers.camera_viewer.z_changed, _viewers.camera_viewer.range_camera_pos, default=_camera_z) alternate [Function(camera_move, _camera_x, _camera_y, _viewers.camera_viewer._camera_z, _camera_rotate), renpy.restart_interaction]
                         bar adjustment ui.adjustment(range=_viewers.camera_viewer.range_camera_pos*2, value=_camera_z+_viewers.camera_viewer.range_camera_pos, page=1, changed=_viewers.camera_viewer.z_changed) xalign 1. yalign .5
                     hbox:
                         style_group "action_editor"
-                        textbutton "rotate" action [SensitiveIf("_camera_rotate" in _viewers.all_keyframes), SelectedIf(_viewers.keyframes_exist("_camera_rotate")), Show("_edit_keyframe", k="_camera_rotate", loop="_camera_rotate_loop")]
+                        textbutton "rotate" action [SensitiveIf("_camera_rotate" in _viewers.all_keyframes), SelectedIf(_viewers.keyframes_exist("_camera_rotate")), Show("_edit_keyframe", k="_camera_rotate")]
                         textbutton "[_camera_rotate: >5]" action Function(_viewers.camera_viewer.edit_value, _viewers.camera_viewer.r_changed, _viewers.camera_viewer.range_rotate, default=_camera_rotate) alternate [Function(camera_move, _camera_x, _camera_y, _camera_z, _viewers.camera_viewer._camera_rotate), renpy.restart_interaction]
                         bar adjustment ui.adjustment(range=_viewers.camera_viewer.range_rotate*2, value=_camera_rotate+_viewers.camera_viewer.range_rotate, page=1, changed=_viewers.camera_viewer.r_changed) xalign 1. yalign .5
             elif tab == "3D Layers":
@@ -585,7 +665,7 @@ screen _action_editor(tab="images", layer="master", name="", time=0):
                     for layer in sorted(_3d_layers.keys()):
                         hbox:
                             style_group "action_editor"
-                            textbutton "[layer]" action [SensitiveIf("layer "+layer in _viewers.all_keyframes), SelectedIf(_viewers.keyframes_exist("layer "+layer)), SetField(_viewers, "moved_time", _viewers.time), Show("_edit_keyframe", k="layer "+layer, loop=layer+"_loop")]
+                            textbutton "[layer]" action [SensitiveIf(layer in _viewers.all_keyframes), SelectedIf(_viewers.keyframes_exist(layer)), SetField(_viewers, "moved_time", _viewers.time), Show("_edit_keyframe", k=layer)]
                             textbutton "{}".format(_3d_layers[layer]) action Function(_viewers.camera_viewer.edit_value, _viewers.camera_viewer.generate_layer_z_changed(layer), 0, default=_3d_layers[layer]) alternate [Function(layer_move, layer, _viewers.camera_viewer._3d_layers[layer]), renpy.restart_interaction]
                             bar adjustment ui.adjustment(range=_viewers.camera_viewer.range_layer_z, value=_3d_layers[layer], page=1, changed=_viewers.camera_viewer.generate_layer_z_changed(layer)) xalign 1. yalign .5
             hbox:
@@ -613,20 +693,23 @@ screen _action_editor(tab="images", layer="master", name="", time=0):
         add _viewers.dragged
 
 init -1600:
-    style action_editor_button size_group "action_editor"
-    style action_editor_button idle_background None
-    style action_editor_button insensitive_background None
-    style action_editor_button_text color "#fff"
-    style action_editor_button ysize 50
-    style action_editor_button_text size 20
-    style action_editor_button_text selected_color "#5ff"
-    style action_editor_button_text hover_color "#000"
-    style action_editor_button_text insensitive_color "#777"
-    style action_editor_a_button take action_editor_button
-    style action_editor_a_button size_group None
+    style action_editor_button:
+        size_group "action_editor"
+        outlines [ (absolute(1), "#000", absolute(0), absolute(0)) ]
+        idle_background None
+        insensitive_background None
+    style action_editor_button_text:
+        color "#aaa"
+        selected_color "#fff"
+        insensitive_color "#777"
+        outlines [ (absolute(1), "#000", absolute(0), absolute(0)) ]
+    style action_editor_a_button:
+        take action_editor_button
+        size_group None
     style action_editor_a_button_text take action_editor_button_text
 
-    style action_editor_label xminimum 110
+    style action_editor_label:
+        xminimum 110
     style action_editor_vbox xfill True
 
 screen _input_screen(message="type value", default=""):
@@ -689,18 +772,18 @@ screen _warper_graph(warper):
     $ length=300
     $ xpos=config.screen_width-400
     $ ypos=100
-    # add Solid("#000", xsize=3, ysize=1.236*length, xpos=xpos+length/2, ypos=length/2+xpos, rotate=45, anchor=(.5, .5))
-    add Solid("#CCC", xsize=length, ysize=length, xpos=xpos, ypos=ypos )
-    add Solid("#000", xsize=length, ysize=3, xpos=xpos, ypos=length+ypos )
-    add Solid("#000", xsize=length, ysize=3, xpos=xpos, ypos=ypos )
+    # add Solid("#000", xsize=3, ysize=1.236*length, xpos=xpos+length/2, ypos=length/2+xpos, rotate=45, anchor=(.5, .5)) 
+    add Solid("#CCC", xsize=length, ysize=length, xpos=xpos, ypos=ypos ) 
+    add Solid("#000", xsize=length, ysize=3, xpos=xpos, ypos=length+ypos ) 
+    add Solid("#000", xsize=length, ysize=3, xpos=xpos, ypos=ypos ) 
     add Solid("#000", xsize=3, ysize=length, xpos=xpos+length, ypos=ypos)
     add Solid("#000", xsize=3, ysize=length, xpos=xpos, ypos=ypos)
     for i in range(1, t):
         $ysize=int(length*renpy.atl.warpers[warper](i/float(t)))
         if ysize >= 0:
-            add Solid("#000", xsize=length/t, ysize=ysize, xpos=xpos+i*length/t, ypos=length+ypos, yanchor=1.)
+            add Solid("#000", xsize=length/t, ysize=ysize, xpos=xpos+i*length/t, ypos=length+ypos, yanchor=1.) 
         else:
-            add Solid("#000", xsize=length/t, ysize=-ysize, xpos=xpos+i*length/t, ypos=length+ypos-ysize, yanchor=1.)
+            add Solid("#000", xsize=length/t, ysize=-ysize, xpos=xpos+i*length/t, ypos=length+ypos-ysize, yanchor=1.) 
 
 screen _move_keyframes:
     modal True
@@ -708,13 +791,13 @@ screen _move_keyframes:
     frame:
         background "#0006"
         has vbox
-        textbutton _("time: [_viewers.moved_time:>.2f] s") action Function(_viewers.edit_moved_time)
+        textbutton _("time: [_viewers.moved_time:>.2f] s") action Function(_viewers.edit_move_all_keyframes)
         bar adjustment ui.adjustment(range=7.0, value=_viewers.moved_time, changed=renpy.curry(_viewers.move_keyframes)(old=_viewers.moved_time)) xalign 1. yalign .5
         textbutton _("close") action Hide("_move_keyframes") xalign .98
 
 # _edit_keyframe((name, layer), "xpos")
 # _edit_keyframe(_camera_x)
-screen _edit_keyframe(k, int=False, loop=None):
+screen _edit_keyframe(k, int=False):
     $check_points = _viewers.all_keyframes[k]
     modal True
     key "game_menu" action Hide("_edit_keyframe")
@@ -729,29 +812,25 @@ screen _edit_keyframe(k, int=False, loop=None):
                     textbutton _("x") action [Function(_viewers.remove_keyframe, remove_time=t, k=k), renpy.restart_interaction] background None
                     textbutton _("{}".format(v)) action Function(_viewers.edit_the_value, check_points=check_points, old=t, value_org=v, int=int)
                     textbutton _("{}".format(w)) action Function(_viewers.edit_the_warper, check_points=check_points, old=t, value_org=w)
-                    textbutton _("[t:>.2f] s") action Function(_viewers.edit_moved_time, check_points=check_points, old=t)
+                    textbutton _("[t:>.2f] s") action Function(_viewers.edit_move_keyframes, check_points=check_points, old=t)
                     bar adjustment ui.adjustment(range=7.0, value=t, changed=renpy.curry(_viewers.move_keyframe)(old=t, check_points=check_points)) xalign 1. yalign .5
         hbox:
-            textbutton _("loop") action ToggleDict(_viewers.loops, loop)
+            textbutton _("loop") action ToggleDict(_viewers.loops, k)
             if k[:8] == "_camera_":
                 textbutton _("expression") action Function(_viewers.edit_expression, k)
+                textbutton _("spline") action ToggleDict(_viewers.splines, "camera")
+            elif not isinstance(k, tuple):
+                textbutton _("expression") action Function(_viewers.edit_expression, k)
+                textbutton _("spline") action ToggleDict(_viewers.splines, k)
             textbutton _("close") action Hide("_edit_keyframe") xalign .98
 
 init -1098 python:
     # Added keymap
     config.underlay.append(renpy.Keymap(
-        self_voicing = Preference("self voicing", "toggle"),
+        # self_voicing = Preference("self voicing", "toggle"), #TODO ???
         action_editor = _viewers.action_editor,
-        #image_viewer = _open_image_viewer,
+        image_viewer = _open_image_viewer,
         ))
-
-
-init 1100 python:
-    config.locked = False
-    config.keymap["action_editor"] = ['P']
-    config.keymap["image_viewer"] = ['U']
-    config.locked = True
-
 
 init -1600 python in _viewers:
     default_rot = False
@@ -770,18 +849,18 @@ init -1600 python in _viewers:
             self.state = {}
             # ((property, default)...), default is used when property can't be got.
             self.props = (
-            ("xpos", 0.),
-            ("ypos", 0.),
-            ("xanchor", 0.),
-            ("yanchor", 0.),
-            # ("xoffset", 0.),
-            # ("yoffset", 0.),
-            ("xzoom", 1.),
-            ("yzoom", 1.),
-            ("zoom", 1.),
+            ("xpos", 0.), 
+            ("ypos", 0.), 
+            ("xanchor", 0.), 
+            ("yanchor", 0.), 
+            # ("xoffset", 0.), 
+            # ("yoffset", 0.), 
+            ("xzoom", 1.), 
+            ("yzoom", 1.), 
+            ("zoom", 1.), 
             ("rotate", 0,),
-            ("alpha", 1.),
-            ("additive", 0.),
+            ("alpha", 1.), 
+            ("additive", 0.), 
             )
             self.force_float = ["zoom", "xzoom", "yzoom", "alpha", "additive"]
 
@@ -863,7 +942,7 @@ init -1600 python in _viewers:
                             check_points[prop] = all_keyframes[(name, layer, prop)]
                     if not check_points: # ビューワー上でのアニメーション(フラッシュ等)の誤動作を抑制
                         continue
-                    loop = {prop+"_loop": loops[name+"_"+layer+"_"+prop+"_loop"] for prop, d in self.props}
+                    loop = {prop+"_loop": loops[(name, layer, prop)] for prop, d in self.props}
                     if play:
                         renpy.show(name, [renpy.store.Transform(function=renpy.curry(self.transform)(check_points=check_points, loop=loop))], layer=layer)
                     else:
@@ -1101,7 +1180,7 @@ init -1600 python in _viewers:
         def x_changed(self, v):
             v=int(v)
             renpy.store.camera_move(v - self.range_camera_pos, renpy.store._camera_y, renpy.store._camera_z, renpy.store._camera_rotate)
-            self.set_camera_keyframe("_camera_x", v-self.range_camera_pos)
+            self.set_camera_keyframe("_camera_x", v-self.range_rotate)
             renpy.restart_interaction()
 
         def y_changed(self, v):
@@ -1174,7 +1253,7 @@ init -1600 python in _viewers:
             sort_keyframes()
 
         def set_layer_keyframe(self, layer):
-            keyframes = all_keyframes.get("layer "+layer, [])
+            keyframes = all_keyframes.get(layer, [])
             if keyframes:
                 for i, (v, t, w)  in enumerate(keyframes):
                     if time < t:
@@ -1187,9 +1266,9 @@ init -1600 python in _viewers:
                     keyframes.append((renpy.store._3d_layers[layer], time, warper))
             else:
                 if time == 0:
-                    all_keyframes["layer "+layer] = [(renpy.store._3d_layers[layer], time, warper)]
+                    all_keyframes[layer] = [(renpy.store._3d_layers[layer], time, warper)]
                 else:
-                    all_keyframes["layer "+layer] = [(self._3d_layers[layer], 0, None), (renpy.store._3d_layers[layer], time, warper)]
+                    all_keyframes[layer] = [(self._3d_layers[layer], 0, None), (renpy.store._3d_layers[layer], time, warper)]
             sort_keyframes()
 
         def play(self, play):
@@ -1201,16 +1280,17 @@ init -1600 python in _viewers:
             layer_check_points = {}
             kwargs = {}
             for layer in renpy.store._3d_layers:
-                if "layer "+layer in all_keyframes:
-                    layer_check_points[layer] = all_keyframes["layer "+layer]
-                kwargs[layer+"_loop"] = loops[layer+"_loop"]
+                if layer in all_keyframes:
+                    layer_check_points[layer] = all_keyframes[layer]
+                kwargs[layer+"_loop"] = loops[layer]
+                kwargs[layer+"_spline"] = splines[layer]
             for coordinate in ["_camera_x", "_camera_y", "_camera_z", "_camera_rotate"]:
-                kwargs[coordinate[8:]+"_loop"] = loops[coordinate+"_loop"]
+                kwargs[coordinate[8:]+"_loop"] = loops[coordinate]
             for coordinate in ["_camera_x", "_camera_y", "_camera_z", "_camera_rotate"]:
                 if expressions[coordinate]:
                     kwargs[coordinate[8:]+"_express"] = renpy.python.py_eval(expressions[coordinate])
             if camera_check_points or layer_check_points:
-                renpy.store.all_moves(camera_check_points=camera_check_points, layer_check_points=layer_check_points, play=play, **kwargs)
+                renpy.store.all_moves(camera_check_points=camera_check_points, layer_check_points=layer_check_points, play=play, camera_spline=splines["camera"], **kwargs)
 
     camera_viewer = CameraViewer()
 
@@ -1290,6 +1370,7 @@ init -1600 python in _viewers:
     from collections import defaultdict
     loops = defaultdict(lambda:False)
     expressions = defaultdict(lambda:None)
+    splines = defaultdict(lambda:False)
     all_keyframes = {}
     time = 0
     moved_time = 0
@@ -1333,7 +1414,7 @@ init -1600 python in _viewers:
                     break
         renpy.restart_interaction()
 
-    def edit_moved_time(check_points, old):
+    def edit_move_keyframes(check_points, old):
         v = renpy.invoke_in_new_context(renpy.call_screen, "_input_screen", default=old)
         if v:
             try:
@@ -1341,6 +1422,17 @@ init -1600 python in _viewers:
                 if v < 0:
                     return
                 move_keyframe(v, old, check_points)
+            except:
+                renpy.notify(_("Please type value"))
+
+    def edit_move_all_keyframes():
+        v = renpy.invoke_in_new_context(renpy.call_screen, "_input_screen", default=moved_time)
+        if v:
+            try:
+                v = renpy.python.py_eval(v)
+                if v < 0:
+                    return
+                move_keyframes(v, moved_time)
             except:
                 renpy.notify(_("Please type value"))
 
@@ -1385,43 +1477,6 @@ init -1600 python in _viewers:
         if v:
             warper = v
 
-    @renpy.pure
-    class ShowImage(renpy.store.Action, renpy.store.DictEquality):
-        def __init__(self, default, tag):
-            self.string=""
-            for e in default:
-                self.string += e + " "
-            self.string += tag
-            self.check = None
-
-        def __call__(self):
-            if self.check is None:
-                for n in renpy.display.image.images:
-                    if set(n) == set(self.string.split()):
-                        self.string=""
-                        for e in n:
-                            self.string += e + " "
-                        try:
-                            for fn in renpy.display.image.images[n].predict_files():
-                                if not renpy.loader.loadable(fn):
-                                    self.check = False
-                                    break
-                            else:
-                                self.check = True
-                        except:
-                            self.check = True #text displayable
-            if self.check:
-                renpy.show(self.string, at_list=[renpy.store.truecenter], layer="screens", tag="preview")
-            else:
-                renpy.show("preview", what=renpy.text.text.Text("No files", color="#F00"), at_list=[renpy.store.truecenter], layer="screens")
-            renpy.restart_interaction()
-
-        # def get_sensitive(self):
-        #     for n in renpy.display.image.images:
-        #         if set(n) == set(self.string.split()):
-        #             return True
-        #     else:
-        #         return False
     # @renpy.pure
     # class AddWindow(renpy.store.Action, renpy.store.DictEquality):
     #     def __init__(self):
@@ -1544,23 +1599,27 @@ init -1600 python in _viewers:
         all_keyframes["_camera_rotate"] = renpy.store._last_camera_arguments[0]["rotate"]
         all_keyframes["_camera_z"] = renpy.store._last_camera_arguments[0]["z"]
         for k in renpy.store._last_camera_arguments[1]:
-            all_keyframes["layer "+k] = renpy.store._last_camera_arguments[1][k]
-        loops["_camera_x_loop"] = renpy.store._last_camera_arguments[2]
-        loops["_camera_y_loop"] = renpy.store._last_camera_arguments[3]
-        loops["_camera_z_loop"] = renpy.store._last_camera_arguments[4]
-        loops["_camera_rotate_loop"] = renpy.store._last_camera_arguments[5]
+            all_keyframes[k] = renpy.store._last_camera_arguments[1][k]
+        loops["_camera_x"] = renpy.store._last_camera_arguments[2]
+        loops["_camera_y"] = renpy.store._last_camera_arguments[3]
+        loops["_camera_z"] = renpy.store._last_camera_arguments[4]
+        loops["_camera_rotate"] = renpy.store._last_camera_arguments[5]
         expressions["_camera_x"] = renpy.store._last_camera_arguments[6]
         expressions["_camera_y"] = renpy.store._last_camera_arguments[7]
         expressions["_camera_z"] = renpy.store._last_camera_arguments[8]
         expressions["_camera_rotate"] = renpy.store._last_camera_arguments[9]
         for k in renpy.store._last_camera_arguments[10]:
-            loops[k] = renpy.store._last_camera_arguments[10][k]
+            if k.find("loop"):
+                loops[k[:-5]] = renpy.store._last_camera_arguments[10][k]
+            elif k.find("express"):
+                expressions[k[:-8]] = renpy.store._last_camera_arguments[10][k]
+        splines["camera"] = renpy.store._last_camera_arguments[16]
         all_keyframes["_camera_x"].insert(0, (renpy.store._last_camera_arguments[11], 0, None))
         all_keyframes["_camera_y"].insert(0, (renpy.store._last_camera_arguments[12], 0, None))
         all_keyframes["_camera_z"].insert(0, (renpy.store._last_camera_arguments[13], 0, None))
         all_keyframes["_camera_rotate"].insert(0, (renpy.store._last_camera_arguments[14], 0, None))
         for k in renpy.store._last_camera_arguments[1]:
-            all_keyframes["layer "+k].insert(0, (renpy.store._last_camera_arguments[15][k], 0, None))
+            all_keyframes[k].insert(0, (renpy.store._last_camera_arguments[15][k], 0, None))
         sort_keyframes()
         change_time(0)
 
@@ -1574,20 +1633,25 @@ init -1600 python in _viewers:
 
         layer_check_points = {}
         loop = ""
+        spline = ""
         expression = ""
         argments = ""
         for layer in renpy.store._3d_layers:
-            if "layer "+layer in all_keyframes:
-                layer_check_points[layer] = all_keyframes["layer "+layer]
+            if layer in all_keyframes:
+                layer_check_points[layer] = all_keyframes[layer]
                 if len(layer_check_points[layer]) == 1 and layer_check_points[layer][0][0] == camera_viewer._3d_layers[layer]:
                     del layer_check_points[layer]
-                if loops[layer+"_loop"]:
+                if loops[layer]:
                     loop += layer+"_loop=True, "
+                if splines[layer]:
+                    spline += layer+"_spline=True, "
         for coordinate in ["_camera_x", "_camera_y", "_camera_z", "_camera_rotate"]:
-            if loops[coordinate+"_loop"]:
+            if loops[coordinate]:
                 loop += coordinate[8:]+"_loop=True, "
             if expressions[coordinate]:
                 expression += coordinate[8:]+"_express="+expressions[coordinate]+", "
+        if splines["camera"]:
+            spline += "camera_spline=True, "
         string = ""
 
         if camera_check_points:
@@ -1598,6 +1662,8 @@ init -1600 python in _viewers:
             argments += expression
         if loop:
             argments += loop
+        if spline:
+            argments += spline
 
         if argments:
             string += """
@@ -1624,7 +1690,7 @@ init -1600 python in _viewers:
                             for i, check_point in enumerate(check_points[1:]):
                                 string += """
             {} {} {} {}""".format(check_point[2], check_points[i+1][1]-check_points[i][1], p, check_point[0])
-                            if loops[name+"_"+layer+"_"+p+"_loop"]:
+                            if loops[(name,layer,p)]:
                                 string += """
             repeat"""
 

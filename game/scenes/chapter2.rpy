@@ -9,11 +9,11 @@ label chapter2:
 
     Rin "Time to get up! Let's go, let's go, we've got a busy day!"
 
-    Kan "Nnn..."
+    Kan "Nnn…"
 
     Rin "Get up!"
 
-    Kan "Nnnnn..."
+    Kan "Nnnnn…"
 
     Kan "...I didn't mean to eat all those brownies."
 
@@ -23,9 +23,10 @@ label chapter2:
 
     Rin "Who's fault is that?"
 
-    "{i}sigh{/i} I don't think she’s gonna be much help today."
+    "{i}sigh{/i}"
+    "I don't think she’s gonna be much help today."
 
-    "Maybe I can take this opportunity for a solo mission... With Kanna bedridden, I can do a little sleuthing."
+    "Maybe I can take this opportunity for a solo mission… With Kanna bedridden, I can do a little sleuthing."
 
     "Dig up some dirt on  Kyousuke - find something useful for granting Kanna's wish."
 
@@ -34,13 +35,13 @@ label chapter2:
     #scene 2.2
     scene hallway with squares
     #ART CG
-    #Image CG Detective Ringo
+    show image CGDetectiveRingo
 
     "Woah, gotta hide!"
 
-    "Boy" "Did you see something, pres?"
+    Boy "Did you see something, pres?"
 
-    "Pres" "...No, it’s nothing."
+    Pres "...No, it’s nothing."
 
     "That was close - that blonde girl almost saw me."
 
@@ -62,7 +63,7 @@ label chapter2:
 
     Maya "My mom and I made rice balls this morning for lunch! We had some extras, so I thought I'd bring you some!"
 
-    "That girl... Maya, was it?"
+    "That girl… Maya, was it?"
 
     "I don't have a problem with her type in most situations."
 
@@ -91,6 +92,7 @@ label chapter2:
     # ART (sprite artist) Create a surprised sprite for Kyousuke??
     #Kyousuke's eyes open. He heard something.
 
+
     #ART CG Dating sim GUI appears to Kyousuke.
     #Show CG Maya with the choice "Try a rice ball" in a dating sim format
     #Ringo is looking up at Kyousuke who's surprised to see a choice button appear in front of him
@@ -101,7 +103,7 @@ label chapter2:
 
     Kyou "I guess I'll try one."
 
-    "{i}Crunch{/i}"
+    #SFX "{i}Crunch{/i}"
 
     Maya "Well?"
 
@@ -178,12 +180,13 @@ label chapter2:
 
     Kyou "Do you think returning her lunchbox counts as a date?"
 
-    "{i}sigh{/i} This idiot is going to make this so easy."
+    "{i}sigh{/i}"
+    "This idiot is going to make this so easy."
 
     "This is also a good opportunity to get some insider info for Kanna."
 
     #scene 2.3
-
+    #SFX classbell sound, screen wipe
     Rin "Hey."
 
     Kyou "..."
@@ -200,7 +203,7 @@ label chapter2:
 
     Kyou "Oh. Thanks for waking me up, Angel! You really are looking out for me."
 
-    "Maya left him a note telling him she’d give him the notes if he dropped off the lunchbox, but I’ll just keep the note to myself."
+    ###"Maya left him a message telling him she’d give him the notes if he dropped off the lunchbox, but I’ll just keep the note to myself."
 
     Rin "I got you covered, buddy."
 
@@ -219,4 +222,3 @@ label chapter2:
     Kyou "Yep! Oh, but wait, should I ask Maya for the notes? Ahh, but she has her clubs..."
 
     "It’s gonna be a long night."
-    jump chapter3

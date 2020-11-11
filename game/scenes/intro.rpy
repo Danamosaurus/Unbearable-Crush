@@ -23,11 +23,13 @@ label start:
     Kan "Right, so if you could please grant my wish, God, I’d worship you forever! I’ll visit everyday, and pray, and offer food!"
     Kan "You name it, I’ll do it! So please grant this wish. You’re my only hope."
     Kan "Will you do it for me, God?"
+    "..."
     Kan "I’ll, uh...take that as a maybe."
 
     #SFX Footsteps "Kanna turns away from the shrine and begins to go home."
 
     Kan "Oh, and if you’re the god of bad relationships,  you can just pretend this never happened!"
+    "..."
     Kan "Well anyway, goodnight."
 
     #ART
@@ -106,7 +108,8 @@ label start:
     Kan "..."
     Kan "Stupid bear."
     Rin  "..."
-    Rin "{i}sigh{/i} Tell me about this guy you like."
+    Rin "{i}sigh{/i}"
+    Rin "Tell me about this guy you like."
 
     #Animation have Kanna's sprite suddenly become very happy.
 

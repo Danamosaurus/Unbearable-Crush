@@ -4,7 +4,6 @@ label chapter7:
     $ game_day = "Day 7"
 
     scene Hallway
-
     Char "You're telling me Kanna has a spirit?"
     Char "Which is why the greatest embarrassment of all time has befallen me."
     Char "And why did you not mention this to me sooner?"
@@ -35,7 +34,7 @@ label chapter7:
     Kan "That's right!"
     Maya "Whatever. I know you're full of it Kanna."
     Kan "Hey, you said my name right!"
-    Maya "Cut the perky act, you're a hypocrite. You just want Kyousuke to be happy? You manipulated Charlotte into looking like an idiot."
+    Maya "Cut the perky act! You're a hypocrite. You just want Kyousuke to be happy? You manipulated Charlotte into looking like an idiot."
     Kan "You openly admitted to controlling Kyousuke!"
     Maya "I know you would do it too if you could."
     Kan "..."
@@ -93,7 +92,7 @@ label chapter7:
     Char "Alright! So we all agree I will be receiving my Kyousuke check in the mail in four to six weeks, yes?"
     Maya "Hey! I've known Kyousuke the longest, I've had dibs on him for a while. Ever heard of dibs?"
     Kan "Isn't that a type of ice cream?"
-    Char "Aw yes, dibs. The middle school playground tradition of being first line, ergo first pick."
+    Char "Aw yes, dibs. The middle school playground tradition of being first in line, ergo first pick."
     Char "Well I was the third one here to vie for Kyousuke's attention. And three is bigger than one, so I win. I get Kyousuke."
     Kan "I don't think that's how it works. I think the person who wants Kyousuke the most should get a chance with him."
     Maya "No, wanting something badly and putting in the time for something are two completely different things."
@@ -127,7 +126,7 @@ label chapter7:
     "(I'm sorry Kanna, but I'm too close to retirement for you to have any ethical misgivings here.)"
     "(Besides, when has what's right and wrong ever affected how business is done?)"
     "(And if you're forbiddening me from influencing Kyousuke's choices when he sees you.)"
-    "(I'll just have to do it now.) "
+    "(I'll just have to do it now.)"
     "(You'll thank me later, Kanna.)"
 
     Rin "You're at the beach, Kyousuke."
@@ -148,10 +147,10 @@ label chapter7:
     Rin "Ice blue raspberry lemonade."
     Kyou "Ah, that's a good one."
     Rin "I whisper into your ear,"
-    Rin '"Do you want those girls?"'
+    Rin "'Do you want those girls?'"
     Kyou "Um, duh, yeah, I do!"
     Kyou "What kind of swimsuits are they wearing?"
-    Rin "It's not that kind of thought experiment! Just shut up and drink your Kool aid."
+    Rin "It's not that kind of thought experiment. Just shut up and drink your Kool aid."
     Rin "You can have any one of those girls, but you can only pick one. Do you have three girls in mind?"
     Kyou "I think so, yea."
     Rin "Alright, who do you pick?"
@@ -165,70 +164,61 @@ label chapter7:
 
     menu:
         "Choices for Kyousuke:"
-
         "Highlight Kanna":
-            jump choice7_A
+            #Choice 1.A. Highlight Kanna
+            Rin "...CHOO!"
+            Kyou "Bless you!"
+            Rin "That was a close one, almost picked the wrong girl."
+            Kyou "I think I'd pick Kanna!"
+            Rin "{i}Gasp!{/i} Really? I never would have thought."
+            Kyou "There's just something about her, I don't know."
+            Kyou "She's just so... genuine, ya know? She's more relaxed and chill to talk to than the others."
+            Kyou "Hey, speaking of Kanna, I think that's her over there, talking with the other girls."
+            Kyou "That's so weird! I was just thinking of all three of them!"
+            Rin "Wow, that's pretty amazing, Kyousuke. Let's go over and talk to 'em."
+            # CODE
+            #Choice 1.A ends
+            # Kanna +1 Points.
         "Highlight Maya.":
-            jump choice7_B
+            #Choice 1.B : Highlight Maya
+            Rin "CHOO!"
+            Kyou "Bless you!"
+            Rin "Oh my god no! That's not Kanna!"
+            Kyou "Kanna's cool, I guess, but I've known Maya for like ever now."
+            Kyou "She'd be pretty mad at me if I didn't go with her. I'd love to go to the beach with her, she'd look great in a swimsuit."
+            Rin "Son of a bi..."
+            Kyou "Hey, speaking of Maya, I think that's her over there, talking with the other girls."
+            Kyou "That's so weird! I was just thinking of all three of them!"
+            Rin "{i}sigh{/i} Wow, that's pretty amazing, Kyousuke. Let's go over and talk to 'em."
+            # CODE
+            #Choice 1.B ends
+            #Maya +1 points.
         "Highlight Charlotte.":
-            jump choice7_C
-    #Choice 1.A. Highlight Kanna
-    label choice7_A:
-        Rin "...CHOO!"
-        Kyou "Bless you!"
-        Rin "That was a close one, almost picked the wrong girl."
-        Kyou "I think I'd pick Kanna!"
-        Rin "{i}Gasp!{/i} Really? I never would have thought."
-        Kyou "There's just something about her, I don't know."
-        Kyou "She's just so... genuine, ya know? She's more relaxed and chill to talk to than the others."
-        Kyou "Hey, speaking of Kanna, I think that's her over there, talking with the other girls."
-        Kyou "That's so weird! I was just thinking of all three of them!"
-        Rin "Wow, that's pretty amazing, Kyousuke. Let's go over and talk to 'em."
+            ##Add 1 point to Charlotte
+            #Choice 1.C.: Highlight Charlotte.
+            Rin "CHOO!"
+            Kyou "Bless you!"
+            Rin "Oh my god, no! That's not Kanna!"
+            Kyou "Kanna's fine, I guess, but Charlotte seems so cool."
+            Kyou "I wonder what beach magic she knows? Maybe she can talk to fish, that'd be kinda cool, wouldn't it?"
+            Rin "Son of a bi..."
+            Kyou "Hey, speaking of Charlotte, I think that's her over there, talking with the other girls."
+            Kyou "That's so weird! I was just thinking of all three of them!"
+            Rin "{i}sigh{/i} Wow, that's pretty amazing, Kyousuke. Let's go over and talk to 'em."
+            # CODE
+            #Choice 1.C ends
+            #Charlotte +1 points
 
-        # CODE
-        #Choice 1.A ends
-        # Kanna +1 Points.
 
-    #Choice 1.B : Highlight Maya
-    label choice7_B:
-        Rin "CHOO!"
-        Kyou "Bless you!"
-        Rin "Oh my god no! That's not Kanna!"
-        Kyou "Kanna's cool, I guess, but I've known Maya for like ever now."
-        Kyou "She'd be pretty mad at me if I didn't go with her. I'd love to go to the beach with her, she'd look great in a swimsuit."
-        Rin "Son of a bi..."
-        Kyou "Hey, speaking of Maya, I think that's her over there, talking with the other girls."
-        Kyou "That's so weird! I was just thinking of all three of them!"
-        Rin "{i}sigh{/i} Wow, that's pretty amazing, Kyousuke. Let's go over and talk to 'em."
-
-        # CODE
-        #Choice 1.B ends
-        #Maya +1 points.
-
-    #Choice 1.C.: Highlight Charlotte.
-    label choice7_C:
-        Rin "CHOO!"
-        Kyou "Bless you!"
-        Rin "Oh my god, no! That's not Kanna!"
-        Kyou "Kanna's fine, I guess, but Charlotte seems so cool."
-        Kyou "I wonder what beach magic she knows? Maybe she can talk to fish, that'd be kinda cool, wouldn't it?"
-        Rin "Son of a bi..."
-        Kyou "Hey, speaking of Charlotte, I think that's her over there, talking with the other girls."
-        Kyou "That's so weird! I was just thinking of all three of them!"
-        Rin "{i}sigh{/i} Wow, that's pretty amazing, Kyousuke. Let's go over and talk to 'em."
-
-        # CODE
-        #Choice 1.C ends
-        #Charlotte +1 points
 
     #The other three girls join the scene.
-    "Kyousuke and Ringo walk up to the squabbling group."
+    "Kyousuke and I walk up to the squabbling group."
 
     Char "In conclusion, yes, I am one eighth fox, but I really don't see how that's relevant to... Oh, hi, Kyousuke!"
     Maya "Hey Kyousuke."
     Kan "Good morning, Kyousuke!"
     Kyou "Good morning, everybody! What are all of you talking about?"
-    Kan "We were ju...'"
+    Kan "We were ju..."
     Char "Kyousuke, would you like to accompany me to a social outing this weekend? I need to interview you for your assistant position, remember?"
     Kyou "...You mean like a date or something?"
 
@@ -320,12 +310,5 @@ label chapter7:
 
     Rin "I sure hope you know what you're doing, kid."
 
-    menu:
-        "DEBUG: Jump to a date scene."
-        "Maya":
-            jump date_maya
-        "Charlote":
-            jump date_charlotte
-        "Kanna":
-            jump date_kanna
-    return
+    #Day 7 ends.
+    #Transition to date scenes.
