@@ -209,11 +209,7 @@ label mayadate:
     Rin "What the? A note?"
     "Ringo picks up the note left on the table."
     Rin "'{i}Kyousuke should be with the person that makes him the most happy. And I know it's not me.{i}"
-    <<<<<<< HEAD
     Rin "'{i}I know you said that Maya is a bad person that shouldn't be with Kyousuke, but they've been friends for so long. Seeing them have fun together at the table across from me,  I think maybe we're wrong about this one.{i}'"
-    =======
-    Rin "'{i}I know you said that Maya is a bad person that shouldn't be with Kyousuke, but they've been friends for so long. Seeing them have fun together at the table across from me,  I think maybe we're wrong about this one.{i}."
-    >>>>>>> Kev-DynamicSprites+Camera
     Rin "'{i} Kyousuke is happy with her, and I guess that's enough for me.  Thanks for trying Ringo, good luck with your next wish and your retirement.{/i}'"
     Rin "Wait? Nonononono, there's still time! Kanna, you idiot! You told me you didn't think Kyousuke was a good fit for Maya!"
     Rin "God, why are teenagers so wishy washy with their feelings!"
@@ -257,7 +253,6 @@ label mayadate:
     Maya "That's a load of bull and you know it.  You don't have the guts to come here on your own and I know that Kanna. Who put you up to this? Charlotte?"
     Kan "..."
     Kyou "Hey, come on now, Maya, she's just trying to eat a delicious fish taco. You don't have to be so mean."
-    Maya "You're telling me all three of us girls agree to the terms that she made herself -  to let you, Kyousuke, deliver a letter and go from there - and she can't even follow her own rules? "
     Maya "You're telling me it's just a happy happenstance that you're here on the day we decided to go on a date? Really? Is that what you're telling me right now, Kanna?"
     Maya "You pulled some kind of magical mambo jumbo from your butt to deal with Charlotte, and now it's my turn right?"
     Maya "Because you can't handle the fact Kyousuke chose someone who wasn't you, even though I won him fair and square. He's mine."
