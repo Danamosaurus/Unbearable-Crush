@@ -33,6 +33,7 @@ define gui.about = _p("""
 """)
 
 
+
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
@@ -157,7 +158,9 @@ define config.window_icon = "gui/window_icon.png"
 ## This section controls how Ren'Py turns your project into distribution files.
 
 init python:
-
+    ##Registers layers and 3D layers
+    config.layers = ['master', 'background', 'middle', 'forward', 'transient', 'screens', 'overlay']
+    register_3d_layer('master', 'middle', 'forward')
     ## The following functions take file patterns. File patterns are case-
     ## insensitive, and matched against the path relative to the base directory,
     ## with and without a leading /. If multiple patterns match, the first is

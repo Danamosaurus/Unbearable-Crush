@@ -22,27 +22,11 @@ init:
     image room night = "bgs/room night.png"
     image roomwposter = "bgs/roomwposter.png"
     image white = "bgs/white.png"
-init python:
-#Dynamic Sprite System-Each category represents a folder in the Images section. These will be auto-defined.
-   # Automatically define the BGs, CGs, and some UI elements
-   DefineImages('cgs')
-   DefineImages('bgs', prepend='bg')
-   DefineImages('mainmenu', prepend='mm')
-   # define the composite sprites with LayeredImages, blinking eyes and flapping mouth
-   DefineImages("sprites", composite=True)
-
-   layerorder = ['hair', 'base', 'arms', 'tail','mouth','eyes','brow',]
-   DefineImages('images/sprites', composite=True, overrideLayerOrder=layerorder, offsets=(0, 100), zooms={'Kan':.85,'Rin':.85,'Kyou':.85, 'Maya': .85, 'Youk':.85, 'Char':.7}, sides=['Kan', 'Rin', 'Kyou','Maya','Youk','Char'])
-   hide_sides = []
-
-
-   #Dynamic Sprite Emote Maps
-   #MapEmote('war hugesmile',  'war md_hugesmile ed_bigsmile blush')
-   # override some default eye blink and mouth flap behaviours
-   #image war_ed_default = BlinkEyes("war_e_default", "war_ec_grin")
-   # image war_md_hugesmile = FlapMouth("war_mc_smug", "war_m_bigsmile")
-
-
+    #cgs
+    image cgs ringo_ent = "cgs/cgs ringo_ent.png"
+    image cgs ringo_ent_shadow = "cgs/cgs ringo_ent_shadow.png"
+    #Popins
+    image pop kannashocked = "popins/kanna_shocked.png"
 
 define config.say_attribute_transition = Dissolve(.2)
 
