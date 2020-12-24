@@ -3,8 +3,8 @@ label chapter2:
     # Update the day shown on the upper corner... to nothing!
     $ game_day = "Day 2"
 
-    scene Bedroom
-
+    scene room day with fade
+    
     Rin "Wakey wakey!"
 
     Rin "Time to get up! Let's go, let's go, we've got a busy day!"

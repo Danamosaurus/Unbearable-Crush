@@ -8,12 +8,12 @@ init:
 # When adding new characters, this is where you define them. Image links them to an image tag.
 # voice_tag links them to their particular slider in the sound settings
 # The "Color" value lets you choose a six hexadecimal color code for each character's name.
-    define Kan = Character("Kanna", image = "Kan",voice_tag = "Kanna",who_color="#ffffff",what_prefix = '"', what_suffix = '"')
-    define Maya = Character("Maya", image = "Maya",voice_tag = "Maya",who_color="#ffffff",what_prefix = '"', what_suffix = '"')
-    define Char = Character("Charlotte", image = "Char",voice_tag = "Charlotte",who_color="#ffffff",what_prefix = '"', what_suffix = '"')
-    define Rin = Character("Ringo", image = "Rin",voice_tag = "Ringo",who_color="#ffffff",what_prefix = '"', what_suffix = '"')
-    define Youk = Character("Youko", image = "Youk",voice_tag = "Youko",who_color="#ffffff",what_prefix = '"', what_suffix = '"')
-    define Kyou = Character("Kyousuke", image = "Kyou",voice_tag = "Kyousuke",who_color="#ffffff",what_prefix = '"', what_suffix = '"')
+    define Kan = Character("Kanna", image = "Kan",voice_tag = "Kan",callback=speaker("Kan"),who_color="#ffffff",what_prefix = '"', what_suffix = '"')
+    define Maya = Character("Maya", image = "Maya",voice_tag = "Maya",callback=speaker("Maya"),who_color="#ffffff",what_prefix = '"', what_suffix = '"')
+    define Char = Character("Charlotte", image = "Char",voice_tag = "Char",callback=speaker("Char"),who_color="#ffffff",what_prefix = '"', what_suffix = '"')
+    define Rin = Character("Ringo", image = "Rin",voice_tag = "Rin",callback=speaker("Rin"),who_color="#ffffff",what_prefix = '"', what_suffix = '"')
+    define Youk = Character("Youko", image = "Youk",voice_tag = "Youk",callback=speaker("Youk"),who_color="#ffffff",what_prefix = '"', what_suffix = '"')
+    define Kyou = Character("Kyousuke", image = "Kyou",voice_tag = "Kyou",callback=speaker("Kyou"),who_color="#ffffff",what_prefix = '"', what_suffix = '"')
     define na = Character()
 
 
@@ -22,6 +22,10 @@ init:
     image room night = "bgs/room night.png"
     image roomwposter = "bgs/roomwposter.png"
     image white = "bgs/white.png"
+    image hallway_1 = "bgs/hallway1/hallway.png"
+    image hallway_1_guy_1 = "bgs/hallway1/hallway 1 guy 1.png"
+    image hallway_1_guy_2 = "bgs/hallway1/hallway 1 guy 2.png"
+    image hallway_1_girl_1 = "bgs/hallway1/hallway 1 girl 1.png"
     #cgs
     image cgs ringo_ent = "cgs/cgs ringo_ent.png"
     image cgs ringo_ent_shadow = "cgs/cgs ringo_ent_shadow.png"

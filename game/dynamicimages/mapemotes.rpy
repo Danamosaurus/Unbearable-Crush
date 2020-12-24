@@ -9,15 +9,14 @@ init python:
 
    layerorder = ['hair', 'base', 'arms', 'tail','mouth','eyes','brow','blush']
    DefineImages('images/sprites', composite=True, overrideLayerOrder=layerorder, offsets=(0, 100), zooms={'Kan':.85,'Rin':.85,'Kyou':.85, 'Maya': .85, 'Youk':.85, 'Char':.7}, sides=['Kan', 'Rin', 'Kyou','Maya','Youk','Char'])
-   hide_sides = []
-
-
 
    #Dynamic Sprite Emote Maps
    #MapEmote('war hugesmile',  'war md_hugesmile ed_bigsmile blush')
    # override some default eye blink and mouth flap behaviours
    #image war_ed_default = BlinkEyes("war_e_default", "war_ec_grin")
    # image war_md_hugesmile = FlapMouth("war_mc_smug", "war_m_bigsmile")
+
+####Kanna
    MapEmote('Kan smile worried eo', 'Kan base mdo_happy ed_default brow_sad')
    MapEmote('Kan smile worried ec', 'Kan base mdo_happy ec_happy brow_sad')
    MapEmote('Kan frown worried eo', 'Kan base md_frown ed_default brow_sad')
@@ -46,3 +45,18 @@ init python:
    MapEmote('Kan drooling happy eo', 'Kan base mdo_drool ed_crazy brow_default blush')
    MapEmote('Kan speaking sad crazy', 'Kan base mdo_oh ed_crazy brow_sad')
    MapEmote('Kan salivating', 'Kan base mdo_drool ec_default brow_content blush')
+   MapEmote('Kan questioning embarrassed', 'Kan base mdo_oh ec_happy brow_skeptic blush')
+###Kyousuke
+   MapEmote('Kyou normal', 'Kyou base md_default ed_default')
+   MapEmote('Kyou smirk', 'Kyou base md_smirk ed_default')
+   MapEmote('Kyou frown', 'Kyou base mdo_default ed_default')
+   MapEmote('Kyou happy', 'Kyou base mdo_smile ed_default')
+
+####Maya
+   MapEmote('Maya smile happy mc', 'Maya base md_default ed_default brow_default')
+   MapEmote('Maya smile happy mo', 'Maya base mdo_grin ed_default brow_default')
+   MapEmote('Maya speaking normal', 'Maya base mdo_default ed_default brow_default')
+   MapEmote('Maya sad speaking', 'Maya base mdo_default ec_default brow_furrow')
+   MapEmote('Maya annoyed ec', 'Maya base mdo_default ec_default brow_scrunch')
+   MapEmote('Maya annoyed eo', 'Maya base mdo_default ed_default brow_scrunch')
+   MapEmote('Maya hopeless ec', 'Maya base md_default ec_default brow_furrow')

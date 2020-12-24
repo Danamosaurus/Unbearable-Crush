@@ -159,7 +159,7 @@ define config.window_icon = "gui/window_icon.png"
 
 init python:
     ##Registers layers and 3D layers
-    config.layers = ['master', 'background', 'middle', 'forward', 'transient', 'screens', 'overlay']
+    config.layers = ['master', 'middle', 'forward','transient', 'screens', 'overlay']
     register_3d_layer('master', 'middle', 'forward')
     ## The following functions take file patterns. File patterns are case-
     ## insensitive, and matched against the path relative to the base directory,
