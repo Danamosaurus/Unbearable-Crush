@@ -4,11 +4,9 @@ label chapter1:
     $ game_day = "Day 1"
     $ hide_sides = ["Maya"]
     scene hallway_1 with squares
-
     "Girl2" "Hey, Who's the creep?"
     "Girl1" "Why's she sneaking around like that?"
     "Girl2" "Maybe she's a spy on a secret mission!"
-    #show Kanna
     Kan frown confident ec "You know I can hear you guys."
     Kan smile concerned ec "I don't care what they say. No one can stop me from achieving my goals. I have resolved myself to claim my-"
     Rin "{i}Gasp!{/i} Air! I need air!"
