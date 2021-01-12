@@ -52,7 +52,7 @@ label chapter1:
     Kyou "See me? Do you want to see my math notes? Do you need me to help you finish your lunch again?"
     Maya sad speaking "*Sigh* I don't want to go to volleyball today. If I’m gonna work hard everyday, it would be nice to have someone there to cheer me on~"
     Kyou "You mean like a fan club?"
-    Maya annoyed ec "No I mean, I, er… maybe if boys were there to watch us play, the girls would perform better~"
+    Maya annoyed ec "No I mean, I, er maybe if boys were there to watch us play, the girls would perform better~"
     Kyou "But it’s an all-girls volleyball team. Why would guys be there?"
     Maya annoyed eo "No, Kyousuke, I mean-"
     # SFX School bell rings.

@@ -1,19 +1,20 @@
 label chapter3:
 
-    # Update the day shown on the upper corner... to nothing!
     $ game_day = "Day 3"
-
-    scene Hallway
-    Kan "What did you learn about Kyousuke? What does his hair smell like? I bet it's something masculine, like a lumberjack."
-    Rin "Close. It smelled like tree bark and was as sticky as tree sap. Oh, and he's super boring."
-    Kan "You mean humble."
-    Rin  "He watched cooking videos on his phone until 2am, then passed out. That ain't humble."
-    Kan "He's so relatable!"
-    Rin "Whatever, just listen: it's important Kyousuke doesn't know I'm with you."
-    Kan  "Why?"
-    Rin "I can't fulfill your wish if he knows I'm helping you. It won't be true love if he knows I'm manipulating him."
-    Kan "True love? Is it true love if you manipulate him to like me? Shouldn't he like me naturally?"
-    Rin  "Stop thinking so hard, just don't let him see me with you."
+    scene hallway_1 with squares
+    Rin "Alright, we're going to do this just like we talked about."
+    Rin "And remember, the most essential thing for right now is that Kyousuke doesn't find out I'm working with you."
+    Kan speaking curious "Because you're his...guardian wingman?"
+    Rin "Ya know, a little push here, a little nudge there, and it'll be all over for that Maya girl."
+    Rin "But it wont work if Kyousuke knows I'm helping you."
+    Rin "I gotta make him think it was his idea, you know?"
+    Kan "So, you want him to like me naturally?"
+    Rin "That's how true love works."
+    Kan "And you're going to use your magic spirit powers to manipulate him..."
+    Kan "...into liking me..."
+    Kan "...naturally?"
+    Rin  "Don't think so hard about it. Just don't let him see me with you."
+    show hallway_1_guy_1 with dissolve
     Kan "But what do I say? I can't just ask him to be my math partner out of the blue, I need a reason! Maybe I can drop my books in front of him? Or crash into him when I turn the corner? Or maybe-"
     Rin  "Time's up, he's right there! Ask him to be your partner. Be yourself.  Go get 'im, tiger."
     Kan "Wait, Ringo, I-H...he-h-heeeeeeyyy, Kyousuke."
@@ -28,7 +29,7 @@ label chapter3:
     Kyou  "Oh, sorry."
     Kan  "Nononono, I meant like, 'shut up I can't believe you totally want to be partners with me!' Haha."
     Kyou  "Um, are you alright? You're acting funny."
-    Kan  "Yeah, why would I…"
+    Kan  "Yeah, why would I..."
 
     #ART, CG, Dating Sim GUI
     "Before Kanna could finish speaking, a set of VN GUI choices appears in front of Kyousuke and Kanna. They are facing Kyousuke, so Kanna can't quite make out what they are supposed to say."
@@ -74,7 +75,7 @@ label chapter3:
     # CG ?
     "Without missing a beat, Kanna turns and throws a right jab, hitting Kyousuke square in the face, knocking him out. He slumps back against the wall."
 
-    Rin  "WHAT!? WHY!?"
+    Rin  "WHAT!? WHY!//?"
     Kan  "He - he was gonna find out about you. A-a-and you said you couldn't fulfill my wish if that happened."
     Rin  "And your first response is punching him in the face? Seriously?"
     Kan  "I don't know! I panicked! I thought I was gonna lose you and my chance with Kyousuke!"
@@ -138,7 +139,7 @@ label chapter3:
     Maya  "That's right."
     Kan  "But-"
     Maya  "You heard him, ditzy. We're working on math together."
-    Kan  "Ok, listen here, you stupid…"
+    Kan  "Ok, listen here, you stupid..."
 
     #ART CG Two more VN GUI choices appear in front of Kyousuke.
 
