@@ -16,7 +16,8 @@ label chapter3:
     Rin  "Don't think so hard about it. Just don't let him see me with you."
     show hallway_1_guy_1 with dissolve
     Kan "But what do I say? I can't just ask him to be my math partner out of the blue, I need a reason! Maybe I can drop my books in front of him? Or crash into him when I turn the corner? Or maybe-"
-    Rin  "Time's up, he's right there! Ask him to be your partner. Be yourself.  Go get 'im, tiger."
+    Rin "You're a walking cliche."
+    Rin  "Anyway, time's up, he's right there! Ask him to be your partner. Be yourself.  Go get 'im, tiger."
     Kan "Wait, Ringo, I-H...he-h-heeeeeeyyy, Kyousuke."
     Kyou  "Oh. Hey, Can-oh! What are you doing here?"
     Kan  "Just, uh, just hanging out, ya know. Also, uh, it's Kanna, but you can call me Can-oh if you really want to. I was wondering, Kyousuke, if you wanted to be math partners next period."
@@ -32,18 +33,17 @@ label chapter3:
     Kan  "Yeah, why would I..."
 
     #ART, CG, Dating Sim GUI
-    "Before Kanna could finish speaking, a set of VN GUI choices appears in front of Kyousuke and Kanna. They are facing Kyousuke, so Kanna can't quite make out what they are supposed to say."
-
     Kan  "Uh, Kyousuke, what are those? Kyousuke? You alright?"
-    Rin  "You can see those?"
+    "Oh. I see. This sometimes happens in these sorts of situations. "
     Kan  "Kyousuke?"
     Kyou  "Hmmm."
     Rin "He can't hear you. Those are the choices in his conscience. He's trying to figure out what to do in this situation."
     Kan  "We wouldn't be in this situation if you just kept quiet!"
     Rin  "We all need moral support sometimes, excuse me for trying to help."
-    Kan "Woah, so you mean I can see what Kyousuke is thinking."
+    Kan "Are these what Kyousuke is thinking?"
+    Kan "I can read his thoughts?"
+    Kan "How intimate..."
     Rin  "It's due to our contract. Let me handle this."
-    Kan "How intimate."
     "I climb up onto Kyousuke's shoulder."
 
     Rin  "Let's see what we got here."
@@ -63,7 +63,7 @@ label chapter3:
 
     Kyou  "Hahaha, it's alright, Kanna. I know what ya mean."
     Kyou  "Like 'Oh shut up! No way!' right?"
-    Kan  "Erm... Yeah, exactly! I'm just excited to get started, ya know?"
+    Kan  "Erm...Yeah, exactly! I'm just excited to get started, ya know?"
     Kyou  "But what was that voice that came from behind you?"
     Kan  "What!?"
 

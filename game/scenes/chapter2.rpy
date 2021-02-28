@@ -86,7 +86,7 @@ label chapter2:
 
     # SFX of a sword being drawn
 
-    "I might have to eliminate her after all."
+    "I might have to eliminate her."
 
     Maya speaking normal "...Kyousuke?"
 
@@ -175,7 +175,7 @@ label chapter2:
 
     Rin "Achem-"
 
-    Rin "Yes! It is I, your guardian angel."
+    Rin "Yes! It is I, your guardian angel bear."
 
     Rin "And I'm here today to tell you that the spirits have chosen {i}you{/i} to win the heart of a very lovely girl."
 

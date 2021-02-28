@@ -21,19 +21,21 @@ label chapter1:
     #ART CG? Kanna adores him while she imagines him being her prince charming. While Ringo's face is blank...
     Kan "Yes! Kyousuke! The glorious, the handsome, the one and only..."
     #Code Set the correct time in the wait tag, based on the VA performance.
-    "He looks like…{w=0.5} the most boring looking person in the world."
+    "He looks like...{w=0.5} the most boring looking person in the world."
     "Oh well, that just makes things easier!"
-    Kan "The other day, I stole Kyousuke's yakisoba bread..."
+    Kan "Yesterday during lunch, when he wasn't looking, I obtained his yakisoba bread."
+    Rin "You stole his lunch?"
+    Kan "Only the part he didn't eat!"
     Rin "...Why?"
-    Kan salivating "It tasted like Kyousuke~"
-    Rin "All right! I get it! God, are all teenagers this creepy? If you like him so much, then why not be honest with him?"
+    Kan salivating "Kyousuke-flavored yakisoba bread~"
+    Rin "All right! I get it! God, are all teenagers this creepy? If you like him so much, then why not just confess to him already?"
     Kan frown worried ec "I don't know. He- he makes me all fluttery!"
     Rin "Fluttery how?"
     Kan speaking embarrassed ec "I don't know! What if I say something stupid and offend him?! Or-"
     Rin "Jeez! Just go talk to him already!"
     Kan questioning embarrassed "What am I supposed to say?"
     Rin "It doesn't matter. Just start talking. He's right there waiting for you, come on, you got this!"
-    Kan smile concerned ec "O-okay... s-s-sure…. I-I-I-I got this..."
+    Kan smile concerned ec "O-okay... s-s-sure. I-I-I-I got this..."
     Rin "Come on, take a step forward... that's it. Almost there, there you go-"
     show Maya smile happy mc with dissolve:
         subpixel True xpos 0.54 ypos 1.4 xanchor 0.5 yanchor 1.0 zoom 1.46 rotate None
@@ -76,9 +78,15 @@ label chapter1:
     # Art (Sprite Artist) Ringo wears a hat or glasses
     Kan speaking curious "Huh?"
     Kan smile concerned ec "What's with that getup?"
-    Rin "I'm going under cover!"
-    "I need to find out more about them in order to grant the wish. So I plan on doing some investigating while Kanna is at the club. I may need to use some magic for this one"
-    "This would be easier if I still had my human form. I could pass as a student easily enough."
-    "Oh well, as long as no one sees me, I should be fine."
+    Rin "I'm going to do some investigating around school tomorrow."
+    Rin "This disguise is just for extra saftey. It would be catastrophic if someone were to see me in this form."
+    Kan speaking curious "Would it break our magical contract or something?"
+    Rin "Yeah...it's something like that."
+    Rin "Just don't let anyone see me."
+    Kan "What should I do tomorrow?"
+    Rin "Just sneak me into school in your backpack again."
+    Rin "Oh, and pack some snacks too."
+    Kan smile concerned ec "You sure seem to eat a lot for your size."
+    Rin "Don't remind me!"
     scene black with fade
     jump chapter2
