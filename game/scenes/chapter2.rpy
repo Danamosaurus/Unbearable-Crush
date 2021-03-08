@@ -33,7 +33,12 @@ label chapter2:
     "After raiding her fridge, of course."
 
     #scene 2.2
-    scene hallway with squares
+  
+    scene hallway onlayer master with squares:
+        subpixel True xpos 0.5 ypos 2.2 xanchor 0.5 yanchor 1.0 rotate None 
+        parallel:
+            xpos -0.02
+            ease_cubic 3.17 xpos 0.45
     #ART CG
     #show image CGDetectiveRingo
 

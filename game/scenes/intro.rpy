@@ -1,5 +1,3 @@
-#Testing github integration3
-
 #ART BG Shrine evening
 label start:
     show screen flower_menu_button with easeinright

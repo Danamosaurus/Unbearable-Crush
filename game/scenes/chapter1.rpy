@@ -3,7 +3,9 @@ label chapter1:
     # Update the day shown on the upper corner... to nothing!
     $ game_day = "Day 1"
     $ hide_sides = ["Maya"]
-    scene hallway_1 with squares
+    $all_moves(camera_check_points={u'y': [(0, 0, u'linear')], u'x': [(0, 0, u'linear')], u'z': [(0, 0, u'linear')]}, layer_check_points={}, subpixel=True, **{})
+    scene hallway_1 onlayer master with squares:
+        subpixel True xpos 0.52 ypos 0.52 xanchor 0.5 yanchor 0.5 xoffset 0 zoom 0.36 rotate None 
     "Girl2" "Hey, Who's the creep?"
     "Girl1" "Why's she sneaking around like that?"
     "Girl2" "Maybe she's a spy on a secret mission!"
@@ -14,9 +16,10 @@ label chapter1:
     Rin "Nah, I'm just messing with you. It's surprisingly comfy for a cramped place. I even get to write a bucket list for my retirement!"
     Kan speaking pleading "Hey! Is that my pen and notebook? Don't play around with that!"
     Rin "What else am I gonna do? Bore myself to death? I’ve done enough of that at the shrine."
-    show hallway_1_guy_1 with Dissolve(.2)
+    #ART maybe cut out a Kyousuke art and show him on the BG?
+    #show hallway_1_guy_1 with Dissolve(.2)
     Kan "It's not my fault that-"
-    Kan speaking excited crazy blush "{i}-It's Kyousuke!"
+    Kan speaking excited crazy blush "{i}-It's Kyousuke!{/i}"
     Rin "That's... the Kyousuke you're looking at?"
     #ART CG? Kanna adores him while she imagines him being her prince charming. While Ringo's face is blank...
     Kan "Yes! Kyousuke! The glorious, the handsome, the one and only..."
@@ -41,7 +44,7 @@ label chapter1:
         subpixel True xpos 0.54 ypos 1.4 xanchor 0.5 yanchor 1.0 zoom 1.46 rotate None
     $ hide_sides = ["Maya"]
     "???" "Kyousuke!"
-    hide hallway_1_guy_1
+    #hide hallway_1_guy_1
     Kan smile surprised crazy "Eh-"
     with Dissolve(.2)
     Kyou "Oh, good morning Maya. What's up?"
@@ -87,6 +90,6 @@ label chapter1:
     Rin "Just sneak me into school in your backpack again."
     Rin "Oh, and pack some snacks too."
     Kan smile concerned ec "You sure seem to eat a lot for your size."
-    Rin "Don't remind me!"
+    Rin "Don't remind me."
     scene black with fade
     jump chapter2

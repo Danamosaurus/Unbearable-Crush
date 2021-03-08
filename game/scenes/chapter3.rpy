@@ -14,7 +14,8 @@ label chapter3:
     Kan "...into liking me..."
     Kan "...naturally?"
     Rin  "Don't think so hard about it. Just don't let him see me with you."
-    show hallway_1_guy_1 with dissolve
+    #ART Cutout of Kyousuke on BG
+    #show hallway_1_guy_1 with dissolve
     Kan "But what do I say? I can't just ask him to be my math partner out of the blue, I need a reason! Maybe I can drop my books in front of him? Or crash into him when I turn the corner? Or maybe-"
     Rin "You're a walking cliche."
     Rin  "Anyway, time's up, he's right there! Ask him to be your partner. Be yourself.  Go get 'im, tiger."

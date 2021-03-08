@@ -45,11 +45,11 @@ screen flower_menu_button():
             # RightClickFlower(),
             # Hide('flower_menu_button'),
             FileTakeScreenshot(),
-            ShowMenu("circle_menu"),
+            Show("circle_menu"),
 
     ]
 
-screen circle_menu:
+screen circle_menu():
 
     modal True
 
