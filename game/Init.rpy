@@ -30,7 +30,7 @@ init:
     image pop kannashocked = "popins/kanna_shocked.png"
 
 define config.say_attribute_transition = Dissolve(.2)
-
+$ _game_menu_screen = "circle_menu"
 #Splash Screen and Update Script
 label splashscreen:
     python:

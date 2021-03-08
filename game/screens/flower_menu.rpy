@@ -46,7 +46,6 @@ screen flower_menu_button():
             # Hide('flower_menu_button'),
             FileTakeScreenshot(),
             Show("circle_menu"),
-
     ]
 
 screen circle_menu():
