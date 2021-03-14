@@ -241,3 +241,6 @@ screen preferences():
             hover "gui/save_load/back_hover.png"
 
             action Return()
+
+    ### Key input
+    key "game_menu_alt" action Return()

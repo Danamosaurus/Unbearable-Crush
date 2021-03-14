@@ -154,3 +154,6 @@ screen confirm(message, yes_action, no_action):
             hover "gui/confirm/no_hover.png"
 
             action no_action
+
+    ### Key input
+    key "game_menu_alt" action no_action

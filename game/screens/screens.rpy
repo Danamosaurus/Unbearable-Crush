@@ -149,9 +149,9 @@ transform fade_transform:
 
             ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
-# init python:
+init python:
 #     config.overlay_screens.append("quick_menu")
-#     config.overlay_screens.append("flower_menu_button")
+    config.overlay_screens.append("flower_menu_button")
 
 default quick_menu = True
 

@@ -1,6 +1,5 @@
 #ART BG Shrine evening
 label start:
-    show screen flower_menu_button with easeinright
 
     # Update the day shown on the upper corner... to nothing!
     $ game_day = ""

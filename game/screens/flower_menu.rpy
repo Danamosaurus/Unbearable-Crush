@@ -41,13 +41,13 @@ transform circle_menu_buttons_animation:
 
 screen flower_menu_button():
 
-    key "mouseup_3" action [
-            # RightClickFlower(),
-            # Hide('flower_menu_button'),
-            FileTakeScreenshot(),
-            ShowMenu("circle_menu"),
+    key "mouseup_3" action [ FileTakeScreenshot(), ShowMenu("circle_menu") ]
+    key "game_menu_alt" action [ FileTakeScreenshot(), ShowMenu("circle_menu") ]
 
-    ]
+
+### The circle menu that let's you save, load, skip, change preferences and skip.
+
+define circle_menu_exit_actions = [ Hide('circle_menu'), Show('flower_menu_closing') ]
 
 screen circle_menu:
 
@@ -100,9 +100,7 @@ screen circle_menu:
 
             xysize (1.0, 1.0)
 
-            key "mouseup_3" action [ Hide('circle_menu'), Show('flower_menu_closing') ]
-
-            action [ Hide('circle_menu'), Show('flower_menu_closing') ]
+            action circle_menu_exit_actions
 
         ### Buttons
 
@@ -161,9 +159,18 @@ screen circle_menu:
 
             action [ MainMenu(confirm=True) ]
 
+    # Key input processing.
+    key "mouseup_3" action circle_menu_exit_actions
+    key "game_menu_alt" action circle_menu_exit_actions
+
+#############################
 
 screen flower_menu_closing():
 
     modal True
 
     timer 0.45 action [ Return(), Show('flower_menu_button') ]
+
+    # Key input processing.
+    key "mouseup_3" action [ Return(), Show('flower_menu_button') ]
+    key "game_menu_alt" action [ Return(), Show('flower_menu_button') ]
