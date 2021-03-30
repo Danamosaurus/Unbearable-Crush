@@ -44,11 +44,20 @@ label start:
     show shrine:
         ease 3 zoom .95
     "..."
+    na "Well, she’s not exactly my ideal client."
     na "Teenagers don't have any knack for wishmaking."
+    na "They always ask for love or popularity, or good grades they haven't earned."
+    na "Of course it doesn't really matter {i}what{/i} the wish is."
+    na "If I just grant this one last request, I can finally get out of this dump."
     na "No more sleeping on wooden floors, getting splinters in my back."
     na "No more tourists, no more noise, and no more of this dead-end wish granting gig."
+    na "Just me, a nice fluffy cloud, and all the peace and quiet a spirit could want..."
+    na "*{i}sigh{/i}* "
     na "The girl left a envelope at the base of my shrine..."
+    na "...It's sealed with a heart-shaped sticker."
+    na "Just one last wish...Then I’ll finally get out of this inconvenient form."
     na "Alright, I’m feeling motivated! Let's get started!"
+    na "With these legs, I'll be lucky to make it before sundown."
     #ART BG Kanna's Bedroom
     scene room night with squares:
         xanchor .5
@@ -73,6 +82,7 @@ label start:
         xpos -.33
     $camera_move(2535, 2709, 238, -18, duration=0)
     Rin "Wake up feeble human, and behold! It is I, the God of Fortune!"
+    Kan neutral surprised crazy "..."
     #ART CG Kanna turns around. She stares, overwhelmed by the smoke and effects. She braces #herself in anticipation for whoever or whatever the voice was that spoke through the smoke.
     #The smoke dissipates, revealing a small, floating, bear-like spirit.
     $camera_move(-406, 2050, -525, 0, duration=2)
