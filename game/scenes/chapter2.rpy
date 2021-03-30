@@ -168,7 +168,7 @@ label chapter2:
 
     Kyou "Hmm?"
 
-    Kyou happy "Hwaa! What is that?"
+    Kyou happy "Woah dude! What is that?"
 
     Rin "Jeez, no need to be rude. It’s me! Your...your-uh..."
 

@@ -6,10 +6,10 @@ transform circle_menu_intro_exit_animation:
     crop ( 0, 0, 1920, 1080)
 
     on show:
-        ease 0.5 alpha 1.0
+        easein 0.25 alpha 1.0
 
     on hide:
-        ease 0.5 alpha 0.0
+        easeout 0.25 alpha 0.0
 
 transform circle_menu_buttons_animation:
 
@@ -20,10 +20,10 @@ transform circle_menu_buttons_animation:
         crop ( 0, 0, 1920, 1080)
 
         parallel:
-            ease 0.5 alpha 1.0
+            easein 0.25 alpha 1.0
 
         parallel:
-            ease 0.5 zoom 1.0
+            easein 0.25 zoom 1.0
 
     on hide:
 
@@ -31,10 +31,10 @@ transform circle_menu_buttons_animation:
         zoom 1.0
 
         parallel:
-            ease 0.5 alpha 0.0
+            easeout 0.25 alpha 0.0
 
         parallel:
-            ease 0.5 zoom 0.0
+            easeout 0.25 zoom 0.0
 
 
 ### Transparent button used to call the flower menu

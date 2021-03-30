@@ -131,9 +131,9 @@ label start:
     Rin "Try the love goddess in the next town over."
     Kan speaking confident "Hold on! You can’t just barge in here, smoke out my room and get my hopes up!"
     Rin "Look kid, I get this is all very confusing, but I’m in a rush. I need to find my next client."
-    Kan speaking pleading "Wait! You said you'd grant my wish. You and your fireworks display. Now you wanna back out?"
+    Kan speaking pleading "Wait! You said you'd grant my wish. You come in here with that whole fireworks display and now you wanna back out?"
     #VOICE dejected
-    Kan frown pout ec "Stupid dream ghost can't even grant my wish."
+    Kan frown pout ec "Stupid dream bear can't even grant my wish."
     Rin "Hey, I never said I couldn't do it."
     #Kanna Wink
     Kan speaking sarcastic ec "No I get it. I guess it's just too hard on you then, being so old and close to retirement."
@@ -142,8 +142,8 @@ label start:
     Rin "I'm Ringo Fortune! I can do literally any dumb thing you humans want. So don’t go questioning me, brat."
     Kan speaking confident "Prove it."
     Rin "Prove it? I don't have to prove anything to you."
-    Rin "Now, good night, have a nice life or whatever."
-    "I climb up the bed and back to the window, preparing to exit."
+    Rin "Now, good night. Have a nice youth, or whatever."
+    "Straightening my tie, I climb up the bed sheet and back to the window."
     "Kanna" "..."
     "Kanna" "Stupid bear."
     Rin  "..."
@@ -181,7 +181,7 @@ label start:
     Rin "We’ll get started in the morning, so for now go back to sleep."
 
     Kan smile happy speaking ec "Man, what a nice dream! Maybe I placed the charm on the dream god’s shrine."
-    Rin "You’ll see when you wake up, kid. Get some sleep."
+    Rin "You’ll see when you wake up, kid."
 
     #ART The camera pans outside of Kanna’s room, showing the night sky.
     "I guess finishing my career with a love wish ain’t so bad."

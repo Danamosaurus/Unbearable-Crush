@@ -1,8 +1,17 @@
 label chapter3:
 
     $ game_day = "Day 3"
-    scene hallway_1 with squares
+    scene hallway onlayer master with squares:
+        subpixel True xpos 0.5 ypos 2.2 xanchor 0.5 yanchor 1.0 rotate None 
+        parallel:
+            xpos -0.02
+            ease_cubic 3.17 xpos 0.45
+    
+
+    show kannabox focused onlayer master with easeinright:
+        subpixel True xpos -0.13 ypos 1.14 xanchor -0.43 yanchor 1.5 zoom 0.25 rotate None 
     Rin "Alright, we're going to do this just like we talked about."
+    hide kannabox with dissolve
     Rin "And remember, the most essential thing for right now is that Kyousuke doesn't find out I'm working with you."
     Kan speaking curious "Because you're his...guardian wingman?"
     Rin "Ya know, a little push here, a little nudge there, and it'll be all over for that Maya girl."
@@ -16,11 +25,13 @@ label chapter3:
     Rin  "Don't think so hard about it. Just don't let him see me with you."
     #ART Cutout of Kyousuke on BG
     #show hallway_1_guy_1 with dissolve
-    Kan "But what do I say? I can't just ask him to be my math partner out of the blue, I need a reason! Maybe I can drop my books in front of him? Or crash into him when I turn the corner? Or maybe-"
-    Rin "You're a walking cliche."
-    Rin  "Anyway, time's up, he's right there! Ask him to be your partner. Be yourself.  Go get 'im, tiger."
+    Kan "But what do I say? I can't just ask him to sit with me out of the blue."
+    Kan "Theres always an inciting incident!"
+    Kan "Maybe I should drop my books in front of him? Or crash into him when I turn the corner? Or maybe-"
+    Rin "Don't be a walking cliche!"
+    Rin "Anyway, time's up, he's right there! Ask him to be your partner. Be yourself.  Go get 'im, tiger."
     Kan "Wait, Ringo, I-H...he-h-heeeeeeyyy, Kyousuke."
-    Kyou  "Oh. Hey, Can-oh! What are you doing here?"
+    Kyou "Oh. Hey, Can-oh! What are you doing here?"
     Kan  "Just, uh, just hanging out, ya know. Also, uh, it's Kanna, but you can call me Can-oh if you really want to. I was wondering, Kyousuke, if you wanted to be math partners next period."
     Kan  "When we go back to class. After this break. When we stop talking. After we walk back to the classroom. Once the break's over. When we're back at our desks. Am I talking too much? Does that make sense?"
     Kyou  "Hmm. Do we go back to class before we're at our desks, or after?"

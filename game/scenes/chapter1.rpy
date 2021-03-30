@@ -47,13 +47,26 @@ label chapter1:
     #hide hallway_1_guy_1
     Kan smile surprised crazy "Eh-"
     with Dissolve(.2)
+    scene white with Dissolve(.2)
+    scene orange onlayer master with dissolve:
+        subpixel True xpos 0.5 ypos 1.0 xanchor 0.5 yanchor 1.0 zoom 0.36 rotate None 
+    $ hide_sides = ['Maya','Kyousuke','Kanna']
+    
+    show cgs mayaintro kyousuke onlayer master with dissolve:
+        subpixel True xpos 0.68 ypos 1.37 xanchor 0.5 yanchor 1.0 zoom 0.47 rotate None 
     Kyou "Oh, good morning Maya. What's up?"
-    show Maya speaking normal with dissolve
+    show Maya speaking normal with dissolve:
+        subpixel True xpos 0.43 ypos 1.4 xanchor 0.5 yanchor 1.0 zoom 1.46 rotate None 
     Maya "I just wanted to see you, that's all."
-    Kan "{i}Gasp!{/i}"
+    show kannabox focused onlayer master with easeinright:
+        subpixel True xpos -0.13 ypos 1.14 xanchor -0.43 yanchor 1.5 zoom 0.25 rotate None
+    Kan "{i}Hn...{/i}"
+    show kannabox focused_ringo onlayer master with dissolve:
+        subpixel True xpos -0.13 ypos 1.14 xanchor -0.43 yanchor 1.5 zoom 0.25 rotate None
     Rin "Uh-oh."
     "Just when we're about to get started...Kanna is stopped dead in her tracks."
     Rin "Oh no..."
+    hide kannabox with dissolve
     Kyou "See me? Do you want to see my math notes? Do you need me to help you finish your lunch again?"
     Maya sad speaking "*Sigh* I don't want to go to volleyball today. If I’m gonna work hard everyday, it would be nice to have someone there to cheer me on~"
     Kyou "You mean like a fan club?"
@@ -63,8 +76,14 @@ label chapter1:
     # SFX School bell rings.
     Maya hopeless ec "Nevermind. I gotta go to class. See you later!"
     hide Maya with dissolve
-    "Is that my target? A brainless dork who can’t read a room?"
-    "What does Kanna even see in him? And who the hell is this love interest appearing out of nowhere?"
+    show kannabox angry_ringo onlayer master with easeinright:
+        subpixel True xpos -0.13 ypos 1.14 xanchor -0.43 yanchor 1.5 zoom 0.25 rotate None
+    Rin "That guy is my target? A brainless dork who can’t read a room?"
+    Rin "What the hell do you even see in him?"
+    show kannabox shout_ringo onlayer master with Dissolve(.2):
+        subpixel True xpos -0.13 ypos 1.14 xanchor -0.43 yanchor 1.5 zoom 0.25 rotate None
+    Kan "What's with this love interest appearing out of nowhere!?"
+    $ hide_sides = []
     scene room day with dissolve
     Kan speaking pleading "Urrrrrrrgggghhhhhhhhh!"
     "She's been screaming into that pillow since we got back."

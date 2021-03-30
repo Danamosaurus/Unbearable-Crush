@@ -23,12 +23,20 @@ init:
     image roomwposter = "bgs/roomwposter.png"
     image white = "bgs/white.png"
     image hallway_1 = "bgs/hallway1/hallway.png"
+    image orange = "bgs/orange.png"
     #cgs
     image cgs ringo_ent = "cgs/cgs ringo_ent.png"
     image cgs ringo_ent_shadow = "cgs/cgs ringo_ent_shadow.png"
+
+    image cgs mayaintro kyousuke = "cgs/mayaintro/kyousuke.png"
     #Popins
     image pop kannashocked = "popins/kanna_shocked.png"
 
+    image kannabox focused = "popins/kannabox/focused.png"
+    image kannabox focused_ringo = "popins/kannabox/focused_ringo.png"
+    image kannabox shout_ringo = "popins/kannabox/shout_ringo.png"
+    image kannabox grimace_ringo = "popins/kannabox/grimace_ringo.png"
+    image kannabox angry_ringo = "popins/kannabox/angry_ringo.png"
 define config.say_attribute_transition = Dissolve(.2)
 $ _game_menu_screen = "circle_menu"
 #Splash Screen and Update Script
