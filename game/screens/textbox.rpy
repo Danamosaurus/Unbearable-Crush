@@ -192,5 +192,5 @@ screen say(who, what):
             hover "gui/textbox/heart_hover.png"
             selected_idle "gui/textbox/heart_hover.png"
             selected_hover "gui/textbox/heart_hover.png"
+            action [ FileTakeScreenshot(), ShowMenu("circle_menu") ]
 
-            action Show("circle_menu")

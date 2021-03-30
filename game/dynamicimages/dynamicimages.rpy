@@ -785,7 +785,7 @@ screen dynamicspritespreview_previewpopup(emotesdict, offset=(0,0)):
                                 align (0.5, 0.5)
                                 zoom 0.6 * valueszoom
 
-screen dynamicspritespreview:
+screen dynamicspritespreview():
     zorder 200
     $ mapemotecode_text = str(mapemotecode) + '{b}' + str(mapemotecode_postscript) + '{/b}'
     button:

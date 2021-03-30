@@ -136,9 +136,9 @@ screen history():
 
             action Hide("history")
 
-
     # Key input processing.
-    key "game_menu" action Hide("history") 
+    key "game_menu_alt" action Hide("history")
+
 
 screen history_entry( who, what ):
 
