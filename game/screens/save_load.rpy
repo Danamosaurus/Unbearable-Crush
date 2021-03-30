@@ -205,3 +205,6 @@ screen file_slots( load_or_save ):
                 selected_hover "gui/save_load/" + str(i) + "_selected.png"
 
                 action FilePage(i)
+
+    ### Key input
+    key "game_menu_alt" action Return()

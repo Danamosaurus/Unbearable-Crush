@@ -39,7 +39,6 @@ style choice_bar_text:
     font "fonts/Inter-Regular-slnt=0.ttf"
 
 
-
 ## Choice screen ###############################################################
 ##
 ## This screen is used to display the in-game choices presented by the menu
@@ -68,17 +67,13 @@ screen choice(items):
                 action i.action
 
 
-
 ## When this is true, menu captions will be spoken by the narrator. When false,
 ## menu captions will be displayed as empty buttons.
 define config.narrator_menu = True
 
-
 style choice_vbox is vbox
 style choice_button is button
 style choice_button_text is button_text
-
-
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
