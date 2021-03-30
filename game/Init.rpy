@@ -23,9 +23,6 @@ init:
     image roomwposter = "bgs/roomwposter.png"
     image white = "bgs/white.png"
     image hallway_1 = "bgs/hallway1/hallway.png"
-    image hallway_1_guy_1 = "bgs/hallway1/hallway 1 guy 1.png"
-    image hallway_1_guy_2 = "bgs/hallway1/hallway 1 guy 2.png"
-    image hallway_1_girl_1 = "bgs/hallway1/hallway 1 girl 1.png"
     #cgs
     image cgs ringo_ent = "cgs/cgs ringo_ent.png"
     image cgs ringo_ent_shadow = "cgs/cgs ringo_ent_shadow.png"
@@ -33,7 +30,7 @@ init:
     image pop kannashocked = "popins/kanna_shocked.png"
 
 define config.say_attribute_transition = Dissolve(.2)
-
+$ _game_menu_screen = "circle_menu"
 #Splash Screen and Update Script
 label splashscreen:
     python:

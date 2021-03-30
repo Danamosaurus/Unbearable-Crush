@@ -1,4 +1,4 @@
-label chapter4:
+label day4:
 
     # Update the day shown on the upper corner... to nothing!
     $ game_day = "Day 4"
@@ -218,7 +218,7 @@ Maya "Oh Kyousuke, darling! I have an extra special surprise for you!"
 
 Kan "Grr!"
 
-Kyousuke "Oh, Maya, hey."
+Kyou "Oh, Maya, hey."
 
 Maya "I was thinking about how much you loved the rice balls I made for you yesterday, and I thought that I could do something to brighten your day!"
 
@@ -262,13 +262,13 @@ Maya "Who is this chick?!"
 
 "???" "...In this life and the next, An eternal contract between you, Kyousuke, and the dark wizard Charlotte Von Vega!"
 
-Kyo "...Huh?"
+Kyou "...Huh?"
 
 Char "Don't be alarmed. In this mortal form, I can manifest only one-tenth of my true power. When I present to you my gift, all of your questions will be answered."
 
 Char "Now eat! Taste the magical sensation of my strawberry cake of astral knowledge and be my companion for all eternity!"
 
-Kan "{i]}Ehh?!{/i}"
+Kan "{i}Ehh?!{/i}"
 
 Rin "I don't know what this is, but it's no match for my power of suggestion."
 

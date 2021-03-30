@@ -3,7 +3,7 @@ label chapter6:
     # Update the day shown on the upper corner... to nothing!
     $ game_day = "Day 6"
 
-    scene Hallway
+    scene hallway
 
 Kan "Hello. Maya, was it?"
 Maya "Oh, Can-oh, what do you want?"

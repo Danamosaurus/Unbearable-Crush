@@ -3,7 +3,9 @@ label chapter1:
     # Update the day shown on the upper corner... to nothing!
     $ game_day = "Day 1"
     $ hide_sides = ["Maya"]
-    scene hallway_1 with squares
+    $all_moves(camera_check_points={u'y': [(0, 0, u'linear')], u'x': [(0, 0, u'linear')], u'z': [(0, 0, u'linear')]}, layer_check_points={}, subpixel=True, **{})
+    scene hallway_1 onlayer master with squares:
+        subpixel True xpos 0.52 ypos 0.52 xanchor 0.5 yanchor 0.5 xoffset 0 zoom 0.36 rotate None 
     "Girl2" "Hey, Who's the creep?"
     "Girl1" "Why's she sneaking around like that?"
     "Girl2" "Maybe she's a spy on a secret mission!"
@@ -14,32 +16,35 @@ label chapter1:
     Rin "Nah, I'm just messing with you. It's surprisingly comfy for a cramped place. I even get to write a bucket list for my retirement!"
     Kan speaking pleading "Hey! Is that my pen and notebook? Don't play around with that!"
     Rin "What else am I gonna do? Bore myself to death? I’ve done enough of that at the shrine."
-    show hallway_1_guy_1 with Dissolve(.2)
+    #ART maybe cut out a Kyousuke art and show him on the BG?
+    #show hallway_1_guy_1 with Dissolve(.2)
     Kan "It's not my fault that-"
-    Kan speaking excited crazy blush "{i}-It's Kyousuke!"
+    Kan speaking excited crazy blush "{i}-It's Kyousuke!{/i}"
     Rin "That's... the Kyousuke you're looking at?"
     #ART CG? Kanna adores him while she imagines him being her prince charming. While Ringo's face is blank...
     Kan "Yes! Kyousuke! The glorious, the handsome, the one and only..."
     #Code Set the correct time in the wait tag, based on the VA performance.
-    "He looks like…{w=0.5} the most boring looking person in the world."
+    "He looks like...{w=0.5} the most boring looking person in the world."
     "Oh well, that just makes things easier!"
-    Kan "The other day, I stole Kyousuke's yakisoba bread..."
+    Kan "Yesterday during lunch, when he wasn't looking, I obtained his yakisoba bread."
+    Rin "You stole his lunch?"
+    Kan "Only the part he didn't eat!"
     Rin "...Why?"
-    Kan salivating "It tasted like Kyousuke~"
-    Rin "All right! I get it! God, are all teenagers this creepy? If you like him so much, then why not be honest with him?"
+    Kan salivating "Kyousuke-flavored yakisoba bread~"
+    Rin "All right! I get it! God, are all teenagers this creepy? If you like him so much, then why not just confess to him already?"
     Kan frown worried ec "I don't know. He- he makes me all fluttery!"
     Rin "Fluttery how?"
     Kan speaking embarrassed ec "I don't know! What if I say something stupid and offend him?! Or-"
     Rin "Jeez! Just go talk to him already!"
     Kan questioning embarrassed "What am I supposed to say?"
     Rin "It doesn't matter. Just start talking. He's right there waiting for you, come on, you got this!"
-    Kan smile concerned ec "O-okay... s-s-sure…. I-I-I-I got this..."
+    Kan smile concerned ec "O-okay... s-s-sure. I-I-I-I got this..."
     Rin "Come on, take a step forward... that's it. Almost there, there you go-"
     show Maya smile happy mc with dissolve:
         subpixel True xpos 0.54 ypos 1.4 xanchor 0.5 yanchor 1.0 zoom 1.46 rotate None
     $ hide_sides = ["Maya"]
     "???" "Kyousuke!"
-    hide hallway_1_guy_1
+    #hide hallway_1_guy_1
     Kan smile surprised crazy "Eh-"
     with Dissolve(.2)
     Kyou "Oh, good morning Maya. What's up?"
@@ -52,7 +57,7 @@ label chapter1:
     Kyou "See me? Do you want to see my math notes? Do you need me to help you finish your lunch again?"
     Maya sad speaking "*Sigh* I don't want to go to volleyball today. If I’m gonna work hard everyday, it would be nice to have someone there to cheer me on~"
     Kyou "You mean like a fan club?"
-    Maya annoyed ec "No I mean, I, er… maybe if boys were there to watch us play, the girls would perform better~"
+    Maya annoyed ec "No I mean, I, er maybe if boys were there to watch us play, the girls would perform better~"
     Kyou "But it’s an all-girls volleyball team. Why would guys be there?"
     Maya annoyed eo "No, Kyousuke, I mean-"
     # SFX School bell rings.
@@ -76,9 +81,15 @@ label chapter1:
     # Art (Sprite Artist) Ringo wears a hat or glasses
     Kan speaking curious "Huh?"
     Kan smile concerned ec "What's with that getup?"
-    Rin "I'm going under cover!"
-    "I need to find out more about them in order to grant the wish. So I plan on doing some investigating while Kanna is at the club. I may need to use some magic for this one"
-    "This would be easier if I still had my human form. I could pass as a student easily enough."
-    "Oh well, as long as no one sees me, I should be fine."
+    Rin "I'm going to do some investigating around school tomorrow."
+    Rin "This disguise is just for extra saftey. It would be catastrophic if someone were to see me in this form."
+    Kan speaking curious "Would it break our magical contract or something?"
+    Rin "Yeah...it's something like that."
+    Rin "Just don't let anyone see me."
+    Kan "What should I do tomorrow?"
+    Rin "Just sneak me into school in your backpack again."
+    Rin "Oh, and pack some snacks too."
+    Kan smile concerned ec "You sure seem to eat a lot for your size."
+    Rin "Don't remind me."
     scene black with fade
     jump chapter2

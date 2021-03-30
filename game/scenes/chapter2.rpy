@@ -2,20 +2,20 @@ label chapter2:
 
     # Update the day shown on the upper corner... to nothing!
     $ game_day = "Day 2"
-
+    $ hide_sides = []
     scene room day with fade
     
     Rin "Wakey wakey!"
 
     Rin "Time to get up! Let's go, let's go, we've got a busy day!"
 
-    Kan "Nnn…"
+    Kan frown upset ec "Nnn..."
 
     Rin "Get up!"
 
-    Kan "Nnnnn…"
+    Kan "Nnnnn..."
 
-    Kan "...I didn't mean to eat all those brownies."
+    Kan frown worried ec "...I didn't mean to eat all those brownies."
 
     Rin "How can you get sick at a time like this? What about school? What about our plan?"
 
@@ -26,24 +26,29 @@ label chapter2:
     "{i}sigh{/i}"
     "I don't think she’s gonna be much help today."
 
-    "Maybe I can take this opportunity for a solo mission… With Kanna bedridden, I can do a little sleuthing."
+    "Maybe I can take this opportunity for a solo mission... With Kanna bedridden, I can do a little sleuthing."
 
     "Dig up some dirt on  Kyousuke - find something useful for granting Kanna's wish."
 
     "After raiding her fridge, of course."
 
     #scene 2.2
-    scene hallway with squares
+  
+    scene hallway onlayer master with squares:
+        subpixel True xpos 0.5 ypos 2.2 xanchor 0.5 yanchor 1.0 rotate None 
+        parallel:
+            xpos -0.02
+            ease_cubic 3.17 xpos 0.45
     #ART CG
-    show image CGDetectiveRingo
+    #show image CGDetectiveRingo
 
     "Woah, gotta hide!"
 
-    Boy "Did you see something, pres?"
+    "Boy" "Did you see something, pres?"
 
-    Pres "...No, it’s nothing."
+    "Pres" "...No, it’s nothing."
 
-    "That was close - that blonde girl almost saw me."
+    "That was close - they almost saw me."
 
     "It's lunchtime now, so this place is just crawling with students."
 
@@ -51,25 +56,36 @@ label chapter2:
 
     "Just where is the lover-boy?"
 
-    Maya "Kyousuke!"
+    show Maya smile happy mc at center with dissolve
 
-    # Code Show Maya
+    $ hide_sides = ['Maya']
+    Maya "Kyousuke!"
 
     "Damn. It's that girl from yesterday."
 
-    Maya "Oh Kyousuke darling, I have something for you!"
+    Maya smile happy mo "Oh Kyousuke darling, I have something for you!"
 
     Kyou "Hm?"
 
     Maya "My mom and I made rice balls this morning for lunch! We had some extras, so I thought I'd bring you some!"
+   
+    Kyou normal "Hmm?"
 
-    "That girl… Maya, was it?"
+    Maya flirting eo "Won't you try one, Kyousuke? I know how much you like maple flavored things."
+
+    "Notes on Kyousuke:"
+
+    "Likes maple flavor..."
+
+    "...maple flavored rice balls?" 
+    
+    Maya flirting eo "And theres a little something extra inside too. I'm sure you'll like them~"
+
+    "This girl...Maya, was it?"
 
     "I don't have a problem with her type in most situations."
 
     "Under different circumstances, I might even find her a bit cute."
-
-    Maya "Won't you try one, Kyousuke? There's a special surprise inside, I'm sure you'll like it!"
 
     "But, right now, this girl is putting my mission in jeopardy."
 
@@ -77,17 +93,17 @@ label chapter2:
 
     "I might have to eliminate her."
 
-    Maya "...Kyousuke?"
+    Maya speaking normal "...Kyousuke?"
 
     #Music stop. Awkward pause.
 
     Kyou "...Hm?"
 
-    Rin "...Are you just going to leave her hanging?!?!"
+    Rin "...Are you just going to leave her hanging?"
 
-    Rin "IDIOT! TRY ONE ALREADY!"
+    Rin "HEY DUMBO! TRY ONE ALREADY!"
 
-    Kyou "Huh?!"
+    Kyou frown "Huh?"
 
     # ART (sprite artist) Create a surprised sprite for Kyousuke??
     #Kyousuke's eyes open. He heard something.
@@ -101,66 +117,96 @@ label chapter2:
 
     #CG closeup. He puts his finger on the button.
 
-    Kyou "I guess I'll try one."
+    Kyou normal "I guess I'll try one."
 
     #SFX "{i}Crunch{/i}"
+    "*Crunch*"
 
-    Maya "Well?"
+    Maya smile happy mc "Well?"
 
-    Kyou "Is there a rice cracker in here?"
+    Kyou surprised "Is there a rice cracker in here?"
 
-    Maya "Told ya there was a surprise inside, didn't I?"
+    Maya smile happy ec "Told you there was a surprise inside, didn't I?"
 
-    "Who puts rice crackers in rice balls?!"
+    "Who puts rice crackers in rice balls?"
 
-    Maya "So, how does it taste?"
+    "Notes on Maya:"
+    "Can't cook."
 
-    Kyou "It tastes ricey."
+    Maya smile happy mo "So, how does it taste?"
 
-    Maya "That's not the answer I was looking for."
+    Kyou frown "It tastes ricey."
 
-    Kyou "Sorry."
+    Maya annoyed ec "That's not the answer I was hoping for."
+
+    Kyou normal "Sorry."
 
     #ART Pop-in Smug Ringo
     "I think you just lost points, Kyousuke"
 
-    Maya "I hate to leave you, but I’m meeting up with a friend. Feel free to eat the rest and swing by my place to return the box, okay?"
+    Maya hopeless ec "I hate to leave you, but I’m meeting up with a friend. Feel free to eat the rest and swing by my place to return the box, okay?"
 
-    Kyou "Um... okay. Sure."
-
+    hide Maya with dissolve
     "And with a flip of her hair, she's gone."
 
-    Kyou "What just happened to me...?"
+    Kyou happy "Um...Okay. Sure."
+
+    Kyou smirk "..."
+
+    Kyou normal "....."
+
+    Kyou frown "What just happened to me...?"
 
     Rin "I think you just triggered a flag there, buddy."
 
-    "Wait - that’s it!"
-
-    Kyou "A flag? Who said that? "
+    Kyou "A flag? Who said that?"
 
     Rin "Down here."
 
-    Kyou "Hmm? Hwaa! What is that?"
+    show Kyou surprised at center with dissolve
+    $ hide_sides = ['Kyousuke']
 
-    Rin "Jeez, no need to be rude. It’s me! Your... guardian angel! That’s right! Yeah! Your guardian angel!"
+    Kyou "Hmm?"
+
+    Kyou happy "Hwaa! What is that?"
+
+    Rin "Jeez, no need to be rude. It’s me! Your...your-uh..."
 
     Kyou "My angel? My angel is a bear?"
 
-    Rin "Nevermind that! All you need to know is that the spirits have chosen {i}you{/i} to win the heart of a very lovely girl."
+    Kyou "A...detective bear?"
 
-    Kyou "Me?"
+    Rin "Oh, yeah no, nevermind that..."
 
-    Rin "You. Now all you have to do is whatever I tell you, and I'll make sure you end up with the girl of your dreams. I’ll be the ultimate wingman."
+    Rin "Achem-"
 
-    Kyou "Oh, really? Wow. Where do I sign?"
+    Rin "Yes! It is I, your guardian angel bear."
 
-    Rin "No signature required. Just a deal between buds, ‘kay?"
+    Rin "And I'm here today to tell you that the spirits have chosen {i}you{/i} to win the heart of a very lovely girl."
+
+    Kyou surprised "Me?"
+
+    Rin "You. Of the hundreds of deserving and far more interesting guys in this school, you have been selected to receive the ultimate girlfriend acquisition aid."
+
+    Rin "That's right! Me, Ringo!"
+
+    Rin "Your personal guardian wingman!"
+
+    Kyou happy "Wow. I've always wanted a guardian wingman!"
+
+    Rin "Yep. Didn't we all."
+
+    Rin "Now, you just gotta do everything I tell you, and I'll make sure you end up with the best girlfriend a guy could hope for."
+    
+    Kyou smirk "That's it? No catch? You got it, dude!"
+
+    Rin "Great. Now, crouch down and let me get in your backpack. We guardian wingmen need to stay hidden."
 
     Kyou "This is awesome. I'm gonna get a girlfriend. Hell yeah!"
 
-    Rin "Yep. Now, crouch down and let me get in your backpack; we guardian angels need to stay hidden."
+    "Well, at least he doesn't seem to picky."
 
-    Kyou "You got it, dude!"
+    hide Kyou with dissolve
 
     "Now, how’s this gonna go?"
 
@@ -174,53 +220,37 @@ label chapter2:
 
     "It's almost a shame that this is my last wish."
 
-    Kyou "Hey, Angel?"
+    Kyou frown "Hey, Ringo?"
 
     Rin "Yes, buddy?"
 
-    Kyou "Do you think returning her lunchbox counts as a date?"
+    Kyou "Do you think returning Maya's lunchbox counts as a date?"
 
     "{i}sigh{/i}"
+
+    Rin "I don't think so."
+
     "This idiot is going to make this so easy."
 
     "This is also a good opportunity to get some insider info for Kanna."
+    scene black with fade
+    $ hide_sides = ['']
 
-    #scene 2.3
-    #SFX classbell sound, screen wipe
-    Rin "Hey."
-
-    Kyou "..."
-
-    Rin "Hey, wake up."
-
-    Kyou "{i}Snore{/i}"
-
-    Rin "I said wake up!"
-
-    Kyou "Huh? Wha?"
-
-    Rin "Class is over. You fell asleep."
-
-    Kyou "Oh. Thanks for waking me up, Angel! You really are looking out for me."
-
-    ###"Maya left him a message telling him she’d give him the notes if he dropped off the lunchbox, but I’ll just keep the note to myself."
-
-    Rin "I got you covered, buddy."
-
-    Rin "Ready to go home?"
-
-    Kyou "Yeah! I just have to drop Maya’s lunchbox off. Oh, but wait, she has debate club today..."
-
-    Kyou "I could wait until after her club, but I think she also wanted to get some archery practice in. Something about not being as good as the student council treasurer? Or was it the president?"
-
-    Kyou "Or was it about the upcoming archery competition with the rival school?"
-
-    "This kid likes to monologue."
-
-    Rin "Not to worry, I slipped the lunchbox back into her bag while you were asleep. She almost caught me, but the mission was a success. Ready to go?"
-
-    Kyou "Yep! Oh, but wait, should I ask Maya for the notes? Ahh, but she has her clubs..."
-
-    "It’s gonna be a long night."
-
+    scene room night with dissolve:
+        zoom .35
+    Kan smile happy eo "You spent the whole day with Kyousuke?"
+    Kan smile happy speaking ec "I'm so jealous~"
+    Kan "What did you learn about him? What did his hair smell like?"
+    Kan "I bet it's something masculine, like a lumberjack."
+    Rin "Hmm. More like tree bark I'd say. Bit sticky too."
+    "He was probably wearing some of that maple syrup now that I think about it."
+    Rin "I dunno. He seemed pretty boring if you're asking me."
+    Kan "You mean humble."
+    Rin  "He watched cooking videos on his phone until 2am, then passed out. That ain't humble."
+    Kan "He's so relatable!"
+    Rin "Whatever, just listen."
+    Rin "You've got some tough competition. She's a real flirt, and seems to have had her eye on him awhile."
+    Rin "Now I've got a plan to bring you and Kyousuke together, and push her out at the same time."
+    Rin "It's risky, but I think it'll work. But you gotta do everything I say."
+    scene black with fade
 jump chapter3

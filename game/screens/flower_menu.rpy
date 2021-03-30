@@ -40,16 +40,16 @@ transform circle_menu_buttons_animation:
 ### Transparent button used to call the flower menu
 
 screen flower_menu_button():
-
+  
     key "mouseup_3" action [ FileTakeScreenshot(), ShowMenu("circle_menu") ]
     key "game_menu_alt" action [ FileTakeScreenshot(), ShowMenu("circle_menu") ]
-
 
 ### The circle menu that let's you save, load, skip, change preferences and skip.
 
 define circle_menu_exit_actions = [ Hide('circle_menu'), Show('flower_menu_closing') ]
 
-screen circle_menu:
+
+screen circle_menu():
 
     modal True
 
