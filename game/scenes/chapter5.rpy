@@ -147,6 +147,8 @@ label chapter5:
         #choice 1.A: Maya +1 points
         #choice1.A : Charlotte +0 points
 
+        $game_player.increaseRelationship("Maya",1)
+
     label choice5_B:
 
         #Choice "Ask them to stop fighting."
@@ -185,6 +187,7 @@ label chapter5:
         # Code
         #choice 1.B Maya -1 points
         #Choice 1.B  Charlotte +0 points
+        $game_player.increaseRelationship("Maya",-1)
 
     Maya "Look, I'm just gonna go back to class."
     Kyou "Are you sure, Maya?"
@@ -255,6 +258,7 @@ label chapter5:
 
     # CODE
     #Choice 1.B Charlotte +1
+    $game_player.increaseRelationship("Charlotte",1)
 
     #ART Kanna's room
     scene roomwposter
@@ -277,5 +281,12 @@ label chapter5:
     #Charlotte +1 , Maya +1.     Choice 1.A
     #Charlotte +1, Maya -1.     Choice 1.B
     #Add/remove points from total accordingly.
+
+    "SHOW SCORE"
+
+    $Kanna = game_player.getRelationship('Kanna')
+    $Maya = game_player.getRelationship('Charlotte')
+    "We Kanna has [Kanna] and Charlotte has [Charlotte]"
+
 
     jump chapter6

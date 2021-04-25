@@ -206,6 +206,8 @@ Kyou "Sorry, Charlotte, I think Maya's right. Good job, Kanna! I didn't know you
 #Choice 1.A    -1 Charlotte
 #0 Maya
 #+1 Kanna
+$game_player.increaseRelationship("Kanna",1)
+$game_player.increaseRelationship("Charlotte",-1)
 
 #Choice 1.B "Do a different magic trick."
 
@@ -277,6 +279,8 @@ Maya "But nothing. Good job Kyousuke, looks like you're the real magician here!"
 #    Charlotte -1 points
 #Maya +1 points
 #Kanna 0 points
+$game_player.increaseRelationship("Kanna",1)
+$game_player.increaseRelationship("Charlotte",-1)
 
 Char "Alright, that's it. Everyone, gather around, for I, Charlotte Von Vega, will allow one and all to view a spectacle of magic no one can comprehend!"
 
@@ -399,6 +403,8 @@ Char "..."
 #Charlotte points -1
 #Kanna points +1
 #Show the player this.
+$game_player.increaseRelationship("Kanna",1)
+$game_player.increaseRelationship("Charlotte",-1)
 
 # CODE Show the usual CG of Ringo and Youko on Kyousuke's backpack
 #Cut to Ringo and Youko in Kyousuke's bag one last time.
@@ -454,6 +460,13 @@ Rin "Night, kid."
 #Choice 1.B:     -2 Charlotte
     #    +1 Maya
     #    +1 Kanna
+
+"SHOW SCORE"
+
+$Kanna = game_player.getRelationship('Kanna')
+$Maya = game_player.getRelationship('Maya')
+$Charlotte = game_player.getRelationship('Charlotte')
+"We Kanna has [Kanna] , Maya has [Maya] and Charlotte [Charlotte]"
 
 
 #Add/remove points from total accordingly.
