@@ -108,16 +108,16 @@ label chapter3:
     Kan sad smile "Okay..."
     Rin  "You knocked 'im out in one hit! Jeez, what are your parents feeding you? Dumbbells?"
     Kan frown pout ec "Anybody can do that!"
-    Rin  "I'm pretty sure you put a dent in the wall."
+    Rin  "Is that a dent in the wall?"
     Kan frown confident ec "It's not that bad!"
-    Rin  "Whatever, I'll get him awake."
+    Rin  "Hey, big guy! Wake up."
     #SFX some kind of sound effect. 
-    Rin "Hey...Wake up!"
+    Rin "Wake up!"
     Kyou "Ooh, what happened?"
     Kan smile worried eo "Oh! Kyousuke, are you alright?"
-    Kyou  "Hey, Can-oh! What are you doing here? I had this weird dream that you punched me asleep, haha."
+    Kyou  "Hey, Can-oh! What are you doing here? I had this weird dream..."
     Kan smile concerned ec "W-we were just talking, remember?"
-    Kyou  "Nope. What were we talking about?"
+    Kyou  "Yeah, we were talking and then..."
     Kan smile happy speaking ec "O-oh! It wasn't important."
 
     #Choice1.A: Kanna gets -1 points.
@@ -162,9 +162,9 @@ label chapter3:
             Kan  "It's Kanna, actually. The pleasure's mine, I guess."
             Maya  "Pretty sure it's Can-oh; that's how Kyousuke said it. You calling him a liar?"
             Kan  "Of course not, he simply forgot. Happens to everyone."
-            Maya  "Oh, so you're calling him simple now? Kyousuke is the most sophisticated man I have ever met. His intellectual prowess is something mere normies can't comprehend."
+            Maya  "Kyousuke is the most sophisticated man I have ever met. His intellectual prowess is something mere normies can't comprehend."
             Maya  "The fact he's wasting his time in this lugubrious school is beyond even my own grasp."
-            Maya  "And I've never received anything less than 103% in any subject. So, darling, I think I can quite tell someone of the same intellectual status as me when I see them."
+            Maya  "And I've never received anything less than perfection in any subject. So, darling, I think I can quite tell someone of the same intellectual status as me when I see them."
             Kyou  "Wow! That's really nice of you Maya! I don't really know what any of that means, but I think it was a compliment!"
             Maya  "It's not simple flattery! It's a fact."
             Kan  "Yeah, ok, cool. But me and Kyousuke were just talking about being math partners next period."
@@ -191,9 +191,9 @@ label chapter3:
 
     # SFX or ART portray this "something" isn't right through a strange sound or some kind of visual glitch?
     "Wait, something isn't right here."
-    "I sense… something familiar."
+    "I sense something familiar."
 
-    "I  look around, trying to locate the weird sensation."
+    "I look around, trying to locate the weird sensation."
 
     "Huh, is there another spirit around?"
     "Doesn't matter, gotta stay focused on the game."
