@@ -47,6 +47,7 @@ init python:
    MapEmote('Kan speaking sad crazy', 'Kan base mdo_oh ed_crazy brow_sad')
    MapEmote('Kan salivating', 'Kan base mdo_drool ec_default brow_content blush')
    MapEmote('Kan questioning embarrassed', 'Kan base mdo_oh ec_happy brow_skeptic blush')
+   MapEmote('Kan sad smile', 'Kan base mdo_default ec_happy brow_sad')
 ###Kyousuke
    MapEmote('Kyou normal', 'Kyou base md_default ed_default')
    MapEmote('Kyou smirk', 'Kyou base md_smirk ed_default')
