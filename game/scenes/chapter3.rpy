@@ -125,42 +125,60 @@ label chapter3:
 
     #Choice: "Kanna's nervous about something. Make her feel comfortable."
 
-    Kyou  "It's alright Can-oh, I'm not that great at math either."
-    Kan  "Wha?"
-    Kyou  "It's ok to be nervous when asking for help. We're all bad at something, so we gotta help each other out, right?"
-    Kan  "Um, right!"
-    Kyou  "Just ignore that weird voice that came from behind you, that's just the sound of stress."
-    Kan  "What? You heard that?"
-    Kyou  "Don't worry about it now! Like I said, it's the sound of stress, right?"
-    Kan  "Um, right!"
-    Kyou  "We'll do our best together!"
-    Kan  "Oh, Kyousuke, only you could say something as kind as that."
+    menu:
+        "Kanna's nervous about something. Make her feel comfortable.":
+            #Kanna gets -1 points
+            $game_player.increaseRelationship("Kanna",-1)
 
-    #Choice1.BKanna gets +1 points
-    #Choice1.B:end
+            Kyou  "It's alright Can-oh, I'm not that great at math either."
+            Kan  "Wha?"
+            Kyou  "It's ok to be nervous when asking for help. We're all bad at something, so we gotta help each other out, right?"
+            Kan  "Um, right!"
+            Kyou  "Just ignore that weird voice that came from behind you, that's just the sound of stress."
+            Kan  "What? You heard that?"
+            Kyou  "Don't worry about it now! Like I said, it's the sound of stress, right?"
+            Kan  "Um, right!"
+            Kyou  "We'll do our best together!"
+            Kan  "Oh, Kyousuke, only you could say something as kind as that."
 
-    #ART enter Maya.
-    #Mid conversation, Maya walks up to Kyousuke, clearly annoyed that Kanna is there talking to him.
+            #Show example
+            $Kanna = game_player.getRelationship('Kanna')
+            "We have [Kanna] from Kanna"
 
-    Maya  "Good morning Kyousuke! Who's your little friend here?"
-    Kyou  "Oh, this is Can-oh! She's our classmate, remember?"
-    Maya  "Can't say that I do. I meet so many people daily, how can I remember each copy-paste face? Nice to meet you Can-oh, I'm Maya."
-    Kan  "It's Kanna, actually. The pleasure's mine, I guess."
-    Maya  "Pretty sure it's Can-oh; that's how Kyousuke said it. You calling him a liar?"
-    Kan  "Of course not, he simply forgot. Happens to everyone."
-    Maya  "Oh, so you're calling him simple now? Kyousuke is the most sophisticated man I have ever met. His intellectual prowess is something mere normies can't comprehend."
-    Maya  "The fact he's wasting his time in this lugubrious school is beyond even my own grasp."
-    Maya  "And I've never received anything less than 103\% in any subject. So, darling, I think I can quite tell someone of the same intellectual status as me when I see them."
-    Kyou  "Wow! That's really nice of you Maya! I don't really know what any of that means, but I think it was a compliment!"
-    Maya  "It's not simple flattery! It's a fact."
-    Kan  "Yeah, ok, cool. But me and Kyousuke were just talking about being math partners next period."
-    Maya  "I’m sorry? Kyousuke and I will be math partners next period."
-    Kan  "Huh?"
-    Kyou  "Oh I forgot, Can-oh; me and Maya are always math partners."
-    Maya  "That's right."
-    Kan  "But-"
-    Maya  "You heard him, ditzy. We're working on math together."
-    Kan  "Ok, listen here, you stupid..."
+        "Choice1.BKanna gets +1 points":   
+
+            #Choice1.BKanna gets +1 points
+            #Choice1.B:end
+
+            #Kanna gets -1 points
+            $game_player.increaseRelationship("Kanna",1)
+
+            #ART enter Maya.
+            #Mid conversation, Maya walks up to Kyousuke, clearly annoyed that Kanna is there talking to him.
+
+            Maya  "Good morning Kyousuke! Who's your little friend here?"
+            Kyou  "Oh, this is Can-oh! She's our classmate, remember?"
+            Maya  "Can't say that I do. I meet so many people daily, how can I remember each copy-paste face? Nice to meet you Can-oh, I'm Maya."
+            Kan  "It's Kanna, actually. The pleasure's mine, I guess."
+            Maya  "Pretty sure it's Can-oh; that's how Kyousuke said it. You calling him a liar?"
+            Kan  "Of course not, he simply forgot. Happens to everyone."
+            Maya  "Oh, so you're calling him simple now? Kyousuke is the most sophisticated man I have ever met. His intellectual prowess is something mere normies can't comprehend."
+            Maya  "The fact he's wasting his time in this lugubrious school is beyond even my own grasp."
+            Maya  "And I've never received anything less than 103% in any subject. So, darling, I think I can quite tell someone of the same intellectual status as me when I see them."
+            Kyou  "Wow! That's really nice of you Maya! I don't really know what any of that means, but I think it was a compliment!"
+            Maya  "It's not simple flattery! It's a fact."
+            Kan  "Yeah, ok, cool. But me and Kyousuke were just talking about being math partners next period."
+            Maya  "I’m sorry? Kyousuke and I will be math partners next period."
+            Kan  "Huh?"
+            Kyou  "Oh I forgot, Can-oh; me and Maya are always math partners."
+            Maya  "That's right."
+            Kan  "But-"
+            Maya  "You heard him, ditzy. We're working on math together."
+            Kan  "Ok, listen here, you stupid..."
+
+            #Show example
+            $Kanna = game_player.getRelationship('Kanna')
+            "We have [Kanna] from Kanna"
 
     #ART CG Two more VN GUI choices appear in front of Kyousuke.
 
@@ -215,6 +233,8 @@ label chapter3:
             Kan  "Well, alright. I guess it won't be too bad as long as you are there, Kyousuke."
             #Choice 2.B: Both Kanna and Maya receive +1 points.
             #Choice2.B End
+            $game_player.increaseRelationship("Kanna",1)
+            $game_player.increaseRelationship("Maya",1)
 
     #ART Kanna's room
     scene room
@@ -230,6 +250,12 @@ label chapter3:
         #Kanna-1,Maya+0        Choice 1.A and choice 2.A
 
     #Show total results thus far.
+
+    "SHOW SCORE"
+
+    $Kanna = game_player.getRelationship('Kanna')
+    $Maya = game_player.getRelationship('Maya')
+    "We Kanna has [Kanna] and Maya has [Maya]"
 
     #opportunities for different results.
 

@@ -1,6 +1,12 @@
 #ART BG Shrine evening
 label start:
 
+    #INIT RELETIONSHIP 0
+
+    $game_player.addRelationship("Kanna")
+    $game_player.addRelationship("Maya")
+    $game_player.addRelationship("Charlotte")
+
     # Update the day shown on the upper corner... to nothing!
     $ game_day = ""
     $ hide_sides = ['Kanna']

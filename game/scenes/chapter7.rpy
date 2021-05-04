@@ -179,6 +179,8 @@ label chapter7:
             # CODE
             #Choice 1.A ends
             # Kanna +1 Points.
+            $game_player.increaseRelationship("Kanna",1)   
+
         "Highlight Maya.":
             #Choice 1.B : Highlight Maya
             Rin "CHOO!"
@@ -193,6 +195,7 @@ label chapter7:
             # CODE
             #Choice 1.B ends
             #Maya +1 points.
+            $game_player.increaseRelationship("Maya",1) 
         "Highlight Charlotte.":
             ##Add 1 point to Charlotte
             #Choice 1.C.: Highlight Charlotte.
@@ -208,6 +211,7 @@ label chapter7:
             # CODE
             #Choice 1.C ends
             #Charlotte +1 points
+            $game_player.increaseRelationship("Charlotte",1)
 
 
 

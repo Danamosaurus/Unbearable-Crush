@@ -32,7 +32,7 @@ init python:
             '''
             Increment Relationship
             '''
-            self.relationships[character] += value
+            self.relationships[character] = self.relationships[character] + value
         
         def getRelationship(self, character):
             '''
