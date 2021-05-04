@@ -164,7 +164,7 @@ label chapter3:
             Kan  "Of course not, he simply forgot. Happens to everyone."
             Maya  "Oh, so you're calling him simple now? Kyousuke is the most sophisticated man I have ever met. His intellectual prowess is something mere normies can't comprehend."
             Maya  "The fact he's wasting his time in this lugubrious school is beyond even my own grasp."
-            Maya  "And I've never received anything less than 103% in any subject. So, darling, I think I can quite tell someone of the same intellectual status as me when I see them."
+            Maya  "And I've never received anything less than 103\% in any subject. So, darling, I think I can quite tell someone of the same intellectual status as me when I see them."
             Kyou  "Wow! That's really nice of you Maya! I don't really know what any of that means, but I think it was a compliment!"
             Maya  "It's not simple flattery! It's a fact."
             Kan  "Yeah, ok, cool. But me and Kyousuke were just talking about being math partners next period."
@@ -253,9 +253,9 @@ label chapter3:
 
     "SHOW SCORE"
 
-    $Kanna = game_player.getRelationship('Kanna')
-    $Maya = game_player.getRelationship('Maya')
-    "We Kanna has [Kanna] and Maya has [Maya]"
+    $Kanna_points = game_player.getRelationship('Kanna')
+    $Maya_points = game_player.getRelationship('Maya')
+    "We Kanna has [Kanna_points] and Maya has [Maya_points]"
 
     #opportunities for different results.
 
