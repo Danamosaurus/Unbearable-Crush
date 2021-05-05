@@ -140,10 +140,10 @@ label ch3choice1option2:
     Kan  "Oh, Kyousuke, only you could say something as kind as that."
     #Choice1-2:end
     #Kanna gets 1 points
-    $game_player.increaseRelationship('Kanna',1)
+    $game_player.increaseRelationship("Kanna",1)
 
 #Show example
-$Kanna = game_player.getRelationship('Kanna')
+$Kanna_points = game_player.getRelationship('Kanna')
 "DEBUG: We have [Kanna_points] points for Kanna"
 label chapter3p2:
 
@@ -225,8 +225,8 @@ label chapter3p3:
 #ART Kanna's room
     scene room with squares
     Rin  "Alright kid. Here's how Kyousuke is feeling about both you and Maya so far."
-    $Kanna = game_player.getRelationship('Kanna')
-    $Maya = game_player.getRelationship('Maya')
+    $Kanna_points = game_player.getRelationship('Kanna')
+    $Maya_points = game_player.getRelationship('Maya')
     "Kanna has [Kanna_points] and Maya has [Maya_points]"
 # ART or CODE
     #Show total scores so far.
