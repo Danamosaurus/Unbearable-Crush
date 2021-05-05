@@ -21,7 +21,6 @@ init python:
             """
             self.player_name = "Player Name"     
             self.relationships = {}
-            self.choices = []
 
         def addRelationship(self, character):
             ''' 
