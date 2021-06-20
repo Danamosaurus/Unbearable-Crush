@@ -46,7 +46,7 @@ label chapter3:
     Kyou  "Um, are you alright? You're acting funny."
     Kan speaking excited crazy blush "Yeah, why would I..."
 
-    #ART, CG, Dating Sim GUI
+    #ART, CG, Dating Sim GUI. Ask hamu for an update on this. 
     Kan frown skeptic "Uh..."
     show Kyou normal at center with Dissolve(3.0)
     Kan "...Kyousuke?"
