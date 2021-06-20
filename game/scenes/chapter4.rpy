@@ -1,6 +1,5 @@
-label day4:
+label chapter4:
 
-    # Update the day shown on the upper corner... to nothing!
     $ game_day = "Day 4"
 
     scene hallway

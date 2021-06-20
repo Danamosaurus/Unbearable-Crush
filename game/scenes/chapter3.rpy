@@ -6,8 +6,7 @@ label chapter3:
         parallel:
             xpos -0.02
             ease_cubic 3.17 xpos 0.45
-    
-
+    #Begin Ch3 part 1
     show kannabox focused onlayer master with easeinright:
         subpixel True xpos -0.13 ypos 1.14 xanchor -0.43 yanchor 1.5 zoom 0.25 rotate None 
     Rin "Alright, we're going to do this just like we talked about."
@@ -77,23 +76,25 @@ label chapter3:
     menu:
         "Choices to send to Kyousuke"
         "Laugh it off, forgive Kanna for yelling at you.":
+            "I  make the selection for Kyousuke, then float back to Kanna to hide in her backpack again. "
             jump ch3choice1option1
         "Kanna's nervous about something. Make her feel comfortable.":
+            "I  make the selection for Kyousuke, then float back to Kanna to hide in her backpack again. "
             jump ch3choice1option2
+
 label ch3choice1option1:
     #Chapter 3 choice 1 option 1: "Laugh it off, forgive Kanna for yelling at you."
     hide Kyou with dissolve
     $ hide_sides = []
-    "I  make the selection for Kyousuke, then float back to Kanna to hide in her backpack again. "
 
     Kyou happy "Hahaha, it's alright, Kanna. I know what ya mean."
     Kyou smirk "Like 'Oh shut up! No way!' right?"
     Kan  "Erm...Yeah, exactly! I'm just excited to get started, ya know?"
     Kyou surprised "But what was that voice that came from behind you?"
-    Kan "What?"
+    Kan neutral surprised crazy "..."
     # CODE  Have Kyousuke's sprite move closer to Kanna
-    Kyou  "It sounded like it came from your backpack or something."
-    Kyou  "No one is behind you. So what was tha..."
+    Kyou frown "It sounded like it came from your backpack or something."
+    Kyou frown "No one is behind you. So what was tha..."
     Kan "-"
     Kan neutral surprised crazy '-'
     # CG ?
@@ -119,116 +120,64 @@ label ch3choice1option1:
     Kan smile concerned ec "W-we were just talking, remember?"
     Kyou  "Yeah, we were talking and then..."
     Kan smile happy speaking ec "O-oh! It wasn't important."
+    $Kanna = game_player.getRelationship("Kanna")
     $game_player.increaseRelationship("Kanna",-1)
-    #Choice1.A: Kanna gets -1 points.
-    #Choice1.A:end.
-
-    #Choice: "Kanna's nervous about something. Make her feel comfortable."
-
-    menu:
-        "Kanna's nervous about something. Make her feel comfortable.":
-            #Kanna gets -1 points
-            $game_player.increaseRelationship("Kanna",-1)
-
-            Kyou  "It's alright Can-oh, I'm not that great at math either."
-            Kan  "Wha?"
-            Kyou  "It's ok to be nervous when asking for help. We're all bad at something, so we gotta help each other out, right?"
-            Kan  "Um, right!"
-            Kyou  "Just ignore that weird voice that came from behind you, that's just the sound of stress."
-            Kan  "What? You heard that?"
-            Kyou  "Don't worry about it now! Like I said, it's the sound of stress, right?"
-            Kan  "Um, right!"
-            Kyou  "We'll do our best together!"
-            Kan  "Oh, Kyousuke, only you could say something as kind as that."
-
-            #Show example
-            $Kanna = game_player.getRelationship('Kanna')
-            "We have [Kanna] from Kanna"
-
-        "Choice1.BKanna gets +1 points":   
-
-            #Choice1.BKanna gets +1 points
-            #Choice1.B:end
-
-            #Kanna gets -1 points
-            $game_player.increaseRelationship("Kanna",1)
-
-            #ART enter Maya.
-            #Mid conversation, Maya walks up to Kyousuke, clearly annoyed that Kanna is there talking to him.
-
-            Maya  "Good morning Kyousuke! Who's your little friend here?"
-            Kyou  "Oh, this is Can-oh! She's our classmate, remember?"
-            Maya  "Can't say that I do. I meet so many people daily, how can I remember each copy-paste face? Nice to meet you Can-oh, I'm Maya."
-            Kan  "It's Kanna, actually. The pleasure's mine, I guess."
-            Maya  "Pretty sure it's Can-oh; that's how Kyousuke said it. You calling him a liar?"
-            Kan  "Of course not, he simply forgot. Happens to everyone."
-            Maya  "Oh, so you're calling him simple now? Kyousuke is the most sophisticated man I have ever met. His intellectual prowess is something mere normies can't comprehend."
-            Maya  "The fact he's wasting his time in this lugubrious school is beyond even my own grasp."
-            Maya  "And I've never received anything less than 103\% in any subject. So, darling, I think I can quite tell someone of the same intellectual status as me when I see them."
-            Kyou  "Wow! That's really nice of you Maya! I don't really know what any of that means, but I think it was a compliment!"
-            Maya  "It's not simple flattery! It's a fact."
-            Kan  "Yeah, ok, cool. But me and Kyousuke were just talking about being math partners next period."
-            Maya  "I’m sorry? Kyousuke and I will be math partners next period."
-            Kan  "Huh?"
-            Kyou  "Oh I forgot, Can-oh; me and Maya are always math partners."
-            Maya  "That's right."
-            Kan  "But-"
-            Maya  "You heard him, ditzy. We're working on math together."
-            Kan  "Ok, listen here, you stupid..."
-
-            #Show example
-            $Kanna = game_player.getRelationship('Kanna')
-            "We have [Kanna] from Kanna"
-
+    #Choice1.1.end.
 label ch3choice1option2:
     #ChoiceChapter 3 choice 1 option 2: "Kanna's nervous about something. Make her feel comfortable."
-    hide Kyou with dissolve
-    $ hide_sides = []
-    Kyou  "It's alright Can-oh, I'm not that great at math either."
-    Kan  "Wha?"
-    Kyou  "It's ok to be nervous when asking for help. We're all bad at something, so we gotta help each other out, right?"
-    Kan  "Um, right!"
-    Kyou  "Just ignore that weird voice that came from behind you, that's just the sound of stress."
-    Kan  "What? You heard that?"
-    Kyou  "Don't worry about it now! Like I said, it's the sound of stress, right?"
-    Kan  "Um, right!"
-    Kyou  "We'll do our best together!"
-    Kan  "Oh, Kyousuke, only you could say something as kind as that."
+    #Kanna gets +1 points
+    Kyou frown "It's alright Can-oh, I'm not that great at math either."
+    Kan speaking curious "What?"
+    Kyou frown "It's ok to be nervous when asking for help. We're all bad at something, so we gotta help each other out, right?"
+    Kan smile happy speaking ec "Um, right!"
+    Kyou happy "Just ignore that weird voice that came from behind you, that's just the sound of stress."
+    Kan smile concerned ec "What? You heard that?"
+    Kyou happy "Don't worry about it now! Like I said, it's the sound of stress, right?"
+    Kan happy eo "Right!"
+    Kyou happy "We'll do our best together!"
+    Kan smile worried ec "Oh, Kyousuke, only you could say something as kind as that."
+    $Kanna = game_player.getRelationship('Kanna')
+    $game_player.increaseRelationship("Kanna",1)
+    "We have [Kanna] from Kanna"
     #Choice1-2:end
     #Kanna gets 1 points
-    $game_player.increaseRelationship("Kanna",1)
 
 #Show example
 $Kanna_points = game_player.getRelationship('Kanna')
 "DEBUG: We have [Kanna_points] points for Kanna"
+##End of Ch3 Part 1. 
+##Begin ch3 Part 2
 label chapter3p2:
 
     #ART enter Maya.
     #Mid conversation, Maya walks up to Kyousuke, clearly annoyed that Kanna is there talking to him.
-    Maya  "Good morning Kyousuke! Who's your little friend here?"
+    Maya smile happy mo "Good morning Kyousuke! Who's your little friend here?"
     Kyou  "Oh, this is Can-oh! She's our classmate, remember?"
-    Maya  "Can't say that I do. I meet so many people daily, how can I remember each copy-paste face? Nice to meet you Can-oh, I'm Maya."
+    Maya hopeless ec "Can't say that I do. I meet so many people daily."
+    Maya smile happy ec "How can I remember each copy-paste face? Nice to meet you Can-oh, I'm Maya."
     Kan  "It's Kanna, actually. The pleasure's mine, I guess."
-    Maya  "Pretty sure it's Can-oh; that's how Kyousuke said it. You calling him a liar?"
+    Maya smile happy ec"Pretty sure it's Can-oh; that's how Kyousuke said it."
     Kan  "Of course not, he simply forgot. Happens to everyone."
-    Maya  "Kyousuke is the most sophisticated man I have ever met. His intellectual prowess is something mere normies can't comprehend."
-    Maya  "The fact he's wasting his time in this lugubrious school is beyond even my own grasp."
-    Maya  "And I've never received anything less than perfection in any subject. So, darling, I think I can quite tell someone of the same intellectual status as me when I see them."
-    Kyou  "Wow! That's really nice of you Maya! I don't really know what any of that means, but I think it was a compliment!"
-    Maya  "It's not simple flattery! It's a fact."
-    Kan  "Yeah, ok, cool. But me and Kyousuke were just talking about being math partners next period."
-    Maya  "I’m sorry? Kyousuke and I will be math partners next period."
-    Kan  "Huh?"
-    Kyou  "Oh I forgot, Can-oh; me and Maya are always math partners."
-    Maya  "That's right."
-    Kan  "But-"
-    Maya  "You heard him, ditzy. We're working on math together."
-    Kan  "Ok, listen here, you stupid..."
+    Maya flirting eo "Kyousuke is the most sophisticated man I have ever met. His intellectual prowess is something mere normies can't comprehend."
+    Maya speaking normal "The fact he's wasting his time in this lugubrious school is beyond even my own grasp."
+    Maya speaking normal "And I've never received anything less than a perfect score in any of my classes. So, darling, I think I can quite tell someone of the same intellectual status as me when I see them."
+    Kyou happy "Wow! That's really nice of you Maya! I don't really know what any of that means, but I think it was a compliment!"
+    Maya flirting eo "It's not simple flattery! It's a fact."
+    Kan  smile concerned ec "Yeah, ok, cool. But me and Kyousuke were just talking about being math partners next period."
+    Maya "I’m sorry? Kyousuke and I will be math partners next period."
+    Kan frown worried eo "Huh?"
+    Kyou surprised "Oh I forgot, Can-oh; me and Maya are always math partners."
+    Maya smile happy mc "That's right."
+    Kan smile worried ec "But-"
+    Maya annoyed eo "You heard him, ditzy. We're working on math together."
+    Kan angry crazy "Ok, listen here you bit-"
     #ART CG Two more VN GUI choices appear in front of Kyousuke.
     #VOICE  Whispering#
-    "Here we go again."
+    Rin "PAUSE!"
+    Rin "Whew, that almost got out of hand."
+    Kyou "Yeah I'll say."
     "I float behind Kyousuke once again."
-    "Alright, let's see what we have this time."
+    Rin "Alright, let's see what kind of options we have this time."
     # SFX or ART portray this "something" isn't right through a strange sound or some kind of visual glitch?
     "Wait, something isn't right here."
     "I sense something familiar."
@@ -239,43 +188,50 @@ label chapter3p2:
     # CG Display the two choices below.
     "'Choose Maya as a math partner.'"
     "\" Head to the bathroom.'"
-    "What kind of options are those? He really can't think for himself at all."
-    "I guess that’s where I come in."
-    "Really, what would that girl do without me?"
+    Rin "What kind of terrible options are these?"
+    Kyou "I dunno."
+    
+    Rin "You really can't think for yourself at all in these types of situations, can you big guy?"
+    Rin "Well, I guess that’s where I come in."
+    "Really, what would Kanna ever do without me?"
     "Now, what’s the best way to go about this?"
     menu:
-        "Choices to send to Kyousuke"
+        "Choices to give to Kyousuke"
         "Choose Kanna as a math partner.":
+            Rin "Here man, do this instead. Your guardian wingman commands it."
+            Kyou "Wow thanks buddy! That's a great idea!"
             jump ch3choice2option1
         "Work in a group with Kanna and Maya.":
+            Rin "Here man, do this instead. Your guardian wingman commands it."
+            Kyou "Wow thanks buddy! That's a great idea!"
             jump ch3choice2option1
 
 label ch3choice2option1:
         #Choice: "Choose Kanna as a math partner.
-        Kyou "Ya know, Maya, This other girl may need more help in math then you do. Maybe I should help her this time. It's the right thing to do."
-        Maya "Oh, Kyousuke, your commitment to justice and helping the less fortunate is only matched by the strength and sharpness of your jawline."
-        Maya "Are you sure you don't mind working with her? I know you're only doing it out of pity, but are you absolutely positive this is what you want to do?"
-        Kyou "It's ok Maya, we can be math partners tomorrow. I'll sacrifice myself for the greater good."
-        Maya "Kyousuke, your valiance knows no bounds. I’ll get him back tomorrow. Have a nice class...Kanna."
-        Kan  "Gee, thanks for the sincerity... Let's get to studying, then I guess."
+        Kyou surprised "Ya know, Maya, This other girl may need more help in math then you do. Maybe I should help her this time. It's the right thing to do."
+        Maya flirting eo "Oh, Kyousuke, your commitment to justice and helping the less fortunate is only matched by the strength and sharpness of your jawline."
+        Maya sad speaking "Are you sure you don't mind working with her? I know you're only doing it out of pity, but are you absolutely positive this is what you want to do?"
+        Kyou frown "It's ok Maya, we can be math partners tomorrow. I'll sacrifice myself for the greater good."
+        Maya hopeless ec "Kyousuke, your valiance knows no bounds. Have a nice class...Kanna."
+        Kan frown pout ec "Gee, thanks for the sincerity... Let's get to studying, then I guess."
         "Kanna will spend some time with Kyousuke today. Getting her noticed must do at least {i}something{/i} for their relationship, right?"
-        #Choice2.1: Both Kanna and Maya receive no points
+        #Kanna looks better, she gains a point. Maya sucks up and doesn't lose any at least.
+        $Kanna = game_player.getRelationship('Kanna')
         $game_player.increaseRelationship("Kanna",1)
         #Choice2.1: End
 
 label ch3choice2option2:
         #Choice: "Work in a group with Kanna and Maya."
-        Kyou  "Wait, maybe we can all work together in a group!"
-        Maya  "What!?"
-        Kan  "Uh..."
+        Kyou happy "Wait, I have an idea! Maybe we can all work together in a group!"
+        Maya annoyed eo "What!?"
+        Kan sad smile "Well..."
         Kyou  "Yeah, theres no reason it has to be just two of us. You guys are getting along so well anyway. It'll be fun!"
-        Maya  "If you really insist, Kyousuke. While I think it should be just me and you, I guess we can let her in, for her own sake."
+        Maya sad speaking "If you really insist, Kyousuke. While I think it should be just me and you, I guess we can let her in, for her own sake."
         Kyou  "Come on Kanna, it'll be fun!"
-        Kan  "Well, alright. I guess it won't be too bad as long as you are there, Kyousuke."
-        #Choice 2.B: Both Kanna and Maya receive +1 points.
+        Kan smile happy ec "Well, alright. I guess it won't be too bad as long as you are there, Kyousuke."
+        "Well, at least this shouldn't hurt her chances. I don't think it helps much either."
+        #Choice 2.B: Neither girl receives a point. 
         #Choice2.B End
-        $game_player.increaseRelationship("Kanna",1)
-        $game_player.increaseRelationship("Maya",1)
 
 label chapter3p3:
 #ART Kanna's room
@@ -295,23 +251,22 @@ label chapter3p3:
 #opportunities for different results.
 
     Rin  "By the way, I noticed a weird sensation while we were at school today."
-    Kan  "Huh? What do you mean?"
+    Kan speaking curious "What do you mean?"
     Rin  "All I can really say is there was a strange energy floating around the school."
-
-    Kan  "It was probably that horrible Maya girl. She was driving me up the wall today."
+    Kan speaking confident "It was probably that horrible Maya girl. She was driving me up the wall today."
     Rin  "No, it wasn't teenage hormones. Something like me. A spirit, maybe."
     "Or maybe I'm underestimating teenage emotions."
-    Kan "You mean another spirit? Like you?"
-    Kan "I hope it's another cute stuffed animal spirit!"
+    Kan speaking curious "You mean another spirit? Like you?"
+    Kan smile happy eo "I hope it's another cute stuffed animal spirit!"
     Rin "Well, actually that's kind of just a {i}me{/i} thing."
     Rin "Most spirits are somewhat dangerous actually."
-    Kan "Dangerous?"
+    Kan frown worried eo "Dangerous?"
     Rin "But don't worry. I doubt he'd be bold enough to try anything in a place as public as the school."
     Rin "It does change our situation somewhat though. If there's another spirit around, things could get complicated."
-    Kan "Well, what should we do?"
+    Kan speaking curious "Well, what should we do?"
     Rin "For now, proceed as planned. We'll take another stab at that partner thing tomorrow."
-    Kan "Yeah! That stupid Maya can't keep Kyousuke all to herself. If it's only her we have to deal with, we can manage, right?"
+    Kan smile happy speaking ec "Yeah! That stupid Maya can't keep Kyousuke all to herself. If it's only her we have to deal with, we can manage, right?"
     Rin "Right!"
     "{i}I hope...{/i}"
     scene black with fade
-    jump day4
+    jump chapter4

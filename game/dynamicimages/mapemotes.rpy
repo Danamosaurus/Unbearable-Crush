@@ -8,7 +8,7 @@ init python:
    DefineImages("sprites", composite=True)
 
    layerorder = ['hair', 'base', 'arms', 'tail','mouth','eyes','brow','blush']
-   DefineImages('images/sprites', composite=True, overrideLayerOrder=layerorder, offsets=(0, 100), zooms={'Kan':.85,'Rin':.85,'Kyou':.85, 'Maya': .85, 'Youk':.85, 'Char':.7}, sides=['Kan', 'Rin', 'Kyou','Maya','Youk','Char'])
+   DefineImages('images/sprites', composite=True, overrideLayerOrder=layerorder, offsets=(0, 100), zooms={'Kan':.85,'Rin':.9,'Kyou':.9, 'Maya': .9, 'Youk':.9, 'Char':.65}, sides=['Kan', 'Rin', 'Kyou','Maya','Youk','Char'])
 
    #Dynamic Sprite Emote Maps
    #MapEmote('war hugesmile',  'war md_hugesmile ed_bigsmile blush')
@@ -48,6 +48,7 @@ init python:
    MapEmote('Kan salivating', 'Kan base mdo_drool ec_default brow_content blush')
    MapEmote('Kan questioning embarrassed', 'Kan base mdo_oh ec_happy brow_skeptic blush')
    MapEmote('Kan sad smile', 'Kan base mdo_default ec_happy brow_sad')
+   MapEmote('Kan angry crazy', 'Kan base md_frown ed_crazy brow_angry')
 ###Kyousuke
    MapEmote('Kyou normal', 'Kyou base md_default ed_default')
    MapEmote('Kyou smirk', 'Kyou base md_smirk ed_default')

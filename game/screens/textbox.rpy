@@ -67,7 +67,7 @@ screen say(who, what):
 
                 text who:
 
-                    pos (410, 713)
+                    pos (510, 713)
 
                     id "who"
 
@@ -80,9 +80,9 @@ screen say(who, what):
 
         text what id "what":
 
-            xysize (1203, 400)
+            xysize (1050, 400)
 
-            xpos 400
+            xpos 500
             ypos 829
 
             line_spacing 20
