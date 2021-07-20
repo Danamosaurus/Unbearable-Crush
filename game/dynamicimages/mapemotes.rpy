@@ -66,3 +66,10 @@ init python:
    MapEmote('Maya annoyed eo', 'Maya base mdo_default ed_default brow_scrunch')
    MapEmote('Maya hopeless ec', 'Maya base md_default ec_default brow_furrow')
    MapEmote('Maya flirting eo', 'Maya base md_default ed_squint brow_default')
+
+###Charlotte
+   MapEmote('Char disgusted', 'Char base mdo_beanmouth ed_squint brow_furrowed')
+   MapEmote('Char sad speaking', 'Char base mdo_default ed_default brow_sad')
+   MapEmote('Char frustrated eo', 'Char base mdo_beanmouth ed_default brow_furrowed')
+   MapEmote('Char smile ec', 'Char base mdo_oho ec_happy brow_default')
+   MapEmote('Char cheeky smile', 'Char base mdo_oho ed_squint brow_default')

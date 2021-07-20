@@ -27,7 +27,7 @@ init:
     #cgs
     image cgs ringo_ent = "cgs/cgs ringo_ent.png"
     image cgs ringo_ent_shadow = "cgs/cgs ringo_ent_shadow.png"
-
+    image cgs charlotte_intro = "cgs/cgs charlotte intro.png"
     image cgs mayaintro kyousuke = "cgs/mayaintro/kyousuke.png"
     #Popins
     image pop kannashocked = "popins/kanna_shocked.png"

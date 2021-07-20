@@ -31,7 +31,7 @@ label chapter1:
     Kan "Only the part he didn't eat!"
     Rin "...Why?"
     Kan salivating "Kyousuke-flavored yakisoba bread~"
-    Rin "All right! I get it! God, are all teenagers this creepy? If you like him so much, then why not just confess to him already?"
+    Rin "All right! I get it! God, are all teenagers this creepy? If you like him so much, then why not just confess to him?"
     Kan frown worried ec "I don't know. He- he makes me all fluttery!"
     Rin "Fluttery how?"
     Kan speaking embarrassed ec "I don't know! What if I say something stupid and offend him?! Or-"
