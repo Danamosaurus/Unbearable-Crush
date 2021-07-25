@@ -6,7 +6,8 @@ label chapter5:
     # CODE Scene Hallway
 
     #We open to the familiar hallway, Ringo is alone, thinking about his next actions. He plans to investigate Kyousuke, and confront Youko when Charlotte inevitably shows up. Kanna is hanging back, eating lunch with her casual group of friends.
-
+    scene hallway onlayer master with Dissolve(1.0):
+        subpixel True xpos 0.5 ypos 2.2 xanchor 0.5 yanchor 1.0 rotate None 
     Rin "Stupid, stupid, STUPID!"
     Rin "Those punk demons at the corporate success shrine think they can just walk all over us little guys."
     #VOICE #Mocking Youko's voice#

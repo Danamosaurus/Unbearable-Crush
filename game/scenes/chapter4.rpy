@@ -51,8 +51,8 @@ label chapter4:
     Maya "Oh Kyousuke, darling! I have an extra special surprise for you!"
 
     Kan angry crazy "Hmm!"
-
-    Kyou "Oh, Maya, hey."
+    $ hide_sides = ['Kyousuke']
+    Kyou surprised "Oh, Maya, hey."
 
     Maya speaking normal "I was thinking about how much you loved the rice balls I made for you yesterday, and I thought that I could do something to brighten your day!"
 
@@ -98,6 +98,7 @@ label chapter4:
 
     "???" "...In this life and the next, An eternal contract between you, Kyousuke, and the dark wizard Charlotte Von Vega!"
 
+    $ hide_sides = ['Charlotte']
     Kyou frown "I uh, don't know what that means. I'd really like to eat some extra special chocolates right now though."
 
     Char "Don't be alarmed. In this mortal form, I can manifest only one-tenth of my true power. When I present to you my gift, all of your questions will be answered."
@@ -105,10 +106,7 @@ label chapter4:
     Char "Now eat! Taste the magical sensation of my strawberry cake of astral knowledge and be my companion for all eternity!"
 
     scene hallway onlayer master with squares:
-        subpixel True xpos 0.5 ypos 2.2 xanchor 0.5 yanchor 1.0 rotate None 
-        parallel:
-            xpos -0.02
-            ease_cubic 3.17 xpos 0.45
+        subpixel True xpos 0.45 ypos 2.2 xanchor 0.5 yanchor 1.0 rotate None 
 
     Kan frown pout ec "{i}...{/i}"
 
@@ -133,6 +131,9 @@ label chapter4:
 
     Kyou happy "prefer...strawberry...cake..."
 
+    show Char cheeky smile at center with dissolve:
+        zoom 1.25
+
     Char cheeky smile "Well, Kyousuke, how does it feel? Do you suddenly find me...irresistable?"
 
     Char smile ec "Do you feel compelled to bow down at my feet and succumb to my every request?"
@@ -155,7 +156,12 @@ label chapter4:
 
     Char disgusted " Why didn't my spell work?"
 
+    hide Char with dissolve
+
     "Kanna backs away and we duck behind a corner."
+
+    show hallway onlayer master:
+        ease_cubic 3.17 xpos 1.35
 
     Kan "Ringooo! What do we do? That banshee is trying to steal him away from me! Why didn’t you stop Kyousuke from eating her dumb cake?"
 
@@ -225,5 +231,7 @@ label chapter4:
     Rin "I need him! I'm trying to make that boy go on a date with my delusional teenager. You're messing that up, so, begone demon! Lest I smite thee, with the magic of heaven's door, or whatever."
 
     Youk "Oh, I'm absolutely trembling."
+
+    scene white with Dissolve(1.0)
 
     jump chapter5
