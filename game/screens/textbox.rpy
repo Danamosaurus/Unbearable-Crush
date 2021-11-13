@@ -99,18 +99,18 @@ screen say(who, what):
         if not renpy.variant("small"):
             if not who in hide_sides:
                 add SideImage() xalign -.1 yalign .5 yanchor 0
-            #elif who == 'Kanna':
-            #    add SideImage() xalign -0.1 yalign .5 yanchor 0
-            #elif who == 'Kyousuke':
-            #    add SideImage() xalign -0.1 yalign .5 yanchor 0
-            #elif who == 'Maya':
-            #    add SideImage() xalign -0.1 yalign .5 yanchor 0
-            #elif who == 'Charlotte':
-            #    add SideImage() xalign -0.1 yalign .5 yanchor 0
-            #elif who == 'Ringo':
-            #    add SideImage() xalign -0.1 yalign .5 yanchor 0
-            #elif who == 'Youko':
-            #    add SideImage() xalign -0.1 yalign .5 yanchor 0
+            elif who == 'Kanna':
+                add SideImage() xalign -0.1 yalign .5 yanchor 0
+            elif who == 'Kyousuke':
+                add SideImage() xalign -0.1 yalign .5 yanchor 0
+            elif who == 'Maya':
+                add SideImage() xalign -0.1 yalign .5 yanchor 0
+            elif who == 'Charlotte':
+                add SideImage() xalign -0.1 yalign .5 yanchor 0
+            elif who == 'Ringo':
+                add SideImage() xalign 0.0 yalign .5 yanchor 0
+            elif who == 'Youko':
+                add SideImage() xalign -0.1 yalign .5 yanchor 0
 
     ### Icons
     fixed:
