@@ -7,8 +7,8 @@ init python:
    # define the composite sprites with LayeredImages, blinking eyes and flapping mouth
    DefineImages("sprites", composite=True)
 
-   layerorder = ['hair', 'base', 'arms', 'tail','mouth','eyes','brow','blush']
-   DefineImages('images/sprites', composite=True, overrideLayerOrder=layerorder, offsets=(0, 100), zooms={'Kan':.85,'Rin':.9,'Kyou':.9, 'Maya': .9, 'Youk':.9, 'Char':.65}, sides=['Kan', 'Rin', 'Kyou','Maya','Youk','Char'])
+   layerorder = ['hair', 'base', 'arms', 'armout','armwave','tail','mouth','eyes','brow','blush','anger','sweatdrop','nervous']
+   DefineImages('images/sprites', composite=True, overrideLayerOrder=layerorder, offsets=(0, 100), zooms={'Kan':.85,'Rin':.6,'Kyou':.9, 'Maya': .9, 'Youk':.9, 'Char':.65}, sides=['Kan', 'Rin', 'Kyou','Maya','Youk','Char'])
 
    #Dynamic Sprite Emote Maps
    #MapEmote('war hugesmile',  'war md_hugesmile ed_bigsmile blush')
@@ -73,3 +73,23 @@ init python:
    MapEmote('Char frustrated eo', 'Char base mdo_beanmouth ed_default brow_furrowed')
    MapEmote('Char smile ec', 'Char base mdo_oho ec_happy brow_default')
    MapEmote('Char cheeky smile', 'Char base mdo_oho ed_squint brow_default')
+###Ringo
+   MapEmote('Rin happy ec', 'Rin base armout mdo_default ed_closed')
+   MapEmote('Rin worried speaking', 'Rin base mdo_default ed_default')
+   MapEmote('Rin normal', 'Rin base md_default ed_default')
+   MapEmote('Rin speaking normal', 'Rin base mdo_oh ed_default')
+   MapEmote('Rin speaking happy', 'Rin base mdo_happy ed_default')
+   MapEmote('Rin headache mo', 'Rin base mdo_oh ed_squint anger')
+   MapEmote('Rin headache mc', 'Rin base mdo_hmm ed_squint anger')
+   MapEmote('Rin curious', 'Rin base armout mdo_hmm ed_default')
+   MapEmote('Rin annoyed', 'Rin base mdo_oh ed_squint')
+   MapEmote('Rin angry speaking armout', 'Rin base armout mdo_oh ed_anger')
+   MapEmote('Rin angry speaking noarm', 'Rin base mdo_oh ed_anger')
+   MapEmote('Rin laughing ec', 'Rin base armout mdo_grin ec_tears')
+   MapEmote('Rin grin', 'Rin base mdo_grin ed_squint')
+   MapEmote('Rin shockedannoyed', 'Rin base mdo_hmm ed_shock anger')
+   MapEmote('Rin veryannoyed', 'Rin base mdo_hmm ed_fury blush anger')
+   MapEmote('Rin sigh', 'Rin base mdo_hmm ed_closed')
+   MapEmote('Rin sarcastic', 'Rin base armout mdo_oh ed_squint')
+   MapEmote('Rin evil grin', 'Rin base mdo_grin ed_anger')
+   MapEmote('Rin testemote', 'Rin base armout mdo_oh ed_squint sweatdrop')
