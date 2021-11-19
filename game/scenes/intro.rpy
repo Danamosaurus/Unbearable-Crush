@@ -124,6 +124,7 @@ label start:
         xpos .5
         ypos .5
     "I present the letter she left for me earlier."
+    $ hide_sides = []
     Rin smile normal "Alright, now let's see what you wished for."
     # CODE Set the appropriate time in the wait tag to match the VAs performance.
     Rin speaking happy "I, Kanna, wish for my classmate, Kyousuke..."

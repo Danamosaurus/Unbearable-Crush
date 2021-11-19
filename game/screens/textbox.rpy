@@ -97,20 +97,23 @@ screen say(who, what):
         ## If there's a side image, display it above the text. Do not display on the
         ## phone variant - there's no room.
         if not renpy.variant("small"):
-            if not who in hide_sides:
-                add SideImage() xalign -.1 yalign .5 yanchor 0
-            elif who == 'Kanna':
+            #Define positioning of side images here for each character
+            #If 'who' is speaking, and is NOT currently listed in hide_sides, add their side image at the defined position.
+            if who == 'Kanna' and not who in hide_sides:
                 add SideImage() xalign -0.1 yalign .5 yanchor 0
-            elif who == 'Kyousuke':
+            elif who == 'Kyousuke' and not who in hide_sides:
                 add SideImage() xalign -0.1 yalign .5 yanchor 0
-            elif who == 'Maya':
+            elif who == 'Maya' and not who in hide_sides:
                 add SideImage() xalign -0.1 yalign .5 yanchor 0
-            elif who == 'Charlotte':
+            elif who == 'Charlotte' and not who in hide_sides:
                 add SideImage() xalign -0.1 yalign .5 yanchor 0
-            elif who == 'Ringo':
+            elif who == 'Ringo' and not who in hide_sides:
                 add SideImage() xalign 0.0 yalign .5 yanchor 0
-            elif who == 'Youko':
+            elif who == 'Youko' and not who in hide_sides:
                 add SideImage() xalign -0.1 yalign .5 yanchor 0
+            #If the speaking character doesn't have a defined position above, use this default position
+            elif not who in hide_sides:
+                add SideImage() xalign -.1 yalign .5 yanchor 0
 
     ### Icons
     fixed:

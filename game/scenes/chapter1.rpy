@@ -50,7 +50,7 @@ label chapter1:
     scene white with Dissolve(.2)
     scene orange onlayer master with dissolve:
         subpixel True xpos 0.5 ypos 1.0 xanchor 0.5 yanchor 1.0 zoom 0.36 rotate None 
-    $ hide_sides = ['Maya','Kyousuke','Kanna']
+    $ hide_sides = ['Maya','Kyousuke','Kanna', 'Ringo']
     
     show cgs mayaintro kyousuke onlayer master with dissolve:
         subpixel True xpos 0.68 ypos 1.37 xanchor 0.5 yanchor 1.0 zoom 0.47 rotate None 
