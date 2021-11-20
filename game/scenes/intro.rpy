@@ -100,7 +100,7 @@ label start:
     Kan neutral surprised crazy "A bear?"
     $ hide_sides = ['Ringo']
     "Bear" "Actually, not really. But I’m as close to the real thing as you’re gonna get."
-    Kan smile surprised crazy"...Ha. Ahaha."
+    Kan smile surprised crazy"...Ha. Ahaha. There's a talking teddy bear in my room."
     Kan frown pout ec "This is a dream, right? I usually wake up after I fall out of bed."
     Kan "I'll just get back in and try again..."
     "Bear" "Bzzzt! Wrong. You’re wide awake, and you’re about to get your wish granted."
@@ -205,7 +205,7 @@ label start:
     "I guess finishing my career with a love wish ain’t so bad."
     #ART show pocket watch. 
     "Well that's just typical."
-    "{i}You're not going to cut me any slack with this one, are you Fortune?{/i}"
+    "You're not going to cut me any slack with this one, are you Fortune?"
     #Art Card Table - A table where Ringo has some playing cards. He's flipping them over, shuffling etc. 
     "A week is hardly enough time to bring two people together by chance alone."
     "I won't know for sure how the cards are laid out until I get a look at the guy we're dealing with."
@@ -213,7 +213,7 @@ label start:
     "I mean hey, they're just teenagers. They fall in and out of love with a change in the weather."
     "And you'd know better than any, Fortune, that the right card played at the right time can tilt the odds in anyone's favor."
     "And nobody stacks the deck like me."
-    "Hell, this might not be as bad as I thought. I'm a spirit of fortune, I can play Cupid!"
+    "Hell, this might not be as bad as I thought. I can play Cupid!"
     # Pause for a bit. Consider cutting any BGM or Ambience playing.
     Rin "...Right?"
     scene black with fade

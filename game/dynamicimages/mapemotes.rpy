@@ -33,6 +33,7 @@ init python:
    MapEmote('Kan smile happy blushing', 'Kan base mdo_happy ec_default brow_content blush')
    MapEmote('Kan smile happy speaking ec', 'Kan base mdo_happy ec_happy brow_content')
    MapEmote('Kan smile concerned ec', 'Kan base mdo_happy ec_happy brow_skeptic')
+   MapEmote('Kan smile crazy eo', 'Kan base mdo_happy ed_crazy brow_content')
    MapEmote('Kan sleeping', 'Kan base mdo_oh ec_default brow_default')
    MapEmote('Kan neutral surprised crazy', 'Kan base md_frown ed_crazy brow_default')
    MapEmote('Kan smile surprised crazy', 'Kan base md_default ed_crazy brow_default')
@@ -48,7 +49,9 @@ init python:
    MapEmote('Kan salivating', 'Kan base mdo_drool ec_default brow_content blush')
    MapEmote('Kan questioning embarrassed', 'Kan base mdo_oh ec_happy brow_skeptic blush')
    MapEmote('Kan sad smile', 'Kan base mdo_default ec_happy brow_sad')
+   MapEmote('Kan speaking sad normal', 'Kan base mdo_oh ed_default brow_sad')
    MapEmote('Kan angry crazy', 'Kan base md_frown ed_crazy brow_angry')
+   MapEmote('Kan shouting crazy', 'Kan base mdo_oh ed_crazy brow_angry')
 ###Kyousuke
    MapEmote('Kyou normal', 'Kyou base md_default ed_default')
    MapEmote('Kyou smirk', 'Kyou base md_smirk ed_default')
@@ -57,15 +60,18 @@ init python:
    MapEmote('Kyou surprised', 'Kyou base mdo_surprised ed_default')
 
 ####Maya
-   MapEmote('Maya smile happy mc', 'Maya base md_default ed_default brow_default')
-   MapEmote('Maya smile happy mo', 'Maya base mdo_grin ed_default brow_default')
-   MapEmote('Maya smile happy ec', 'Maya base mdo_grin ec_default brow_default')
-   MapEmote('Maya speaking normal', 'Maya base mdo_default ed_default brow_default')
-   MapEmote('Maya sad speaking', 'Maya base mdo_default ec_default brow_furrow')
-   MapEmote('Maya annoyed ec', 'Maya base mdo_default ec_default brow_scrunch')
-   MapEmote('Maya annoyed eo', 'Maya base mdo_default ed_default brow_scrunch')
-   MapEmote('Maya hopeless ec', 'Maya base md_default ec_default brow_furrow')
-   MapEmote('Maya flirting eo', 'Maya base md_default ed_squint brow_default')
+   MapEmote('Maya smile happy mc', 'Maya pose1 base md_default ed_default brow_default')
+   MapEmote('Maya smile happy mo', 'Maya pose1 base mdo_grin ed_default brow_default')
+   MapEmote('Maya smile happy ec', 'Maya pose1 base mdo_grin ec_default brow_default')
+   MapEmote('Maya speaking normal', 'Maya pose1 base mdo_default ed_default brow_default')
+   MapEmote('Maya sad speaking', 'Maya pose1 base mdo_default ec_default brow_furrow')
+   MapEmote('Maya annoyed ec', 'Maya pose1 base mdo_default ec_default brow_scrunch')
+   MapEmote('Maya annoyed eo', 'Maya pose1 base mdo_default ed_default brow_scrunch')
+   MapEmote('Maya hopeless ec', 'Maya pose1 base md_default ec_default brow_furrow')
+   MapEmote('Maya flirting eo', 'Maya pose1 base md_default ed_squint brow_default')
+
+   #Intropose
+   MapEmote('Maya intropose_smile', 'Maya mayaintropose base md_default ed_default brow_default')
 
 ###Charlotte
    MapEmote('Char disgusted', 'Char base mdo_beanmouth ed_squint brow_furrowed')
@@ -78,6 +84,7 @@ init python:
    MapEmote('Rin worried speaking', 'Rin base mdo_default ed_default')
    MapEmote('Rin normal', 'Rin base md_default ed_default')
    MapEmote('Rin speaking normal', 'Rin base mdo_oh ed_default')
+   MapEmote('Rin speaking armout', 'Rin base armout mdo_oh ed_default')
    MapEmote('Rin speaking happy', 'Rin base mdo_happy ed_default')
    MapEmote('Rin headache mo', 'Rin base mdo_oh ed_squint anger')
    MapEmote('Rin headache mc', 'Rin base mdo_hmm ed_squint anger')
@@ -85,6 +92,7 @@ init python:
    MapEmote('Rin annoyed', 'Rin base mdo_oh ed_squint')
    MapEmote('Rin angry speaking armout', 'Rin base armout mdo_oh ed_anger')
    MapEmote('Rin angry speaking noarm', 'Rin base mdo_oh ed_anger')
+   MapEmote('Rin angry shouting', 'Rin base armout mdo_surprise ed_anger anger')
    MapEmote('Rin laughing ec', 'Rin base armout mdo_grin ec_tears')
    MapEmote('Rin grin', 'Rin base mdo_grin ed_squint')
    MapEmote('Rin shockedannoyed', 'Rin base mdo_hmm ed_shock anger')
@@ -93,3 +101,5 @@ init python:
    MapEmote('Rin sarcastic', 'Rin base armout mdo_oh ed_squint')
    MapEmote('Rin evil grin', 'Rin base mdo_grin ed_anger')
    MapEmote('Rin testemote', 'Rin base armout mdo_oh ed_squint sweatdrop')
+   MapEmote('Rin panting', 'Rin base armwave mdo_surprise ed_shock nervous')
+   MapEmote('Rin surprised', 'Rin base mdo_happy ed_shock')
