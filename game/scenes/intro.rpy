@@ -6,18 +6,21 @@ label start:
     $game_player.addRelationship("Kanna")
     $game_player.addRelationship("Maya")
     $game_player.addRelationship("Charlotte")
-
+    camera:
+        perspective True
     # Update the day shown on the upper corner... to nothing!
     $ game_day = ""
     $ hide_sides = ['Kanna']
-    scene black
+    scene black onlayer background
     Kan frown worried ec "Okay...Here I go."
-    show shrine:
-        zoom .75 ypos .5 xpos .5 xanchor .5 yanchor.5 alpha 0 subpixel True
+    show shrine onlayer master:
+        subpixel True xpos 0.5 ypos 0.5 xanchor 0.5 yanchor 0.5 rotate None blur None 
         parallel:
-            easein 5 zoom .85
+            alpha 0.0
+            easein 3 alpha 1.0
         parallel:
-            easein 5 alpha 1
+            zoom 0.8
+            easein 2 zoom 0.9
     $ hide_sides = []
     Kan smile worried ec "Uh... Hello? Spirit?"
     Kan frown worried eo "It’s me, Kanna."
@@ -46,7 +49,7 @@ label start:
     #ART
     #Ringo appears faintly from the top of the shrine, not enough to fully make out that he's a little #bear, but enough to make out that he's small, and clearly a spirit of some sort
     "..."
-    show shrine:
+    show shrine onlayer master:
         ease 3 zoom .95
     "..."
     na "Well, she’s not exactly my ideal client."
@@ -65,12 +68,20 @@ label start:
     na "Alright, Fortune. I’m feeling pretty motivated!"
     na "With these legs, I'll be lucky to make it before sundown."
     #ART BG Kanna's Bedroom
-    scene room night with squares:
+    scene room night onlayer master with squares:
         xanchor .5
         yanchor .5
         xpos .15
         ypos .15
-    $camera_move(7000, 500, 0, 0, duration=5)
+    #$camera_move(7000, 500, 0, 0, duration=5)
+        subpixel True 
+        parallel:
+            xpos 0.73
+            easein 5 xpos 0.16
+        parallel:
+            ypos 0.24
+            easein 5 ypos 0.16
+
     $ hide_sides = ['Ringo']
     "..."
     Kan sleeping "Zzzz"
@@ -80,20 +91,25 @@ label start:
     #A large circular portal forms in the center of the room. Golden sparks, and flashes light up the room. A large explosion erupts from the circle, filling the room with smoke.
     #Ringo is summoned from the explosion, and floats in the smoke, wearing a smug expression.
     #Upon hearing the explosion, Kanna falls off of her bed, and sits awestruck on the ground with blankets all around her. She begins to run out of the room, too shocked to scream. She reaches the door, and hears a strange voice from behind her.
-
-    $camera_move(-9000, -4371, -1264, 0, duration=1)
     scene black with fade
-    $camera_move(2535, 2709, 238, -18, duration=0)
-    show cgs ringo_ent_shadow:
+    show cgs ringo_ent_shadow with dissolve:
         zoom .5
         xpos -.33
-    $camera_move(2535, 2709, 238, -18, duration=0)
     "???" "Wake up feeble human, and behold!"
     Kan neutral surprised crazy "..."
     #ART CG Kanna turns around. She stares, overwhelmed by the smoke and effects. She braces #herself in anticipation for whoever or whatever the voice was that spoke through the smoke.
     #The smoke dissipates, revealing a small, floating, bear-like spirit.
-    $camera_move(-406, 2050, -525, 0, duration=2)
-    $renpy.pause(2.0)
+    camera:
+        subpixel True
+        parallel:
+            linear 1.86 zpos -157.0
+        parallel:
+            linear 1.86 xpos 0.0
+        parallel:
+            linear 1.86 rotate 0
+        parallel:
+            linear 1.86 ypos 87
+    $renpy.pause(1.0)
     show cgs ringo_ent with dissolve:
         zoom .5
         xpos -.33
@@ -174,6 +190,18 @@ label start:
     Rin sarcastic "I just wanna know why you like him, that’s all."
 
     #MUSIC Something fun here for when Kanna starts up about Kyousuke.
+
+    camera:
+        subpixel True ypos 87 zpos -157.0 
+        parallel:
+            zpos -157.0
+            ease 30.0 zpos -557.0
+        parallel:
+            xpos 0.0
+            ease 30.0 xpos 0.247916666667
+        parallel:
+            ypos 87
+            ease 30.0 ypos -99
     Kan smile happy speaking ec "Ohh, he’s just the best! He’s got long, flowing, chocolate colored hair. It drapes over his stunning, electric eyes."
     Kan speaking confident "Well, I’ve never seen his eyes... but I KNOW they’re stunning!"
     Kan frown confident ec "He’s the strong and silent type, so he doesn't say much."

@@ -1,4 +1,4 @@
-﻿## This file contains options that can be changed to customize your game.
+## This file contains options that can be changed to customize your game.
 ##
 ## Lines beginning with two '#' marks are comments, and you shouldn't uncomment
 ## them. Lines beginning with a single '#' mark are commented-out code, and you
@@ -32,7 +32,11 @@ define config.version = "1.0"
 define gui.about = _p("""
 """)
 
+define config.layers = ['background', 'master', 'upstage', 'stage', 'downstage','transient', 'screens', 'overlay']
 
+camera:
+    perspective True
+    gl_depth True
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
@@ -158,9 +162,6 @@ define config.window_icon = "gui/window_icon.png"
 ## This section controls how Ren'Py turns your project into distribution files.
 
 init python:
-    ##Registers layers and 3D layers
-    config.layers = ['master', 'middle', 'forward','transient', 'screens', 'overlay']
-    register_3d_layer('master', 'middle', 'forward')
     ## The following functions take file patterns. File patterns are case-
     ## insensitive, and matched against the path relative to the base directory,
     ## with and without a leading /. If multiple patterns match, the first is

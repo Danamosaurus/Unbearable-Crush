@@ -3,7 +3,6 @@ label chapter1:
     # Update the day shown on the upper corner... to nothing!
     $ game_day = "Day 1"
     $ hide_sides = ["Maya"]
-    $all_moves(camera_check_points={u'y': [(0, 0, u'linear')], u'x': [(0, 0, u'linear')], u'z': [(0, 0, u'linear')]}, layer_check_points={}, subpixel=True, **{})
     scene hallway_1 onlayer master with squares:
         subpixel True xpos 0.52 ypos 0.52 xanchor 0.5 yanchor 0.5 xoffset 0 zoom 0.36 rotate None 
     "Girl2" "Hey, Who's the creep?"
@@ -51,22 +50,38 @@ label chapter1:
     Rin speaking armout "Won't it be great to go home tonight knowing that today was the day you finally got to speak to Kyousuke?"
     Kan questioning embarrassed "What am I supposed to say?"
     Rin "It doesn't matter. Just start talking. He's right there waiting for you, come on, you got this!"
+    camera:
+        subpixel True xpos 0.247916666667 ypos -99 zpos -557.0 
+        parallel:
+            zpos -557.0
+            ease 4 zpos -650.0
+        parallel:
+            xpos 0.247916666667
+            ease 4 xpos -0.04
     Kan smile concerned ec "O-okay... s-s-sure. I-I-I-I got this..."
     Rin "Come on, take a step forward... that's it. Almost there, there you go-"
-    show Maya smile happy mc with dissolve:
-        subpixel True xpos 0.54 ypos 1.4 xanchor 0.5 yanchor 1.0 zoom 1.46 rotate None
+    show Maya smile happy mc:
+        subpixel True xpos 0.52 ypos 0.81 zpos -174.0 xanchor 0.5 yanchor 1.0 zoom 0.7 alpha 0 rotate None blur None
+        parallel:
+            easein .5 xpos .50
+        parallel:
+            linear .5 alpha 1
     $ hide_sides = ["Maya"]
     "???" "Kyousuke!"
     #hide hallway_1_guy_1
     Rin surprised "Eh-"
     with Dissolve(.2)
     scene white with Dissolve(.2)
-    scene orange onlayer master with dissolve:
+    scene orange onlayer master:
         subpixel True xpos 0.5 ypos 1.0 xanchor 0.5 yanchor 1.0 zoom 0.36 rotate None 
+    camera:
+        ypos 0 xpos 0
+        easein .5 zpos -91.0  
     $ hide_sides = ['Maya','Kyousuke','Kanna', 'Ringo']
-    
     show cgs mayaintro kyousuke onlayer master with dissolve:
-        subpixel True xpos 0.68 ypos 1.37 xanchor 0.5 yanchor 1.0 zoom 0.47 rotate None 
+        subpixel True xpos 0.68 ypos 1.37 xanchor 0.5 yanchor 1.0 zoom 0.47 rotate None
+
+
     Kyou "Oh, good morning Maya. What's up?"
     show Maya speaking normal with dissolve:
         subpixel True xpos 0.43 ypos 1.4 xanchor 0.5 yanchor 1.0 zoom 1.46 rotate None 

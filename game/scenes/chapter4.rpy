@@ -205,32 +205,42 @@ label chapter4:
     "???" "Ah, I thought I had caught the scent of a spirit in the area. Although, I must confess,  I wasn't expecting a cute little teddy bear."
     
     Rin "Show yourself, spirit!"
+    $ hide_sides = ['Youko']
+    show Youk  onlayer master:
+        xpos 931 ypos 1079 xanchor 0.5 yanchor 1.0 alpha 0
+        parallel:
+            additive 1
+            easeout 1 additive 0
+        parallel:
+            easein 1.5 alpha 1
+        parallel:
+            easein 1 zpos -50
 
-    Youk "Ringo Fortune? Is that really you? I almost mistook you for a clearance sale toy."
+    Youk speaking "Ringo Fortune? Is that really you? I almost mistook you for a clearance sale toy."
 
     Rin "Youko! So it was you who's been screwing up my magic! Can't you see I'm trying to grant a wish here?"
 
-    Youk "Oh fierce and powerful servant of luck, I see you've lost a bet."
+    Youk smile "Oh fierce and powerful servant of luck, I see you've lost a bet."
 
-    Youk "Your ridiculous form aside, as a fellow spirit, I'm sure you can understand that I'm merely acting in accordance to my master's will."
+    Youk speaking "Your ridiculous form aside, as a fellow spirit, I'm sure you can understand that I'm merely acting in accordance to my master's will."
 
     Rin "Yeah, about that... How did the demon spirit Youko end up serving a delusional high schooler?"
 
     Rin "Did {i}you{/i} lose a bet?"
 
-    Youk "Wow, truly a clever retort. Genius, really...I suppose it happens we find ourselves in similar situations."
+    Youk neutral "Wow, truly a clever retort. Genius, really...I suppose it happens we find ourselves in similar situations."
 
-    Youk "That aside, I must ask that you don't interfere with my work. The lady Charlotte has requested a human companion, and it seems Kyousuke is the only boy who is acceptable."
+    Youk speaking "That aside, I must ask that you don't interfere with my work. The lady Charlotte has requested a human companion, and it seems Kyousuke is the only boy who is acceptable."
 
     Rin "I've heard that somewhere before. Under normal circumstances, I'd be just fine letting you have him. I'm not so rude to interfere with the work of another spirit."
 
     Rin "But, this time, you can't have him!"
 
-    Youk "Beg pardon?"
+    Youk neutral "Beg pardon?"
 
     Rin "I need him! I'm trying to make that boy go on a date with my delusional teenager. You're messing that up, so, begone demon! Lest I smite thee, with the magic of heaven's door, or whatever."
 
-    Youk "Oh, I'm absolutely trembling."
+    Youk speaking "Oh, I'm absolutely trembling."
 
     scene white with Dissolve(1.0)
 
