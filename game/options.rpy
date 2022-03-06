@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Bear2020Project")
+define config.name = _("UnbearableCrush")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -42,7 +42,7 @@ camera:
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "Bear2020Project"
+define build.name = "UnbearableCrush"
 
 
 ## Sounds and music ############################################################

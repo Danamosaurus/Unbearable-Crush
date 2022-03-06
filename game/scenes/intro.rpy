@@ -11,9 +11,9 @@ label start:
     # Update the day shown on the upper corner... to nothing!
     $ game_day = ""
     $ hide_sides = ['Kanna']
-    scene black onlayer background
+    scene black
     Kan frown worried ec "Okay...Here I go."
-    show shrine onlayer master:
+    show shrine:
         subpixel True xpos 0.5 ypos 0.5 xanchor 0.5 yanchor 0.5 rotate None blur None 
         parallel:
             alpha 0.0
