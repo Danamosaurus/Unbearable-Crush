@@ -15,8 +15,6 @@ init:
     define Youk = Character("Youko", image = "Youk",voice_tag = "Youk",callback=speaker("Youk"),who_color="#ffffff",what_prefix = '"', what_suffix = '"')
     define Kyou = Character("Kyousuke", image = "Kyou",voice_tag = "Kyou",callback=speaker("Kyou"),who_color="#ffffff",what_prefix = '"', what_suffix = '"')
     define na = Character()
-
-
     #Backgrounds
     image room = "bgs/room day.png"
     image room night = "bgs/room night.png"
@@ -31,12 +29,17 @@ init:
     image cgs mayaintro kyousuke = "cgs/mayaintro/kyousuke.png"
     #Popins
     image pop kannashocked = "popins/kanna_shocked.png"
-
     image kannabox focused = "popins/kannabox/focused.png"
     image kannabox focused_ringo = "popins/kannabox/focused_ringo.png"
     image kannabox shout_ringo = "popins/kannabox/shout_ringo.png"
     image kannabox grimace_ringo = "popins/kannabox/grimace_ringo.png"
     image kannabox angry_ringo = "popins/kannabox/angry_ringo.png"
+    #Main Menu Images
+    image bearmenu_bg = "mainmenu/bearmenubg.png"
+    image bearmenu_char = "mainmenu/bearmenu_char.png"
+    image bearmenu_kan = "mainmenu/bearmenu_kan.png"
+    image bearmenu_maya = "mainmenu/bearmenu_maya.png"
+
 define config.say_attribute_transition = Dissolve(.2)
 $ _game_menu_screen = "circle_menu"
 #Splash Screen and Update Script
@@ -64,4 +67,6 @@ label update:
     if new_version != None:
         $ updater.update(url=UPDATE_URL, base=None, force=False, public_key=None, simulate=None, add=[], restart=True)
     else:
+        #Return to main menu
         return
+return

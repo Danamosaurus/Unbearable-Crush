@@ -205,7 +205,7 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        #textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
@@ -244,7 +244,13 @@ screen main_menu():
     style_prefix "main_menu"
 
     add gui.main_menu_background
-
+    add "images/mainmenu/bearmenu_char.png"
+    add "images/mainmenu/bearmenu_maya.png"
+    add "images/mainmenu/bearmenu_kan.png"
+    add "images/unbearable_logo.png":
+        xpos .7
+        ypos 0
+        zoom .5
     ## This empty frame darkens the main menu.
     frame:
         pass
@@ -256,8 +262,8 @@ screen main_menu():
     if gui.show_name:
 
         vbox:
-            text "[config.name!t]":
-                style "main_menu_title"
+            #text "[config.name!t]":
+            #   style "main_menu_title"
 
             text "[config.version]":
                 style "main_menu_version"
@@ -272,14 +278,12 @@ style main_menu_version is main_menu_text
 style main_menu_frame:
     xsize 420
     yfill True
-
+    xalign 0
     background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
-    xalign 1.0
     xoffset -30
     xmaximum 1200
-    yalign 1.0
     yoffset -30
 
 style main_menu_text:

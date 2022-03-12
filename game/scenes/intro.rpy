@@ -11,17 +11,25 @@ label start:
     # Update the day shown on the upper corner... to nothing!
     $ game_day = ""
     $ hide_sides = ['Kanna']
-    scene black
-    Kan frown worried ec "Okay...Here I go."
+    show bearmenubg
+    show bearmenu_char
+    show bearmenu_maya
+    show bearmenu_kan
     show shrine:
         subpixel True xpos 0.5 ypos 0.5 xanchor 0.5 yanchor 0.5 rotate None blur None 
         parallel:
             alpha 0.0
-            easein 3 alpha 1.0
+            easein 3.5 alpha 1.0
         parallel:
             zoom 0.8
             easein 2 zoom 0.9
     $ hide_sides = []
+    hide bearmenu_char with Dissolve (1.0)
+    pause .2
+    hide bearmenu_maya with Dissolve(.5)
+    pause .2
+    hide bearmenu_kan with Dissolve(1.5)
+    Kan frown worried ec "Okay...Here I go."
     Kan smile worried ec "Uh... Hello? Spirit?"
     Kan frown worried eo "It’s me, Kanna."
     Kan smile worried ec "I know we don’t talk often... or at all, and I know I haven’t really visited your shrine before, or even thought about you."

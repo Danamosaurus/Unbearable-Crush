@@ -76,26 +76,21 @@ define config.has_voice = True
 ## transition should be used.
 
 ## Entering or exiting the game menu.
-
 define config.enter_transition = dissolve
 define config.exit_transition = dissolve
 
-
 ## Between screens of the game menu.
-
 define config.intra_transition = dissolve
-
+define config.end_game_transition = dissolve
 
 ## A transition that is used after a game has been loaded.
-
-define config.after_load_transition = None
-
+define config.after_load_transition = dissolve
 
 ## Used when entering the main menu after the game has ended.
+define config.end_game_transition = dissolve
 
-define config.end_game_transition = None
-
-
+## Used entering the main menu after splash screen.
+define config.end_splash_transition = dissolve
 ## A variable to set the transition used when the game starts does not exist.
 ## Instead, use a with statement after showing the initial scene.
 
