@@ -87,7 +87,7 @@ screen say(who, what):
 
             line_spacing 20
 
-            font "fonts/Inter-Regular-slnt=0.ttf"
+            font "fonts/Rubik-VariableFont_wght.ttf"
 
             color "#000"
 
