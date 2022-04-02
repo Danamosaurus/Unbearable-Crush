@@ -46,26 +46,69 @@ style choice_bar_text:
 ## and action fields.
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#choice
+init python:
+    choice_box_style = 'default'
+    choice_button_animation_suggestion_transform_duration = 0.3
+    choice_button_animation_suggestion_transform_strength = 0.5
+transform choice_button_animation_default_transform(start_delay=0.0):
+    xoffset -1000 alpha 0
+    pause start_delay
+    easein 0.6 xoffset 0 alpha 1
+transform choice_button_animation_hide_default_transform(start_delay=0.0, target_xoffset=0):
+    pause start_delay
+    linear 0.3 xoffset target_xoffset alpha 0
+transform choice_button_animation_suggestion_transform(start_delay=0.0):
+    xoffset 0 alpha 0 anchor (0.5, 0.5) xalign 0.5 ypos 200 transform_anchor True
+    pause start_delay
+    parallel:
+        easein 0.3 alpha 1
+    parallel:
+        block:
+            ease choice_button_animation_suggestion_transform_duration offset (-5*choice_button_animation_suggestion_transform_strength, -5*choice_button_animation_suggestion_transform_strength)
+            ease choice_button_animation_suggestion_transform_duration offset (5*choice_button_animation_suggestion_transform_strength, 5*choice_button_animation_suggestion_transform_strength)
+            ease choice_button_animation_suggestion_transform_duration offset (0, -3*choice_button_animation_suggestion_transform_strength)
+            ease choice_button_animation_suggestion_transform_duration offset (-3*choice_button_animation_suggestion_transform_strength, 0)
+            ease choice_button_animation_suggestion_transform_duration offset (5*choice_button_animation_suggestion_transform_strength, -5*choice_button_animation_suggestion_transform_strength)
+            ease choice_button_animation_suggestion_transform_duration offset (-5*choice_button_animation_suggestion_transform_strength, 5*choice_button_animation_suggestion_transform_strength)
+            ease choice_button_animation_suggestion_transform_duration offset (3*choice_button_animation_suggestion_transform_strength, 0)
+            repeat
+transform choice_button_animation_hide_suggestion_transform(start_delay=0.0, target_offset=(0,0), target_zoom=1.0):
+    pause start_delay
+    parallel:
+        linear 0.3 alpha 0
+    parallel:
+        ease 0.3 offset target_offset zoom target_zoom
 
-screen choice(items):
+screen choice(items, tohide=None):
     style_prefix "choice"
 
     vbox:
-
         style "choice_vbox"
-
-        for i in items:
-
+        for i in range(len(items)):
             button:
-
                 style "choice_bar_style"
-
-                text i.caption:
-
+                text items[i].caption:
                     style "choice_bar_text"
-
-                action i.action
-
+                if choice_box_style == 'suggestion':
+                    if tohide is None:
+                        at choice_button_animation_suggestion_transform((i-1) * 0.1)
+                    elif i == tohide:
+                        at choice_button_animation_hide_suggestion_transform(0, (0, -250 - 100*i), 0.3)
+                    else:
+                        at choice_button_animation_hide_suggestion_transform((i-1) * 0.05)
+                else:
+                    if tohide is None:
+                        at choice_button_animation_default_transform((i-1) * 0.1)
+                    elif i == tohide:
+                        at choice_button_animation_hide_default_transform(0, 1000)
+                    else:
+                        at choice_button_animation_hide_default_transform((i-1) * 0.05)
+                if tohide is None:
+                    action Show("choice", None, items, tohide=i)
+                else:
+                    action None
+    if tohide is not None:
+        timer 0.5 action items[tohide].action
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
 ## menu captions will be displayed as empty buttons.
