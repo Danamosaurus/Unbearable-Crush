@@ -1,0 +1,490 @@
+.DS_Store
+Init.rpy
+Init.rpyc
+classes.rpy
+classes.rpyc
+devlog.txt
+gui.rpy
+gui.rpyc
+init_game.rpy
+init_game.rpyc
+options.rpy
+options.rpyc
+showpoints.rpy
+showpoints.rpyc
+voiceparser.rpy
+voiceparser.rpyc
+Camera/.DS_Store
+Camera/00warper.rpy
+Camera/00warper.rpyc
+Camera/ActionEditor.rpy
+Camera/ActionEditor.rpyc
+Camera/ActionEditor_config.rpy
+Camera/ActionEditor_config.rpyc
+Camera/ActionEditor_screens.rpy
+Camera/ActionEditor_screens.rpyc
+Camera/README.md
+Camera/camera.png
+Camera/image_viewer.rpy
+Camera/image_viewer.rpyc
+Camera/keymap.rpy
+Camera/keymap.rpyc
+Camera/menu_screen.rpy
+Camera/menu_screen.rpyc
+Camera/sound_viewer.rpy
+Camera/sound_viewer.rpyc
+cache/bytecode.rpyb
+cache/pyanalysis.rpyb
+cache/screens.rpyb
+cache/shaders.txt
+dynamicimages/dynamicimages.rpy
+dynamicimages/dynamicimages.rpyc
+dynamicimages/mapemotes.rpy
+dynamicimages/mapemotes.rpyc
+fonts/Inter-Black-slnt=0.ttf
+fonts/Inter-Bold-slnt=0.ttf
+fonts/Inter-ExtraBold-slnt=0.ttf
+fonts/Inter-ExtraLight-slnt=0.ttf
+fonts/Inter-Light-slnt=0.ttf
+fonts/Inter-Medium-slnt=0.ttf
+fonts/Inter-Regular-slnt=0.ttf
+fonts/Inter-SemiBold-slnt=0.ttf
+fonts/Inter-Thin-slnt=0.ttf
+fonts/Inter-VariableFont_slnt,wght.ttf
+fonts/Merriweather-Black.ttf
+fonts/Merriweather-BlackItalic.ttf
+fonts/Merriweather-Bold.ttf
+fonts/Merriweather-BoldItalic.ttf
+fonts/Merriweather-Italic.ttf
+fonts/Merriweather-Light.ttf
+fonts/Merriweather-LightItalic.ttf
+fonts/Merriweather-Regular.ttf
+gui/.DS_Store
+gui/frame.png
+gui/game_menu.png
+gui/main_menu.png
+gui/namebox.png
+gui/notify.png
+gui/nvl.png
+gui/skip.png
+gui/textbox.png
+gui/window_icon.png
+gui/bar/bottom.png
+gui/bar/left.png
+gui/bar/right.png
+gui/bar/top.png
+gui/button/check_foreground.png
+gui/button/check_selected_foreground.png
+gui/button/choice_hover_background.png
+gui/button/choice_idle_background.png
+gui/button/hover_background.png
+gui/button/idle_background.png
+gui/button/quick_hover_background.png
+gui/button/quick_idle_background.png
+gui/button/radio_foreground.png
+gui/button/radio_selected_foreground.png
+gui/button/slot_hover_background.png
+gui/button/slot_idle_background.png
+gui/choice/choice_bar.png
+gui/circle_menu/background.png
+gui/circle_menu/config_hover.png
+gui/circle_menu/config_idle.png
+gui/circle_menu/load_hover.png
+gui/circle_menu/load_idle.png
+gui/circle_menu/quit_hover.png
+gui/circle_menu/quit_idle.png
+gui/circle_menu/save_hover.png
+gui/circle_menu/save_idle.png
+gui/circle_menu/skip_hover.png
+gui/circle_menu/skip_idle.png
+gui/confirm/background.png
+gui/confirm/delete_title.png
+gui/confirm/flower_slide.png
+gui/confirm/load_title.png
+gui/confirm/no_hover.png
+gui/confirm/no_idle.png
+gui/confirm/overwrite_title.png
+gui/confirm/quit_title.png
+gui/confirm/return_menu_title.png
+gui/confirm/yes_hover.png
+gui/confirm/yes_idle.png
+gui/history/background.png
+gui/history/scroll_bar.png
+gui/history/scroll_thumb.png
+gui/overlay/confirm.png
+gui/overlay/game_menu.png
+gui/overlay/main_menu.png
+gui/phone/nvl.png
+gui/phone/textbox.png
+gui/phone/bar/bottom.png
+gui/phone/bar/left.png
+gui/phone/bar/right.png
+gui/phone/bar/top.png
+gui/phone/button/check_foreground.png
+gui/phone/button/check_selected_foreground.png
+gui/phone/button/choice_hover_background.png
+gui/phone/button/choice_idle_background.png
+gui/phone/button/hover_background.png
+gui/phone/button/idle_background.png
+gui/phone/button/radio_foreground.png
+gui/phone/button/radio_selected_foreground.png
+gui/phone/button/slot_hover_background.png
+gui/phone/button/slot_idle_background.png
+gui/phone/overlay/game_menu.png
+gui/phone/overlay/main_menu.png
+gui/phone/scrollbar/horizontal_hover_bar.png
+gui/phone/scrollbar/horizontal_hover_thumb.png
+gui/phone/scrollbar/horizontal_idle_bar.png
+gui/phone/scrollbar/horizontal_idle_thumb.png
+gui/phone/scrollbar/vertical_hover_bar.png
+gui/phone/scrollbar/vertical_hover_thumb.png
+gui/phone/scrollbar/vertical_idle_bar.png
+gui/phone/scrollbar/vertical_idle_thumb.png
+gui/phone/slider/horizontal_hover_bar.png
+gui/phone/slider/horizontal_hover_thumb.png
+gui/phone/slider/horizontal_idle_bar.png
+gui/phone/slider/horizontal_idle_thumb.png
+gui/phone/slider/vertical_hover_bar.png
+gui/phone/slider/vertical_hover_thumb.png
+gui/phone/slider/vertical_idle_bar.png
+gui/phone/slider/vertical_idle_thumb.png
+gui/preferences/afchoices_hover.png
+gui/preferences/afchoices_idle.png
+gui/preferences/afchoices_selected.png
+gui/preferences/background.png
+gui/preferences/bar_left.png
+gui/preferences/bar_right.png
+gui/preferences/disabled_hover.png
+gui/preferences/disabled_idle.png
+gui/preferences/disabled_selected.png
+gui/preferences/fullscreen_hover.png
+gui/preferences/fullscreen_idle.png
+gui/preferences/fullscreen_selected.png
+gui/preferences/left_hover.png
+gui/preferences/left_idle.png
+gui/preferences/left_selected.png
+gui/preferences/mute_all_hover.png
+gui/preferences/mute_all_idle.png
+gui/preferences/mute_all_selected.png
+gui/preferences/right_hover.png
+gui/preferences/right_idle.png
+gui/preferences/right_selected.png
+gui/preferences/thumb_hover.png
+gui/preferences/thumb_idle.png
+gui/preferences/transitions_hover.png
+gui/preferences/transitions_idle.png
+gui/preferences/transitions_selected.png
+gui/preferences/utext_hover.png
+gui/preferences/utext_idle.png
+gui/preferences/utext_selected.png
+gui/preferences/windowed_hover.png
+gui/preferences/windowed_idle.png
+gui/preferences/windowed_selected.png
+gui/sagi/.DS_Store
+gui/sagi/button-disabled.png
+gui/sagi/button-highlighted.png
+gui/sagi/button-idle.png
+gui/sagi/circle.png
+gui/sagi/frame.png
+gui/sagi/roundbutton-disabled.png
+gui/sagi/roundbutton-hover.png
+gui/sagi/roundbutton-idle.png
+gui/sagi/smallbutton-disabled.png
+gui/sagi/smallbutton-highlighted.png
+gui/sagi/smallbutton-idle.png
+gui/sagi/smallbutton-selected.png
+gui/sagi/textframe.png
+gui/sagi/Comfortaa/Comfortaa_Bold.ttf
+gui/sagi/Comfortaa/Comfortaa_Regular.ttf
+gui/sagi/Comfortaa/Comfortaa_Thin.ttf
+gui/sagi/Comfortaa/SIL Open Font License.txt
+gui/sagi/test/bg.jpg
+gui/sagi/test/leona.png
+gui/sagi/test/raine.png
+gui/save_load/1_hover.png
+gui/save_load/1_idle.png
+gui/save_load/1_selected.png
+gui/save_load/2_hover.png
+gui/save_load/2_idle.png
+gui/save_load/2_selected.png
+gui/save_load/3_hover.png
+gui/save_load/3_idle.png
+gui/save_load/3_selected.png
+gui/save_load/4_hover.png
+gui/save_load/4_idle.png
+gui/save_load/4_selected.png
+gui/save_load/5_hover.png
+gui/save_load/5_idle.png
+gui/save_load/5_selected.png
+gui/save_load/6_hover.png
+gui/save_load/6_idle.png
+gui/save_load/6_selected.png
+gui/save_load/7_hover.png
+gui/save_load/7_idle.png
+gui/save_load/7_selected.png
+gui/save_load/8_hover.png
+gui/save_load/8_idle.png
+gui/save_load/8_selected.png
+gui/save_load/9_hover.png
+gui/save_load/9_idle.png
+gui/save_load/9_selected.png
+gui/save_load/a_hover.png
+gui/save_load/a_idle.png
+gui/save_load/a_selected.png
+gui/save_load/back_hover.png
+gui/save_load/back_idle.png
+gui/save_load/back_selected.png
+gui/save_load/background.png
+gui/save_load/load_hover.png
+gui/save_load/load_idle.png
+gui/save_load/load_select.png
+gui/save_load/load_title.png
+gui/save_load/no_data_image.png
+gui/save_load/q_hover.png
+gui/save_load/q_idle.png
+gui/save_load/q_selected.png
+gui/save_load/save_hover.png
+gui/save_load/save_idle.png
+gui/save_load/save_selected.png
+gui/save_load/save_title.png
+gui/save_load/slot1_hover.png
+gui/save_load/slot1_idle.png
+gui/save_load/slot2_hover.png
+gui/save_load/slot2_idle.png
+gui/save_load/slot3_hover.png
+gui/save_load/slot3_idle.png
+gui/save_load/slot4_hover.png
+gui/save_load/slot4_idle.png
+gui/save_load/slot5_hover.png
+gui/save_load/slot5_idle.png
+gui/save_load/slot6_hover.png
+gui/save_load/slot6_idle.png
+gui/save_load/slot7_hover.png
+gui/save_load/slot7_idle.png
+gui/save_load/slot8_hover.png
+gui/save_load/slot8_idle.png
+gui/scrollbar/horizontal_hover_bar.png
+gui/scrollbar/horizontal_hover_thumb.png
+gui/scrollbar/horizontal_idle_bar.png
+gui/scrollbar/horizontal_idle_thumb.png
+gui/scrollbar/vertical_hover_bar.png
+gui/scrollbar/vertical_hover_thumb.png
+gui/scrollbar/vertical_idle_bar.png
+gui/scrollbar/vertical_idle_thumb.png
+gui/slider/horizontal_hover_bar.png
+gui/slider/horizontal_hover_thumb.png
+gui/slider/horizontal_idle_bar.png
+gui/slider/horizontal_idle_thumb.png
+gui/slider/vertical_hover_bar.png
+gui/slider/vertical_hover_thumb.png
+gui/slider/vertical_idle_bar.png
+gui/slider/vertical_idle_thumb.png
+gui/textbox/day_bar.png
+gui/textbox/heart_hover.png
+gui/textbox/heart_idle.png
+gui/textbox/heart_slelected.png
+gui/textbox/history_hover.png
+gui/textbox/history_idle.png
+gui/textbox/history_selected.png
+gui/textbox/qs_hover.png
+gui/textbox/qs_idle.png
+gui/textbox/qs_selected.png
+gui/textbox/rollback_hover.png
+gui/textbox/rollback_idle.png
+gui/textbox/rollback_selected.png
+gui/textbox/skip_hover.png
+gui/textbox/skip_idle.png
+gui/textbox/skip_selected.png
+gui/textbox/square_hover.png
+gui/textbox/square_idle.png
+gui/textbox/square_selected.png
+gui/textbox/textbox.png
+images/.DS_Store
+images/sarchalenlogo.png
+images/unbearable_logo.png
+images/Popins/.DS_Store
+images/Popins/kanna_shocked.png
+images/Popins/kannabox/angry_ringo.png
+images/Popins/kannabox/focused.png
+images/Popins/kannabox/focused_ringo.png
+images/Popins/kannabox/grimace_ringo.png
+images/Popins/kannabox/shout_ringo.png
+images/bgs/orange.png
+images/bgs/room day.png
+images/bgs/room night.png
+images/bgs/roomwposter.png
+images/bgs/shrine.png
+images/bgs/white.png
+images/bgs/hallway1/hallway.png
+images/cgs/.DS_Store
+images/cgs/cgs charlotte intro.png
+images/cgs/cgs ringo_ent.png
+images/cgs/cgs ringo_ent_shadow.png
+images/cgs/mayaintro/kyousuke.png
+images/mainmenu/.DS_Store
+images/mainmenu/bear menu concept.png
+images/mainmenu/bearmenu_char.png
+images/mainmenu/bearmenu_kan.png
+images/mainmenu/bearmenu_maya.png
+images/mainmenu/bearmenubg.png
+images/mainmenu/raw sprites/charlotte half body.png
+images/mainmenu/raw sprites/kanna half body.png
+images/mainmenu/raw sprites/maya halfbody.png
+images/sprites/.DS_Store
+images/sprites/Char/base.png
+images/sprites/Char/brow default.png
+images/sprites/Char/brow furrowed.png
+images/sprites/Char/brow sad.png
+images/sprites/Char/e default.png
+images/sprites/Char/e shocked.png
+images/sprites/Char/e squint.png
+images/sprites/Char/ec default.png
+images/sprites/Char/ec happy.png
+images/sprites/Char/m beanmouth.png
+images/sprites/Char/m default.png
+images/sprites/Char/m oh.png
+images/sprites/Char/m oho.png
+images/sprites/Char/m shocked.png
+images/sprites/Char/mc frown.png
+images/sprites/Kan/base.png
+images/sprites/Kan/brow angry.png
+images/sprites/Kan/brow content.png
+images/sprites/Kan/brow default.png
+images/sprites/Kan/brow furrow.png
+images/sprites/Kan/brow sad.png
+images/sprites/Kan/brow skeptic.png
+images/sprites/Kan/e crazy.png
+images/sprites/Kan/e default.png
+images/sprites/Kan/ec default.png
+images/sprites/Kan/ec happy.png
+images/sprites/Kan/m default.png
+images/sprites/Kan/m drool.png
+images/sprites/Kan/m happy.png
+images/sprites/Kan/m oh.png
+images/sprites/Kan/mc frown.png
+images/sprites/Kan/mc smile.png
+images/sprites/Kan/optional blush.png
+images/sprites/Kyou/base.png
+images/sprites/Kyou/e default.png
+images/sprites/Kyou/m default.png
+images/sprites/Kyou/m smile.png
+images/sprites/Kyou/m surprised.png
+images/sprites/Kyou/mc default.png
+images/sprites/Kyou/mc smirk.png
+images/sprites/Maya/.DS_Store
+images/sprites/Maya/mayaintropose/.DS_Store
+images/sprites/Maya/mayaintropose/base.png
+images/sprites/Maya/mayaintropose/brow default.png
+images/sprites/Maya/mayaintropose/e default.png
+images/sprites/Maya/mayaintropose/ec default.png
+images/sprites/Maya/mayaintropose/m default.png
+images/sprites/Maya/mayaintropose/m grin.png
+images/sprites/Maya/mayaintropose/mc default.png
+images/sprites/Maya/pose1/.DS_Store
+images/sprites/Maya/pose1/base.png
+images/sprites/Maya/pose1/brow default.png
+images/sprites/Maya/pose1/brow furrow.png
+images/sprites/Maya/pose1/brow mad.png
+images/sprites/Maya/pose1/brow scrunch.png
+images/sprites/Maya/pose1/e default.png
+images/sprites/Maya/pose1/e squint.png
+images/sprites/Maya/pose1/ec default.png
+images/sprites/Maya/pose1/m default.png
+images/sprites/Maya/pose1/m grin.png
+images/sprites/Maya/pose1/mc default.png
+images/sprites/Rin/base.png
+images/sprites/Rin/e anger.png
+images/sprites/Rin/e closed.png
+images/sprites/Rin/e default.png
+images/sprites/Rin/e fury.png
+images/sprites/Rin/e shock.png
+images/sprites/Rin/e squint.png
+images/sprites/Rin/e worry.png
+images/sprites/Rin/ec default.png
+images/sprites/Rin/ec tears.png
+images/sprites/Rin/m default.png
+images/sprites/Rin/m grin.png
+images/sprites/Rin/m happy.png
+images/sprites/Rin/m hmm.png
+images/sprites/Rin/m oh.png
+images/sprites/Rin/m surprise.png
+images/sprites/Rin/optional anger.png
+images/sprites/Rin/optional armout.png
+images/sprites/Rin/optional armwave.png
+images/sprites/Rin/optional blush.png
+images/sprites/Rin/optional nervous.png
+images/sprites/Rin/optional sweatdrop.png
+images/sprites/Youk/base.png
+images/sprites/Youk/m default.png
+images/sprites/Youk/m sigh.png
+images/sprites/Youk/m smile.png
+images/sprites/Youk/mc smirk.png
+images/sprites/Youk/md.png
+images/sprites/Youk/optional sigh puff.png
+saves/.auto-9-LT1 3.save.icloud
+saves/1-1-LT1.save
+saves/_reload-2-LT1.save
+saves/auto-1-LT1.save
+saves/auto-10-LT1.save
+saves/auto-2-LT1.save
+saves/auto-3-LT1.save
+saves/auto-4-LT1.save
+saves/auto-5-LT1.save
+saves/auto-6-LT1.save
+saves/auto-7-LT1.save
+saves/auto-8-LT1.save
+saves/auto-9-LT1 2.save
+saves/auto-9-LT1 4.save
+saves/auto-9-LT1 5.save
+saves/auto-9-LT1.save
+saves/navigation.json
+saves/persistent
+scenes/chapter1.rpy
+scenes/chapter1.rpyc
+scenes/chapter2.rpy
+scenes/chapter2.rpyc
+scenes/chapter3.rpy
+scenes/chapter3.rpyc
+scenes/chapter4.rpy
+scenes/chapter4.rpyc
+scenes/chapter5.rpy
+scenes/chapter5.rpyc
+scenes/chapter6.rpy
+scenes/chapter6.rpyc
+scenes/chapter7.rpy
+scenes/chapter7.rpyc
+scenes/charlottedate.rpy
+scenes/charlottedate.rpyc
+scenes/intro.rpy
+scenes/intro.rpyc
+scenes/kannadate.rpy
+scenes/kannadate.rpyc
+scenes/mayadate.rpy
+scenes/mayadate.rpyc
+screens/choice.rpy
+screens/choice.rpyc
+screens/confirm.rpy
+screens/confirm.rpyc
+screens/flower_menu.rpy
+screens/flower_menu.rpyc
+screens/gallery.rpy
+screens/gallery.rpyc
+screens/history.rpy
+screens/history.rpyc
+screens/jukebox.rpy
+screens/jukebox.rpyc
+screens/preferences.rpy
+screens/preferences.rpyc
+screens/save_load.rpy
+screens/save_load.rpyc
+screens/screens.rpy
+screens/screens.rpyc
+screens/textbox.rpy
+screens/textbox.rpyc
+setup/keymaps.rpy
+setup/keymaps.rpyc
+setup/variables.rpy
+setup/variables.rpyc
+tl/.DS_Store
+tl/None/common.rpym
+tl/None/common.rpymc
