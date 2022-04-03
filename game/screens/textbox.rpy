@@ -1,8 +1,26 @@
 ### Styles
-default Rin_sprite_transform_strength = 1.0
+init python:
+    import math
+    Rin_sprite_transform_distance = 30.0
+    Rin_sprite_transform_strength = 0.6
+    Rin_sprite_transform_current_going_up = True
+    Rin_sprite_transform_current_offset = 0.0
+    def Rin_sprite_transform_function(trans, st, at):
+        global Rin_sprite_transform_strength, Rin_sprite_transform_current_going_up, Rin_sprite_transform_distance, Rin_sprite_transform_current_offset
+        trans.yoffset = Rin_sprite_transform_current_offset
+        if Rin_sprite_transform_current_going_up:
+            trans.yoffset += Rin_sprite_transform_strength * math.sqrt(abs(1.0 - trans.yoffset / Rin_sprite_transform_distance))
+            if abs(Rin_sprite_transform_distance - trans.yoffset) < 0.1:
+                Rin_sprite_transform_current_going_up = False
+        else:
+            trans.yoffset -= Rin_sprite_transform_strength * math.sqrt(abs(trans.yoffset / Rin_sprite_transform_distance))
+            if abs(trans.yoffset) < 0.1:
+                Rin_sprite_transform_current_going_up = True
+        Rin_sprite_transform_current_offset = trans.yoffset
+        return 0
+
 transform Rin_sprite_transform:
-    ease 1.5 yoffset -30 * Rin_sprite_transform_strength
-    ease 1.5 yoffset 0
+    function Rin_sprite_transform_function
     repeat
 style textbox_day_style:
 
