@@ -78,7 +78,7 @@ label splashscreen:
             pause 1.0
             ease 0.2 yoffset -450
             easeout 0.3 yoffset 0
-            ease 1.0 rotate 380
+            ease 0.8 rotate 380
             easeout 0.3 rotate 330 xoffset -650
     show bearmenubg_right zorder 1000:
         anchor (1.0, 0.5) transform_anchor True align (0.5, 0.5) zoom 2 rotate 90 yoffset 600 xoffset 100
@@ -89,21 +89,21 @@ label splashscreen:
             pause 1.0
             ease 0.2 yoffset 450
             easeout 0.3 yoffset 0
-            ease 1.0 rotate 380
+            ease 0.8 rotate 380
             easeout 0.3 rotate 335 xoffset -110
-    $ renpy.pause(3, hard=True)
+    $ renpy.pause(2.8, hard=True)
     hide unbearable_logo
     $ renpy.pause(0.1, hard=True)
     show bearmenu_kan zorder 1003:
         align (0.5, 0.5) zoom 1.0 xoffset -300 alpha 0
         easein 0.3 xoffset 0 alpha 1
     show bearmenu_maya zorder 1002:
-        align (0.5, 0.5) zoom 1.0 xoffset 300 alpha 0
-        pause 0.05
+        align (0.5, 0.5) zoom 1.0 xoffset 200 alpha 0
+        pause 0.1
         easein 0.3 xoffset 0 alpha 1
     show bearmenu_char zorder 1001:
-        align (0.5, 0.5) zoom 1.0 xoffset 300 alpha 0
-        pause 0.1
+        align (0.5, 0.5) zoom 1.0 xoffset 100 alpha 0
+        pause 0.2
         easein 0.3 xoffset 0 alpha 1
     $ renpy.pause(0.5, hard=True)
     jump update
