@@ -2,13 +2,13 @@ label chapter3:
 
     $ game_day = "Day 3"
     scene hallway onlayer master with squares:
-        subpixel True xpos 0.5 ypos 2.2 xanchor 0.5 yanchor 1.0 rotate None 
+        subpixel True xpos 0.5 ypos 2.2 xanchor 0.5 yanchor 1.0 rotate None
         parallel:
             xpos -0.02
             ease_cubic 3.17 xpos 0.45
     #Begin Ch3 part 1
     show kannabox focused onlayer master with easeinright:
-        subpixel True xpos -0.13 ypos 1.14 xanchor -0.43 yanchor 1.5 zoom 0.25 rotate None 
+        subpixel True xpos -0.13 ypos 1.14 xanchor -0.43 yanchor 1.5 zoom 0.25 rotate None
     Rin "Alright, we're going to do this just like we talked about."
     hide kannabox with dissolve
     Rin "And remember, the most essential thing for right now is that Kyousuke doesn't find out I'm working with you."
@@ -45,7 +45,7 @@ label chapter3:
     Kyou  "Um, are you alright? You're acting funny."
     Kan speaking excited crazy blush "Yeah, why would I..."
 
-    #ART, CG, Dating Sim GUI. Ask hamu for an update on this. 
+    #ART, CG, Dating Sim GUI. Ask hamu for an update on this.
     Kan frown skeptic "Uh..."
     show Kyou normal at center with Dissolve(3.0)
     Kan "...Kyousuke?"
@@ -63,12 +63,24 @@ label chapter3:
     "Literally..."
     Kan smile worried eo "I can read his thoughts?"
     Kan smile happy speaking ec "How intimate..."
+
+    # TEST adding an optional thought that wasn't in script
+    show screen thought(["'Ice cream...'"],
+                        block_progress = False)
     Rin  "Let me handle this."
     "I climb up onto Kyousuke's shoulder."
 
+    # TEST be sure to force hide the thought screen occasionally, since renpy skip and rollback sometimes fails to hide it
+    hide screen thought
+
     Rin  "Let's see what we got here."
-    "'Press her further about the ominous voice.'"
-    "'Reject this weird girl.'"
+
+    # TEST changing an existing thought in script to the new clickable one that blocks progress
+    call screen thought(["'Press her further about the ominous voice.'",
+                        "'Reject this weird girl.'"])
+    hide screen thought
+    # "'Press her further about the ominous voice.'"
+    # "'Reject this weird girl.'"
     "Oof, that's not good. I should {i}inspire{/i} him with a better choice."
     "But what should I have him do instead?"
     "I have to keep the idea simple enough so he can't screw it up."
@@ -112,7 +124,7 @@ label ch3choice1option1:
     Rin  "Is that a dent in the wall?"
     Kan frown confident ec "It's not that bad!"
     Rin  "Hey, big guy! Wake up."
-    #SFX some kind of sound effect. 
+    #SFX some kind of sound effect.
     Rin "Wake up!"
     Kyou "Ooh, what happened?"
     Kan smile worried eo "Oh! Kyousuke, are you alright?"
@@ -145,7 +157,7 @@ label ch3choice1option2:
 #Show example
 $Kanna_points = game_player.getRelationship('Kanna')
 "DEBUG: We have [Kanna_points] points for Kanna"
-##End of Ch3 Part 1. 
+##End of Ch3 Part 1.
 ##Begin ch3 Part 2
 label chapter3p2:
 
@@ -190,7 +202,7 @@ label chapter3p2:
     "\" Head to the bathroom.'"
     Rin "What kind of terrible options are these?"
     Kyou "I dunno."
-    
+
     Rin "You really can't think for yourself at all in these types of situations, can you big guy?"
     Rin "Well, I guess that’s where I come in."
     "Really, what would Kanna ever do without me?"
@@ -230,7 +242,7 @@ label ch3choice2option2:
         Kyou  "Come on Kanna, it'll be fun!"
         Kan smile happy ec "Well, alright. I guess it won't be too bad as long as you are there, Kyousuke."
         "Well, at least this shouldn't hurt her chances. I don't think it helps much either."
-        #Choice 2.B: Neither girl receives a point. 
+        #Choice 2.B: Neither girl receives a point.
         #Choice2.B End
 
 label chapter3p3:

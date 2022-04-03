@@ -1,5 +1,9 @@
 ### Styles
-
+default Rin_sprite_transform_strength = 1.0
+transform Rin_sprite_transform:
+    ease 1.5 yoffset -30 * Rin_sprite_transform_strength
+    ease 1.5 yoffset 0
+    repeat
 style textbox_day_style:
 
     font "fonts/Inter-Regular-slnt=0.ttf"
@@ -108,7 +112,7 @@ screen say(who, what):
             elif who == 'Charlotte' and not who in hide_sides:
                 add SideImage() xalign -0.1 yalign .5 yanchor 0
             elif who == 'Ringo' and not who in hide_sides:
-                add SideImage() xalign 0.0 yalign .5 yanchor 0
+                add SideImage() xalign 0.0 yalign .5 yanchor 0 at Rin_sprite_transform
             elif who == 'Youko' and not who in hide_sides:
                 add SideImage() xalign -0.1 yalign .5 yanchor 0
             #If the speaking character doesn't have a defined position above, use this default position
@@ -196,4 +200,3 @@ screen say(who, what):
             selected_idle "gui/textbox/heart_hover.png"
             selected_hover "gui/textbox/heart_hover.png"
             action [ FileTakeScreenshot(), ShowMenu("circle_menu") ]
-
