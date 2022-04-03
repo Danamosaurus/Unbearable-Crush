@@ -59,6 +59,53 @@ label splashscreen:
         ypos .5
     $ renpy.pause(2, hard=True)
     hide sarchalenlogo with Dissolve(1.0)
+
+    # FANCY MAIN MENU INTRO ANIMATION
+    # scene black with Dissolve(1.0)
+    # pause
+    show unbearable_logo:
+        anchor (0.5, 1.0) align (0.5, 0.5)
+        yoffset -1000
+        linear 0.3 yoffset 0
+        linear 0.15 xzoom 1.05 yzoom 0.9 yoffset 50
+        linear 0.3 xzoom 1 yzoom 1 yoffset 0
+    show bearmenubg_left zorder 1000:
+        anchor (1.0, 0.5) transform_anchor True align (0.5, 0.5) zoom 2 rotate 90 yoffset -600 xoffset -100
+        parallel:
+            linear 2.0 xoffset 0
+        parallel:
+            ease 0.5 yoffset -400
+            pause 1.0
+            ease 0.2 yoffset -450
+            easeout 0.3 yoffset 0
+            ease 0.8 rotate 380
+            easeout 0.3 rotate 330 xoffset -650
+    show bearmenubg_right zorder 1000:
+        anchor (1.0, 0.5) transform_anchor True align (0.5, 0.5) zoom 2 rotate 90 yoffset 600 xoffset 100
+        parallel:
+            linear 2.0 xoffset 0
+        parallel:
+            ease 0.5 yoffset 400
+            pause 1.0
+            ease 0.2 yoffset 450
+            easeout 0.3 yoffset 0
+            ease 0.8 rotate 380
+            easeout 0.3 rotate 335 xoffset -110
+    $ renpy.pause(2.8, hard=True)
+    hide unbearable_logo
+    $ renpy.pause(0.1, hard=True)
+    show bearmenu_kan zorder 1003:
+        align (0.5, 0.5) zoom 1.0 xoffset -300 alpha 0
+        easein 0.3 xoffset 0 alpha 1
+    show bearmenu_maya zorder 1002:
+        align (0.5, 0.5) zoom 1.0 xoffset 200 alpha 0
+        pause 0.1
+        easein 0.3 xoffset 0 alpha 1
+    show bearmenu_char zorder 1001:
+        align (0.5, 0.5) zoom 1.0 xoffset 100 alpha 0
+        pause 0.2
+        easein 0.3 xoffset 0 alpha 1
+    $ renpy.pause(0.5, hard=True)
     jump update
 
 label update:
@@ -70,3 +117,6 @@ label update:
         #Return to main menu
         return
 return
+# label main_menu:
+#     call screen main_menu
+#     return
