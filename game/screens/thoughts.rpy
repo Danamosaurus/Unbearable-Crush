@@ -28,6 +28,9 @@ transform thought_button_expanded_transform(target_offset=(0,0), target_zoom=1.0
 transform thought_button_hide_transform:
     linear 0.3 alpha 0 zoom 0
 
+image thought_bubble_idle:
+    "gui/thought/thought_bubble_default.png"
+    alpha 0.8
 image flash_white:
     "#fff"
     alpha 0
@@ -47,7 +50,7 @@ screen thought(items, expanded=[], block_progress=True):
         for i in range(len(items)):
             button:
                 pos (1100 + (i-1) * 300, 150)
-                background "gui/thought/thought_bubble_default.png"
+                background "thought_bubble_idle"
                 xsize 480
                 ysize 270
                 padding (80, 40)
