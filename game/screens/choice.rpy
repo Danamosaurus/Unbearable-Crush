@@ -63,7 +63,10 @@ transform choice_button_animation_hide_suggestion_transform(start_delay=0.0, tar
         linear 0.3 alpha target_alpha
     parallel:
         ease 0.3 pos target_pos zoom target_zoom offset (0, 0)
-
+image thought_bubble_choice_hover:
+    "gui/thought/thought_bubble_default.png"
+    # matrixcolor TintMatrix("#F9CFA8")
+    alpha 1.0
 screen choice(items, tohide=None, choice_type="default", image_to_show="Rin normal", original_thought=None, state=None):
     if choice_type == "thought":
         if original_thought is not None:
@@ -90,10 +93,8 @@ screen choice(items, tohide=None, choice_type="default", image_to_show="Rin norm
                         color "#000"
                         size 32
                     if tohide is None:
-                        if i == 0:
-                            at thought_button_shiver_transform(start_delay=i*0.1)
-                        elif i == 1:
-                            at thought_button_shiver_transform(start_delay=i*0.1)
+                        at thought_button_shiver_transform(start_delay=i*0.1)
+                        hover_background "thought_bubble_choice_hover"
                     elif i == tohide:
                         at choice_button_animation_hide_suggestion_transform(target_pos=(1300, 150), target_alpha=1)
                     else:

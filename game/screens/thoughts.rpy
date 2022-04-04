@@ -9,11 +9,11 @@
 init python:
     thought_button_transform_duration = 0.3
     thought_button_transform_strength = 0.5
-transform thought_button_shiver_transform(target_offset=(0,0), target_zoom=1.0, start_delay=0.0):
+transform thought_button_shiver_transform(target_offset=(0,0), target_zoom=1.0, start_delay=0.0, matrixcolor=None):
     anchor (0.5, 0.5) transform_anchor True
     pause start_delay
     parallel:
-        easein 0.3 zoom target_zoom alpha 1
+        easein 0.3 zoom target_zoom alpha 1 matrixcolor None
     parallel:
         block:
             ease thought_button_transform_duration offset (target_offset[0] - 5*thought_button_transform_strength, target_offset[0] - 5*thought_button_transform_strength)
