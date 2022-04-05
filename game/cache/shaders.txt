@@ -8,6 +8,7 @@ renpy.solid
 renpy.geometry renpy.solid
 renpy.ftl
 renpy.matrixcolor renpy.matrixcolor renpy.solid
+renpy.alpha renpy.alpha renpy.texture
 renpy.matrixcolor renpy.texture
 renpy.texture -renpy.texture renpy.blur renpy.texture -renpy.texture renpy.blur
 renpy.alpha renpy.solid
