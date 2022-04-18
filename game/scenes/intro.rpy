@@ -16,7 +16,7 @@ label start:
     show bearmenu_maya
     show bearmenu_kan
     show shrine:
-        subpixel True xpos 0.5 ypos 0.5 xanchor 0.5 yanchor 0.5 rotate None blur None 
+        subpixel True xpos 0.5 ypos 0.5 xanchor 0.5 yanchor 0.5 rotate None blur None
         parallel:
             alpha 0.0
             easein 3.5 alpha 1.0
@@ -30,8 +30,19 @@ label start:
     pause .2
     hide bearmenu_kan with Dissolve(1.5)
     Kan frown worried ec "Okay...Here I go."
+
+    show screen expbar("Kanna", 0.0, 4.5)
+
     Kan smile worried ec "Uh... Hello? Spirit?"
+
+    show screen expbar("Kanna", 4.5, 2.3)
+
     Kan frown worried eo "It’s me, Kanna."
+
+    show screen expbar("Kanna", 0.0, 1.4)
+    show screen expbar2("Maya", 5.0, 3.6)
+    show screen expbar3("Charlotte", 2.1, 4.9)
+
     Kan smile worried ec "I know we don’t talk often... or at all, and I know I haven’t really visited your shrine before, or even thought about you."
     Kan "Actually, I’m not even sure what kind of spirit you are."
     # CODE
@@ -82,7 +93,7 @@ label start:
         xpos .15
         ypos .15
     #$camera_move(7000, 500, 0, 0, duration=5)
-        subpixel True 
+        subpixel True
         parallel:
             xpos 0.73
             easein 5 xpos 0.16
@@ -200,7 +211,7 @@ label start:
     #MUSIC Something fun here for when Kanna starts up about Kyousuke.
 
     camera:
-        subpixel True ypos 87 zpos -157.0 
+        subpixel True ypos 87 zpos -157.0
         parallel:
             zpos -157.0
             ease 30.0 zpos -557.0
@@ -239,10 +250,10 @@ label start:
     Rin "Yeah yeah, you’ll see when you wake up, kid."
     #ART The camera pans outside of Kanna’s room, showing the night sky.
     "I guess finishing my career with a love wish ain’t so bad."
-    #ART show pocket watch. 
+    #ART show pocket watch.
     "Well that's just typical."
     "You're not going to cut me any slack with this one, are you Fortune?"
-    #Art Card Table - A table where Ringo has some playing cards. He's flipping them over, shuffling etc. 
+    #Art Card Table - A table where Ringo has some playing cards. He's flipping them over, shuffling etc.
     "A week is hardly enough time to bring two people together by chance alone."
     "I won't know for sure how the cards are laid out until I get a look at the guy we're dealing with."
     "This 'Kyousuke'."
