@@ -21,7 +21,39 @@
 ## show screen expbar2("Maya", 0.1, 1.4, 2.5)
 ## show screen expbar3("Charlotte", 0.1, 1.4, 2.5)
 ##
+## EXAMPLE 4, $ show_expbar_multiple(list_of_healthbar_values, duration_to_linger_on_screen)
+## $ show_expbar_multiple((
+##         ("Kanna", 0.0, 1.4),
+##         ("Maya", 5.0, 3.6),
+##         ("Charlotte", 2.1, 4.9),
+##     ), 2.5
+## )
+##
 default healthbar_max = 5
+
+init python:
+    def show_expbar_multiple(name_exp, duration=2.5):
+        durations = []
+        for i in range(len(name_exp)):
+            name, from_exp, to_exp = name_exp[i]
+            if i == 1:
+                s_name = "expbar2"
+            elif i == 2:
+                s_name = "expbar3"
+            else:
+                s_name = "expbar"
+            durations.append(abs(to_exp - from_exp))
+            renpy.show_screen(s_name, name, from_exp, to_exp, duration=None)
+        total_duration = 0.6 + max(durations) + duration
+        if duration is not None and duration is not 0:
+            renpy.pause(delay=total_duration)
+            hide_all_expbar()
+            renpy.pause(delay=0.6)
+
+    def hide_all_expbar():
+        renpy.hide_screen("expbar")
+        renpy.hide_screen("expbar2")
+        renpy.hide_screen("expbar3")
 
 transform healthbar_transform(align=(0.95, 0.03), yoffset=-100, duration=0.6):
     on show:
@@ -37,8 +69,8 @@ transform healthbar_inner_transform(from_val, to_val, startdelay=0.6, duration=1
 
 transform expbar_levelup_transform():
     anchor (45, 45) align (0.5, 0.5)
-    easeout 0.1 zoom 1.3
-    easein 0.6 zoom 1.0
+    easeout 0.1 zoom 1.3 offset (-10, -10)
+    easein 0.6 zoom 1.0 offset (0, 0)
 
 transform expbar_levelup_particles_transform():
     anchor (0.5, 0.5) align (0.5, 0.5) zoom 1.0 alpha 1
