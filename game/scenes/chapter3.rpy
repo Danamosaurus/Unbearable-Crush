@@ -85,8 +85,10 @@ label chapter3:
     "But what should I have him do instead?"
     "I have to keep the idea simple enough so he can't screw it up."
 
-    menu:
-        "Choices to send to Kyousuke"
+    menu(choice_type="thought",
+        original_thought=["'Press her further about the ominous voice.'",
+                        "'Reject this weird girl.'"]):
+        # "Choices to send to Kyousuke"
         "Laugh it off, forgive Kanna for yelling at you.":
             "I  make the selection for Kyousuke, then float back to Kanna to hide in her backpack again. "
             jump ch3choice1option1

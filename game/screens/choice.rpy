@@ -47,7 +47,6 @@ style choice_bar_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 init python:
-    choice_box_style = 'default'
     choice_button_animation_suggestion_transform_duration = 0.3
     choice_button_animation_suggestion_transform_strength = 0.5
 transform choice_button_animation_default_transform(start_delay=0.0):
@@ -57,58 +56,80 @@ transform choice_button_animation_default_transform(start_delay=0.0):
 transform choice_button_animation_hide_default_transform(start_delay=0.0, target_xoffset=0):
     pause start_delay
     linear 0.3 xoffset target_xoffset alpha 0
-transform choice_button_animation_suggestion_transform(start_delay=0.0):
-    xoffset 0 alpha 0 anchor (0.5, 0.5) xalign 0.5 ypos 200 transform_anchor True
+
+transform choice_button_animation_hide_suggestion_transform(start_delay=0.0, target_pos=(0,0), target_zoom=1.0, target_alpha=0):
     pause start_delay
     parallel:
-        easein 0.3 alpha 1
+        linear 0.3 alpha target_alpha
     parallel:
-        block:
-            ease choice_button_animation_suggestion_transform_duration offset (-5*choice_button_animation_suggestion_transform_strength, -5*choice_button_animation_suggestion_transform_strength)
-            ease choice_button_animation_suggestion_transform_duration offset (5*choice_button_animation_suggestion_transform_strength, 5*choice_button_animation_suggestion_transform_strength)
-            ease choice_button_animation_suggestion_transform_duration offset (0, -3*choice_button_animation_suggestion_transform_strength)
-            ease choice_button_animation_suggestion_transform_duration offset (-3*choice_button_animation_suggestion_transform_strength, 0)
-            ease choice_button_animation_suggestion_transform_duration offset (5*choice_button_animation_suggestion_transform_strength, -5*choice_button_animation_suggestion_transform_strength)
-            ease choice_button_animation_suggestion_transform_duration offset (-5*choice_button_animation_suggestion_transform_strength, 5*choice_button_animation_suggestion_transform_strength)
-            ease choice_button_animation_suggestion_transform_duration offset (3*choice_button_animation_suggestion_transform_strength, 0)
-            repeat
-transform choice_button_animation_hide_suggestion_transform(start_delay=0.0, target_offset=(0,0), target_zoom=1.0):
-    pause start_delay
-    parallel:
-        linear 0.3 alpha 0
-    parallel:
-        ease 0.3 offset target_offset zoom target_zoom
-
-screen choice(items, tohide=None):
-    style_prefix "choice"
-
-    vbox:
-        style "choice_vbox"
-        for i in range(len(items)):
-            button:
-                style "choice_bar_style"
-                text items[i].caption:
-                    style "choice_bar_text"
-                if choice_box_style == 'suggestion':
+        ease 0.3 pos target_pos zoom target_zoom offset (0, 0)
+image thought_bubble_choice_hover:
+    "gui/thought/thought_bubble_default.png"
+    # matrixcolor TintMatrix("#F9CFA8")
+    alpha 1.0
+screen choice(items, tohide=None, choice_type="default", image_to_show="Rin normal", original_thought=None, state=None):
+    if choice_type == "thought":
+        if original_thought is not None:
+            if state == "done":
+                use thought(original_thought[0:1], choice_mode=True)
+            else:
+                use thought(original_thought, choice_mode=True)
+        fixed:
+            if state == "done":
+                add "flash_white"
+            window:
+                add image_to_show
+                align (0.5, 1.3)
+            for i in range(len(items)):
+                button:
+                    pos (540 + i*800, 900)
+                    background "thought_bubble_idle"
+                    xsize 480
+                    ysize 270
+                    padding (80, 40)
+                    text items[i].caption:
+                        text_align 0.5
+                        align (0.5, 0.5)
+                        color "#000"
+                        size 32
                     if tohide is None:
-                        at choice_button_animation_suggestion_transform((i-1) * 0.1)
+                        at thought_button_shiver_transform(start_delay=i*0.1)
+                        hover_background "thought_bubble_choice_hover"
                     elif i == tohide:
-                        at choice_button_animation_hide_suggestion_transform(0, (0, -250 - 100*i), 0.3)
+                        at choice_button_animation_hide_suggestion_transform(target_pos=(1300, 150), target_alpha=1)
                     else:
-                        at choice_button_animation_hide_suggestion_transform((i-1) * 0.05)
-                else:
+                        at choice_button_animation_hide_suggestion_transform(target_pos=(540 + i*800, 900))
+                    if tohide is None:
+                        action Show("choice", None, items, tohide=i, choice_type=choice_type, image_to_show=image_to_show, original_thought=original_thought)
+                    else:
+                        action None
+        if tohide is not None:
+            if state is None:
+                timer 0.3 action Show("choice", None, items, tohide=tohide, choice_type=choice_type, image_to_show=image_to_show, original_thought=original_thought, state="done")
+            elif state == "done":
+                timer 2.0 action items[tohide].action
+                key config.keymap['dismiss'] action items[tohide].action
+    else:
+        style_prefix "choice"
+        vbox:
+            style "choice_vbox"
+            for i in range(len(items)):
+                button:
+                    style "choice_bar_style"
+                    text items[i].caption:
+                        style "choice_bar_text"
                     if tohide is None:
                         at choice_button_animation_default_transform((i-1) * 0.1)
                     elif i == tohide:
                         at choice_button_animation_hide_default_transform(0, 1000)
                     else:
                         at choice_button_animation_hide_default_transform((i-1) * 0.05)
-                if tohide is None:
-                    action Show("choice", None, items, tohide=i)
-                else:
-                    action None
-    if tohide is not None:
-        timer 0.5 action items[tohide].action
+                    if tohide is None:
+                        action Show("choice", None, items, tohide=i, choice_type=choice_type, image_to_show=image_to_show, original_thought=original_thought)
+                    else:
+                        action None
+        if tohide is not None:
+            timer 0.5 action items[tohide].action
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
 ## menu captions will be displayed as empty buttons.
