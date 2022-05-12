@@ -14,6 +14,7 @@ renpy.texture -renpy.texture renpy.blur renpy.texture -renpy.texture renpy.blur
 renpy.alpha renpy.solid
 renpy.geometry renpy.matrixcolor renpy.solid
 renpy.blur renpy.geometry
+renpy.matrixcolor renpy.alpha renpy.texture
 renpy.geometry renpy.imagedissolve
 renpy.matrixcolor renpy.matrixcolor renpy.texture -renpy.texture renpy.blur renpy.texture -renpy.texture renpy.blur
 renpy.matrixcolor renpy.alpha renpy.matrixcolor renpy.texture

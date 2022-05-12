@@ -69,22 +69,13 @@ init -1600 python in _viewers:
     preview_size=0.6
     preview_background_color="#111"
 
-
-    props_set = (
-            ("child", "xpos", "ypos", "zpos", "xalignaround", "yalignaround", "radius", "angle", "rotate"), 
-            ("offsetX", "offsetY", "offsetZ", "rotateX", "rotateY", "rotateZ"),
-            ("xanchor", "yanchor", "matrixanchorX", "matrixanchorY", "xoffset", "yoffset"), 
-            ("xzoom", "yzoom", "zoom", "cropX", "cropY", "cropW", "cropH"), 
-            ("alpha", "blur", "additive", "invert", "contrast", "saturate", "bright", "hue", "dof", "focusing"),
-            ("xpan", "ypan", "xtile", "ytile"),
-            )
-    props_set_names = (
-            "Child/Pos    ", 
-            "3D Matrix    ",
-            "Anchor/Offset", 
-            "Zoom/Crop    ", 
-            "Effect       ",
-            "Misc         ",
+    props_sets = (
+            ("Child/Pos    ", ("child", "xpos", "ypos", "zpos", "xalignaround", "yalignaround", "radius", "angle", "rotate")), 
+            ("3D Matrix    ", ("offsetX", "offsetY", "offsetZ", "rotateX", "rotateY", "rotateZ")),
+            ("Anchor/Offset", ("xanchor", "yanchor", "matrixanchorX", "matrixanchorY", "xoffset", "yoffset")), 
+            ("Zoom/Crop    ", ("xzoom", "yzoom", "zoom", "cropX", "cropY", "cropW", "cropH")), 
+            ("Effect       ", ("alpha", "blur", "additive", "invert", "contrast", "saturate", "bright", "hue", "dof", "focusing")),
+            ("Misc         ", ("zzoom", "perspective", "function", "xpan", "ypan", "xtile", "ytile")),
             )
 
     props_groups = {
@@ -96,19 +87,35 @@ init -1600 python in _viewers:
         "focusing":["focusing", "dof"], 
     }
 
-    special_props = ["child"]
-
-    force_float = ["zoom", "xzoom", "yzoom", "alpha", "additive", "blur", "invert", "contrast", "saturate", "bright", "xalignaround", "yalignaround"]
-    force_wide_range = ["rotate", "rotateX", "rotateY", "rotateZ", "offsetX", "offsetY", "offsetZ", "zpos", "xoffset", "yoffset", "hue", "dof", "focusing", "angle", "xpan", "ypan"]
-    force_plus = ["additive", "blur", "alpha", "invert", "contrast", "saturate", "cropW", "cropH", "dof", "focusing", "xtile", "ytile"]
+    #These variables are always float type.
+    #常に浮動小数になる変数です。
+    force_float = ("zoom", "xzoom", "yzoom", "alpha", "additive", "blur", "invert", "contrast", "saturate", "bright", "xalignaround", "yalignaround")
+    #These variables are always wide range even if it is float type.
+    #浮動小数であっても整数と同じスケールで表示される変数です。
+    force_wide_range = ("rotate", "rotateX", "rotateY", "rotateZ", "offsetX", "offsetY", "offsetZ", "zpos", "xoffset", "yoffset", "hue", "dof", "focusing", "angle", "xpan", "ypan")
+    #These variables are always plus
+    #常に正数になる変数です。
+    force_plus = ("additive", "blur", "alpha", "invert", "contrast", "saturate", "cropW", "cropH", "dof", "focusing", "xtile", "ytile")
+    #These varialbes aren't setted without keyframe.
     #crop doesn't work when perspective True and rotate change the pos of image when perspective is not True
-    not_used_by_default = ["rotate", "cropX", "cropY", "cropW", "cropH", "xpan", "ypan"]
+    #キーフレームを設定しなければ適用されない変数です。
+    not_used_by_default = ("rotate", "cropX", "cropY", "cropW", "cropH", "xpan", "ypan", "function")
+
+    boolean_props = ["zzoom"]
+    any_props = []
+
+    #Exclusive variables
+    #排他的な変数です。
     exclusive = (
             ({"xpos", "ypos"}, {"xalignaround", "yalignaround", "radius", "angle"}), 
             ({"xtile", "ytile"}, {"xpan", "ypan"}), 
         )
+    xygroup = {"pos": ("xpos", "ypos"), "anchor": ("xanchor", "yanchor"), "offset": ("xoffset", "yoffset")}
 
-    sort_ref_list = [
+    #The order of properties in clipboard data.
+    #この順番でクリップボードデータが出力されます
+    #ないものは出力されません
+    sort_order_list = (
     "pos",
     "anchor",
     "offset",
@@ -137,11 +144,16 @@ init -1600 python in _viewers:
     "ypan", 
     "xtile", 
     "ytile", 
-    ]
+    )
 
-    xygroup = {"pos": ("xpos", "ypos"), "anchor": ("xanchor", "yanchor"), "offset": ("xoffset", "yoffset")}
+
+    special_props = ["child", "function"]
+    in_editor = False
 
 init 1600 python in _viewers:
+    #The properties used in image tag tab
+    #画像タブに表示されるプロパティー
+    #(property name,  default value)
     transform_props = (
     ("child", (None, None)), 
     ("xpos", 0), 
@@ -172,7 +184,7 @@ init 1600 python in _viewers:
     ("rotateY", 0.),
     ("rotateZ", 0.),
     ("dof", 400),
-    ("focusing", renpy.config.perspective[1]), 
+    ("focusing", round(renpy.config.perspective[1], 2)), 
     ("alpha", 1.), 
     ("additive", 0.), 
     ("blur", 0.), 
@@ -186,9 +198,12 @@ init 1600 python in _viewers:
     ("ypan", 0.), 
     ("xtile", 1), 
     ("ytile", 1), 
+    ("function", (None, None)), 
     )
 
-    #perspetve competes crop
+    #The properties used in camera tab
+    #カメラタブに表示されるプロパティー
+    #(property name,  default value)
     camera_props = (
     ("xpos", 0.), 
     ("ypos", 0.), 
@@ -218,7 +233,7 @@ init 1600 python in _viewers:
     ("rotateY", 0.),
     ("rotateZ", 0.),
     ("dof", 400),
-    ("focusing", renpy.config.perspective[1]), 
+    ("focusing", round(renpy.config.perspective[1], 2)), 
     ("alpha", 1.), 
     ("additive", 0.), 
     ("blur", 0.), 
@@ -232,4 +247,53 @@ init 1600 python in _viewers:
     ("xtile", 1), 
     ("ytile", 1), 
     ("perspective", None),
+    ("function", (None, None)), 
     )
+
+    generate_groups_value = {}
+    def generate_matrixtransform_value(rotateX, rotateY, rotateZ, offsetX, offsetY, offsetZ):
+        return Matrix.offset(offsetX, offsetY, offsetZ)*Matrix.rotate(rotateX, rotateY, rotateZ)
+    generate_groups_value["matrixtransform"] = generate_matrixtransform_value
+
+    def generate_matrixanchor_value(matrixanchorX, matrixanchorY):
+        return (matrixanchorX, matrixanchorY)
+    generate_groups_value["matrixanchor"] = generate_matrixanchor_value
+
+    def generate_matrixcolor_value(invert, contrast, saturate, bright, hue):
+        return InvertMatrix(invert)*ContrastMatrix(contrast)*SaturationMatrix(saturate)*BrightnessMatrix(bright)*HueMatrix(hue)
+    generate_groups_value["matrixcolor"] = generate_matrixcolor_value
+
+    def generate_crop_value(cropX, cropY, cropW, cropH):
+        return (cropX, cropY, cropW, cropH)
+    generate_groups_value["crop"] = generate_crop_value
+
+    def generate_alignaround_value(xalignaround, yalignaround):
+        return (xalignaround, yalignaround)
+    generate_groups_value["alignaround"] = generate_alignaround_value
+
+
+    generate_groups_clipboard = {}
+    def generate_matrixtransform_clipboard(rotateX, rotateY, rotateZ, offsetX, offsetY, offsetZ):
+        v = "OffsetMatrix(%s, %s, %s)*RotateMatrix(%s, %s, %s)"
+        return v % (offsetX, offsetY, offsetZ, rotateX, rotateY, rotateZ)
+    generate_groups_clipboard["matrixtransform"] = generate_matrixtransform_clipboard
+
+    def generate_matrixanchor_clipboard(matrixanchorX, matrixanchorY):
+        v = "(%s, %s)"
+        return v % (matrixanchorX, matrixanchorY)
+    generate_groups_clipboard["matrixanchor"] = generate_matrixanchor_clipboard
+
+    def generate_matrixcolor_clipboard(invert, contrast, saturate, bright, hue):
+        v = "InvertMatrix(%s)*ContrastMatrix(%s)*SaturationMatrix(%s)*BrightnessMatrix(%s)*HueMatrix(%s)"
+        return v % (invert, contrast, saturate, bright, hue)
+    generate_groups_clipboard["matrixcolor"] = generate_matrixcolor_clipboard
+
+    def generate_crop_clipboard(cropX, cropY, cropW, cropH):
+        v = "(%s, %s, %s, %s)"
+        return v % (cropX, cropY, cropW, cropH)
+    generate_groups_clipboard["crop"] = generate_crop_clipboard
+
+    def generate_alignaround_clipboard(xalignaround, yalignaround):
+        v = "(%s, %s)"
+        return v % (xalignaround, yalignaround)
+    generate_groups_clipboard["alignaround"] = generate_alignaround_clipboard
