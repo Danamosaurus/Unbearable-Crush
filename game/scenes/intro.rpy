@@ -2,7 +2,7 @@
 label start:
 
     #INIT RELETIONSHIP 0
-
+    #Testing
     $game_player.addRelationship("Kanna")
     $game_player.addRelationship("Maya")
     $game_player.addRelationship("Charlotte")

@@ -19,8 +19,7 @@ screen _new_action_editor(opened=None, time=0, previous_time=None, in_graphic_mo
     $force_plus = _viewers.force_plus
     $force_float = _viewers.force_float
     $force_wide_range = _viewers.force_wide_range
-    $props_set = _viewers.props_set
-    $props_set_names = _viewers.props_set_names
+    $props_sets = _viewers.props_sets
     $props_groups = _viewers.props_groups
     $keyframes_exist = _viewers.keyframes_exist
     $generate_sound_menu = _viewers.generate_sound_menu
@@ -141,8 +140,8 @@ screen _new_action_editor(opened=None, time=0, previous_time=None, in_graphic_mo
                 hbox:
                     style_group "new_action_editor_c"
                     imagebutton:
-                        idle DynamicDisplayable(_viewers.show_current_time)
-                        hover DynamicDisplayable(_viewers.show_current_time)
+                        idle DynamicDisplayable(_viewers.show_current_time_idle)
+                        hover DynamicDisplayable(_viewers.show_current_time_hover)
                         action Function(_viewers.edit_time)
                         xalign 1.
                         size_group None
@@ -169,13 +168,13 @@ screen _new_action_editor(opened=None, time=0, previous_time=None, in_graphic_mo
                     #他と同時にグラフィックモードで表示するとタイムバーが反応しないことがある
                     hbox:
                         style_group "new_action_editor_c"
-                        textbutton "  [key]" action None text_color "#CCC"
+                        textbutton "  [key]" action None text_color "#FFF"
                         add _viewers.DraggableValue(value_format, key, f, use_wide_range, p in force_plus,
                             text_size=16, text_color="#CCC", text_hover_underline=True)
                     fixed:
                         # ysize int(config.screen_height*(1-_viewers.preview_size)-_viewers.time_column_height)
                         ysize None
-                        add TimeLine(s, tag, key=key, changed=f, use_wide_range=use_wide_range, opened=opened, in_graphic_mode=in_graphic_mode)
+                        add TimeLine(current_scene, tag, key=key, changed=f, use_wide_range=use_wide_range, opened=opened, in_graphic_mode=in_graphic_mode)
             else:
                 viewport:
                     mousewheel True
@@ -226,10 +225,7 @@ screen _new_action_editor(opened=None, time=0, previous_time=None, in_graphic_mo
                                             style_group "new_action_editor_b"
                                     fixed:
                                         add TimeLine(s, "camera")
-                                textbutton _(indent*2+"  perspective"):
-                                    action [SelectedIf(get_value("perspective", scene_keyframes[s][1], True)),
-                                    Function(_viewers.toggle_perspective)]
-                                for i, props_set_name in enumerate(props_set_names):
+                                for props_set_name, props_set in props_sets:
                                     if props_set_name in opened[s]:
                                         hbox:
                                             hbox:
@@ -239,8 +235,8 @@ screen _new_action_editor(opened=None, time=0, previous_time=None, in_graphic_mo
                                                 $new_opened[s].remove(props_set_name)
                                                 textbutton indent*2+"- " + props_set_name action Show("_new_action_editor", opened=new_opened, in_graphic_mode=in_graphic_mode)
                                             fixed:
-                                                add TimeLine(s, "camera", props_set_num=i)
-                                        for p in props_set[i]:
+                                                add TimeLine(s, "camera", props_set=props_set)
+                                        for p in props_set:
                                             if (p, _viewers.get_default(p, True)) in _viewers.camera_props and p != "child" and (p not in props_groups["focusing"] or \
                                                 (persistent._viewer_focusing and get_value("perspective", scene_keyframes[s][1], True))):
                                                 $key = p
@@ -253,14 +249,58 @@ screen _new_action_editor(opened=None, time=0, previous_time=None, in_graphic_mo
                                                 else:
                                                     $value_format = int_format
                                                 hbox:
-                                                    hbox:
-                                                        style_group "new_action_editor_c"
-                                                        textbutton indent*3+"  [p]" action None text_color "#CCC"
-                                                        add _viewers.DraggableValue(value_format, key, f, use_wide_range, p in force_plus,
-                                                            text_size=16, text_color="#CCC", text_hover_underline=True)
+                                                    if p == "perspective":
+                                                        hbox:
+                                                            style_group "new_action_editor_c"
+                                                            textbutton indent*3+"  [p]":
+                                                                action None text_color "#FFF"
+                                                            textbutton "[value]":
+                                                                action [SelectedIf(keyframes_exist(key)),
+                                                                Function(_viewers.toggle_perspective)]
+                                                                size_group None
+                                                    elif p == "function":
+                                                        hbox:
+                                                            style_group "new_action_editor_c"
+                                                            textbutton indent*3+"  [p]":
+                                                                action None text_color "#FFF"
+                                                            textbutton "[value[0]]":
+                                                                action [SelectedIf(keyframes_exist(key)),
+                                                                Function(_viewers.edit_function, key)]
+                                                                size_group None
+                                                    elif p in _viewers.any_props:
+                                                        hbox:
+                                                            style_group "new_action_editor_c"
+                                                            textbutton indent*3+"  [p]":
+                                                                action None text_color "#FFF"
+                                                            if isinstance(value, str):
+                                                                textbutton "'[value]'":
+                                                                    action [SelectedIf(keyframes_exist(key)),
+                                                                    Function(_viewers.edit_any, key)]
+                                                                    size_group None
+                                                            else:
+                                                                textbutton "[value]":
+                                                                    action [SelectedIf(keyframes_exist(key)),
+                                                                    Function(_viewers.edit_any, key)]
+                                                                    size_group None
+                                                    elif p in _viewers.boolean_props:
+                                                        hbox:
+                                                            style_group "new_action_editor_c"
+                                                            textbutton indent*3+"  [p]":
+                                                                action None text_color "#FFF"
+                                                            textbutton "[value]":
+                                                                action [SelectedIf(keyframes_exist(key)),
+                                                                Function(_viewers.toggle_boolean_property, key)]
+                                                                size_group None
+                                                    else:
+                                                        hbox:
+                                                            style_group "new_action_editor_c"
+                                                            textbutton indent*3+"  [p]" action None text_color "#FFF"
+                                                            add _viewers.DraggableValue(value_format, key, f, use_wide_range, p in force_plus,
+                                                                text_size=16, text_color="#CCC", text_hover_underline=True)
                                                     # if key not in in_graphic_mode:
-                                                    fixed:
-                                                        add TimeLine(s, "camera", key=key, changed=f, use_wide_range=use_wide_range, opened=opened)
+                                                    if p not in _viewers.boolean_props+["function"]:
+                                                        fixed:
+                                                            add TimeLine(s, "camera", key=key, changed=f, use_wide_range=use_wide_range, opened=opened)
                                                     # else:
                                                     #     fixed:
                                                     #         ysize int(config.screen_height*(1-_viewers.preview_size)-_viewers.time_column_height)
@@ -276,7 +316,7 @@ screen _new_action_editor(opened=None, time=0, previous_time=None, in_graphic_mo
                                                     $new_opened[s] = new_opened[s] + [props_set_name]
                                                 textbutton indent*2+"+ "+props_set_name action Show("_new_action_editor", opened=new_opened, in_graphic_mode=in_graphic_mode)
                                             fixed:
-                                                add TimeLine(s, "camera", props_set_num=i)
+                                                add TimeLine(s, "camera", props_set=props_set)
                             for tag in tag_list:
                                 if tag not in opened[s]:
                                     hbox:
@@ -306,10 +346,7 @@ screen _new_action_editor(opened=None, time=0, previous_time=None, in_graphic_mo
                                                 size_group None
                                         fixed:
                                             add TimeLine(s, (tag, layer))
-                                    textbutton _(indent*2+"  zzoom"):
-                                        action [SelectedIf(get_value((tag, layer, "zzoom"), scene_keyframes[s][1], True)),
-                                        Function(_viewers.toggle_boolean_property, (tag, layer, "zzoom"))]
-                                    for i, props_set_name in enumerate(props_set_names):
+                                    for props_set_name, props_set in props_sets:
                                         if (tag, layer, props_set_name) not in opened[s]:
                                             hbox:
                                                 hbox:
@@ -322,7 +359,7 @@ screen _new_action_editor(opened=None, time=0, previous_time=None, in_graphic_mo
                                                     textbutton indent*2+"+ "+props_set_name:
                                                         action Show("_new_action_editor", opened=new_opened, in_graphic_mode=in_graphic_mode)
                                                 fixed:
-                                                    add TimeLine(s, (tag, layer), props_set_num=i)
+                                                    add TimeLine(s, (tag, layer), props_set=props_set)
                                         else:
                                             hbox:
                                                 hbox:
@@ -330,11 +367,11 @@ screen _new_action_editor(opened=None, time=0, previous_time=None, in_graphic_mo
                                                     $new_opened = opened.copy()
                                                     $new_opened[s] = opened[s].copy()
                                                     $new_opened[s].remove((tag, layer, props_set_name))
-                                                    textbutton indent*2+"- " + props_set_names[i]:
+                                                    textbutton indent*2+"- " + props_set_name:
                                                         action Show("_new_action_editor", opened=new_opened, in_graphic_mode=in_graphic_mode)
                                                 fixed:
-                                                    add TimeLine(s, (tag, layer), props_set_num=i)
-                                            for p in props_set[i]:
+                                                    add TimeLine(s, (tag, layer), props_set=props_set)
+                                            for p in props_set:
                                                 if (p, _viewers.get_default(p)) in _viewers.transform_props and (p not in props_groups["focusing"] and (((persistent._viewer_focusing
                                                     and get_value("perspective", scene_keyframes[s][1], True)) and p != "blur")
                                                     or (not persistent._viewer_focusing or not get_value("perspective", scene_keyframes[s][1], True)))):
@@ -357,6 +394,7 @@ screen _new_action_editor(opened=None, time=0, previous_time=None, in_graphic_mo
                                                                         action [SelectedIf(keyframes_exist((tag, layer, "child"))),
                                                                         Function(_viewers.change_child, tag, layer, default=value[0])]
                                                                         size_group None
+                                                                        text_language "unicode"
                                                                 hbox:
                                                                     style_group "new_action_editor_c"
                                                                     textbutton indent*3+"  with [value[1]]":
@@ -364,19 +402,54 @@ screen _new_action_editor(opened=None, time=0, previous_time=None, in_graphic_mo
                                                                         SelectedIf(keyframes_exist((tag, layer, "child"))),
                                                                         Function(_viewers.edit_transition, tag, layer)]
                                                                         size_group None
+                                                                        text_language "unicode"
+                                                        elif p == "function":
+                                                            hbox:
+                                                                style_group "new_action_editor_c"
+                                                                textbutton indent*3+"  [p]":
+                                                                    action None text_color "#FFF"
+                                                                textbutton "[value[0]]":
+                                                                    action [SelectedIf(keyframes_exist(key)),
+                                                                    Function(_viewers.edit_function, key)]
+                                                                    size_group None
+                                                        elif p in _viewers.any_props:
+                                                            hbox:
+                                                                style_group "new_action_editor_c"
+                                                                textbutton indent*3+"  [p]":
+                                                                    action None text_color "#FFF"
+                                                                if isinstance(value, str):
+                                                                    textbutton "'[value]'":
+                                                                        action [SelectedIf(keyframes_exist(key)),
+                                                                        Function(_viewers.edit_any, key)]
+                                                                        size_group None
+                                                                else:
+                                                                    textbutton "[value]":
+                                                                        action [SelectedIf(keyframes_exist(key)),
+                                                                        Function(_viewers.edit_any, key)]
+                                                                        size_group None
+                                                        elif p in _viewers.boolean_props:
+                                                            hbox:
+                                                                style_group "new_action_editor_c"
+                                                                textbutton indent*3+"  [p]":
+                                                                    action None text_color "#FFF"
+                                                                textbutton "[value]":
+                                                                    action [SelectedIf(keyframes_exist(key)),
+                                                                    Function(_viewers.toggle_boolean_property, key)]
+                                                                    size_group None
                                                         else:
                                                             hbox:
                                                                 style_group "new_action_editor_c"
                                                                 textbutton indent*3+"  [p]":
-                                                                    action None text_color "#CCC"
+                                                                    action None text_color "#FFF"
                                                                 add _viewers.DraggableValue(value_format, key, f, use_wide_range, p in force_plus,
                                                                     text_size=16, text_color="#CCC", text_hover_underline=True)
-                                                        fixed:
-                                                            # if key not in in_graphic_mode:
-                                                            add TimeLine(s, (tag, layer), key=key, changed=f, use_wide_range=use_wide_range, opened=opened)
-                                                            # else:
-                                                                # ysize int(config.screen_height*(1-_viewers.preview_size)-_viewers.time_column_height)
-                                                                # add TimeLine(s, (tag, layer), key=key, changed=f, use_wide_range=use_wide_range, opened=opened, in_graphic_mode=in_graphic_mode)
+                                                        if p not in _viewers.boolean_props+["function"]:
+                                                            fixed:
+                                                                # if key not in in_graphic_mode:
+                                                                add TimeLine(s, (tag, layer), key=key, changed=f, use_wide_range=use_wide_range, opened=opened)
+                                                                # else:
+                                                                    # ysize int(config.screen_height*(1-_viewers.preview_size)-_viewers.time_column_height)
+                                                                    # add TimeLine(s, (tag, layer), key=key, changed=f, use_wide_range=use_wide_range, opened=opened, in_graphic_mode=in_graphic_mode)
                                     $new_opened = opened.copy()
                                     $new_opened[s] = opened[s].copy()
                                     $new_opened[s] = [o for o in opened if (not isinstance(o, tuple) or o[0] != tag) and o !=tag]
@@ -421,14 +494,13 @@ screen _new_action_editor(opened=None, time=0, previous_time=None, in_graphic_mo
                                 hbox:
                                     style_group "new_action_editor_c"
                                     textbutton indent*1+"  [channel]":
-                                        action None text_color "#CCC"
+                                        action None text_color "#FFF"
                                         size_group None
                                 fixed:
                                     add TimeLine(s, "sounds", key=channel)
                             hbox:
                                 $value = "None"
-                                $sorted_play_times = sound_keyframes[channel].keys()
-                                $sorted_play_times.sort()
+                                $sorted_play_times = sorted(sound_keyframes[channel].keys())
                                 for t in sorted_play_times:
                                     if current_time >= t:
                                         $value = sound_keyframes[channel][t]
@@ -451,6 +523,8 @@ init -1599 python in _viewers:
     key_hovere_child = Transform(rotate=45)(Solid("#AAD", xsize=16, ysize=16))
     warperkey_child = Transform(rotate=45)(Solid("#07A", xsize=16, ysize=16))
     warperkey_hovere_child = Transform(rotate=45)(Solid("#4AD", xsize=16, ysize=16))
+    knot_child = Transform(rotate=45)(Solid("#04A", xsize=16, ysize=16))
+    knot_hovere_child = Transform(rotate=45)(Solid("#48D", xsize=16, ysize=16))
     insensitive_key_child = Transform(rotate=45)(Solid("#447", xsize=16, ysize=16))
     insensitive_key_hovere_child = Transform(rotate=45)(Solid("#669", xsize=16, ysize=16))
     interpolate_key_child = Solid("#BBB", xsize=4, ysize=4) #, xoffset=key_half_xsize-2, yoffset=key_half_ysize-2)
@@ -465,10 +539,10 @@ init python in _viewers:
         box.add(Solid(preview_background_color, xsize=(1-preview_size)/2, ysize=preview_size, xpos=0.))
         box.add(Solid(preview_background_color, xsize=(1-preview_size)/2, ysize=preview_size, xalign=1.))
     else:
-        box.add(Transform(zoom=preview_size)(child))
         box.add(Solid(preview_background_color, xsize=config.screen_width, ysize=(1-preview_size), ypos=preview_size))
         box.add(Solid(preview_background_color, xsize=(1-preview_size), ysize=preview_size, xalign=1.))
     screen_background = box
+
 
 init -1597:
     style new_action_editor_frame:
@@ -485,6 +559,8 @@ init -1597:
         color "#CCC"
         outlines [ (absolute(2), "#000", absolute(0), absolute(0)) ]
         size 16
+    if (renpy.version_tuple[0] == 7 and renpy.version_tuple[1] >= 5) or renpy.version_tuple[0] > 7:
+        style new_action_editor_text language "unicode"
     style new_action_editor_button_text is new_action_editor_text:
         hover_underline True
         selected_color "#FFF"
@@ -552,8 +628,7 @@ screen _action_editor(tab="camera", layer="master", opened=0, time=0, page=0):
     $force_plus = _viewers.force_plus
     $force_float = _viewers.force_float
     $force_wide_range = _viewers.force_wide_range
-    $props_set = _viewers.props_set
-    $props_set_names = _viewers.props_set_names
+    $props_sets = _viewers.props_sets
     $props_groups = _viewers.props_groups
     $keyframes_exist = _viewers.keyframes_exist
 
@@ -661,109 +736,139 @@ screen _action_editor(tab="camera", layer="master", opened=0, time=0, page=0):
                 action [SensitiveIf(len(page_list) != page+1), Show("_action_editor", tab=tab, layer=layer, page=page+1), renpy.restart_interaction]
 
         if tab == "camera":
-            for i, props_set_name in enumerate(props_set_names):
-                if i < opened:
-                    hbox:
-                        textbutton "+ "+props_set_name action Show("_action_editor", tab=tab, layer=layer, opened=i, page=page)
-            textbutton "- " + props_set_names[opened] action [SelectedIf(True), NullAction()]
-            for p, d in _viewers.camera_props:
-                if p in props_set[opened] and (p not in props_groups["focusing"] or 
-                    (persistent._viewer_focusing and get_value("perspective", scene_keyframes[current_scene][1], True))):
-                    $value = get_property(p)
-                    $f = generate_changed(p)
-                    $use_wide_range = p not in force_float and (p in force_wide_range or ((value is None and isinstance(d, int)) or isinstance(value, int)))
-                    if use_wide_range:
-                        $value_range = persistent._wide_range
-                        $bar_page = 1
-                    else:
-                        $value_range = persistent._narrow_range
-                        $bar_page = .05
-                    if p in force_plus:
-                        $bar_value = value
-                    else:
-                        $bar_value = value + value_range
-                        $value_range = value_range*2
-                    if not use_wide_range or isinstance(value, float):
-                        $value_format = float_format
-                    else:
-                        $value_format = int_format
-                    hbox:
-                        textbutton "  [p]":
-                            action [SensitiveIf(p in all_keyframes[current_scene]),
-                            SelectedIf(keyframes_exist(p)), Show("_edit_keyframe", key=p, use_wide_range=use_wide_range, change_func=f)]
-                        textbutton value_format.format(value):
-                            action Function(edit_value, f, use_wide_range=use_wide_range, default=value, force_plus=p in force_plus)
-                            alternate Function(reset, p) style_group "action_editor_b"
-                        bar adjustment ui.adjustment(range=value_range, value=bar_value, page=bar_page, changed=f):
-                            xalign 1. yalign .5 style "action_editor_bar"
-            for i, props_set_name in enumerate(props_set_names):
-                if i > opened:
+            for i, (props_set_name, props_set) in enumerate(props_sets):
+                if i == opened:
+                    textbutton "- " + props_set_name action [SelectedIf(True), NullAction()]
+                    for p, d in _viewers.camera_props:
+                        if p in props_set and (p not in props_groups["focusing"] or 
+                            (persistent._viewer_focusing and get_value("perspective", scene_keyframes[current_scene][1], True))):
+                            $value = get_property(p)
+                            $f = generate_changed(p)
+                            $use_wide_range = p not in force_float and (p in force_wide_range or ((value is None and isinstance(d, int)) or isinstance(value, int)))
+                            if use_wide_range:
+                                $value_range = persistent._wide_range
+                                $bar_page = 1
+                            else:
+                                $value_range = persistent._narrow_range
+                                $bar_page = .05
+                            if not use_wide_range or isinstance(value, float):
+                                $value_format = float_format
+                            else:
+                                $value_format = int_format
+                            hbox:
+                                textbutton "  [p]":
+                                    action [SensitiveIf(p in all_keyframes[current_scene]),
+                                    SelectedIf(keyframes_exist(p)), Show("_edit_keyframe", key=p, use_wide_range=use_wide_range, change_func=f)]
+                                if p == "perspective":
+                                    textbutton "[value]":
+                                        action [SelectedIf(get_value(p, scene_keyframes[current_scene][1], True)),
+                                        Function(_viewers.toggle_perspective)]
+                                elif p == "function":
+                                    textbutton "[value[0]]":
+                                        action [SelectedIf(get_value(p, scene_keyframes[current_scene][1], True)), 
+                                        Function(_viewers.edit_function, p)]
+                                elif p in _viewers.any_props:
+                                    if isinstance(value, str):
+                                        textbutton "'[value]'":
+                                            action [SelectedIf(get_value(p, scene_keyframes[current_scene][1], True)), 
+                                            Function(_viewers.edit_any, p)]
+                                    else:
+                                        textbutton "[value]":
+                                            action [SelectedIf(get_value(p, scene_keyframes[current_scene][1], True)), 
+                                            Function(_viewers.edit_any, p)]
+                                elif p in _viewers.boolean_props:
+                                    textbutton "[value]":
+                                        action [SelectedIf(get_value(p, scene_keyframes[current_scene][1], True)), 
+                                        Function(_viewers.toggle_boolean_property, p)]
+                                else:
+                                    if p in force_plus:
+                                        $bar_value = value
+                                    else:
+                                        $bar_value = value + value_range
+                                        $value_range = value_range*2
+                                    textbutton value_format.format(value):
+                                        action Function(edit_value, f, use_wide_range=use_wide_range, default=value, force_plus=p in force_plus)
+                                        alternate Function(reset, p) style_group "action_editor_b"
+                                    bar adjustment ui.adjustment(range=value_range, value=bar_value, page=bar_page, changed=f):
+                                        xalign 1. yalign .5 style "action_editor_bar"
+                else:
                     hbox:
                         textbutton "+ "+props_set_name:
                             action Show("_action_editor", tab=tab, layer=layer, opened=i, page=page)
         else:
-            for i, props_set_name in enumerate(props_set_names):
-                if i < opened:
+            for i, (props_set_name, props_set) in enumerate(props_sets):
+                if i == opened:
+                    textbutton "- " + props_set_name action [SelectedIf(True), NullAction()]
+                    for p, d in _viewers.transform_props:
+                        if p in props_set and (p not in props_groups["focusing"] and (((persistent._viewer_focusing 
+                            and get_value("perspective", scene_keyframes[current_scene][1], True)) and p != "blur") 
+                            or (not persistent._viewer_focusing or not get_value("perspective", scene_keyframes[current_scene][1], True)))):
+                            $key = (tab, layer, p)
+                            $value = get_property(key)
+                            $f = generate_changed(key)
+                            $use_wide_range = p not in force_float and (p in force_wide_range or ((value is None and isinstance(d, int)) or isinstance(value, int)))
+                            if use_wide_range:
+                                $value_range = persistent._wide_range
+                                $bar_page = 1
+                            else:
+                                $value_range = persistent._narrow_range
+                                $bar_page = .05
+                            if not use_wide_range or isinstance(value, float):
+                                $value_format = float_format
+                            else:
+                                $value_format = int_format
+                            hbox:
+                                textbutton "  [p]":
+                                    action [SensitiveIf(key in all_keyframes[current_scene]), 
+                                    SelectedIf(keyframes_exist(key)), 
+                                    Show("_edit_keyframe", key=key, use_wide_range=use_wide_range, change_func=f)]
+                                if p == "child":
+                                    textbutton "[value[0]]":
+                                        action [SelectedIf(keyframes_exist((tab, layer, "child"))), 
+                                        Function(_viewers.change_child, tab, layer, default=value[0])]
+                                        size_group None
+                                    textbutton "with" action None size_group None
+                                    textbutton "[value[1]]":
+                                        action [SensitiveIf(key in all_keyframes[current_scene]), 
+                                        SelectedIf(keyframes_exist((tab, layer, "child"))), 
+                                        Function(_viewers.edit_transition, tab, layer)]
+                                        size_group None
+                                elif p == "function":
+                                    textbutton "[value[0]]":
+                                        action [SelectedIf(get_value(key, scene_keyframes[current_scene][1], True)), 
+                                        Function(_viewers.edit_function, key)]
+                                elif p in _viewers.any_props:
+                                    if isinstance(value, str):
+                                        textbutton "'[value]'":
+                                            action [SelectedIf(get_value(key, scene_keyframes[current_scene][1], True)), 
+                                            Function(_viewers.edit_any, key)]
+                                    else:
+                                        textbutton "[value]":
+                                            action [SelectedIf(get_value(key, scene_keyframes[current_scene][1], True)), 
+                                            Function(_viewers.edit_any, key)]
+                                elif p in _viewers.boolean_props:
+                                    textbutton "[value]":
+                                        action [SelectedIf(get_value(key, scene_keyframes[current_scene][1], True)), 
+                                        Function(_viewers.toggle_boolean_property, key)]
+                                else:
+                                    if p in force_plus:
+                                        $bar_value = value
+                                    else:
+                                        $bar_value = value + value_range
+                                        $value_range = value_range*2
+                                    textbutton value_format.format(value):
+                                        action Function(edit_value, f, use_wide_range=use_wide_range, default=value, force_plus=p in force_plus)
+                                        alternate Function(reset, key) style_group "action_editor_b"
+                                    bar adjustment ui.adjustment(range=value_range, value=bar_value, page=bar_page, changed=f):
+                                        xalign 1. yalign .5 style "action_editor_bar"
+                else:
                     hbox:
                         textbutton "+ "+props_set_name:
                             action Show("_action_editor", tab=tab, layer=layer, opened=i, page=page)
-            textbutton "- " + props_set_names[opened] action [SelectedIf(True), NullAction()]
-            for p, d in _viewers.transform_props:
-                if p in props_set[opened] and (p not in props_groups["focusing"] and (((persistent._viewer_focusing 
-                    and get_value("perspective", scene_keyframes[current_scene][1], True)) and p != "blur") 
-                    or (not persistent._viewer_focusing or not get_value("perspective", scene_keyframes[current_scene][1], True)))):
-                    $key = (tab, layer, p)
-                    $value = get_property(key)
-                    $f = generate_changed(key)
-                    $use_wide_range = p not in force_float and (p in force_wide_range or ((value is None and isinstance(d, int)) or isinstance(value, int)))
-                    if use_wide_range:
-                        $value_range = persistent._wide_range
-                        $bar_page = 1
-                    else:
-                        $value_range = persistent._narrow_range
-                        $bar_page = .05
-                    if not use_wide_range or isinstance(value, float):
-                        $value_format = float_format
-                    else:
-                        $value_format = int_format
-                    hbox:
-                        textbutton "  [p]":
-                            action [SensitiveIf(key in all_keyframes[current_scene]), 
-                            SelectedIf(keyframes_exist(key)), 
-                            Show("_edit_keyframe", key=key, use_wide_range=use_wide_range, change_func=f)]
-                        if p == "child":
-                            textbutton "[value[0]]":
-                                action [SelectedIf(keyframes_exist((tab, layer, "child"))), 
-                                Function(_viewers.change_child, tab, layer, default=value[0])]
-                                size_group None
-                            textbutton "with" action None size_group None
-                            textbutton "[value[1]]":
-                                action [SensitiveIf(key in all_keyframes[current_scene]), 
-                                SelectedIf(keyframes_exist((tab, layer, "child"))), 
-                                Function(_viewers.edit_transition, tab, layer)]
-                                size_group None
-                        else:
-                            if p in force_plus:
-                                $bar_value = value
-                            else:
-                                $bar_value = value + value_range
-                                $value_range = value_range*2
-                            textbutton value_format.format(value):
-                                action Function(edit_value, f, use_wide_range=use_wide_range, default=value, force_plus=p in force_plus)
-                                alternate Function(reset, key) style_group "action_editor_b"
-                            bar adjustment ui.adjustment(range=value_range, value=bar_value, page=bar_page, changed=f):
-                                xalign 1. yalign .5 style "action_editor_bar"
-            for i, props_set_name in enumerate(props_set_names):
-                if i > opened:
-                    hbox:
-                        textbutton "+ "+props_set_name action Show("_action_editor", tab=tab, layer=layer, opened=i, page=page)
         hbox:
             xfill False
             xalign 1.
             if tab == "camera":
-                textbutton _("perspective"):
-                    action [SelectedIf(get_value("perspective", scene_keyframes[current_scene][1], True)), Function(_viewers.toggle_perspective)]
-                    size_group None
                 textbutton _("clipboard") action Function(_viewers.put_camera_clipboard) size_group None
                 # textbutton _("reset") action [_viewers.camera_reset, renpy.restart_interaction] size_group None
             else:
@@ -771,10 +876,6 @@ screen _action_editor(tab="camera", layer="master", opened=0, time=0, page=0):
                     SensitiveIf(tab in _viewers.image_state[current_scene][layer]), 
                     Show("_action_editor", tab="camera", layer=layer, opened=opened, page=page), 
                     Function(_viewers.remove_image, layer, tab)] size_group None
-                textbutton _("zzoom"):
-                    action [SelectedIf(get_value((tab, layer, "zzoom"), scene_keyframes[current_scene][1], True)), 
-                    Function(_viewers.toggle_boolean_property, (tab, layer, "zzoom"))]
-                    size_group None
                 textbutton _("clipboard"):
                     action Function(_viewers.put_image_clipboard, tab, layer)
                     size_group None
@@ -822,7 +923,7 @@ init -1598:
     style action_editor_b_button_text is action_editor_button_text:
         xalign 1.0
 
-screen _input_screen(message="type value", default=""):
+screen _input_screen(message=_("type value"), default=""):
     modal True
     key "game_menu" action Return("")
 
@@ -1246,7 +1347,7 @@ init 1 python in _viewers:
             y = int(y/preview_size)
         else:
             (x, y) = (x/preview_size, y/preview_size)
-        return Text("({:>4}, {:>4})".format(x, y), size=16), 0.1
+        return Text("({:>4}, {:>4})".format(x, y), style="new_action_editor_text"), 0.1
 
 
     def rel_pos(st, at):
@@ -1258,11 +1359,15 @@ init 1 python in _viewers:
             (x, y) = (x/preview_size, y/preview_size)
         rx = x/float(config.screen_width)
         ry = y/float(config.screen_height)
-        return Text("({:>.3}, {:>.3})".format(rx, ry), size=16), 0.1
+        return Text("({:>.3}, {:>.3})".format(rx, ry), style="new_action_editor_text"), 0.1
 
 
-    def show_current_time(st, at):
+    def show_current_time_idle(st, at):
         return Text(_("time: {:>05.2f} s").format(current_time), style="new_action_editor_text"), 0.01
+
+
+    def show_current_time_hover(st, at):
+        return Text(_("time: {:>05.2f} s").format(current_time), style="new_action_editor_text", underline=True), 0.01
 
 
     def is_wide_range(key):
@@ -1272,8 +1377,17 @@ init 1 python in _viewers:
         else:
             prop = key
             d = get_default(prop, True)
-        value = get_property(prop)
+        value = get_property(key)
         return prop not in force_float and (prop in force_wide_range or ((value is None and isinstance(d, int)) or isinstance(value, int)))
+
+
+    def out_of_viewport():
+        #check if there is out of showing range of viewport
+        x, y = renpy.get_mouse_pos()
+        if y < config.screen_height * preview_size + time_column_height or y > config.screen_height:
+            return True
+        else:
+            return False
 
 
     class DraggableValue(renpy.Displayable):
@@ -1357,7 +1471,7 @@ init 1 python in _viewers:
             self.hovered = False
             if not self.dragging and x >= 0 and x <= self.width and y >= 0 and y <= self.height:
                 self.hovered = True
-                if renpy.map_event(ev, "mousedown_1"):
+                if renpy.map_event(ev, "mousedown_1") and not out_of_viewport():
                     if self.get_mods() & self.KMOD_CTRL:
                         self.speed = self.SLOW
                     elif self.get_mods() & self.KMOD_SHIFT:
@@ -1371,7 +1485,7 @@ init 1 python in _viewers:
                 elif not self.dragging and renpy.map_event(ev, "mouseup_1"):
                     if self.clicking == True:
                         self.clicking = False
-                        action=Function(edit_value, self.changed, self.use_wide_range, self.value, self.force_plus),
+                        action=Function(edit_value, self.changed, self.value, self.use_wide_range, self.force_plus),
                         rv = renpy.run(action)
                         if rv is not None:
                             return rv
@@ -1399,13 +1513,13 @@ init 1 python in _viewers:
     class TimeLine(renpy.Displayable):
 
 
-        def __init__(self, scene, tag, props_set_num=None, key=None, changed=None, use_wide_range=None, opened=None, in_graphic_mode=[]):
+        def __init__(self, scene, tag, props_set=None, key=None, changed=None, use_wide_range=None, opened=None, in_graphic_mode=[]):
             super(TimeLine, self).__init__()
             from pygame import MOUSEMOTION
             from renpy.store import Function, Solid, Fixed
             self.scene = scene
             self.tag = tag
-            self.props_set_num = props_set_num
+            self.props_set = props_set
             self.key = key
             self.changed=changed
             self.use_wide_range=use_wide_range
@@ -1414,6 +1528,7 @@ init 1 python in _viewers:
 
             self.children = []
             self.warpkey_children = []
+            self.knot_children = []
             self.graphic_mode = self.key in self.in_graphic_mode
             self.background = TimeLineBackground(self.key, self.graphic_mode)
             self.mark_num = 100
@@ -1426,7 +1541,7 @@ init 1 python in _viewers:
                 return False
             if self.tag != other.tag:
                 return False
-            if self.props_set_num != other.props_set_num:
+            if self.props_set != other.props_set:
                 return False
             if self.key != other.key:
                 return False
@@ -1438,6 +1553,7 @@ init 1 python in _viewers:
         def render(self, width, height, st, at):
             new_children = []
             new_warpkey_children = []
+            new_knot_children = []
             box = Fixed()
             box.add(self.background.get_child())
 
@@ -1457,7 +1573,7 @@ init 1 python in _viewers:
                             _, t, _ = c
                             child = KeyFrame(insensitive_key_child, t, insensitive_key_hovere_child, False, key=None, clicked=Function(change_time, t))
                             new_children.append(child)
-            elif self.tag == "camera" and self.props_set_num is None and self.key is None:
+            elif self.tag == "camera" and self.props_set is None and self.key is None:
                 scene_start = scene_keyframes[self.scene][1]
                 for p, d in camera_props:
                     _all_keyframes = all_keyframes[self.scene]
@@ -1466,10 +1582,10 @@ init 1 python in _viewers:
                         for _, t, _ in _all_keyframes.get(p, []):
                             child = KeyFrame(insensitive_key_child, t, insensitive_key_hovere_child, False, key=None, clicked=Function(change_time, t))
                             new_children.append(child)
-            elif self.tag == "camera" and self.props_set_num is not None:
+            elif self.tag == "camera" and self.props_set is not None:
                 _all_keyframes = all_keyframes[self.scene]
                 scene_start = scene_keyframes[self.scene][1]
-                for p in props_set[self.props_set_num]:
+                for p in self.props_set:
                     if (p not in props_groups["focusing"] or \
                         (persistent._viewer_focusing and get_value("perspective", scene_start, True))):
                         for _, t, _ in _all_keyframes.get(p, []):
@@ -1508,9 +1624,14 @@ init 1 python in _viewers:
                         if w.startswith("warper_generator"):
                             warperkey_child = WarperKey(t_diff/2 + last_t, self.key, last_v, v, self.scene, t)
                             new_warpkey_children.append(warperkey_child)
+                        if t in splines[self.scene][self.key]:
+                            knots = splines[self.scene][self.key][t]
+                            for i in range(1, len(knots)+1):
+                                knot_child = KnotKey(i*t_diff/(len(knots)+1) + last_t, self.key, i-1, self.scene, t)
+                                new_knot_children.append(knot_child)
                     last_v, last_t = v, t
 
-            elif isinstance(self.tag, tuple) and self.props_set_num is None and self.key is None:
+            elif isinstance(self.tag, tuple) and self.props_set is None and self.key is None:
                 tag, layer = self.tag
                 _all_keyframes = all_keyframes[self.scene]
                 for p, d in transform_props:
@@ -1518,10 +1639,10 @@ init 1 python in _viewers:
                         child = KeyFrame(insensitive_key_child, t, insensitive_key_hovere_child, False, key=None,
                             clicked=Function(change_time, t))
                         new_children.append(child)
-            elif isinstance(self.tag, tuple) and self.props_set_num is not None:
+            elif isinstance(self.tag, tuple) and self.props_set is not None:
                 tag, layer = self.tag
                 _all_keyframes = all_keyframes[self.scene]
-                for p in props_set[self.props_set_num]:
+                for p in self.props_set:
                     for _, t, _ in _all_keyframes.get((tag, layer, p), []):
                         child = KeyFrame(insensitive_key_child, t, insensitive_key_hovere_child, False, key=None,
                             clicked=Function(change_time, t))
@@ -1559,6 +1680,11 @@ init 1 python in _viewers:
                         if w.startswith("warper_generator"):
                             warperkey_child = WarperKey(t_diff/2 + last_t, self.key, last_v, v, self.scene, t)
                             new_warpkey_children.append(warperkey_child)
+                        if t in splines[self.scene][self.key]:
+                            knots = splines[self.scene][self.key][t]
+                            for i in range(1, len(knots)+1):
+                                knot_child = KnotKey(i*t_diff/(len(knots)+1) + last_t, self.key, i-1, self.scene, t)
+                                new_knot_children.append(knot_child)
                     last_v, last_t = v, t
 
             elif self.tag == "sounds" and self.key is None:
@@ -1588,6 +1714,18 @@ init 1 python in _viewers:
                     box.add(new_c.get_child())
             self.warpkey_children = warpkey_children
 
+            knot_children = []
+            for new_c in new_knot_children:
+                for old_c in self.knot_children:
+                    if new_c == old_c:
+                        knot_children.append(old_c)
+                        box.add(old_c.get_child())
+                        break
+                else:
+                    knot_children.append(new_c)
+                    box.add(new_c.get_child())
+            self.knot_children = knot_children
+
             children = []
             for new_c in new_children:
                 for old_c in self.children:
@@ -1609,6 +1747,10 @@ init 1 python in _viewers:
 #すべてのイベントをオフにするとバーの問題は確認できない
             redraw = False
             for c in self.warpkey_children:
+                rv = c.event(ev, x, y, st)
+                if rv:
+                    redraw = True
+            for c in self.knot_children:
                 rv = c.event(ev, x, y, st)
                 if rv:
                     redraw = True
@@ -1750,7 +1892,7 @@ init 1 python in _viewers:
                 x >= self.xpos - self.width/2. and x <= self.width/2.+self.xpos and \
                 y >= self.ypos - self.yoffset and y <= self.height - self.yoffset +self.ypos:
                 self.hovered = True
-                if renpy.map_event(ev, "mousedown_1"):
+                if renpy.map_event(ev, "mousedown_1") and not out_of_viewport():
                     if self.get_mods() & self.KMOD_CTRL:
                         self.speed = self.SLOW
                     elif self.get_mods() & self.KMOD_SHIFT:
@@ -1877,7 +2019,7 @@ init 1 python in _viewers:
                 x >= self.xpos - self.width/2. and x <= self.width/2.+self.xpos and \
                 y >= self.ypos - self.yoffset and y <= self.height - self.yoffset +self.ypos:
                 self.hovered = True
-                if renpy.map_event(ev, "mousedown_1"):
+                if renpy.map_event(ev, "mousedown_1") and not out_of_viewport():
                     self.clicking = True
                     raise renpy.display.core.IgnoreEvent()
                 elif not self.dragging and renpy.map_event(ev, "mouseup_1"):
@@ -1914,6 +2056,128 @@ init 1 python in _viewers:
             for key in self.key_list:
                 v, t, w = all_keyframes[self.scene][key][i]
                 all_keyframes[self.scene][key][i] = (v, t, "warper_generator([(1, 1, {:.2})])".format(k))
+            renpy.restart_interaction()
+
+
+    class KnotKey():
+
+
+        def __init__(self, time, key, knot_num, scene, key_time):
+            from pygame import MOUSEMOTION, KMOD_CTRL, KMOD_SHIFT
+            from pygame.key import get_mods
+            from pygame.mouse import get_pressed
+            self.child = knot_child
+            self.hover_child = knot_hovere_child
+            self.time = time
+            self.key = key
+            self.knot_num = knot_num
+            self.scene = scene
+            self.key_time = key_time
+
+            self.dragging = False
+            self.clicking = False
+            self.last_hovered = self.hovered = False
+
+            self.MOUSEMOTION = MOUSEMOTION
+            self.get_pressed = get_pressed
+
+            self.barwidth = config.screen_width - c_box_size-50 - key_half_xsize
+            self.barheight = config.screen_height*(1-preview_size)-time_column_height
+            self.width = key_xsize
+            self.height = key_ysize
+            self.yoffset = self.height/2.
+
+            # self.key_list = [key]
+            if isinstance(key, tuple):
+                n, l, p = key
+                # for gn, ps in props_groups.items():
+                #     if p in ps:
+                #         self.key_list = [(n, l, p) for p in props_groups[gn]]
+                self.force_plus = p in force_plus
+            else:
+                # for gn, ps in props_groups.items():
+                #     if key in ps:
+                #         if gn != "focusing":
+                #             self.key_list = props_groups[gn]
+                self.force_plus = key in force_plus
+
+            if is_wide_range(key):
+                self.range = persistent._graphic_editor_wide_range
+            else:
+                self.range = persistent._graphic_editor_narrow_range
+
+
+        def __eq__(self, other):
+            # if not isinstance(other, WarperKey):
+            #     return False
+            if self.key != other.key:
+                return False
+            if self.time != other.time:
+                return False
+            if self.knot_num != other.knot_num:
+                return False
+            if self.scene != other.scene:
+                return False
+            if self.key_time != other.key_time:
+                return False
+            return True
+
+
+        def get_child(self):
+            self.xpos = time_to_pos(self.time)
+            self.ypos = self.knot_num_to_pos()
+            anchor = (0.5, 0.5)
+            if self.hovered:
+                child = self.hover_child
+            else:
+                child = self.child
+            return Transform(child, xoffset=self.xpos, yoffset=self.ypos, anchor=anchor)
+
+
+        def knot_num_to_pos(self):
+            knots = splines[self.scene][self.key][self.key_time]
+            knot = knots[self.knot_num]
+            return value_to_pos(knot, self.range, self.force_plus)
+
+
+        def knot_drag_changed(self, y):
+            v = pos_to_value(y, is_wide_range(self.key), self.force_plus)
+            if isinstance(v, float):
+                v = round(v, 2)
+            splines[self.scene][self.key][self.key_time][self.knot_num] = v
+            renpy.restart_interaction()
+
+
+        def event(self, ev, x, y, st):
+            clicking, _, _ = self.get_pressed()
+            if not clicking and self.dragging:
+                self.dragging = False
+                self.clicking = False
+
+            if ev.type == self.MOUSEMOTION and self.clicking:
+                self.dragging = True
+                self.knot_drag_changed(y)
+                return True
+
+            self.hovered = False
+            if not self.dragging and \
+                x >= self.xpos - self.width/2. and x <= self.width/2.+self.xpos and \
+                y >= self.ypos - self.yoffset and y <= self.height - self.yoffset +self.ypos:
+                self.hovered = True
+                if renpy.map_event(ev, "mousedown_1") and not out_of_viewport():
+                    self.clicking = True
+                    raise renpy.display.core.IgnoreEvent()
+                elif not self.dragging and renpy.map_event(ev, "mouseup_1"):
+                    self.clicking = False
+                    raise renpy.display.core.IgnoreEvent()
+            elif self.clicking and renpy.map_event(ev, "mouseup_1"):
+                self.dragging = False
+                self.clicking = False
+                raise renpy.display.core.IgnoreEvent()
+            if self.last_hovered != self.hovered:
+                self.last_hovered = self.hovered
+                return True
+            self.last_hovered = self.hovered
 
 
     class TimeLineBackground():
@@ -1987,7 +2251,7 @@ init 1 python in _viewers:
             if not self.dragging and x >= self.xpos and x <= self.width + self.xpos \
                 and y >= self.ypos and y <= self.height + self.ypos:
                 self.hovered = True
-                if renpy.map_event(ev, "mousedown_1"):
+                if renpy.map_event(ev, "mousedown_1") and not out_of_viewport():
                     self.clicking = True
                     raise renpy.display.core.IgnoreEvent()
                 elif not self.dragging and renpy.map_event(ev, "mouseup_1"):
@@ -2028,7 +2292,8 @@ init 1 python in _viewers:
             self.height = int(preview_size*config.screen_height)
 
             self.children = []
-            self.camera = CameraPin(current_scene)
+            self.camera_children = []
+            self.mark_num = 20
 
 
         def __eq__(self, other):
@@ -2044,8 +2309,19 @@ init 1 python in _viewers:
             for l in ["master"]:
                 state = get_image_state(l)
                 for tag in state:
-                    child = ImagePin(tag, l, current_scene)
-                    new_children.append(child)
+                    ks = self.get_image_keyframes(tag, l)
+                    if not ks or (current_time not in ks and ks[-1] > current_time):
+                        child = ImagePin(tag, l, current_scene, current_time)
+                        new_children.append(child)
+                    last_t = None
+                    for t in ks:
+                        child = ImagePin(tag, l, current_scene, t)
+                        new_children.append(child)
+                        if last_t is not None:
+                            t_diff = (t - last_t)
+                            for i in range(1, self.mark_num):
+                                box.add(ImageInterpolate(tag, l, current_scene, (i * (t - last_t) / self.mark_num)+last_t).get_child())
+                        last_t = t
 
             children = []
             for new_c in new_children:
@@ -2060,12 +2336,32 @@ init 1 python in _viewers:
                     box.add(new_c.get_child())
             self.children = children
 
-            child = CameraPin(current_scene)
-            if self.camera == child:
-                self.camera.update(child)
-            else:
-                self.camera = child
-            box.add(self.camera.get_child())
+            new_children = []
+            ks = self.get_camera_keyframes()
+            if not ks or (current_time not in ks and ks[-1] > current_time):
+                child = CameraPin(current_scene, current_time)
+                new_children.append(child)
+            last_t = None
+            for t in ks:
+                child = CameraPin(current_scene, t)
+                new_children.append(child)
+                if last_t is not None:
+                    for i in range(1, self.mark_num):
+                        box.add(CameraInterpolate(current_scene, (i * (t - last_t) / self.mark_num) + last_t).get_child())
+                last_t = t
+
+            camera_children = []
+            for new_c in new_children:
+                for old_c in self.camera_children:
+                    if new_c == old_c:
+                        old_c.update(new_c)
+                        camera_children.append(old_c)
+                        box.add(old_c.get_child())
+                        break
+                else:
+                    camera_children.append(new_c)
+                    box.add(new_c.get_child())
+            self.camera_children = camera_children
 
             render = box.render(width, height, st, at)
             return render
@@ -2077,7 +2373,10 @@ init 1 python in _viewers:
                 rv = c.event(ev, x, y, st)
                 if rv:
                     redraw = True
-            rv = self.camera.event(ev, x, y, st)
+            for c in self.camera_children:
+                rv = c.event(ev, x, y, st)
+                if rv:
+                    redraw = True
             if rv:
                 redraw = True
             if redraw:
@@ -2089,10 +2388,75 @@ init 1 python in _viewers:
                 renpy.redraw(self, 0)
 
 
-    class ImagePin():
+        def get_image_keyframes(self, tag, layer):
+            result = set()
+            for p in ["xpos", "ypos", "zpos"]:
+                if (tag, layer, p) not in all_keyframes[current_scene]:
+                    continue
+                else:
+                    for _, t, _ in all_keyframes[current_scene][(tag, layer, p)]:
+                        result.add(t)
+            
+            return sorted(list(result))
 
 
-        def __init__(self, tag, layer, scene_num):
+        def get_camera_keyframes(self):
+            result = set()
+            for p in ["xpos", "ypos", "zpos"]:
+                if p not in all_keyframes[current_scene]:
+                    continue
+                else:
+                    for _, t, _ in all_keyframes[current_scene][p]:
+                        result.add(t)
+            return sorted(tuple(result))
+
+
+    class ImageInterpolate():
+
+
+        def __init__(self, tag, layer, scene_num, time):
+            self.tag = tag
+            self.layer = layer
+            self.scene_num = scene_num
+            self.time = time
+
+            self.barwidth = config.screen_width - c_box_size-50 - key_half_xsize
+            self.barheight = config.screen_height*(1-preview_size)-time_column_height
+
+
+            self.width = 6
+            self.height = 6
+            box = Fixed(xsize=self.width, ysize=self.height)
+            box.add(Solid("#AAA",xsize=self.width, ysize=self.height))
+            box.add(Solid("#333",xpos=1, ypos=1, xsize=self.width-2, ysize=self.height-2))
+            self.child =box
+
+
+        def value_to_pos(self):
+            xpos = get_value((self.tag, self.layer, "xpos"), self.time, True, self.scene_num)
+            if isinstance(xpos, float):
+                xpos *= config.screen_width
+            xpos *= preview_size
+
+            ypos = get_value((self.tag, self.layer, "ypos"), self.time, True, self.scene_num)
+            if isinstance(ypos, float):
+                ypos *= config.screen_height
+            ypos *= preview_size
+
+            return (xpos, ypos)
+
+
+        def get_child(self):
+            self.xpos, self.ypos = self.value_to_pos()
+            anchor = (0.5, 0.5)
+            return Transform(self.child, xoffset=self.xpos, yoffset=self.ypos, anchor=anchor)
+
+
+    class ImagePin(ImageInterpolate):
+
+
+        def __init__(self, tag, layer, scene_num, time):
+            super(ImagePin, self).__init__(tag, layer, scene_num, time)
             from pygame import MOUSEMOTION, KMOD_CTRL, KMOD_SHIFT, KMOD_ALT
             from pygame.key import get_mods
             from pygame.mouse import get_pressed
@@ -2100,22 +2464,24 @@ init 1 python in _viewers:
             self.tag = tag
             self.layer = layer
             self.scene_num = scene_num
+            self.time = time
 
-            self.clicked = [Show("_new_action_editor", opened={scene_num:[tag, (tag, layer, "Child/Pos    ")]})] + [QueueEvent("mouseup_1")]
-            xpos   = get_value((tag, layer, "xpos"), current_time, True, self.scene_num)
-            if isinstance(xpos, float):
-                xpos = round(xpos, 2)
-            ypos   = get_value((tag, layer, "ypos"), current_time, True, self.scene_num)
-            if isinstance(ypos, float):
-                ypos = round(ypos, 2)
-            zpos   = get_value((tag, layer, "zpos"), current_time, True, self.scene_num)
-            if isinstance(zpos, float):
-                zpos = round(zpos, 2)
-            rotate = get_value((tag, layer, "rotate"), current_time, True, self.scene_num)
-            if isinstance(rotate, float):
-                rotate = round(rotate, 2)
+            self.clicked = [Show("_new_action_editor", opened={scene_num:[tag, (tag, layer, "Child/Pos    ")]}), Function(change_time, time)] + [QueueEvent("mouseup_1")]
             self.draggable = scene_num == current_scene
+
             if self.draggable:
+                xpos   = get_value((tag, layer, "xpos"), time, True, self.scene_num)
+                if isinstance(xpos, float):
+                    xpos = round(xpos, 2)
+                ypos   = get_value((tag, layer, "ypos"), time, True, self.scene_num)
+                if isinstance(ypos, float):
+                    ypos = round(ypos, 2)
+                zpos   = get_value((tag, layer, "zpos"), time, True, self.scene_num)
+                if isinstance(zpos, float):
+                    zpos = round(zpos, 2)
+                rotate = get_value((tag, layer, "rotate"), time, True, self.scene_num)
+                if isinstance(rotate, float):
+                    rotate = round(rotate, 2)
                 self.x_changed = generate_changed((self.tag, self.layer, "xpos"))
                 self.y_changed = generate_changed((self.tag, self.layer, "ypos"))
                 self.z_changed = generate_changed((self.tag, self.layer, "zpos"))
@@ -2123,13 +2489,13 @@ init 1 python in _viewers:
                 self.alternate = ShowAlternateMenu(
                         [("{}".format(tag), NullAction()),
                         ("edit: xpos {}".format(xpos), 
-                         [Function(edit_value, self.x_changed, is_wide_range((tag, layer, "xpos")), xpos, "xpos" in force_plus, current_time), Function(change_time, current_time)]),
-                        ("edit: ypos {}".format(ypos),
-                         [Function(edit_value, self.y_changed, is_wide_range((tag, layer, "ypos")), ypos, "ypos" in force_plus, current_time), Function(change_time, current_time)]),
-                        ("edit: zpos {}".format(zpos),
-                         [Function(edit_value, self.z_changed, is_wide_range((tag, layer, "zpos")), zpos, "zpos" in force_plus, current_time), Function(change_time, current_time)]),
+                         [Function(edit_value, self.x_changed, xpos, is_wide_range((tag, layer, "xpos")), "xpos" in force_plus, time), Function(change_time, time)]),
+                        ("edit: ypos {}".format(ypos),             
+                         [Function(edit_value, self.y_changed, ypos, is_wide_range((tag, layer, "ypos")), "ypos" in force_plus, time), Function(change_time, time)]),
+                        ("edit: zpos {}".format(zpos),             
+                         [Function(edit_value, self.z_changed, zpos, is_wide_range((tag, layer, "zpos")), "zpos" in force_plus, time), Function(change_time, time)]),
                         ("edit: rotate {}".format(rotate), 
-                         [Function(edit_value, self.r_changed, is_wide_range((tag, layer, "rotate")), rotate, "rotate" in force_plus, current_time), Function(change_time, current_time)])],
+                         [Function(edit_value, self.r_changed, rotate, is_wide_range((tag, layer, "rotate")), "rotate" in force_plus, time), Function(change_time, time)])],
                         style_prefix="_viewers_alternate_menu")
 
             self.dragging = False
@@ -2143,12 +2509,39 @@ init 1 python in _viewers:
             self.get_mods = get_mods
             self.get_pressed = get_pressed
 
-            self.barwidth = config.screen_width - c_box_size-50 - key_half_xsize
-            self.barheight = config.screen_height*(1-preview_size)-time_column_height
-            self.child = Transform(rotate=45)(Solid("#0CF", xsize=16, ysize=16))
-            self.hover_child = Transform(rotate=45)(Solid("#2EF", xsize=16, ysize=16))
-            self.other_child = Transform(rotate=45)(Solid("#09B", xsize=16, ysize=16))
-            self.other_hover_child = Transform(rotate=45)(Solid("#2BC", xsize=16, ysize=16))
+            box = Fixed(xsize=16,ysize=16)
+            box.add(Solid("#07A", xsize=16, ysize=16))
+            box.add(Solid("#0CF", align=(.5, .5), xsize=14, ysize=14))
+            self.current_child = Transform(rotate=45)(box)
+            box = Fixed(xsize=16,ysize=16)
+            box.add(Solid("#09A", xsize=16, ysize=16))
+            box.add(Solid("#2EF", align=(.5, .5), xsize=14, ysize=14))
+            self.current_hover_child = Transform(rotate=45)(box)
+            box = Fixed(xsize=16,ysize=16)
+            box.add(Solid("#047", xsize=16, ysize=16))
+            box.add(Solid("#09B", align=(.5, .5), xsize=14, ysize=14))
+            self.current_other_child = Transform(rotate=45)(box)
+            box = Fixed(xsize=16,ysize=16)
+            box.add(Solid("#078", xsize=16, ysize=16))
+            box.add(Solid("#2BC", align=(.5, .5), xsize=14, ysize=14))
+            self.current_other_hover_child = Transform(rotate=45)(box)
+            box = Fixed(xsize=16,ysize=16)
+            box.add(Solid("#059", xsize=16, ysize=16))
+            box.add(Solid("#09C", align=(.5, .5), xsize=14, ysize=14))
+            self.child = Transform(rotate=45)(box)
+            box = Fixed(xsize=16,ysize=16)
+            box.add(Solid("#078", xsize=16, ysize=16))
+            box.add(Solid("#2BE", align=(.5, .5), xsize=14, ysize=14))
+            self.hover_child = Transform(rotate=45)(box)
+            box = Fixed(xsize=16,ysize=16)
+            box.add(Solid("#014", xsize=16, ysize=16))
+            box.add(Solid("#069", align=(.5, .5), xsize=14, ysize=14))
+            self.other_child = Transform(rotate=45)(box)
+            box = Fixed(xsize=16,ysize=16)
+            box.add(Solid("#037", xsize=16, ysize=16))
+            box.add(Solid("#28B", align=(.5, .5), xsize=14, ysize=14))
+            self.other_hover_child = Transform(rotate=45)(box)
+
             self.width = key_xsize
             self.height = key_ysize
 
@@ -2160,6 +2553,8 @@ init 1 python in _viewers:
                 return False
             if self.scene_num != other.scene_num:
                 return False
+            if self.time != other.time:
+                return False
             if self.draggable != other.draggable:
                 return False
             return True
@@ -2169,18 +2564,32 @@ init 1 python in _viewers:
             self.alternate = other.alternate
 
 
-        def value_to_pos(self):
-            xpos = get_value((self.tag, self.layer, "xpos"), current_time, True, self.scene_num)
-            if isinstance(xpos, float):
-                xpos *= config.screen_width
-            xpos *= preview_size
-
-            ypos = get_value((self.tag, self.layer, "ypos"), current_time, True, self.scene_num)
-            if isinstance(ypos, float):
-                ypos *= config.screen_height
-            ypos *= preview_size
-
-            return (xpos, ypos)
+        def get_child(self):
+            self.xpos, self.ypos = self.value_to_pos()
+            anchor = (0.5, 0.5)
+            if self.hovered:
+                if self.scene_num == current_scene:
+                    if current_time == self.time:
+                        child = self.current_hover_child
+                    else:
+                        child = self.hover_child
+                else:
+                    if current_time == self.time:
+                        child = self.current_other_scene_hover_child
+                    else:
+                        child = self.other_scene_hover_child
+            else:
+                if self.scene_num == current_scene:
+                    if current_time == self.time:
+                        child = self.current_child
+                    else:
+                        child = self.child
+                else:
+                    if current_time == self.time:
+                        child = self.current_other_scene_child
+                    else:
+                        child = self.other_scene_child
+            return Transform(child, xoffset=self.xpos, yoffset=self.ypos, anchor=anchor)
 
 
         def pos_to_value(self, x, y):
@@ -2232,22 +2641,6 @@ init 1 python in _viewers:
                 self.y_changed(to_changed_value(y, "ypos" in force_plus, is_wide_range((self.tag, self.layer, "ypos"))))
 
 
-        def get_child(self):
-            self.xpos, self.ypos = self.value_to_pos()
-            anchor = (0.5, 0.5)
-            if self.hovered:
-                if self.scene_num == current_scene:
-                    child = self.hover_child
-                else:
-                    child = self.other_scene_hover_child
-            else:
-                if self.scene_num == current_scene:
-                    child = self.child
-                else:
-                    child = self.other_scene_child
-            return Transform(child, xoffset=self.xpos, yoffset=self.ypos, anchor=anchor)
-
-
         def event(self, ev, x, y, st):
             clicking, _, _ = self.get_pressed()
             if not clicking and self.dragging:
@@ -2261,6 +2654,7 @@ init 1 python in _viewers:
             if self.draggable and ev.type == self.MOUSEMOTION and self.clicking:
                 self.dragging = True
                 self.pos_to_value(x, y)
+                
 
             self.hovered = False
             if not self.dragging and \
@@ -2273,8 +2667,8 @@ init 1 python in _viewers:
                     self.clicking = True
                     self.last_x = x
                     self.last_y = y
-                    self.last_zpos = get_value((self.tag, self.layer, "zpos"), scene_num=self.scene_num)
-                    self.last_rotate = get_value((self.tag, self.layer, "rotate"), default=True, scene_num=self.scene_num)
+                    self.last_zpos = get_value((self.tag, self.layer, "zpos"), time=self.time, scene_num=self.scene_num)
+                    self.last_rotate = get_value((self.tag, self.layer, "rotate"), time=self.time, default=True, scene_num=self.scene_num)
                     raise renpy.display.core.IgnoreEvent()
                 elif not self.dragging and renpy.map_event(ev, "mouseup_1"):
                     if self.clicking == True:
@@ -2302,45 +2696,89 @@ init 1 python in _viewers:
             self.last_hovered = self.hovered
 
 
-    class CameraPin():
+    class CameraInterpolate():
 
 
-        def __init__(self, scene_num):
+        def __init__(self, scene_num, time):
+            self.scene_num = scene_num
+            self.time = time
+
+            self.barwidth = config.screen_width - c_box_size-50 - key_half_xsize
+            self.barheight = config.screen_height*(1-preview_size)-time_column_height
+
+            self.width = 6
+            self.height = 6
+            box = Fixed(xsize=self.width, ysize=self.height)
+            box.add(Solid("#AAA",xsize=self.width, ysize=self.height))
+            box.add(Solid("#333",xpos=1, ypos=1, xsize=self.width-2, ysize=self.height-2))
+            self.child = box
+            self.xoffset = int(preview_size * config.screen_width / 2)
+            self.yoffset = int(preview_size * config.screen_height / 2)
+
+
+        def value_to_pos(self):
+            xpos = get_value("xpos", self.time, True, self.scene_num)
+            if isinstance(xpos, float):
+                xpos *= config.screen_width
+            xpos *= preview_size
+            xpos += self.xoffset
+
+            ypos = get_value("ypos", self.time, True, self.scene_num)
+            if isinstance(ypos, float):
+                ypos *= config.screen_height
+            ypos *= preview_size
+            ypos += self.yoffset
+
+            return (xpos, ypos)
+
+
+        def get_child(self):
+            self.xpos, self.ypos = self.value_to_pos()
+            anchor = (0.5, 0.5)
+            return Transform(self.child, xoffset=self.xpos, yoffset=self.ypos, anchor=anchor)
+
+
+    class CameraPin(CameraInterpolate):
+
+
+        def __init__(self, scene_num, time):
+            super(CameraPin, self).__init__(scene_num, time)
             from pygame import MOUSEMOTION, KMOD_CTRL, KMOD_SHIFT, KMOD_ALT
             from pygame.key import get_mods
             from pygame.mouse import get_pressed
             from renpy.store import Show, QueueEvent, Function, NullAction
             self.scene_num = scene_num
+            self.time = time
 
-            self.clicked = [Show("_new_action_editor", opened={scene_num:["camera", "Child/Pos    "]})] + [QueueEvent("mouseup_1")]
-            xpos   = get_value("xpos", current_time, True, self.scene_num)
-            if isinstance(xpos, float):
-                xpos = round(xpos, 2)
-            ypos   = get_value("ypos", current_time, True, self.scene_num)
-            if isinstance(ypos, float):
-                ypos = round(ypos, 2)
-            zpos   = get_value("zpos", current_time, True, self.scene_num)
-            if isinstance(zpos, float):
-                zpos = round(zpos, 2)
-            rotate = get_value("rotate", current_time, True, self.scene_num)
-            if isinstance(rotate, float):
-                rotate = round(rotate, 2)
+            self.clicked = [Show("_new_action_editor", opened={scene_num:["camera", "Child/Pos    "]}), Function(change_time, time)] + [QueueEvent("mouseup_1")]
             self.draggable = scene_num == current_scene
             if self.draggable:
                 self.x_changed = generate_changed("xpos")
                 self.y_changed = generate_changed("ypos")
                 self.z_changed = generate_changed("zpos")
                 self.r_changed = generate_changed("rotate")
+                xpos   = get_value("xpos", time, True, self.scene_num)
+                if isinstance(xpos, float):
+                    xpos = round(xpos, 2)
+                ypos   = get_value("ypos", time, True, self.scene_num)
+                if isinstance(ypos, float):
+                    ypos = round(ypos, 2)
+                zpos   = get_value("zpos", time, True, self.scene_num)
+                if isinstance(zpos, float):
+                    zpos = round(zpos, 2)
+                rotate = get_value("rotate", time, True, self.scene_num)
+                if isinstance(rotate, float):
+                    rotate = round(rotate, 2)
                 self.alternate = ShowAlternateMenu([
                         ("camera", NullAction()),
                         ("edit: xpos {}".format(xpos), 
-                         [Function(edit_value, self.x_changed, is_wide_range("xpos"), xpos, "xpos" in force_plus, current_time), Function(change_time, current_time)]),
-                        ("edit: ypos {}".format(ypos),
-                         [Function(edit_value, self.y_changed, is_wide_range("ypos"), ypos, "ypos" in force_plus, current_time), Function(change_time, current_time)]),
-                        ("edit: zpos {}".format(zpos),
-                         [Function(edit_value, self.z_changed, is_wide_range("zpos"), zpos, "zpos" in force_plus, current_time), Function(change_time, current_time)]),
+                         [Function(edit_value, self.x_changed, xpos, is_wide_range("xpos"), "xpos" in force_plus, time), Function(change_time, time)]),
+                        ("edit: ypos {}".format(ypos),             
+                         [Function(edit_value, self.y_changed, ypos, is_wide_range("ypos"), "ypos" in force_plus, time), Function(change_time, time)]),
+                        ("edit: zpos {}".format(zpos),             
+                         [Function(edit_value, self.z_changed, zpos, is_wide_range("zpos"), "zpos" in force_plus, time), Function(change_time, time)]),
                         ("edit: rotate {}".format(rotate), 
-                         [Function(edit_value, self.r_changed, is_wide_range("rotate"), rotate, "rotate" in force_plus, current_time), Function(change_time, current_time)])],
+                         [Function(edit_value, self.r_changed, rotate, is_wide_range("rotate"), "rotate" in force_plus, time), Function(change_time, time)])],
                         style_prefix="_viewers_alternate_menu")
 
             self.dragging = False
@@ -2354,20 +2792,37 @@ init 1 python in _viewers:
             self.get_mods = get_mods
             self.get_pressed = get_pressed
 
-            self.barwidth = config.screen_width - c_box_size-50 - key_half_xsize
-            self.barheight = config.screen_height*(1-preview_size)-time_column_height
-            self.child = Transform(rotate=45)(Solid("#222", xsize=16, ysize=16))
-            self.hover_child = Transform(rotate=45)(Solid("#555", xsize=16, ysize=16))
-            # self.other_child = Transform(rotate=45)(Solid("#09B", xsize=16, ysize=16))
-            # self.other_hover_child = Transform(rotate=45)(Solid("#2BC", xsize=16, ysize=16))
+            self.current_child = Transform(rotate=45)(Solid("#222", xsize=16, ysize=16))
+            self.current_hover_child = Transform(rotate=45)(Solid("#555", xsize=16, ysize=16))
+            self.child = Transform(rotate=45)(Solid("#444", xsize=16, ysize=16))
+            self.hover_child = Transform(rotate=45)(Solid("#666", xsize=16, ysize=16))
+
+            box = Fixed(xsize=16,ysize=16)
+            box.add(Solid("#555", xsize=16, ysize=16))
+            box.add(Solid("#222", align=(.5, .5), xsize=14, ysize=14))
+            self.current_child = Transform(rotate=45)(box)
+            box = Fixed(xsize=16,ysize=16)
+            box.add(Solid("#888", xsize=16, ysize=16))
+            box.add(Solid("#555", align=(.5, .5), xsize=14, ysize=14))
+            self.current_hover_child = Transform(rotate=45)(box)
+
+            box = Fixed(xsize=16,ysize=16)
+            box.add(Solid("#777", xsize=16, ysize=16))
+            box.add(Solid("#444", align=(.5, .5), xsize=14, ysize=14))
+            self.child = Transform(rotate=45)(box)
+            box = Fixed(xsize=16,ysize=16)
+            box.add(Solid("#999", xsize=16, ysize=16))
+            box.add(Solid("#666", align=(.5, .5), xsize=14, ysize=14))
+            self.hover_child = Transform(rotate=45)(box)
+
             self.width = key_xsize
             self.height = key_ysize
-            self.xoffset = int(preview_size * config.screen_width / 2)
-            self.yoffset = int(preview_size * config.screen_height / 2)
 
 
         def __eq__(self, other):
             if self.scene_num != other.scene_num:
+                return False
+            if self.time != other.time:
                 return False
             if self.draggable != other.draggable:
                 return False
@@ -2378,20 +2833,26 @@ init 1 python in _viewers:
             self.alternate = other.alternate
 
 
-        def value_to_pos(self):
-            xpos = get_value("xpos", current_time, True, self.scene_num)
-            if isinstance(xpos, float):
-                xpos *= config.screen_width
-            xpos *= preview_size
-            xpos += self.xoffset
-
-            ypos = get_value("ypos", current_time, True, self.scene_num)
-            if isinstance(ypos, float):
-                ypos *= config.screen_height
-            ypos *= preview_size
-            ypos += self.yoffset
-
-            return (xpos, ypos)
+        def get_child(self):
+            self.xpos, self.ypos = self.value_to_pos()
+            anchor = (0.5, 0.5)
+            if self.hovered:
+                if self.scene_num == current_scene:
+                    if self.time == current_time:
+                        child = self.current_hover_child
+                    else:
+                        child = self.hover_child
+                # else:
+                #     child = self.other_scene_hover_child
+            else:
+                if self.scene_num == current_scene:
+                    if self.time == current_time:
+                        child = self.current_child
+                    else:
+                        child = self.child
+                # else:
+                #     child = self.other_scene_child
+            return Transform(child, xoffset=self.xpos, yoffset=self.ypos, anchor=anchor)
 
 
         def pos_to_value(self, x, y):
@@ -2443,22 +2904,6 @@ init 1 python in _viewers:
             else:
                 self.x_changed(to_changed_value(x, "xpos" in force_plus, is_wide_range("xpos")))
                 self.y_changed(to_changed_value(y, "ypos" in force_plus, is_wide_range("ypos")))
-
-
-        def get_child(self):
-            self.xpos, self.ypos = self.value_to_pos()
-            anchor = (0.5, 0.5)
-            if self.hovered:
-                if self.scene_num == current_scene:
-                    child = self.hover_child
-                # else:
-                #     child = self.other_scene_hover_child
-            else:
-                if self.scene_num == current_scene:
-                    child = self.child
-                # else:
-                #     child = self.other_scene_child
-            return Transform(child, xoffset=self.xpos, yoffset=self.ypos, anchor=anchor)
 
 
         def event(self, ev, x, y, st):
@@ -2641,6 +3086,9 @@ init 1 python in _viewers:
                 Function(change_child, n, l, time=t, default=v[0])))
             button_list.append((("edit transform: {}".format(v[1])), 
                 Function(edit_transition, n, l, time=t)))
+        elif p in boolean_props + any_props:
+            button_list.append((("edit value: {}".format(v)), 
+                Function(edit_any, key, time=t)))
         else:
             button_list.append(( _("edit value: {}".format(v)),
                 [Function(edit_value, change_func, default=v, use_wide_range=use_wide_range, force_plus=p in force_plus, time=t),
@@ -2655,7 +3103,7 @@ init 1 python in _viewers:
                 button_list.append(( _("use warper generator"),
                     [SelectedIf(w.startswith("warper_generator")), Function(use_warper_generator, check_points=check_points_list, old=t)]))
             if p not in [prop for ps in props_groups.values() for prop in ps]:
-                if i > 0 and not in_graphic_mode:
+                if i > 0:
                     button_list.append(( _("spline editor"),
                         [SelectedIf(t in splines[current_scene][key]), 
                         Show("_spline_editor", change_func=change_func, 
