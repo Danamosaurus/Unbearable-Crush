@@ -284,10 +284,10 @@ label chapter5:
     #Add/remove points from total accordingly.
 
     "SHOW SCORE"
-
-    $Kanna = game_player.getRelationship('Kanna')
-    $Maya = game_player.getRelationship('Charlotte')
-    "We Kanna has [Kanna] and Charlotte has [Charlotte]"
+    ####This is an example of how to properly show score. Please look at the variables used. 
+    $Kanna_points = game_player.getRelationship('Kanna')
+    $Charlotte_points = game_player.getRelationship('Charlotte')
+    "We Kanna has [Kanna_points] and Charlotte has [Charlotte_points]"
 
 
     jump chapter6
