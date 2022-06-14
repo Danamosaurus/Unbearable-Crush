@@ -16,7 +16,7 @@ label start:
     show bearmenu_maya
     show bearmenu_kan
     show shrine:
-        subpixel True xpos 0.5 ypos 0.5 xanchor 0.5 yanchor 0.5 rotate None blur None 
+        subpixel True xpos 0.5 ypos 0.5 xanchor 0.5 yanchor 0.5 rotate None blur None
         parallel:
             alpha 0.0
             easein 3.5 alpha 1.0
@@ -82,7 +82,7 @@ label start:
         xpos .15
         ypos .15
     #$camera_move(7000, 500, 0, 0, duration=5)
-        subpixel True 
+        subpixel True
         parallel:
             xpos 0.73
             easein 5 xpos 0.16
@@ -200,7 +200,7 @@ label start:
     #MUSIC Something fun here for when Kanna starts up about Kyousuke.
 
     camera:
-        subpixel True ypos 87 zpos -157.0 
+        subpixel True ypos 87 zpos -157.0
         parallel:
             zpos -157.0
             ease 30.0 zpos -557.0
@@ -239,10 +239,10 @@ label start:
     Rin "Yeah yeah, you’ll see when you wake up, kid."
     #ART The camera pans outside of Kanna’s room, showing the night sky.
     "I guess finishing my career with a love wish ain’t so bad."
-    #ART show pocket watch. 
+    #ART show pocket watch.
     "Well that's just typical."
     "You're not going to cut me any slack with this one, are you Fortune?"
-    #Art Card Table - A table where Ringo has some playing cards. He's flipping them over, shuffling etc. 
+    #Art Card Table - A table where Ringo has some playing cards. He's flipping them over, shuffling etc.
     "A week is hardly enough time to bring two people together by chance alone."
     "I won't know for sure how the cards are laid out until I get a look at the guy we're dealing with."
     "This 'Kyousuke'."
