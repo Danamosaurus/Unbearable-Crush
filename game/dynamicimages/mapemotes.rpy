@@ -103,6 +103,7 @@ init python:
    MapEmote('Rin testemote', 'Rin base armout mdo_oh ed_squint sweatdrop')
    MapEmote('Rin panting', 'Rin base armwave mdo_surprise ed_shock nervous')
    MapEmote('Rin surprised', 'Rin base mdo_happy ed_shock')
+   MapEmote('Rin smile normal', 'Rin base mdo_grin ed_default')
 
    ##Youko
    MapEmote('Youk smile', 'Youk base mdo_smile')

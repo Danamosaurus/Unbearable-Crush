@@ -144,7 +144,7 @@ label chapter6:
     "Fortune-telling"
     "Mind-reading"
     #ART Show this Youko's big ass grown adult body stuffed into Kanna's backpack hanging like a sack of potatoes. She doesn't notice.
-    #ART Ringo comments there's not enough room in here for two of them. 
+    #ART Ringo comments there's not enough room in here for two of them.
     "Youko appears in Kyousuke's backpack, right next to Ringo."
 
     Rin "'About time you showed up."
@@ -317,7 +317,7 @@ label chapter6:
 
     #New choice, reorganized dialogue, and new dialogue after this point:
 
-    #Maybe do another set of choices before Charlotte's humiliation here? 
+    #Maybe do another set of choices before Charlotte's humiliation here?
 
     #Cut back to Ringo and Youko in Kyousuke's bag".
 
@@ -387,7 +387,7 @@ label chapter6:
     Rin "He’s gonna end up hurting himself."
     Youk "Of course not. At least not long enough for him to do any damage."
     Youk "But I don’t have the faintest clue what he means by thinking of two sodas."
-    Youk"Is he that thirsty?" 
+    Youk"Is he that thirsty?"
     Rin "Man this is getting stupid."
     Youk "You just now realized  that?"
     Youk "Regardless, I believe you're up first this time."
@@ -422,9 +422,9 @@ label chapter6:
 
     #Choice 2.A "Super Strength"
 
-    #NOTES - Kyousuke wants to be strong. Charlotte shows him a technique to increase his strength just a little bit. He does indeed feel a little bit stronger. 
-    #Charlotte recommends crushing the Micolash rock to gain it’s insight to look into the other world. 
-    #But when he tries to crush the Micolash rock that Charlotte gives him, he can’t do it. Kanna gives it a try and she crushes Micolash with ease. 
+    #NOTES - Kyousuke wants to be strong. Charlotte shows him a technique to increase his strength just a little bit. He does indeed feel a little bit stronger.
+    #Charlotte recommends crushing the Micolash rock to gain it’s insight to look into the other world.
+    #But when he tries to crush the Micolash rock that Charlotte gives him, he can’t do it. Kanna gives it a try and she crushes Micolash with ease.
     #Charlotte and Maya are speechless while Kyousuke is extremely impressed.
     Kyou "I want to be strong!"
     Kyou "Super strong!"
@@ -446,7 +446,7 @@ label chapter6:
     Kyou "I don’t know. It just sounds like it would be cool."
     Kan "I guess it would be cool."
     Maya "It would be."
-    Char "It would be cool indeed." 
+    Char "It would be cool indeed."
     Char "But I can’t just make you super strong all of a sudden."
     Char "Well I mean of course I can, but this is about your training, not about my magical ability."
     Char "So I will show you a technique to begin your journey of strength training!"
@@ -470,7 +470,7 @@ label chapter6:
     Char "But yes, do you still have it Kyousuke?"
     Kyou "I do! Got it right here."
     Char "Excellent! Hand to me."
-    Kyou "Alright." 
+    Kyou "Alright."
     #Charlotte spits on the rock.
     Char "*Ptooe.*"
     Maya "Eww, what the heck are you doing?"
@@ -530,7 +530,7 @@ label chapter6:
     Kan "Whose side are you on?"
     Maya "Kyousuke’s of course. Are you saying that you’re not on Kyousuke’s side?"
     Kan "JUST GIVE ME THE ROCK!"
-    Maya "Fine, geez." 
+    Maya "Fine, geez."
     "Kan wraps her fist around the rock."
     Maya "Are you blushing?"
     Kan "JUST LET ME LOOK AT IT O.K?"
@@ -541,10 +541,10 @@ label chapter6:
     Kan "Huh."
     Kan "See I knew something was up with it! It’s completely destroyed."
     Kyou "WOAH!"
-    Kyou "That’s amazing Kanna! You pulverized it. It’s like sand now!" 
+    Kyou "That’s amazing Kanna! You pulverized it. It’s like sand now!"
     Kan "Nice try Charlotte! I knew this was some sort of fake!"
     Char "..."
-    Maya "..."  
+    Maya "..."
     Maya "I think uh...I think that was an actual rock."
     Char "I uh..."
     Char "K-Kyousuke must have weakened it for you! His new strength must have damaged the structural integrity of the mana capacitor."
@@ -562,8 +562,8 @@ label chapter6:
     Maya "T-there’s no way someone like Kanna here could do something like that."
     Kan "Hey!"
     Kyou "How did you get so strong, Kanna?"
-    Kan "O-oh I’m not that strong. You weakened it for me Kyousuke." 
-    # End of Choice 2.A 
+    Kan "O-oh I’m not that strong. You weakened it for me Kyousuke."
+    # End of Choice 2.A
 
     # CODE
     #Choice 2.A
@@ -573,10 +573,10 @@ label chapter6:
     $game_player.increaseRelationship("Kanna",1)
     $game_player.increaseRelationship("Charlotte",0)
 
-    
+
     #Choice2.B "Two Sodas"
 
-    #NOTES - Kyousuke explains that he is thirsty but he only has one soda in his backpack. He wants to duplicate it to get another soda! When Charlotte attempts to duplicate the soda, she ends up duplicating the wrong brand by mistake. (This is because Youko grabs a soda for Charlotte but it’s the wrong one.) So Maya takes Kyousuke’s soda and duplicates it for him. Because she knows how to do that. She just does. And when pressed about how / why Maya can do this, she just says she can and there’s no elaboration.  
+    #NOTES - Kyousuke explains that he is thirsty but he only has one soda in his backpack. He wants to duplicate it to get another soda! When Charlotte attempts to duplicate the soda, she ends up duplicating the wrong brand by mistake. (This is because Youko grabs a soda for Charlotte but it’s the wrong one.) So Maya takes Kyousuke’s soda and duplicates it for him. Because she knows how to do that. She just does. And when pressed about how / why Maya can do this, she just says she can and there’s no elaboration.
 
 
     #Choice 2.B "Two Sodas"
@@ -594,11 +594,11 @@ label chapter6:
 
     Rin "What does he think he’s doing?"
     Rin "We gotta move if we don’t want to get spotted."
-    Youk "I’m just going to blend into the shadows inside the backpack. Maybe he won’t notice you?"  
+    Youk "I’m just going to blend into the shadows inside the backpack. Maybe he won’t notice you?"
     Youk "Just pretend to be a cute little teddy bear in his backpack."
     Rin "Shut up! Make me blend too!"
     Youk "No, I don’t think I will."
-    Rin "Then I’m coming with you!" 
+    Rin "Then I’m coming with you!"
     Youk "What are yo-ahh  get off of me!"
 
     "Kyousuke removes his backpack, unzips the main pocket, and starts going through it."
@@ -641,11 +641,11 @@ label chapter6:
     Char "Really? But Dr. Amigo’s Jalapeno Desert Splash Blast is known to be the perfect drink for any occasion."
     Char "I know I drink it in winter, fall, spring, and summer. Day or night. Work days, off days. Lazy afternoons or date nights. There’s never a time where the splash of Dr. Amigo's Jalapeno flavor isn't perfect!"
     Char "Dr. Amigo’s Jalapeno Desert Splash Blast. Bring the heat of the desert and the splash of the ocean, wherever you go."
-    Char "Now with extra chunks of jalapeno gunk!" 
+    Char "Now with extra chunks of jalapeno gunk!"
     Kan "..."
     Maya "..."
     Maya "So...are you gonna make another soda or..."
-    Char "Yes of course." 
+    Char "Yes of course."
     Char "Kyousuke! Hand me the can of Dr. Amigo’s Jalapeno Desert Splash Blast, if you will."
     Kyou "Here’s the can of Dr. Amigo’s Jalapeno Desert Splash Blast, Charlotte!"
     Kan "Can we...can we please just call it soda?"
@@ -697,7 +697,7 @@ label chapter6:
     Maya "Don’t worry about it."
     Maya "I figured this would happen anyway."
     "Maya turns her back from the group. A ruffling sound can be heard."
-    Maya "Here you go Kyousuke." 
+    Maya "Here you go Kyousuke."
     Kyou "Wow! Two cans of Dr. Amigo’s Jalapeno Desert Splash Blast you did that so fast!"
     Maya "It’s easy. I do it all the time."
     Char "WHAT!?"
@@ -714,15 +714,15 @@ label chapter6:
     Kan "But HOW?"
     Char "AND WITHOUT MAGIC NO LESS?"
     Maya "You guys could do it too if you tried."
-    CHAR " I DID TRY. AND I SUCCEEDED."
+    Char "I DID TRY. AND I SUCCEEDED."
     Kan "Are you in some ‘duplication club’ or something?"
     Maya "You guys are making a big deal over nothing. Anyone can do it."
     Maya "Do you want another one, Kyousuke?"
     Kyou "No thanks Maya!"
     Kyou "I really thought you could help teach me something Charlotte. Maybe next time I guess."
-    Char "But I...Kyousuke you used your mental projection to-" 
+    Char "But I...Kyousuke you used your mental projection to-"
     Maya "Can we move on now?"
-    Kan and Char "NO!"
+    "Kanna and Charlotte" "NO!"
     Maya "Let’s move on."
 
     #Back to Ringo and Youko
@@ -925,5 +925,3 @@ label chapter6:
     #Add/remove points from total accordingly.
     #Show total scores so far.
     #Day 6 end:
-
-
