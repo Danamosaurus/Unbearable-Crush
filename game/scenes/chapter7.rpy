@@ -158,6 +158,7 @@ label chapter7:
 
     #" VN GUI choices appear in front of Kyousuke and Ringo."
     #"The choices simply read: Kanna, Maya, Charlotte."
+    #NOTE This should only happen if we need a tie breaker. This will need some coding.
 
     Rin "Time to add a point to Kanna."
     Rin "Ahh, ahhhhh..."
