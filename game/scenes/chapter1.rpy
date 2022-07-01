@@ -221,6 +221,10 @@ label chapter1:
     Rin "Oh, and pack some snacks too. Can't work on an empty stomach."
     Kan smile concerned ec "You sure seem to eat a lot for your size."
     Rin headache mo "Don't remind me."
+    Rin speaking happy "And we should be celebrating! We're starting the quest to catch the man of your dreams."
+    Rin speaking happy "Have some of these brownies! You don't want me to eat them by myself, do you?"
+    Kan frown skeptic "Hey! Have you been eating my brownies? Those were for Kyousuke!"
+    Rin speaking happy "And now they're for us! Come on, dig in!"
     scene black with fade
     "There's defenitely something going on here. All I wanted was an easy wish."
     "But if I land Kanna on some sort of festival, we should be golden!"
