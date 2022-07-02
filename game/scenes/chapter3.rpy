@@ -90,10 +90,13 @@ label chapter3:
                         "'Reject this weird girl.'"]):
         # "Choices to send to Kyousuke"
         "Laugh it off, forgive Kanna for yelling at you.":
-            "I  make the selection for Kyousuke, then float back to Kanna to hide in her backpack again. "
+            "I  make the selection for Kyousuke, then float back to Kanna to hide in her backpack again."
+            #Kanna gains a point.
+            $game_player.increaseRelationship("Kanna",1)
             jump ch3choice1option1
         "Kanna's nervous about something. Make her feel comfortable.":
-            "I  make the selection for Kyousuke, then float back to Kanna to hide in her backpack again. "
+            "I  make the selection for Kyousuke, then float back to Kanna to hide in her backpack again."
+            #Nobody gains any points
             jump ch3choice1option2
 
 label ch3choice1option1:
@@ -214,10 +217,16 @@ label chapter3p2:
         "Choose Kanna as a math partner.":
             Rin "Here man, do this instead. Your guardian wingman commands it."
             Kyou "Wow thanks buddy! That's a great idea!"
+            #Kanna gains 1 point. Maya loses 1 point.
+            $game_player.increaseRelationship("Kanna",1)
+            $game_player.increaseRelationship("Maya",-1)
             jump ch3choice2option1
         "Work in a group with Kanna and Maya.":
             Rin "Here man, do this instead. Your guardian wingman commands it."
             Kyou "Wow thanks buddy! That's a great idea!"
+            #Kanna gains 1 point
+            $game_player.increaseRelationship("Kanna",1)
+
             jump ch3choice2option1
 
 label ch3choice2option1:
@@ -254,15 +263,6 @@ label chapter3p3:
     $Kanna_points = game_player.getRelationship('Kanna')
     $Maya_points = game_player.getRelationship('Maya')
     "Kanna has [Kanna_points] and Maya has [Maya_points]"
-# ART or CODE
-    #Show total scores so far.
-    #Possible scores from day 3 .
-    #Kanna +2, Maya +1.     Choice 1.B and choice 2.B
-    #Kanna 0, Maya +1.         Choice 1.A and choice 2.B
-    #Kanna +1,Maya 0        Choice 1.B and choice 2.A
-    #Kanna-1,Maya+0        Choice 1.A and choice 2.A
-
-#opportunities for different results.
 
     Rin  "By the way, I noticed a weird sensation while we were at school today."
     Kan speaking curious "What do you mean?"

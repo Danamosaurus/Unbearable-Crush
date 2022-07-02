@@ -78,6 +78,9 @@ label chapter1:
         ypos 0 xpos 0
         easein .5 zpos -91.0  
     $ hide_sides = ['Maya','Kyousuke','Kanna', 'Ringo']
+
+    ##Maya introduction - Childhood friend starts with 5 points. 
+    $game_player.increaseRelationship("Maya",5)
     show cgs mayaintro kyousuke onlayer master with dissolve:
         subpixel True xpos 0.68 ypos 1.37 xanchor 0.5 yanchor 1.0 zoom 0.47 rotate None
 

@@ -33,12 +33,16 @@ init python:
             '''
             Increment Relationship
             '''
+            if character not in self.relationships:
+                self.updateRelationship(character, 0)
             self.relationships[character] = self.relationships[character] + value
         
         def getRelationship(self, character):
             '''
             Get Relationship
             '''
+            if character not in self.relationships:
+                self.updateRelationship(character, 0)
             return self.relationships[character]
         
         def updateRelationship(self, character, value):
