@@ -33,6 +33,11 @@ default healthbar_max = 5
 
 init python:
     def show_expbar_multiple(name_exp, duration=2.5):
+        pointmapping = {
+            "Kanna" :       [0.24, 1.41, 2.32, 3.52, 4.42, 5.62, 6.43, 7.72, 8.53, 9.44],
+            "Maya" :        [0.74, 1.54, 2.82, 3.45, 4.64, 5.75, 6.55, 7.36, 8.46, 9.65],
+            "Charlotte" :   [0.0, 1.26, 2.47, 3.38, 4.56, 5.84, 6.67, 7.57, 8.68, 9.34],
+        }
         durations = []
         for i in range(len(name_exp)):
             name, from_exp, to_exp = name_exp[i]
@@ -42,11 +47,19 @@ init python:
                 s_name = "expbar3"
             else:
                 s_name = "expbar"
+            if name in pointmapping:
+                points = pointmapping[name]
+                from_exp = points[from_exp % 10] + int(from_exp / 10) * 10
+                to_exp = points[to_exp % 10] + int(to_exp / 10) * 10
+            else:
+                from_exp += 0.5
+                to_exp += 0.5
             durations.append(abs(to_exp - from_exp))
             renpy.show_screen(s_name, name, from_exp, to_exp, duration=None)
         total_duration = 0.6 + max(durations) + duration
         if duration is not None and duration is not 0:
-            renpy.pause(delay=total_duration)
+            renpy.pause(delay=0.6 + max(durations), hard=True)
+            renpy.pause(delay=duration)
             hide_all_expbar()
             renpy.pause(delay=0.6)
 

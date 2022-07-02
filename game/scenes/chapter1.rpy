@@ -4,7 +4,7 @@ label chapter1:
     $ game_day = "Day 1"
     $ hide_sides = ["Maya"]
     scene hallway_1 onlayer master with squares:
-        subpixel True xpos 0.52 ypos 0.52 xanchor 0.5 yanchor 0.5 xoffset 0 zoom 0.36 rotate None 
+        subpixel True xpos 0.52 ypos 0.52 xanchor 0.5 yanchor 0.5 xoffset 0 zoom 0.36 rotate None
     "Girl2" "Hey, Who's the creep?"
     "Girl1" "Why's she sneaking around like that?"
     "Girl2" "Maybe she's a spy on a secret mission!"
@@ -51,7 +51,7 @@ label chapter1:
     Kan questioning embarrassed "What am I supposed to say?"
     Rin "It doesn't matter. Just start talking. He's right there waiting for you, come on, you got this!"
     camera:
-        subpixel True xpos 0.247916666667 ypos -99 zpos -557.0 
+        subpixel True xpos 0.247916666667 ypos -99 zpos -557.0
         parallel:
             zpos -557.0
             ease 4 zpos -650.0
@@ -73,21 +73,22 @@ label chapter1:
     with Dissolve(.2)
     scene white with Dissolve(.2)
     scene orange onlayer master:
-        subpixel True xpos 0.5 ypos 1.0 xanchor 0.5 yanchor 1.0 zoom 0.36 rotate None 
+        subpixel True xpos 0.5 ypos 1.0 xanchor 0.5 yanchor 1.0 zoom 0.36 rotate None
     camera:
         ypos 0 xpos 0
-        easein .5 zpos -91.0  
+        easein .5 zpos -91.0
     $ hide_sides = ['Maya','Kyousuke','Kanna', 'Ringo']
 
-    ##Maya introduction - Childhood friend starts with 5 points. 
-    $game_player.increaseRelationship("Maya",5)
+    ##Maya introduction - Childhood friend starts with 5 points.
+    $game_player.increaseRelationship("Maya", 5, showui=False)
+    # uncomment the line below to show the UI
+    # $game_player.showRelationshipUI(["Maya"], duration=0.5)
     show cgs mayaintro kyousuke onlayer master with dissolve:
         subpixel True xpos 0.68 ypos 1.37 xanchor 0.5 yanchor 1.0 zoom 0.47 rotate None
 
-
     Kyou "Oh, good morning Maya. What's up?"
     show Maya speaking normal with dissolve:
-        subpixel True xpos 0.43 ypos 1.4 xanchor 0.5 yanchor 1.0 zoom 1.46 rotate None 
+        subpixel True xpos 0.43 ypos 1.4 xanchor 0.5 yanchor 1.0 zoom 1.46 rotate None
     Maya "I just wanted to see you, that's all."
     show kannabox focused onlayer master with easeinright:
         subpixel True xpos -0.13 ypos 1.14 xanchor -0.43 yanchor 1.5 zoom 0.25 rotate None
@@ -112,7 +113,7 @@ label chapter1:
     Kan speaking pleading "Don't shout they'll hear you!"
     hide Maya with dissolve
     show cgs mayaintro kyousuke onlayer master with dissolve:
-        subpixel True xpos 0.68 ypos 1.37 xanchor 0.5 yanchor 1.0 zoom 0.47 rotate None 
+        subpixel True xpos 0.68 ypos 1.37 xanchor 0.5 yanchor 1.0 zoom 0.47 rotate None
     show Maya smile happy mc onlayer master with dissolve:
         subpixel True xpos 1000 ypos 876 xanchor 0.5 yanchor 1.0 zoom 0.78 rotate None
     Kyou "So Maya, what brings you back to my locker?"

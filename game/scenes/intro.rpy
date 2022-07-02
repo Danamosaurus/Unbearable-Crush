@@ -30,25 +30,8 @@ label start:
     pause .2
     hide bearmenu_kan with Dissolve(1.5)
     Kan frown worried ec "Okay...Here I go."
-
-    # show screen expbar("Kanna", 0.0, 4.5)
-
     Kan smile worried ec "Uh... Hello? Spirit?"
-
-    # show screen expbar("Kanna", 4.5, 2.3)
-
     Kan frown worried eo "It’s me, Kanna."
-
-    # show screen expbar("Kanna", 0.0, 1.4)
-    # show screen expbar2("Maya", 5.0, 3.6)
-    # show screen expbar3("Charlotte", 2.1, 4.9)
-    $ show_expbar_multiple((
-            ("Kanna", 0.0, 1.4),
-            ("Maya", 5.0, 3.6),
-            ("Charlotte", 2.1, 4.9),
-        ), 2.5
-    )
-
     Kan smile worried ec "I know we don’t talk often... or at all, and I know I haven’t really visited your shrine before, or even thought about you."
     Kan "Actually, I’m not even sure what kind of spirit you are."
     # CODE

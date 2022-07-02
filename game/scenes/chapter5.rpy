@@ -7,7 +7,7 @@ label chapter5:
 
     #We open to the familiar hallway, Ringo is alone, thinking about his next actions. He plans to investigate Kyousuke, and confront Youko when Charlotte inevitably shows up. Kanna is hanging back, eating lunch with her casual group of friends.
     scene hallway onlayer master with Dissolve(1.0):
-        subpixel True xpos 0.5 ypos 2.2 xanchor 0.5 yanchor 1.0 rotate None 
+        subpixel True xpos 0.5 ypos 2.2 xanchor 0.5 yanchor 1.0 rotate None
     Rin "Stupid, stupid, STUPID!"
     Rin "Those punk demons at the corporate success shrine think they can just walk all over us little guys."
     #VOICE #Mocking Youko's voice#
@@ -183,7 +183,7 @@ label chapter5:
         Kyou "I... I'm sorry, Maya, I didn't mean that. I just want all of us to get along."
         Maya "It's alright, Kyousuke..."
 
-        #Charlotte gains a point, Maya loses one. 
+        #Charlotte gains a point, Maya loses one.
         $game_player.increaseRelationship("Maya",-1)
         $game_player.increaseRelationship("Charlotte",1)
 
@@ -281,10 +281,10 @@ label chapter5:
     #Add/remove points from total accordingly.
 
     "SHOW SCORE"
-    ####This is an example of how to properly show score. Please look at the variables used. 
+    ####This is an example of how to properly show score. Please look at the variables used.
     $Kanna_points = game_player.getRelationship('Kanna')
     $Charlotte_points = game_player.getRelationship('Charlotte')
-    "We Kanna has [Kanna_points] and Charlotte has [Charlotte_points]"
-
+    # "We Kanna has [Kanna_points] and Charlotte has [Charlotte_points]"
+    $game_player.showRelationshipUI(["Kanna", "Maya", "Charlotte"], duration=0.5)
 
     jump chapter6
