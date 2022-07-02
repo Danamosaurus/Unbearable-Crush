@@ -67,6 +67,11 @@ transform healthbar_inner_transform(from_val, to_val, startdelay=0.6, duration=1
     startdelay
     linear duration xsize to_val
 
+transform expbar_inner_transform(from_val, to_val, startdelay=0.6, duration=1.0):
+    crop (0, 0, from_val, 41)
+    startdelay
+    linear duration crop (0, 0, to_val, 41)
+
 transform expbar_levelup_transform():
     anchor (45, 45) align (0.5, 0.5)
     easeout 0.1 zoom 1.3 offset (-10, -10)
@@ -156,34 +161,32 @@ screen expbar(name, from_exp, to_exp, duration=2.5, showduration=0.6, align=(0.9
         xsize 680
         ysize 50
         hbox:
-            spacing 30
+            spacing 15
             fixed:
                 xsize 180
+                yoffset 2
                 text name:
-                    size 40
+                    size 32
                     text_align 1.0
                     xalign 1.0
-                    outlines [ (2, "#000") ]
+                    outlines [ (absolute(3), "#e13b86", absolute(0), absolute(0)) ]
+                    bold True
             fixed:
                 xsize 400
                 ysize 50
                 frame:
-                    background Frame('gui/healthbar/healthbar_frame.png', 6, 6, 6, 6)
+                    background Frame('gui/healthbar/expbar_frame.png', 0, 0, 0, 0)
                     xalign 0.0
-                    xsize 400
+                    xsize 394
                     ysize 50
                 frame:
-                    background Frame('gui/healthbar/healthbar_fill.png', 6, 6, 6, 6)
-                    at healthbar_inner_transform(int(1.0 * start_fraction * 400), int(1.0 * end_fraction * 400), startdelay=showduration, duration=exp_to_next_level)
+                    background Frame('gui/healthbar/expbar_fill.png', 0, 0, 0, 0)
+                    at expbar_inner_transform(int(1.0 * start_fraction * 385), int(1.0 * end_fraction * 385), startdelay=showduration, duration=exp_to_next_level)
                     xalign 0.0
-                    ysize 50
-                frame:
-                    background Tile('gui/healthbar/healthbar_overlay.png')
-                    margin (6, 6)
-                    xalign 0.0
-                    xsize 400
-                    ysize 50
+                    xysize (385, 41)
+                    offset (2.5, 2.5)
             fixed:
+                yoffset 2
                 if levelup > 0:
                     at expbar_levelup_transform
                 elif levelup < 0:
@@ -198,16 +201,19 @@ screen expbar(name, from_exp, to_exp, duration=2.5, showduration=0.6, align=(0.9
                         color '#fff'
                         align (0.5, 0.5)
                         text_align 0.5
-                        size 36
+                        size 40
+                        outlines [ (absolute(3), "#e13b86", absolute(0), absolute(0)) ]
+                        bold True
+                        offset (-4, -4)
                 if levelup > 0:
                     fixed:
-                        add 'gui/healthbar/healthbar_overlay.png'
+                        add 'gui/healthbar/expbar_particles.png'
                         at expbar_levelup_particles_transform
                     fixed:
-                        add 'gui/healthbar/healthbar_overlay.png'
+                        add 'gui/healthbar/expbar_particles.png'
                         at expbar_levelup_particles_transform
                     fixed:
-                        add 'gui/healthbar/healthbar_overlay.png'
+                        add 'gui/healthbar/expbar_particles.png'
                         at expbar_levelup_particles_transform
     if to_level > from_level:
         timer (showduration+exp_to_next_level) action [Hide("expbar"),
@@ -239,34 +245,32 @@ screen expbar2(name, from_exp, to_exp, duration=2.5, showduration=0.6, align=(0.
         xsize 680
         ysize 50
         hbox:
-            spacing 30
+            spacing 15
             fixed:
                 xsize 180
+                yoffset 2
                 text name:
-                    size 40
+                    size 32
                     text_align 1.0
                     xalign 1.0
-                    outlines [ (2, "#000") ]
+                    outlines [ (absolute(3), "#e13b86", absolute(0), absolute(0)) ]
+                    bold True
             fixed:
                 xsize 400
                 ysize 50
                 frame:
-                    background Frame('gui/healthbar/healthbar_frame.png', 6, 6, 6, 6)
+                    background Frame('gui/healthbar/expbar_frame.png', 0, 0, 0, 0)
                     xalign 0.0
-                    xsize 400
+                    xsize 394
                     ysize 50
                 frame:
-                    background Frame('gui/healthbar/healthbar_fill.png', 6, 6, 6, 6)
-                    at healthbar_inner_transform(int(1.0 * start_fraction * 400), int(1.0 * end_fraction * 400), startdelay=showduration, duration=exp_to_next_level)
+                    background Frame('gui/healthbar/expbar_fill.png', 0, 0, 0, 0)
+                    at expbar_inner_transform(int(1.0 * start_fraction * 385), int(1.0 * end_fraction * 385), startdelay=showduration, duration=exp_to_next_level)
                     xalign 0.0
-                    ysize 50
-                frame:
-                    background Tile('gui/healthbar/healthbar_overlay.png')
-                    margin (6, 6)
-                    xalign 0.0
-                    xsize 400
-                    ysize 50
+                    xysize (385, 41)
+                    offset (2.5, 2.5)
             fixed:
+                yoffset 2
                 if levelup > 0:
                     at expbar_levelup_transform
                 elif levelup < 0:
@@ -281,16 +285,19 @@ screen expbar2(name, from_exp, to_exp, duration=2.5, showduration=0.6, align=(0.
                         color '#fff'
                         align (0.5, 0.5)
                         text_align 0.5
-                        size 36
+                        size 40
+                        outlines [ (absolute(3), "#e13b86", absolute(0), absolute(0)) ]
+                        bold True
+                        offset (-4, -4)
                 if levelup > 0:
                     fixed:
-                        add 'gui/healthbar/healthbar_overlay.png'
+                        add 'gui/healthbar/expbar_particles.png'
                         at expbar_levelup_particles_transform
                     fixed:
-                        add 'gui/healthbar/healthbar_overlay.png'
+                        add 'gui/healthbar/expbar_particles.png'
                         at expbar_levelup_particles_transform
                     fixed:
-                        add 'gui/healthbar/healthbar_overlay.png'
+                        add 'gui/healthbar/expbar_particles.png'
                         at expbar_levelup_particles_transform
     if to_level > from_level:
         timer (showduration+exp_to_next_level) action [Hide("expbar2"),
@@ -322,34 +329,32 @@ screen expbar3(name, from_exp, to_exp, duration=2.5, showduration=0.6, align=(0.
         xsize 680
         ysize 50
         hbox:
-            spacing 30
+            spacing 15
             fixed:
                 xsize 180
+                yoffset 2
                 text name:
-                    size 40
+                    size 32
                     text_align 1.0
                     xalign 1.0
-                    outlines [ (2, "#000") ]
+                    outlines [ (absolute(3), "#e13b86", absolute(0), absolute(0)) ]
+                    bold True
             fixed:
                 xsize 400
                 ysize 50
                 frame:
-                    background Frame('gui/healthbar/healthbar_frame.png', 6, 6, 6, 6)
+                    background Frame('gui/healthbar/expbar_frame.png', 0, 0, 0, 0)
                     xalign 0.0
-                    xsize 400
+                    xsize 394
                     ysize 50
                 frame:
-                    background Frame('gui/healthbar/healthbar_fill.png', 6, 6, 6, 6)
-                    at healthbar_inner_transform(int(1.0 * start_fraction * 400), int(1.0 * end_fraction * 400), startdelay=showduration, duration=exp_to_next_level)
+                    background Frame('gui/healthbar/expbar_fill.png', 0, 0, 0, 0)
+                    at expbar_inner_transform(int(1.0 * start_fraction * 385), int(1.0 * end_fraction * 385), startdelay=showduration, duration=exp_to_next_level)
                     xalign 0.0
-                    ysize 50
-                frame:
-                    background Tile('gui/healthbar/healthbar_overlay.png')
-                    margin (6, 6)
-                    xalign 0.0
-                    xsize 400
-                    ysize 50
+                    xysize (385, 41)
+                    offset (2.5, 2.5)
             fixed:
+                yoffset 2
                 if levelup > 0:
                     at expbar_levelup_transform
                 elif levelup < 0:
@@ -364,16 +369,19 @@ screen expbar3(name, from_exp, to_exp, duration=2.5, showduration=0.6, align=(0.
                         color '#fff'
                         align (0.5, 0.5)
                         text_align 0.5
-                        size 36
+                        size 40
+                        outlines [ (absolute(3), "#e13b86", absolute(0), absolute(0)) ]
+                        bold True
+                        offset (-4, -4)
                 if levelup > 0:
                     fixed:
-                        add 'gui/healthbar/healthbar_overlay.png'
+                        add 'gui/healthbar/expbar_particles.png'
                         at expbar_levelup_particles_transform
                     fixed:
-                        add 'gui/healthbar/healthbar_overlay.png'
+                        add 'gui/healthbar/expbar_particles.png'
                         at expbar_levelup_particles_transform
                     fixed:
-                        add 'gui/healthbar/healthbar_overlay.png'
+                        add 'gui/healthbar/expbar_particles.png'
                         at expbar_levelup_particles_transform
     if to_level > from_level:
         timer (showduration+exp_to_next_level) action [Hide("expbar3"),
