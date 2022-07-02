@@ -65,36 +65,58 @@ transform choice_button_animation_hide_suggestion_transform(start_delay=0.0, tar
         ease 0.3 pos target_pos zoom target_zoom offset (0, 0)
 image thought_bubble_choice_hover:
     "gui/thought/thought_bubble_default.png"
-    # matrixcolor TintMatrix("#F9CFA8")
-    alpha 1.0
+image thought_bubble_choice_option_0:
+    "gui/thought/thought_bubble_choice_0.png"
+image thought_bubble_choice_option_1:
+    "gui/thought/thought_bubble_choice_1.png"
+image thought_bubble_choice_hover_0:
+    "gui/thought/thought_bubble_choice_0.png"
+    matrixcolor TintMatrix("#F9DFEE")
+image thought_bubble_choice_hover_1:
+    "gui/thought/thought_bubble_choice_1.png"
+    matrixcolor TintMatrix("#F9DFEE")
 screen choice(items, tohide=None, choice_type="default", image_to_show="Rin normal", original_thought=None, state=None):
     if choice_type == "thought":
         if original_thought is not None:
             if state == "done":
-                use thought(original_thought[0:1], choice_mode=True)
+                pass
             else:
                 use thought(original_thought, choice_mode=True)
         fixed:
             if state == "done":
                 add "flash_white"
             window:
+                add "gui/thought/thought_bg.png"
+                align (0.5, 1.0)
+            window:
                 add image_to_show
                 align (0.5, 1.3)
             for i in range(len(items)):
                 button:
                     pos (540 + i*800, 900)
-                    background "thought_bubble_idle"
+                    if i == tohide and state == "done":
+                        background "thought_bubble_idle_1"
+                    elif i == tohide and not state == "done":
+                        background "thought_bubble_choice_option_1"
+                    else:
+                        background "thought_bubble_choice_option_" + str(i)
                     xsize 480
                     ysize 270
                     padding (80, 40)
                     text items[i].caption:
                         text_align 0.5
                         align (0.5, 0.5)
-                        color "#000"
+                        if i == 0 and not i == tohide:
+                            xoffset -45
+                        if i == 1 or i == tohide:
+                            xoffset 25
+                        yoffset -15
+                        color "#fff"
                         size 32
+                        outlines [ (absolute(3), "#e13b86", absolute(0), absolute(0)) ]
                     if tohide is None:
                         at thought_button_shiver_transform(start_delay=i*0.1)
-                        hover_background "thought_bubble_choice_hover"
+                        hover_background "thought_bubble_choice_hover_" + str(i)
                     elif i == tohide:
                         at choice_button_animation_hide_suggestion_transform(target_pos=(1300, 150), target_alpha=1)
                     else:

@@ -31,13 +31,16 @@ transform thought_button_normal_transform(target_offset=(0,0), target_zoom=1.0, 
 transform thought_button_hide_transform:
     linear 0.3 alpha 0 zoom 0
 
-image thought_bubble_idle:
-    "gui/thought/thought_bubble_default.png"
-    alpha 0.8
-image thought_bubble_choice:
-    "gui/thought/thought_bubble_default.png"
-    matrixcolor TintMatrix("#F9CFA8")
-    alpha 0.8
+image thought_bubble_idle_0:
+    "gui/thought/thought_bubble_0.png"
+image thought_bubble_idle_1:
+    "gui/thought/thought_bubble_1.png"
+image thought_bubble_choice_0:
+    "gui/thought/thought_bubble_0.png"
+    matrixcolor TintMatrix("#F9DFEE")
+image thought_bubble_choice_1:
+    "gui/thought/thought_bubble_1.png"
+    matrixcolor TintMatrix("#F9DFEE")
 image flash_white:
     "#fff"
     alpha 0
@@ -62,9 +65,9 @@ screen thought(items, expanded=[], block_progress=True, choice_mode=False):
                 else:
                     pos (800 + i*300, 150)
                 if choice_mode:
-                    background "thought_bubble_choice"
+                    background "thought_bubble_choice_" + str(i)
                 else:
-                    background "thought_bubble_idle"
+                    background "thought_bubble_idle_" + str(i)
                 xsize 480
                 ysize 270
                 padding (80, 40)
@@ -73,8 +76,14 @@ screen thought(items, expanded=[], block_progress=True, choice_mode=False):
                     text items[i]:
                         text_align 0.5
                         align (0.5, 0.5)
-                        color "#000"
+                        if i == 0:
+                            xoffset -45
+                        if i == 1:
+                            xoffset 25
+                        yoffset -15
+                        color "#fff"
                         size 32
+                        outlines [ (absolute(3), "#e13b86", absolute(0), absolute(0)) ]
                 elif i in expanded or choice_mode:
                     if choice_mode:
                         at thought_button_normal_transform
@@ -85,8 +94,14 @@ screen thought(items, expanded=[], block_progress=True, choice_mode=False):
                     text items[i]:
                         text_align 0.5
                         align (0.5, 0.5)
-                        color "#000"
+                        if i == 0:
+                            xoffset -45
+                        if i == 1:
+                            xoffset 25
+                        yoffset -15
+                        color "#fff"
                         size 32
+                        outlines [ (absolute(3), "#e13b86", absolute(0), absolute(0)) ]
                 else:
                     if i == hovered_index:
                         at thought_button_shiver_transform(target_zoom=0.3)
@@ -95,12 +110,15 @@ screen thought(items, expanded=[], block_progress=True, choice_mode=False):
                     text "...":
                         text_align 0.5
                         align (0.5, 0.5)
-                        yoffset -30
-                        color "#000"
+                        if i == 0:
+                            xoffset -40
+                        yoffset -50
+                        color "#fff"
+                        outlines [ (absolute(10), "#e13b86", absolute(0), absolute(0)) ]
                         size 150
                     hovered SetScreenVariable("hovered_index", i)
                     unhovered SetScreenVariable("hovered_index", None)
-                if expanded is None or i in expanded:
+                if expanded is None or i in expanded or choice_mode:
                     action None
                 else:
                     action [SetScreenVariable("hovered_index", None),
