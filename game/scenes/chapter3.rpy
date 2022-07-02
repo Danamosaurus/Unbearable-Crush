@@ -137,7 +137,7 @@ label ch3choice1option1:
     Kan smile concerned ec "W-we were just talking, remember?"
     Kyou  "Yeah, we were talking and then..."
     Kan smile happy speaking ec "O-oh! It wasn't important."
-    $Kanna = game_player.getRelationship("Kanna")
+    # $Kanna = game_player.getRelationship("Kanna")
     $game_player.increaseRelationship("Kanna",-1)
     #Choice1.1.end.
 label ch3choice1option2:
@@ -153,15 +153,16 @@ label ch3choice1option2:
     Kan happy eo "Right!"
     Kyou happy "We'll do our best together!"
     Kan smile worried ec "Oh, Kyousuke, only you could say something as kind as that."
-    $Kanna = game_player.getRelationship('Kanna')
+    # $Kanna = game_player.getRelationship('Kanna')
     $game_player.increaseRelationship("Kanna",1)
-    "We have [Kanna] from Kanna"
+    # "We have [Kanna] from Kanna"
     #Choice1-2:end
     #Kanna gets 1 points
 
 #Show example
 $Kanna_points = game_player.getRelationship('Kanna')
-"DEBUG: We have [Kanna_points] points for Kanna"
+# "DEBUG: We have [Kanna_points] points for Kanna"
+$game_player.showRelationshipUI(["Kanna"], duration=0.5)
 ##End of Ch3 Part 1.
 ##Begin ch3 Part 2
 label chapter3p2:
@@ -218,8 +219,10 @@ label chapter3p2:
             Rin "Here man, do this instead. Your guardian wingman commands it."
             Kyou "Wow thanks buddy! That's a great idea!"
             #Kanna gains 1 point. Maya loses 1 point.
-            $game_player.increaseRelationship("Kanna",1)
-            $game_player.increaseRelationship("Maya",-1)
+            # $game_player.increaseRelationship("Kanna",1)
+            # $game_player.increaseRelationship("Maya",-1)
+            $game_player.increaseRelationshipMultiple({"Kanna":1, "Maya":-1})
+
             jump ch3choice2option1
         "Work in a group with Kanna and Maya.":
             Rin "Here man, do this instead. Your guardian wingman commands it."
@@ -239,7 +242,7 @@ label ch3choice2option1:
         Kan frown pout ec "Gee, thanks for the sincerity... Let's get to studying, then I guess."
         "Kanna will spend some time with Kyousuke today. Getting her noticed must do at least {i}something{/i} for their relationship, right?"
         #Kanna looks better, she gains a point. Maya sucks up and doesn't lose any at least.
-        $Kanna = game_player.getRelationship('Kanna')
+        # $Kanna = game_player.getRelationship('Kanna')
         $game_player.increaseRelationship("Kanna",1)
         #Choice2.1: End
 
@@ -262,7 +265,8 @@ label chapter3p3:
     Rin  "Alright kid. Here's how Kyousuke is feeling about both you and Maya so far."
     $Kanna_points = game_player.getRelationship('Kanna')
     $Maya_points = game_player.getRelationship('Maya')
-    "Kanna has [Kanna_points] and Maya has [Maya_points]"
+    # "Kanna has [Kanna_points] and Maya has [Maya_points]"
+    $game_player.showRelationshipUI(["Kanna", "Maya"], duration=0.5)
 
     Rin  "By the way, I noticed a weird sensation while we were at school today."
     Kan speaking curious "What do you mean?"

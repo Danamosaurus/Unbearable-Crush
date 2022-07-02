@@ -168,7 +168,7 @@ label chapter6:
     Rin "(I could also highlight 'mind reading' and, if all goes to plan, shame Charlotte.)"
     Rin "(I need Kanna here for 'fortune telling,' so maybe I can inject something to stall for time?)"
 
-    menu: 
+    menu:
         "Choices for Kyousuke."
         "Read Kyousuke's Mind.":
             jump Choice1A
@@ -914,7 +914,8 @@ label chapter6:
     $Kanna = game_player.getRelationship('Kanna')
     $Maya = game_player.getRelationship('Maya')
     $Charlotte = game_player.getRelationship('Charlotte')
-    "We Kanna has [Kanna] , Maya has [Maya] and Charlotte [Charlotte]"
+    # "We Kanna has [Kanna] , Maya has [Maya] and Charlotte [Charlotte]"
+    $game_player.showRelationshipUI(["Kanna", "Maya", "Charlotte"], duration=0.5)
 
 
     #Add/remove points from total accordingly.
