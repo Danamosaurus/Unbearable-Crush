@@ -270,6 +270,6 @@ label chapter2:
     Rin "It's risky, but I think it'll work. But you gotta do everything I say."
     Rin "Capeesh?"
     Kan "Capeesh! Whatever that means."
-    Rin "Alright, listen up kid, here's the plan."
+    Rin "Okay, listen up kid, here's the plan."
     scene black with fade
 jump chapter3

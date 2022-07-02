@@ -28,11 +28,12 @@ label chapter3:
     Kan speaking confident "Theres always an inciting incident!"
     Kan neutral surprised crazy "Maybe I should drop my books in front of him? Or crash into him when I turn the corner? Or maybe-"
     Rin "Don't be a walking cliche!"
-    Rin "Anyway, time's up, he's right there! Ask him to be your partner. Be yourself.  Go get 'im, tiger."
-    Kan speaking surprised crazy "Wait, Ringo, I-H..."
+    Rin "Anyway, time's up, he's right there! Ask him to be your math partner. Be yourself. Go get 'im, tiger."
+    Kan speaking surprised crazy "Wait, Ringo, I-I..."
     Kan smile concerned ec "He-h-heeeeeeyyy, Kyousuke."
-    Kyou "Oh. Hey, Can-oh! What are you doing here?"
-    Kan  "Just, uh, just hanging out, ya know. Also, uh, it's Kanna, but you can call me Can-oh if you really want to. I was wondering, Kyousuke, if you wanted to be math partners next period."
+    Kyou "Oh. Hey, you're Can-oh, right? What are you doing here?"
+    Kan  "Just, uh, just hanging out, ya know haha. Also, uh, it's Kanna, but you can call me Can-oh if you really want to."
+    Kan "I-I was wondering, Kyousuke, if you wanted to be m-math partners next period."
     Kan  "When we go back to class. After this break. When we stop talking. After we walk back to the classroom. Once the break's over. When we're back at our desks. Am I talking too much? Does that make sense?"
     Kyou  "Hmm. Do we go back to class before we're at our desks, or after?"
     Kan  speaking sarcastic ec "Uh, before."
@@ -41,11 +42,12 @@ label chapter3:
     Kan speaking pleading "Shut up!"
     Kyou  "Oh, sorry."
     Kan neutral surprised crazy "-"
-    Kan questioning embarrassed "Nononono, I meant like, 'shut up I can't believe you totally want to be partners with me!' Haha."
+    Kan questioning embarrassed "Nononono, I meant like, {i}'shut up I can't believe you totally want to be partners with me!'{/i} Haha."
     Kyou  "Um, are you alright? You're acting funny."
     Kan speaking excited crazy blush "Yeah, why would I..."
 
     #ART, CG, Dating Sim GUI. Ask hamu for an update on this.
+
     Kan frown skeptic "Uh..."
     show Kyou normal at center with Dissolve(3.0)
     Kan "...Kyousuke?"
@@ -58,6 +60,7 @@ label chapter3:
     Rin "I'm pretty sure he can't hear you. He's trying to figure out what to do in this situation."
     Kan  "We wouldn't be in this situation if you just kept quiet!"
     Rin  "We all need moral support sometimes, excuse me for trying to help."
+
     Kan speaking curious "Are these what Kyousuke is thinking about?"
     Rin "Well, more the choice he has in front of him."
     "Literally..."
