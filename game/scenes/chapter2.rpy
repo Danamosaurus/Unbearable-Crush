@@ -233,7 +233,7 @@ label chapter2:
 
     "This plan is perfect! It's so simple."
 
-    Kyou frown "Hey, Mr. Guardian Angel?"
+    Kyou frown "Hey, Mr. Guardian wingman?"
 
     Rin "What's up, buddy?"
 

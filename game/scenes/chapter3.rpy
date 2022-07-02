@@ -12,8 +12,9 @@ label chapter3:
     Rin "Alright, we're going to do this just like we talked about."
     hide kannabox with dissolve
     Rin "And remember, the most essential thing for right now is that Kyousuke doesn't find out I'm working with you."
-    Kan smile happy ec "Because you're his guardian wingman?"
-    Rin "Ya know, a little push here, a little nudge there, and it'll be all over for that Maya girl."
+    Kan smile happy ec "Because you're his {i}guardian wingman?{/i}"
+    Rin "Ya know, a little push here, a little nudge there, and it'll be all over for that Maya girl and Kyousuke will fall right into your arms."
+    Rin "It's what us wingman's do."
     Rin "But it wont work if Kyousuke knows I'm helping you."
     Rin "I gotta make him think it was his idea, you know?"
     Kan smile happy eo "So, you want him to like me naturally?"
@@ -44,34 +45,42 @@ label chapter3:
     Kan neutral surprised crazy "-"
     Kan questioning embarrassed "Nononono, I meant like, {i}'shut up I can't believe you totally want to be partners with me!'{/i} Haha."
     Kyou  "Um, are you alright? You're acting funny."
-    Kan speaking excited crazy blush "Yeah, why would I..."
-
-    #ART, CG, Dating Sim GUI. Ask hamu for an update on this.
+    Kan speaking excited crazy blush "Y-yeah, why would I be acting funny? I'm not funny at all, I'm always serious. Not an ounce of humor in my body."
+    Kyou "..."
+    Kyou "..."
+    Kyou "..."
 
     Kan frown skeptic "Uh..."
     show Kyou normal at center with Dissolve(3.0)
     Kan "...Kyousuke?"
-    "It's as if he's been put on pause."
+    Rin "It's as if he's been put on pause."
     Kan "Kyousuke? What's wrong?"
-    "Oh. I see. This sometimes happens in these sorts of situations."
+    Rin "Oh. It's one of these. This sometimes happens in these sorts of situations."
     Kan smile concerned ec "Kyousuke?"
     $ hide_sides = ['Kyousuke']
-    Kyou  "Hmmm."
+    Kyou  "..."
     Rin "I'm pretty sure he can't hear you. He's trying to figure out what to do in this situation."
     Kan  "We wouldn't be in this situation if you just kept quiet!"
     Rin  "We all need moral support sometimes, excuse me for trying to help."
 
-    Kan speaking curious "Are these what Kyousuke is thinking about?"
-    Rin "Well, more the choice he has in front of him."
-    "Literally..."
-    Kan smile worried eo "I can read his thoughts?"
-    Kan smile happy speaking ec "How intimate..."
+    Kan speaking curious "What do we do? What happens now?"
+    Rin "Mophead here needs some help figuring out what to do or say."
+    Rin "He has some choices to make, and it looks like he lacks the strength of will to make them."
+    Kan speaking curious "Strength of will? How does he make day to day choices then?"
+    Rin "I mean, at somepoint he picks one. But it looks like he's stumped this time."
+    Rin "Probably because you yelled at him to shut up."
+    Kan "THAT WAS YOUR FAULT!"
+    Rin "I'll see what his thinking and {i}help him{/i} decide the best choice."
+    Kan smile worried eo "You can read his thoughts?"
+    Kan salivating "How intimate~"
+    Kan smile worried eo "But isn't that sorta like manipulative?"
+    Rin "What did we say about not thinking so hard?"
 
     # TEST adding an optional thought that wasn't in script
-    show screen thought(["'Ice cream...'"],
-                        block_progress = False)
-    Rin  "Let me handle this."
-    "I climb up onto Kyousuke's shoulder."
+    #show screen thought(["'Ice cream...'"],
+    #                    block_progress = False)
+    Rin  "Just let me handle this."
+    "I fly up onto Kyousuke's shoulder."
 
     # TEST be sure to force hide the thought screen occasionally, since renpy skip and rollback sometimes fails to hide it
     hide screen thought
@@ -93,10 +102,10 @@ label chapter3:
                         "'Reject this weird girl.'"]):
         # "Choices to send to Kyousuke"
         "Laugh it off, forgive Kanna for yelling at you.":
-            "I  make the selection for Kyousuke, then float back to Kanna to hide in her backpack again. "
+            "I make the selection for Kyousuke, then float back to Kanna to hide in her backpack again. "
             jump ch3choice1option1
         "Kanna's nervous about something. Make her feel comfortable.":
-            "I  make the selection for Kyousuke, then float back to Kanna to hide in her backpack again. "
+            "I make the selection for Kyousuke, then float back to Kanna to hide in her backpack again. "
             jump ch3choice1option2
 
 label ch3choice1option1:
@@ -105,7 +114,7 @@ label ch3choice1option1:
     $ hide_sides = []
 
     Kyou happy "Hahaha, it's alright, Kanna. I know what ya mean."
-    Kyou smirk "Like 'Oh shut up! No way!' right?"
+    Kyou smirk "Like, {i}'oh shut up! No way!'{/i} right?"
     Kan  "Erm...Yeah, exactly! I'm just excited to get started, ya know?"
     Kyou surprised "But what was that voice that came from behind you?"
     Kan neutral surprised crazy "..."
@@ -116,11 +125,11 @@ label ch3choice1option1:
     Kan neutral surprised crazy '-'
     # CG ?
     "A right jab hits Kyousuke square in the face. He slumps back against the wall." with vpunch
-    Rin  "W-Why?"
+    Rin  "WHAT? W-WHY?"
     Kan speaking embarrassed ec "He - he was gonna find out about you. A-a-and you said you couldn't fulfill my wish if that happened."
     Rin "And your first response is to mess up his face?"
-    Rin "Yandere or Tsundere?! Make up your mind!"
-    Kan speaking sad crazy "Oh god, what am I gonna do?"
+    Rin "Why have you been giving me the {i}ditsy down-on-her luck girl{/i} shtick if you're just gonna act like a delinquent?!"
+    Kan speaking sad crazy "Oh God, what am I gonna do?"
     Rin  "Cool it, I'll try and fix this. I don't think he's gonna be happy about this, though."
     Rin  "Next time, instead of unleashing the god hand on the poor kid, try using words first, ok?"
     Kan sad smile "Okay..."
@@ -135,8 +144,8 @@ label ch3choice1option1:
     Kan smile worried eo "Oh! Kyousuke, are you alright?"
     Kyou  "Hey, Can-oh! What are you doing here? I had this weird dream..."
     Kan smile concerned ec "W-we were just talking, remember?"
-    Kyou  "Yeah, we were talking and then..."
-    Kan smile happy speaking ec "O-oh! It wasn't important."
+    Kyou  "We were? I thought that wasy my dream. We were talking and then all of a sudden you-"
+    Kan smile happy speaking ec "O-oh! That sure sounds like a crazy dream, Kyousuke!"
     $Kanna = game_player.getRelationship("Kanna")
     $game_player.increaseRelationship("Kanna",-1)
     #Choice1.1.end.
@@ -173,54 +182,79 @@ label chapter3p2:
     Maya hopeless ec "Can't say that I do. I meet so many people daily."
     Maya smile happy ec "How can I remember each copy-paste face? Nice to meet you Can-oh, I'm Maya."
     Kan  "It's Kanna, actually. The pleasure's mine, I guess."
-    Maya smile happy ec"Pretty sure it's Can-oh; that's how Kyousuke said it."
-    Kan  "Of course not, he simply forgot. Happens to everyone."
-    Maya flirting eo "Kyousuke is the most sophisticated man I have ever met. His intellectual prowess is something mere normies can't comprehend."
+    Maya smile happy ec "Kanna? Pretty sure it's Can-oh; that's how Kyousuke said it."
+    Kan  "Huh? Of course not, I think I know how to pronounce my own name."
+    Maya smile happy ec "Are you calling Kyousuke a liar?"
+    Kan "What? No no no I'm just saying-"
+    Maya flirting eo "Kyousuke is the most sophisticated man I have ever met. His intellectual prowess is something mere normies like you can't comprehend."
     Maya speaking normal "The fact he's wasting his time in this lugubrious school is beyond even my own grasp."
-    Maya speaking normal "And I've never received anything less than a perfect score in any of my classes. So, darling, I think I can quite tell someone of the same intellectual status as me when I see them."
+    Maya speaking normal "And I've never received anything less than a perfect score in any of my classes. So, Can-oh, I think I can quite tell someone of the same intellectual status as me when I see them."
     Kyou happy "Wow! That's really nice of you Maya! I don't really know what any of that means, but I think it was a compliment!"
     Maya flirting eo "It's not simple flattery! It's a fact."
-    Kan  smile concerned ec "Yeah, ok, cool. But me and Kyousuke were just talking about being math partners next period."
+    Maya speaking normal "And it's the truth. Kyousuke would never lie about anyones name."
+    Kan  smile concerned ec "Yeah, ok, that's cool and all. But me and Kyousuke were just talking about being math partners next period."
+    Kan  smile concerned ec "So you can, you know, go away now."
     Maya "I’m sorry? Kyousuke and I will be math partners next period."
     Kan frown worried eo "Huh?"
     Kyou surprised "Oh I forgot, Can-oh; me and Maya are always math partners."
     Maya smile happy mc "That's right."
     Kan smile worried ec "But-"
     Maya annoyed eo "You heard him, ditzy. We're working on math together."
-    Kan angry crazy "Ok, listen here you bit-"
-    #ART CG Two more VN GUI choices appear in front of Kyousuke.
-    #VOICE  Whispering#
-    Rin "PAUSE!"
+    Kan angry crazy "Ok, I'm not talking this from someone who's hair color is the same as dish soap."
+    Kan angry crazy "Is that what you wish it with?"
+    Maya annoyed eo "EXCUSE ME?"
+
+    "Uh oh, I better do something."
+    Kyou "PAUSE!"
+    "..."
+    Kyou "I uh... need to think for a minute and talk with my um...brain about what to say next."
+    Kyou "So just...uh...stop talking and let me...say something...in...a second."
+    Kyou "I'll just turn around for a minute to uh...think to myself."
+    Maya "Of course, Kyousuke. Your time to think is more important then anything this homely girl has to say. Please take all the time you need."
+    Kan "Are you like this all the time?"
+    Maya "Sweet, understanding, and caring? Why, of course I am."
+
+    # Ringo and Kyousuke whispering to each other
     Rin "Whew, that almost got out of hand."
-    Kyou "Yeah I'll say."
-    "I float behind Kyousuke once again."
-    Rin "Alright, let's see what kind of options we have this time."
-    # SFX or ART portray this "something" isn't right through a strange sound or some kind of visual glitch?
+    Kyou "Yeah I'll say. Glad you came and told me to say something Mr. guardian wingman."
+    Kyou "That went so smooth~"
+    Rin "Whatever you say, bud."
+    Kyou "But what should I say?"
+    Rin "I'm sure you'll think of something kid. You just do what you think is best and I'll support you!"
+    Kyou "Thanks Mr. guardian wingman."
+    Rin "Knock em dead!"
+
+    "As if I'm going to let this guy make his own choices."
+    "Alright, let's see what kind of options we have this time."
+
+    #Some kind of visual / sound effect / something aside from writing to indicate ringo is sensing something
+    "..."
     "Wait, something isn't right here."
-    "I sense something familiar."
-    "I look around, trying to locate the weird sensation."
-    "Huh, is there another spirit around?"
-    "Doesn't matter, gotta stay focused on the game."
+    "I sense something. Somekind of presence."
+    "Is there another spirit around?"
+    "..."
+    "Huh. Maybe it's my own spiritual energy?"
+    "*{i}Sniff, sniff.{/i}*"
+    "Yeah, that's probably it. I need to talk a shower later tonight."
+    "Whatever, doesn't matter, gotta stay focused on the game."
 
     # CG Display the two choices below.
     "'Choose Maya as a math partner.'"
     "\" Head to the bathroom.'"
-    Rin "What kind of terrible options are these?"
-    Kyou "I dunno."
-
-    Rin "You really can't think for yourself at all in these types of situations, can you big guy?"
-    Rin "Well, I guess that’s where I come in."
+    "What kind of terrible options are these?"
+    "You really can't think for yourself at all in these types of situations, can you big guy?"
+    "Well, I guess that’s where I come in."
     "Really, what would Kanna ever do without me?"
     "Now, what’s the best way to go about this?"
     menu:
         "Choices to give to Kyousuke"
         "Choose Kanna as a math partner.":
-            Rin "Here man, do this instead. Your guardian wingman commands it."
-            Kyou "Wow thanks buddy! That's a great idea!"
+            #Rin "Here man, do this instead. Your guardian wingman commands it."
+            #Kyou "Wow thanks buddy! That's a great idea!"
             jump ch3choice2option1
         "Work in a group with Kanna and Maya.":
-            Rin "Here man, do this instead. Your guardian wingman commands it."
-            Kyou "Wow thanks buddy! That's a great idea!"
+            #Rin "Here man, do this instead. Your guardian wingman commands it."
+            #Kyou "Wow thanks buddy! That's a great idea!"
             jump ch3choice2option1
 
 label ch3choice2option1:
@@ -271,17 +305,20 @@ label chapter3p3:
     Kan speaking curious "What do you mean?"
     Rin  "All I can really say is there was a strange energy floating around the school."
     Kan speaking confident "It was probably that horrible Maya girl. She was driving me up the wall today."
-    Rin  "No, it wasn't teenage hormones. Something like me. A spirit, maybe."
+    Rin  "No, it wasn't teenage hormones. Something like me, I think."
     "Or maybe I'm underestimating teenage emotions."
-    Kan speaking curious "You mean another spirit? Like you?"
-    Kan smile happy eo "I hope it's another cute stuffed animal spirit!"
+    Kan speaking curious "You mean another spirit?"
+    Kan smile happy eo "I hope it's another cute stuffed animal!"
     Rin "Well, actually that's kind of just a {i}me{/i} thing."
     Rin "Most spirits are somewhat dangerous actually."
     Kan frown worried eo "Dangerous?"
-    Rin "But don't worry. I doubt he'd be bold enough to try anything in a place as public as the school."
-    Rin "It does change our situation somewhat though. If there's another spirit around, things could get complicated."
+    Rin "But don't worry. I think it might have been some of may own magic I was sensing. Magic came sometimes go off and do it's own thing."
+    Rin "And besides, I doubt any spirit would be bold enough to try anything in a place as public as a high school."
+    Kan "Aren't you a spirit using magic in a public high school?"
+    Rin "Yes, but that's beside the point!"
+    Rin "If there's another spirit around, and that's a big if, things could get complicated."
     Kan speaking curious "Well, what should we do?"
-    Rin "For now, proceed as planned. We'll take another stab at that partner thing tomorrow."
+    Rin "For now, go with the plan. We'll take another stab at that math partner thing tomorrow."
     Kan smile happy speaking ec "Yeah! That stupid Maya can't keep Kyousuke all to herself. If it's only her we have to deal with, we can manage, right?"
     Rin "Right!"
     "{i}I hope...{/i}"
