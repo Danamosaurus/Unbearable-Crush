@@ -49,7 +49,7 @@ label chapter2:
 
     "Woah, gotta hide!"
 
-    "Boy" "Did you see something, pres?"
+    "Boy" "Did you see something, Pres?"
 
     "President" "I’m not sure… let me check it out."
 

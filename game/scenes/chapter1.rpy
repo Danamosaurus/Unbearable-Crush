@@ -19,10 +19,10 @@ label chapter1:
     #Kanna singing a sneaking theme (Maybe reference the metal gear solid sneaking theme / james bond theme / whatever sneaking song you'd like! Maybe a fun idea, we can change this if we want.)
     #I'd like to display a music note symbol here in the text. But I was not sure how to do so.
     Kan smile happy eo "{i}Da da. Da da da da da. Da da da da da. Da da~{/i}"
-    "Girl1" "Hey, Who's the creep?"
-    "Girl2" "Why's she sneaking around like that?"
-    "Girl2" "Oh, maybe she's a spy on a secret mission!"
-    "Girl1" "Or she's a creep. Let's get away from her."
+    "Girl 1" "Hey, Who's the creep?"
+    "Girl 2" "Why's she sneaking around like that?"
+    "Girl 2" "Oh, maybe she's a spy on a secret mission!"
+    "Girl 1" "Or she's a creep. Let's get away from her."
     Kan frown confident ec "You know I can hear you guys."
     Kan smile concerned ec "I don't care what they say. No one can stop me from achieving my goals. I have resolved myself to claim my-"
     Rin panting "{i}Gasp!{/i} Air! I need air!"
