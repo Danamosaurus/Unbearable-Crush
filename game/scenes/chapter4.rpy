@@ -68,7 +68,7 @@ label chapter4:
     Maya flirting eo "Your welcome! And wouldn't it be great if you had these kind of surprises everyday?"
     Maya flirting eo "From now on, I'll be making your lunch daily."
 
-    Ky surprised "Woah Maya, are you sure? That sounds like a ton of work!"
+    Kyou "Woah Maya, are you sure? That sounds like a ton of work!"
     Maya flirting eo "Oh it's just what I do Kyousuke. What are such good friends for?"
 
     Kan "{i}Nng!{/i}"
@@ -199,9 +199,8 @@ label chapter4:
     Maya annoyed eo "Kyousuke?"
 
     # CG Simulate "Eat Charlotte's delicious strawberry cake" being picked
-    Kyou
     Kyou "I - I think I..."
-    Kyou "Love the strawberry cake! Yum yum yum, delicioso! "
+    Kyou "Love the strawberry cake! Yum yum yum, delicioso!"
     Maya "You didn't even try mine!?"
     Kan "Or mine!? Kyousuke, what about the chocolates?"
     Kyou "Let me, mmmm, finish this cake up first."
@@ -308,7 +307,9 @@ label chapter4:
     Rin "Did {i}you{/i} lose a bet?"
 
     Youk neutral "Wow, truly a clever retort. Genius, really...I suppose it happens we find ourselves in similar situations."
-
+    Youk neutral "But it's simple Mr. Fortune. Someone made a wish on my shrine, so I must fulfill it. It's the first rule of any transaction."
+    Youk "And business is the real force of this world, not luck, love, or anything in between."
+    Rin "Oh brother, just stop! No one wants to hear that boring nonsense."
     Youk speaking "That aside, I must ask that you don't interfere with my work. The lady Charlotte has requested a human companion, and it seems Kyousuke is the only boy who is acceptable."
 
     Rin "Sounds a lot like my wish maker. Under normal circumstances, I'd be just fine letting you have him. I'm not so rude to interfere with the work of another spirit."
@@ -355,13 +356,13 @@ label chapter4:
     Kan "Well...I did promise the Home Ec club I'd help them with sewing and baking tomorrow..."
     Rin "Go! Bake a scarf or knit a cake or whatever, let ole Ringo handle it."
     Kan "Well...okay. I trust you."
-    Rin "Good! Now get some sleep, I gotta get my thougts together about all this."
+    Rin "Great! Now get some sleep, I gotta get my thougts together about all this."
     Kan "Good night, Ringo."
     "All of this just got a lot more messy."
-    "And of course it did, it always does."
+    "Of course it did, it always does."
     "And I'm stuck in this stupid bear form until we get it figured out."
     "Go figure."
-    
+
     scene white with Dissolve(1.0)
 
     jump chapter5

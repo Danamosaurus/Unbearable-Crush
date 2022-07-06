@@ -7,38 +7,48 @@ label chapter5:
 
     #We open to the familiar hallway, Ringo is alone, thinking about his next actions. He plans to investigate Kyousuke, and confront Youko when Charlotte inevitably shows up. Kanna is hanging back, eating lunch with her casual group of friends.
     scene hallway onlayer master with Dissolve(1.0):
-        subpixel True xpos 0.5 ypos 2.2 xanchor 0.5 yanchor 1.0 rotate None 
+        subpixel True xpos 0.5 ypos 2.2 xanchor 0.5 yanchor 1.0 rotate None
     Rin "Stupid, stupid, STUPID!"
     Rin "Those punk demons at the corporate success shrine think they can just walk all over us little guys."
     #VOICE #Mocking Youko's voice#
-    Rin '"Business is the real force of this world, not luck, love, or anything in between."'
-    Rin "{i}Gah{/i}, I hate him and his stupid company. The idiot girl couldn't even summon the right spirit to help her. Amatuer!"
+    Rin '{i}"Business is the real force of this world, not luck, love, or anything in between."{/i}'
+    Rin "{i}Gah{/i}, I hate him and his stupid shrine. The idiot girl couldn't even summon the right spirit to help her. Amatuer!"
 
+    "Get it together Ringo, don't let him rile you up."
+    "There's Kyousuke, better get this show on the road."
     #Ringo spots Maya and Kyousuke talking. He floats over, and hides in Kyousuke's backpack.
 
     Maya "Kyousuke, how's little Rocko doing?"
-    Kyou " Oh, my dog? He's great. I finally got him to blink with both eyes at the same time!"
+    Kyou "Oh, my dog? He's great. I finally got him to blink with both eyes at the same time!"
     Maya "That's amazing, Kyousuke! How did you get him to do that?"
     Kyou "Well, once I figured it out myself, it wasn't too hard to show him how to do it."
     Maya "I'd love to see him again. Maybe we should take him for a walk together."
     Kyou "Say, I was going to take him out today... If you're free after school, we could go together."
-    Maya "I have  jazz band practice after school... But I can skip it this time!"
+    Maya "I have jazz band practice after school... But I can skip it this time!"
     Maya "I highly doubt that the first chair bass string is as important as they say, anyway."
     Kyou "I thought you were in the volleyball club? Or was it baseball?"
-    Maya "Don't you remember, Kyousuke? I'm in every club this school has to offer."
+    Maya "Don't be silly Ktousuke, you're on the baseball team, remember?"
+    Kyou "I am? I don't remember ever hitting a ball or anything."
+    Maya "Yes well uh, the overall team does leave something to be desired."
+    Maya "No matter how much water I give and how many towels I hand out, you boys just never seem to win."
+    Kyou "You're on the baseball team too?"
+    Maya "Just as the watergirl."
+    Kyou "How are you in so many different clubs and sports?"
+    Maya "But don't you remember, Kyousuke? I'm in every club this school has to offer."
     Kyou "Every single one?"
     Maya "Every single one."
     Kyou "How do you make time for all that?"
     Maya "It's very easy actually. I have this system wher-"
 
     #CODE Shake screen to portray Charlotte's powerful laugh.
-    Char " WAHAHAHAHA!"
-    Rin "Showtime."
+    Char "WAHAHAHAHA!"
+    "Showtime."
 
     #ART Enter Charlotte
 
     "There's something strange about Charlotte's shadow…"
     "It looked as if it was rippling."
+    "Stupid demon and his stupid tricks. Not everyone can hide in plain sight."
 
     Maya "Uh, excuse me, we were in the middle of something here."
     Char "You're excused! Kyousuke, it is time for us to converse."
@@ -58,6 +68,9 @@ label chapter5:
     # ART Ringo popin trying to hold his laugh, Kyousuke popin smiling, Maya fuming popin.
     #An awkward silence raises between them. Ringo is doing everything he can to hold back laughter. Kyousuke is smiling absentmindedly, while Maya is fuming.
 
+    #Ringo snickering
+    "{i}*Phbt*{/i} This girl thinks she's the real deal oh my God."
+
     Maya "Really now?"
     Char "Really. I suggest you get in on my good side if you want to remain in your squishy, mortal form."
     Maya "How old are you?"
@@ -66,7 +79,8 @@ label chapter5:
     Maya "You certainly have the forehead of one. Why don't you crawl back into the cave you knuckle-dragged yourself out of, and leave us civilized folk alone."
     Maya "You can chant to all the chalk drawings while you're in there. It'll make you feel better."
 
-    "I look down again at the shadow to see Youko rising out of it."
+    "Charlotte's shadow is rippling like crazy."
+    "It looks like something is about to come out of it..."
 
     Char "I see."
     Maya  "Run along now, so Kyousuke and I can get back to cha-"
@@ -76,13 +90,14 @@ label chapter5:
     Maya "...{w=1.0}Can you just leave, please?"
     Char "I know! We'll let the whims of fate decide what happens next. And by fate, I mean Kyousuke."
     Kyou "Who, me?"
-    Char "Would you rather talk with someone who has seen the whole of the cosmos?"
+    Char "Would you rather discourse with someone who has seen the whole of the cosmos?"
     Char "Or someone doomed to wander the halls of mere mortal existence?"
     Kyou "Cosmo or wander? Cosmo and wander?"
-    Maya "Would you rather discourse with {i}me{/i} or {i}her{/i}, Kyousuke?"
+    Maya "Would you rather talk with {i}me{/i} or {i}her{/i}, Kyousuke?"
     Kyou "Um..."
 
-    #ART #Once again the VN GUI pop ups in front of Kyousuke. Ringo pops his head out of Kyousuke's backpack to prepare what to do. Youko pops up right next to him, looking at the same choices. The girls continue to bicker.
+    #ART #Once again the VN GUI pop ups in front of Kyousuke. Ringo pops his head out of Kyousuke's backpack to prepare what to do.
+    #Youko pops up right next to him, looking at the same choices. The girls continue to bicker.
 
     #ART enter Youko.
 
@@ -108,12 +123,12 @@ label chapter5:
     Rin "Rookie mistake. It'll be a cakewalk to change his mind."
     Youk "Do prove me wrong. If you can, that is."
     # VOICE and AUDIO Some reverb should be applied to the voice file to make look like it's a thought and not a dialogue.
-    Rin "(Ok what can we do here?)"
-    Rin "(Kanna isn't here right now, so I guess I just  make both these girls look bad.)"
-    Rin "(Or...)"
-    Rin "(Make one look better than the other.)"
-    Rin "(I hope this all works out in the end.)"
-    Rin "(It's tricky without Kanna.)"
+    "Ok what can we do here?"
+    "Kanna isn't here right now, so I guess I just  make both these girls look bad."
+    "Or..."
+    "Make one look better than the other."
+    "I hope this all works out in the end."
+    "It's tricky without Kanna."
 
     # CODE Show following menu.
     menu:
@@ -284,7 +299,7 @@ label chapter5:
     #Add/remove points from total accordingly.
 
     "SHOW SCORE"
-    ####This is an example of how to properly show score. Please look at the variables used. 
+    ####This is an example of how to properly show score. Please look at the variables used.
     $Kanna_points = game_player.getRelationship('Kanna')
     $Charlotte_points = game_player.getRelationship('Charlotte')
     "We Kanna has [Kanna_points] and Charlotte has [Charlotte_points]"
