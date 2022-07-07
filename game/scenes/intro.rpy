@@ -29,11 +29,11 @@ label start:
     hide bearmenu_maya with Dissolve(.5)
     pause .2
     hide bearmenu_kan with Dissolve(1.5)
-    Kan frown worried ec "Okay...Here I go."
-    Kan smile worried ec "Uh... Hello? Spirit?"
+    Kan frown worried ec "Okay. Here I go."
+    Kan smile worried ec "Uh...Hello? God? Spirit? Whatever you are?"
     Kan frown worried eo "It’s me, Kanna."
     Kan smile worried ec "I know we don’t talk often... or at all, and I know I haven’t really visited your shrine before, or even thought about you."
-    Kan "Actually, I’m not even sure what kind of spirit you are."
+    Kan "Actually, I’m not even sure what kind of God, spirit, thingy you are."
     # CODE
     # Change size tag below to a more adequate value when font and font size are decided.
     # Kanna should be muterring, so the text shown should be smaller than usual.
@@ -43,11 +43,11 @@ label start:
     "..."
     #SFX Cicadas, environmental
 
-    Kan frown worried ec "So if you could please grant my wish, I’d worship you forever! I’ll visit everyday and bring you all kinds of tasty treats!"
+    Kan frown worried ec "A-alright! So if you could please grant my wish, I’d worship you forever! I’ll visit everyday and bring you all kinds of tasty treats!"
     Kan "You name it, I’ll do it! So please grant this wish. You’re my only hope."
     Kan eo "Will you do it for me?"
     "..."
-    Kan smile worried ec "I’ll, uh...take that as a maybe."
+    Kan smile worried ec "I’ll, um...take that as a maybe."
 
     #SFX Footsteps "Kanna turns away from the shrine and begins to go home."
 
@@ -62,19 +62,21 @@ label start:
     "..."
     na "Well, she’s not exactly my ideal client."
     na "Teenagers don't have any knack for proper wishmaking."
-    na "They're always so short-sighted, wishing for love or popularity, or good grades they haven't earned."
+    na "They're always so short-sighted, wishing for love, popularity, or good grades they haven't earned."
     na "They want everything handed to them on a silver tray. Never willing to leave things up to {i}chance.{/i}"
     na "Of course it doesn't really matter {i}what{/i} her wish is."
     na "Just one more wish granted, and I'll have earned back my freedom."
-    na "No more sleeping on wooden floors, getting splinters in my back."
-    na "No more tourists, no more noise, and no more of this dead-end wish granting business."
-    na "Just me, a nice fluffy cloud, and all the peace and quiet a spirit could want."
-    na "*{i}sigh{/i}* "
+    na "No more sticky, smelly fur."
+    na "No more hunger pangs and feeling lazy all the time."
+    na "No more stupid curse!"
+    na "I'll finally be my good old fashioned, motivated, sweet smelling, non-sticky self again!"
+    na "*{i}sigh{/i}*"
     na "The girl left a envelope at the base of my shrine..."
     na "...It's sealed with a heart-shaped sticker."
-    na "Just one last wish. Then I’ll finally get out of this inconvenient form."
-    na "Alright, Fortune. I’m feeling pretty motivated!"
-    na "With these legs, I'll be lucky to make it before sundown."
+    na "Just one last wish. Then I’ll finally get out of this awful form."
+    na "And I'm not spending another miserable second away from my beautiful body!"
+    na "Let's get this party started!"
+
     #ART BG Kanna's Bedroom
     scene room night onlayer master with squares:
         xanchor .5
@@ -92,7 +94,7 @@ label start:
 
     $ hide_sides = ['Ringo']
     "..."
-    Kan sleeping "Zzzz"
+    Kan sleeping "Zzzz."
 
     #ART #SFX Ringo Entrance
     #The lights are out. Kanna is cocooned in various blankets, sleeping peacefully. Her window is open, and the blue glow of the moon gently illuminates her room.
@@ -103,7 +105,13 @@ label start:
     show cgs ringo_ent_shadow with dissolve:
         zoom .5
         xpos -.33
+    #Half asleep
     "???" "Wake up feeble human, and behold!"
+    Kan sleeping "Wha? Beetle? Just five more minutes, Mr. Beetle. Zzzz~"
+    "???" "I said, {i}WAKE UP FEEBLE HUMAN, AND BEHOLD!{/i}"
+    Kan sleeping "I don't care if it's not legal. What does a beetle know about law anyway? Zzzz~"
+    "???" "FEEBLE. Fee-ble. You have about five seconds to wake up before I show you exactly what that word means, human."
+    Kan sleeping "*{i}Yawn{/i}*"
     Kan neutral surprised crazy "..."
     #ART CG Kanna turns around. She stares, overwhelmed by the smoke and effects. She braces #herself in anticipation for whoever or whatever the voice was that spoke through the smoke.
     #The smoke dissipates, revealing a small, floating, bear-like spirit.
@@ -123,17 +131,19 @@ label start:
         xpos -.33
     Kan neutral surprised crazy "A bear?"
     $ hide_sides = ['Ringo']
-    "Bear" "Actually, not really. But I’m as close to the real thing as you’re gonna get."
+    "Bear" "I'm not a bear. But I am as close to the real thing as you’re gonna get."
+    Kan neutral surprised crazy "What happened to the feeble paralegal beetle?"
+    "Bear" "That was your sleep crazed delusion. And I don't do law wishes. Too boring."
     Kan smile surprised crazy"...Ha. Ahaha. There's a talking teddy bear in my room."
     Kan frown pout ec "This is a dream, right? I usually wake up after I fall out of bed."
     Kan "I'll just get back in and try again..."
     "Bear" "Bzzzt! Wrong. You’re wide awake, and you’re about to get your wish granted."
     Kan frown skeptic "My wish?"
-    Kan speaking surprised crazy "You mean {i}that{/i} wish?"
+    Kan speaking surprised crazy "You mean {i}that{/i} wish? From the shrine!?"
     "Bear" "Ding ding ding! We have a winner."
-    Kan "You're the spirit from the shrine!"
+    Kan "You're the God, spirit, thingy from the shrine!"
     "Bear" "Please allow me to introduce myself."
-    "Bear" "The name's Ringo. I'm a spirit of Fortune. Master of chance, of fate."
+    "Bear" "The name's Ringo. I'm a spirit of Fortune. Master of chance, fate, luck, and all things that bring prosperity."
     $ hide_sides = ['Ringo']
     Rin "Nice to meet ya!"
     Kan "But wait, I don't understand! Why are you in my room? What happe...Why are you a bear?"
@@ -147,9 +157,9 @@ label start:
         yanchor .5
         xpos .5
         ypos .5
-    "I present the letter she left for me earlier."
+    "Let's crack open that letter she left earlier."
     $ hide_sides = []
-    Rin smile normal "Alright, now let's see what you wished for."
+    Rin smile normal "Alright, what did you wished for."
     # CODE Set the appropriate time in the wait tag to match the VAs performance.
     Rin speaking happy "I, Kanna, wish for my classmate, Kyousuke..."
     Rin curious "...to notice me and...{w=0.5}"
@@ -157,39 +167,57 @@ label start:
     Rin headache mc "..."
     Rin headache mo "Seriously? Your wish is to turn your life into a bad rom-com?"
     Kan smile worried ec "Why not? What’s wrong with that?"
-    Rin angry speaking noarm "Why'd you put a love wish on a fortune shrine? There are different types of shrines for a reason, you know."
+    Rin angry speaking noarm "There is literally infinite potential for prosperity and you choose a love wish?"
+    Kan smile worried ec "How was I supposed to know that? Besides, having true love is the most fortunate a person can be!"
+    Rin angry speaking noarm "God, teenagers really don't know the meaning of nuance or critical thought."
+    Rin angry speaking noarm "Why'd you put a love wish on a fortune shrine anyway? There are different types of shrines for a reason, you know."
     Kan frown worried eo "I thought I could go to any shrine and make a wish. What’s the problem? You’re a magical spirit bear!"
-    Rin speaking normal "Well, more like his representative in this case."
+    Rin angry speaking noarm "I'm not a bear. I just look like one at the moment."
+    Rin angry speaking noarm "And the problem is that the wish is more trouble then it's worth."
     Kan frown worried eo "So...you can't grant my wish?"
     Rin angry speaking noarm "Listen, kid, do you know how hard it is to make people fall in love?"
     Rin angry speaking armout "It's not exactly a snap of the fingers. Love, actual love, doesn't just happen."
-    Rin laughing ec "It would take a miracle worker!"
+    Rin angry speaking armout "Love takes commitment, trust, understanding, empathy, and most importantly, time."
+    Rin angry speaking noarm "I could grant ten other wishes in the time it takes to do a love wish!"
+    Kan smile happy speaking ec "But you can grant the wish! There's no rush, I'll wait as long as I need to get to my Kyousuke."
+    Rin angry speaking noarm "I can grant it. But I'm not going to."
+    Kan frown worried eo "What!? Why not!"
+    Rin angry speaking noarm "It's too much time and too much effort for just one wish."
+    Kan smile happy speaking ec "So just do it quick!"
+    Rin laughing ec "Do it quick!? Did you even listen to anything I just said? That would take a miracle worker!"
     Kan speaking curious"Aren’t you a miracle worker, though?"
-    Rin smile normal "Course I am. But I’m also about to retire, and I want an easy gig before I go."
-    Kan frown skeptic "Retire?"
-    Rin grin "And your wish would’ve been my last job, but this is more trouble than it's worth."
-    Rin happy ec "Try the love goddess in the next town over."
+    Rin smile normal "Of course I am. But if I grant one more wish I get out of this stupid bear form."
+    Rin smile normal "So I'm looking for a quick and dirty wish to grant. I'm talking a one day wish tops. A love wish is not that."
+    Kan speaking curious "Just wave your little bear paws around and have Kyousuke and me go on a date. Easy peasy lemon squeezy."
+    Rin angry speaking noarm "That is not how magic works."
+    Kan frown worried eo "It's magic. How complicated can it be?"
+    Rin angry speaking armout "Fine. You want to go on a date with this guy? I can put you both in a fancy restaurant right now and you guys can wing it. There's your date."
+    Kan speaking surprised crazy "W-w-wait! I want him to notice me first and then we go on a date!"
+    Kan speaking surprised crazy "It's got to be real! I ask him out or he asks me out, that type of thing."
+    Kan speaking surprised crazy "A fancy restaurant in the middle of the night is {i}not{/i} real!"
+    Rin angry speaking noarm "See? True love is specific to each person and each couple. It's a bunch of nonsense I'm not dealing with."
+    Rin grin "It's more trouble than it's worth. So I'm outta here. Go try the love Goddess in the next town over."
     Kan speaking confident "Hold on! You can’t just barge in here, smoke out my room and get my hopes up!"
     Rin speaking happy "Look kid, I get this is all very confusing, but I’m in a rush. I need to find my next client."
     Kan speaking pleading "Wait! You said you'd grant my wish. You come in here with that whole fireworks display and now you wanna back out?"
     #VOICE dejected
     Kan frown pout ec "Stupid dream bear can't even grant my wish."
-    Rin annoyed "Hey, I never said I couldn't do it."
+    Rin annoyed "Hey, I said I could do it. I just don't want to."
     #Kanna Wink
-    Kan speaking sarcastic ec "No I get it. I guess it's just too hard on you then, being so old and close to retirement."
+    Kan speaking sarcastic ec "No I get it. I guess it's just too hard on you then, being a big grumpy fat bear and all."
     Rin angry speaking noarm "I didn't say that either! Do you even know what I can do? I could make you rich in a day. I could make you a popstar before lunch."
     Rin "I've even raised the dead before! That one was gross and I couldn't sleep for weeks, but hey, I did it."
-    Rin angry speaking armout "I'm Ringo Fortune! I can do literally any dumb thing you humans want. So don’t go questioning me, brat."
+    Rin angry speaking armout "I'm Ringo Fortune! I can do literally any dumb thing you humans want. So don’t go questioning me, dumb brat."
     Kan speaking confident "Prove it."
     Rin "Prove it? I don't have to prove anything to you."
     Rin "Now, good night. Have a nice youth, or whatever."
-    "Straightening my tie, I climb up the bed sheet and back to the window."
+    "Should have expected this sort of thing from a teen. Time to head back to the shrine and wait I guess."
     "Kanna" "..."
     "Kanna" "Stupid bear."
     Rin shockedannoyed "..."
     Rin veryannoyed "..."
+    Rin sigh"*{i}Sigh{/i}*"
     "{i}Just one last wish.{/i}"
-    Rin sigh"{i}Sigh{/i}"
     Rin "Tell me about this guy you like."
 
     #Animation have Kanna's sprite suddenly become very happy.
@@ -234,23 +262,37 @@ label start:
     "*rip*"
     Kan speaking sad crazy "Hey, my poster!"
     Rin smile normal "Hey, we're about to replace it with the real thing, right?"
-    Rin speaking happy "I'll hitch a ride in your backpack tomorrow, so get back to sleep and try not to freak out until then."
+    Rin speaking happy "I'll hitch a ride in your backpack tomorrow to see what we're working with, so get back to sleep and try not to freak out until then."
     Kan smile happy speaking ec "Man, what a nice dream! Maybe I placed the charm on the dream spirit's shrine."
     Rin "Yeah yeah, you’ll see when you wake up, kid."
     #ART The camera pans outside of Kanna’s room, showing the night sky.
-    "I guess finishing my career with a love wish ain’t so bad."
+    "God, it just had to be a love wish. Typical."
+    "I won't know the hand I've been dealt until I get a good look at this Kyousuke guy."
+    "They are just teenagers after all. They fall in and out of love with a change in the weather."
+    "As long as I play the right card at the right time, it should be a cakewalk to tilt the odds into Kanna's favor."
+    "I've been doing this wish granting thing for hundreds, thousands, hundreds of thousands of years!"
+    "I've granted the wishes of amoebas and cells all the way to kings and queens of nations!"
+    "A love wish isn't the easiest thing in the world, but I've done way worse."
+    "Maybe this won't even be as bad as I thought. I haven't played Cupid in a while, it could be fun!"
+    "Tomorrow is the beginning of the end for this bear form."
+    "And that's all that matters at the end of the day."
+    "It can't be that hard to make a couple of ditsy high schoolers fall for each other."
+    "..."
+    "...Right?"
+
+    #Cut out ending to Prologue
     #ART show pocket watch.
-    "Well that's just typical."
-    "You're not going to cut me any slack with this one, are you Fortune?"
+    #"Well that's just typical."
+    #"You're not going to cut me any slack with this one, are you Fortune?"
     #Art Card Table - A table where Ringo has some playing cards. He's flipping them over, shuffling etc.
-    "A week is hardly enough time to bring two people together by chance alone."
-    "I won't know for sure how the cards are laid out until I get a look at the guy we're dealing with."
-    "This 'Kyousuke'."
-    "I mean hey, they're just teenagers. They fall in and out of love with a change in the weather."
-    "And you'd know better than any, Fortune, that the right card played at the right time can tilt the odds in anyone's favor."
-    "And nobody stacks the deck like me."
-    "Hell, this might not be as bad as I thought. I can play Cupid!"
+    #"A week is hardly enough time to bring two people together by chance alone."
+    #"I won't know for sure how the cards are laid out until I get a look at the guy we're dealing with."
+    #"This 'Kyousuke'."
+    #"I mean hey, they're just teenagers. They fall in and out of love with a change in the weather."
+    #"And you'd know better than any, Fortune, that the right card played at the right time can tilt the odds in anyone's favor."
+    #"And nobody stacks the deck like me."
+    #"Hell, this might not be as bad as I thought. I can play Cupid!"
     # Pause for a bit. Consider cutting any BGM or Ambience playing.
-    Rin "...Right?"
+    #Rin "...Right?"
     scene black with fade
     jump chapter1
