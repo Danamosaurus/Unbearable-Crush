@@ -254,9 +254,6 @@ label chapter3p2:
             #Rin "Here man, do this instead. Your guardian wingman commands it."
             #Kyou "Wow thanks buddy! That's a great idea!"
             jump ch3choice2option1
-        "Work in a group with Kanna and Maya.":
-            #Rin "Here man, do this instead. Your guardian wingman commands it."
-            #Kyou "Wow thanks buddy! That's a great idea!"
 
         "Work in a group with Kanna and Maya.":
             Rin "Here man, do this instead. Your guardian wingman commands it."
