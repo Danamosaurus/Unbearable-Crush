@@ -209,10 +209,10 @@ label chapter4:
         zoom 1.25
 
     Char cheeky smile "Well, Kyousuke, how does it feel? Do you suddenly find me...irresistable?"
-
+    #Code XP bar goes up up up +++++ 
     Char smile ec "Do you feel compelled to bow down at my feet and succumb to my every request?"
-
     Kyou "{i}Mmm{/i}, so good~"
+
 
     Char frustrated eo "It's not working... why isn't it working!?"
 

@@ -159,11 +159,9 @@ label chapter5:
         Maya "I really think you should go, Charlotte."
         Char "No, no. I feel like I should stay here and see what happens."
 
-        # CODE
-        #choice 1.A: Maya +1 points
-        #choice1.A : Charlotte +0 points
+        #Nobody gets any points
 
-        $game_player.increaseRelationship("Maya",1)
+
 
     label choice5_B:
 
@@ -200,10 +198,9 @@ label chapter5:
         Kyou "I... I'm sorry, Maya, I didn't mean that. I just want all of us to get along."
         Maya "It's alright, Kyousuke..."
 
-        # Code
-        #choice 1.B Maya -1 points
-        #Choice 1.B  Charlotte +0 points
+        #Charlotte gains a point, Maya loses one.
         $game_player.increaseRelationship("Maya",-1)
+        $game_player.increaseRelationship("Charlotte",1)
 
     Maya "Look, I'm just gonna go back to class."
     Kyou "Are you sure, Maya?"
@@ -302,7 +299,7 @@ label chapter5:
     ####This is an example of how to properly show score. Please look at the variables used.
     $Kanna_points = game_player.getRelationship('Kanna')
     $Charlotte_points = game_player.getRelationship('Charlotte')
-    "We Kanna has [Kanna_points] and Charlotte has [Charlotte_points]"
-
+    # "We Kanna has [Kanna_points] and Charlotte has [Charlotte_points]"
+    $game_player.showRelationshipUI(["Kanna", "Maya", "Charlotte"], duration=0.5)
 
     jump chapter6

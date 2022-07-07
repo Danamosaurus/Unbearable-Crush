@@ -1,3 +1,6 @@
+## Define variables that are meant to be saved with save games and rollbacks with "default"
+default game_player = player()
+
 init +1 python:
 
 ################################################################################
@@ -10,7 +13,7 @@ init +1 python:
 ## Game Objects
 ################################################################################
 
-    game_player = player()
+    # game_player = player()
 
 ################################################################################
 ## CG
