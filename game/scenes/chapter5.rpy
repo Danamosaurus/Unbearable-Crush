@@ -27,14 +27,14 @@ label chapter5:
     Maya "I have jazz band practice after school... But I can skip it this time!"
     Maya "I highly doubt that the first chair bass string is as important as they say, anyway."
     Kyou "I thought you were in the volleyball club? Or was it baseball?"
-    Maya "Don't be silly Ktousuke, you're on the baseball team, remember?"
+    Maya "Don't be silly Kyousuke, you're on the baseball team, remember?"
     Kyou "I am? I don't remember ever hitting a ball or anything."
     Maya "Yes well uh, the overall team does leave something to be desired."
     Maya "No matter how much water I give and how many towels I hand out, you boys just never seem to win."
-    Kyou "You're on the baseball team too?"
-    Maya "Just as the watergirl."
+    Kyou "You're on the baseball team too? I've never seen you out in the field."
+    Maya "Just as the watergirl. And a good watergirl is never seen~"
     Kyou "How are you in so many different clubs and sports?"
-    Maya "But don't you remember, Kyousuke? I'm in every club this school has to offer."
+    Maya "Don't you remember, Kyousuke? I'm in every club this school has to offer."
     Kyou "Every single one?"
     Maya "Every single one."
     Kyou "How do you make time for all that?"
@@ -48,7 +48,7 @@ label chapter5:
 
     "There's something strange about Charlotte's shadow…"
     "It looked as if it was rippling."
-    "Stupid demon and his stupid tricks. Not everyone can hide in plain sight."
+    "Stupid demon and his stupid tricks. Not everyone can hide in plain sight, some of us have to do dirty work for a living."
 
     Maya "Uh, excuse me, we were in the middle of something here."
     Char "You're excused! Kyousuke, it is time for us to converse."
@@ -69,7 +69,7 @@ label chapter5:
     #An awkward silence raises between them. Ringo is doing everything he can to hold back laughter. Kyousuke is smiling absentmindedly, while Maya is fuming.
 
     #Ringo snickering
-    "{i}*Phbt*{/i} This girl thinks she's the real deal oh my God."
+    "{i}*Phbt*{/i} This girl thinks she's the real deal, oh my God."
 
     Maya "Really now?"
     Char "Really. I suggest you get in on my good side if you want to remain in your squishy, mortal form."
@@ -106,7 +106,7 @@ label chapter5:
     Youk "Mr. Fortune, I suggest you rethink your actions."
     Rin "I'm just doing the same thing you're doing, buddy."
     Youk "Can you even do magic with those little fuzzy paws of yours?"
-    Rin "Hey, this form wasn't my choice! You think I'd want to be a teddy bear?"
+    Rin "Hey, this form wasn't my choice! You think I want to be a teddy bear?"
     Youk "Maybe it's your heart's true form, all cute and cuddly at its core."
     Rin "Whatever. You want to make the first move here, corporate hotshot?"
     Youk "With pleasure."
@@ -118,6 +118,7 @@ label chapter5:
     Youk "You see, the simpleton already wants to address my client. I can simply do this."
 
     #ANIM # The Charlotte choice glows purple, and begins to have sparkle effects around it. Kyousuke is entranced, and wants to choose it.
+    #Or something similar, doesn't have to be this exact visual effect. Just something to show Youko messing with the UI
 
     Kyou "{i}Ooh!{/i}"
     Rin "Rookie mistake. It'll be a cakewalk to change his mind."
@@ -153,7 +154,7 @@ label chapter5:
         Kyou "We've been friends for a while, and she was talking first."
         Char "Don't you feel a strong pull to talk with me instead?"
         Kyou  "Um, no. And you're acting kinda weird now."
-        Char "I... I will remain here and spectate."
+        Char "I-I will remain here and spectate."
         Maya "Spectate?"
         Char "Yes, I... when Kyousuke talks, he gives off the energy my mage clan requires to weave their magic."
         Maya "I really think you should go, Charlotte."
@@ -184,7 +185,12 @@ label chapter5:
         Maya "Kyousuke, you see how unreasonable she's being, right?"
 
         # ART CG? Or perhaps some kind of purple filter over the game screen?
-        "Kyousuke looks over at Charlotte, but before he can comment, a slight purple and sparkling fog sets in, surrounding his face."
+        "Atta-boy Kyousuke! Get both of them!"
+        "..."
+        "Wait, what is that purple fog near his face?"
+        "WAIT!"
+
+        #"Kyousuke looks over at Charlotte, but before he can comment, a slight purple and sparkling fog sets in, surrounding his face."
 
         Rin "Hey! You can't do that, that's cheating."
         Youk "How so? This spell of mine will only make him be a little more honest about his feelings!"
@@ -194,8 +200,10 @@ label chapter5:
 
         # ART
        # "Ringo waves his paws around in a circle, and very tiny clouds and gold sparkles flutter around Kyousuke's eyes."
+       #The above is optional, we don't 100% need those visual effects, but it would be cool though.
 
-        Kyou "I... I'm sorry, Maya, I didn't mean that. I just want all of us to get along."
+        Kyou "Wait, wait, did I mean to say that?"
+        Kyou "I... I'm sorry, Maya, I didn't mean that. Atleast I don't think so. I just want all of us to get along."
         Maya "It's alright, Kyousuke..."
 
         #Charlotte gains a point, Maya loses one.
@@ -223,7 +231,7 @@ label chapter5:
     Rin "What?"
     Youk "She wants him, so I'm getting him for her."
     Rin "Oh, come on, you can choose any other dumb kid."
-    Rin "Why don't you do the 'professional courtesy' of giving this one to me."
+    Rin "Why don't you do the {i}'professional courtesy'{/i} of giving this one to me."
     Youk "I have an unbesmirched reputation to uphold, Mr. Fortune."
 
     # ART CG Another GUI choice menu.
@@ -235,9 +243,9 @@ label chapter5:
     Rin "Do I even need to do anything? I like both of those options."
     Youk "Humour me."
 
-    Rin "(Well, I could just highlight one of the options.)"
-    Rin "(Or maybe I can try to inject Kanna into this.)"
-    Rin "(He did mention her earlier, maybe he's thinking about her?)"
+    "Well, I could just highlight one of the options."
+    "Or maybe I can try to inject Kanna into this."
+    "He did mention her earlier, maybe he's thinking about her?"
 
     # ART Replace "Head to the bathroom" options with a golden "Try and find Kanna."
     #"Highlight: Head to the bathroom."
@@ -269,6 +277,9 @@ label chapter5:
     Youk "Goodbye, Mr. Fortune. We'll certainly be meeting again."
     Youk "Bring your little client next time. It'll be a delight watching her as we steal Kyousuke from her."
 
+    "What a freaking mess."
+    "Kanna's not gonna like this..."
+
     # CODE
     #Choice 1.B Charlotte +1
     $game_player.increaseRelationship("Charlotte",1)
@@ -278,14 +289,31 @@ label chapter5:
 
     Kan "They can overwrite what Kyousuke thinks? How is that fair!?"
     Rin "It's not! He did say he could only do it once a day, though."
-    Kan "Hmmm... Maybe we can find a way to, like, back them into a corner and turn the situation to our advantage."
-    Kan "Force them to use that power when they really don't need to?"
+    Kan "First this Maya girl is trying to swindle Kyousuke away to go to that bear festival this weekend."
+    Kan "And now this Charlotte chick is trying to magically steal him away from both of us!"
+    Kan "I mean-from me!"
+    Kan "What do we even do, Ringo?"
+    Rin "Hmmm... Maybe we can find a way to, like, back them into a corner and turn the situation to our advantage."
+    Rin "Force them to use that power when they really don't need to."
+    Rin "Hold on, you just said Charlotte is trying to steal Kyousuke away from {i}both of you?{/i}"
+    Kan "N-no! I meant me and only me!"
+    Rin "Hmmmm, {i}the enemy of my enemy is my friend{/i}."
+    Kan "What?"
     Rin "Say, I think I have a plan, kid."
-    Kan "We can try to embarrass her!"
+    Rin "Knock that fake witch down a peg or two."
+    Kan "Like, embarrassing her?"
     Rin "Close. Charlotte has some thick skin, but maybe we can use Kyousuke to do that for us."
     Kan "But will Kyousuke be embarrassed? I'd hate to see him look all flustered in front of everyone."
-    Kan "Wait, maybe I'd like to see that!"
-    Rin "Grab your sewing kit, we're staying up late tonight!"
+    Kan "Wait, maybe I'd like to see that~"
+    Rin "Don't be weird. Now, you said you spent all afternoon baking and sewing right?"
+    Kan "Yep, it's a tough job, but someone had to do it."
+    Rin "What was the sew to bake ratio? Did you sew a lot? You CAN sew and make things besides brownies and cake, right?"
+    Kan "Uh, who do you think you're talking to here? I got my own sewing kit I've had since I was a little kid."
+    Rin "Perfect! Grab it!"
+    Rin "And grab all your baking whatchacallit and the kajigger for mixing too."
+    Rin "We're staying up late tonight. I have the perfect plan."
+    Kan "...Did you just call a rubber spatula and a mixer a {i}whatchacallit{/i} and a {i}kajigger{/i}?"
+    Rin "Shut up and start sewing! We're winning over Kyousuke tomorrow! "
 
     # CODE and (possibly) ART
     #Everyone's scores with Kyousuke so far.
