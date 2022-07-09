@@ -34,9 +34,9 @@ label chapter6:
     Kan "He'll know what to do and who to pick when the time comes."
     Kan "And I've no doubt that person will be me."
     Maya "Wooowww, so confident! Where's this coming from?"
-    Kan "It's gonna happen Maya; I know Kyousuke will do the right thing, no matter what. I believe in him"
+    Kan "It's gonna happen Maya! I know Kyousuke will do the right thing, no matter what. I believe in him."
     Maya "That's nice and all, but you're just in denial. He'll never choose you."
-    Maya "He's not exactly the brightest.  He needs a little... persuasion in order to understand who he really likes."
+    Maya "He's not exactly the brightest. He needs a little... persuasion in order to understand who he really likes."
     Kan "What do you mean?"
     Maya "He's dumber than a sack of potatoes, Can-oh. Even you must have noticed it by now."
     Kan "No! Kyousuke is the smartest person in this school, hands down."
@@ -50,8 +50,11 @@ label chapter6:
     Kan "I just want him to be happy..."
 
     Maya "What was that?"
-    Kan "...Look, you gonna help me take Charlotte down a peg or not?"
+    Kan "...Look, you gonna help me take Charlotte down or not?"
     Maya "Might as well. Let's hear the plan."
+
+    #Tranisiton to next scene
+
     window hide
     camera:
         subpixel True
@@ -87,6 +90,7 @@ label chapter6:
     Char "WAHAHAHA!"
     Rin "Not that one, maybe the girl after that."
 
+    "Alright, phase one is a go."
     #Ringo slides back into Kyousuke's backpack.
 
     Char "Good morning, Kyousuke! After carrying my books yesterday, I'm here to officially give you your wizard learner's permit!"
@@ -105,7 +109,7 @@ label chapter6:
     Char "If you can beat yesterday's score, I'll place the third eye of Micolash upon the rock!"
     Kyou "Cool! Does that mean you'll glue more googly eyes to it?"
     Char "Naturally! The eyes mean we can gain insight!"
-    Char "Grant us eyes, o' powerful Micolash. Grant us vision to see past the delusions of our mere existence, so we may gaze into the metaphysical realm of the true cosmos."
+    Char "{i}Grant us eyes, o' powerful Micolash. Grant us vision to see past the delusions of our mere existence, so we may gaze into the metaphysical realm of the true cosmos.{/i}"
     Char "Bless us with your omnipotent-"
     Maya "Ok, you are acting exceptionally weird today."
     #Char "N-"
@@ -115,26 +119,27 @@ label chapter6:
     Char "Kyousuke! You dare compare my studies of the world beyond man to that of a simple humanistic expression?"
     Maya"I think he does dare. Maybe if you could do something cool, like fortune telling, or maybe, mind reading, he would take you seriously."
     Maya "Kyousuke's intellect is unrivaled, Charlotte. Just the other day, he was telling me about having boy cheerleaders to liven the girls as they play volleyball."
-    Maya "Which the school is currently talking about implementing, as they also thought it was  brilliant."
+    Maya "Which the school is currently talking about implementing, as they also thought it was brilliant."
     Kyou "I don't remember doing that."
     Maya "You told me all about it a few days ago, remember? I did all the specifics and wrote your plans down and submitted them to the school."
-    Maya "It's all just busy paperwork, Kyousuke, trust me; but you get all the credit, don't worry!"
+    Maya "It's all just busy paperwork, Kyousuke, trust me. But you'll get all the credit, don't worry!"
     Kyou "Wow! Thanks Maya. I appreciate you helping me flesh out my ideas."
     Kyou "It was a tricky problem to solve, but I'm sure the girls will love the support."
     #EDITING Show her being flustered
     "Charlotte is clearly flustered about the lack of attention."
     "The shadow beneath her feet is flickering again."
+    "Perfect."
 
-    Char "Wait just a minute. I'll have you know I can perform such childish tricks as fortune telling AND mind reading."
+    Char "Wait just a minute. I'll have you know I can perform such childish tricks as fortune telling {i}AND{/i} mind reading."
     Char "Pick your poison, Kyousuke. Which would you like to see?"
     Maya "Hold on, how are we supposed to test this so-called magic of yours?"
     Char "You really don't know? {i}Phhhbbt{/i}, of course you don't. Tell her Kyousuke."
     Kyou "Umm, I'm actually not sure how to test that."
     Char "Correct!"
-    Maya "Oh my god... Ok, if Kyousuke wants you to do fortune telling, you'll have to predict what will happen when the school bell rings."
+    Maya "Oh my God... Okay, if Kyousuke wants you to do fortune telling, you'll have to predict what will happen when the school bell rings."
     Maya "If Kyousuke picks mind reading, both you and him will say what you're thinking in unison."
     Char "Child's play! Something so easy is but a game for the child of the creator. The associate natural law breaker. Th..."
-    Maya "Can we just skip to the 'wahaha' part please?"
+    Maya "Can we just skip to the, 'wahaha', part please?"
     Char "WAHAHAHA!"
     Maya "Thank you."
     Char "Alright, Kyousuke, decide which magic you would like me to perform!"
@@ -143,18 +148,21 @@ label chapter6:
     "Two more choices appear in front of Kyousuke."
     "Fortune-telling"
     "Mind-reading"
-    #ART Show this Youko's big ass grown adult body stuffed into Kanna's backpack hanging like a sack of potatoes. She doesn't notice.
+    #ART Show this Youko's big ass grown adult body stuffed into Kanna's backpack hanging like a sack of potatoes. She doesn't notice. (Note from TJ: lol, love the visual)
     #ART Ringo comments there's not enough room in here for two of them.
-    "Youko appears in Kyousuke's backpack, right next to Ringo."
 
-    Rin "'About time you showed up."
+    Youk "These kids make it so easy, don't they?"
+    Rin "About time you showed up."
     Youk "Little Kanna is slipping out of the boy's mind, Mr. Fortune."
     Youk "Are you even representing her? Maybe you should give her my card after this is over, I can find someone she'll like just as much as Kyousuke."
-    Rin "Not a chance, fancy pants. Kanna will win his heart, just you wait!"
-    Rin "But I am feeling generous. You make the first move today."
+    Rin "Not a chance, fancy pants! Just you wait, Kanna will win his heart."
+    Youk "You're so cute when you're angry. Be careful though, don't want to get wrinkles in your fur."
+    Rin "Eat me, pretty boy!"
+    Youk "So scary~"
+    Rin "Lucky for you, I'm feeling generous. You can make the first move today."
     Youk "What move is there to make? Let's see what he picks, then go from there."
     Rin "We both know that hyena is no fortune teller. You're gonna want to read his mind."
-    Youk "On the contrary. I can pull off whichever decision Kyousuke makes, mind reading is just more convenient"
+    Youk "On the contrary. I can pull off whichever decision Kyousuke makes, mind reading is just more convenient."
     Rin "Then make your move already."
     Youk "Very well."
     #ART Youko "Poof" back into Charlotte's shadow. How do we show that?
@@ -162,11 +170,11 @@ label chapter6:
     #Mind-reading begins to glow the familiar purple sparkle glow.
     #Put Charlotte's effects on Mind-reading
 
-    Rin "(Alright, I know either way we go, we got this one in the bag.)"
-    Rin "(I can tell Kanna did her job, otherwise Maya wouldn't have brought up fortune telling or mind reading.)"
-    Rin "(Anyway, we need to tread carefully with these two clowns here.)"
-    Rin "(I could also highlight 'mind reading' and, if all goes to plan, shame Charlotte.)"
-    Rin "(I need Kanna here for 'fortune telling,' so maybe I can inject something to stall for time?)"
+    "Alright, I know either way we go, we got this one in the bag."
+    "I can tell Kanna did her job, otherwise Maya wouldn't have brought up fortune telling or mind reading."
+    "However, we do need to tread carefully with these two clowns here."
+    "I could also highlight 'mind reading' and, if all goes to plan, shame Charlotte."
+    "But I need Kanna here for 'fortune telling,' so maybe I can inject something to stall for time?"
 
     menu:
         "Choices for Kyousuke."
@@ -186,7 +194,7 @@ label chapter6:
         Char "Er, how should we judge this? Maybe someone should give a topic?"
         Maya "Ok, Kyousuke thinks of a color and says it outloud."
         Char "Easy! Alright on the count of two."
-        Maya "On the count of three, can you be normal for, like, a minute?"
+        Maya "On the count of three! Can you be normal for a single minute?"
         Char "I've avidly studied normality. Hence why I blend in so well at this school."
         Char "How else would a priestess of my magnitude be allowed into such a common, mortal realm?"
         Maya "Everything you spew is hot garbage. Let's just go."
@@ -201,7 +209,7 @@ label chapter6:
         Maya "Three."
         Maya "Two."
         Maya "One."
-        "Charlotte &  Kyousuke" "Red."
+        "Charlotte &  Kyousuke" "Red!"
 
         Kyou "Woah!"
         Char "See? There is nothing my powers cannot do!"
@@ -211,6 +219,7 @@ label chapter6:
         Maya "Favorite animal."
 
         "Kanna turns the corner of the hall, sprinting at full speed."
+        "Here we go."
 
         Maya "Three."
         Maya "Two."
@@ -223,7 +232,7 @@ label chapter6:
         Kyou "Giraffe!"
 
         "Kanna slams directly into Charlotte, knocking her clean off her feet to the floor."
-        "Kanna lays on top of her, reeling."
+        "That kid knows how to tackle, dang. She'd be good at American Football."
 
         Kyou "Good morning, Kanna! Where are you off to in such a hurry?"
         Char "Release your weight from my chest! The flow of mana cannot reach my lungs!"
@@ -248,14 +257,19 @@ label chapter6:
         Kyou "Maybe instead of some mental stuff, you can do a classic card trick!"
 
         #Show Rin and Youk
-
         Youk "Did he... just pick yours?"
         Rin "The kid just wants to see some card tricks or a rabbit out of a hat or something."
         Youk "No matter, I can make this work."
 
         Char "Um, I... er, Yes! Of course! What sort of magic trick were you thinking?"
         Kyou "Can you pull a rabbit out of a hat? Wait, none of us are wearing hats. Um, can you do a card trick?"
+        Kyou "You always have that deck of cards in you hand, those should work!"
         #WRITING She's literally holding cards in her sprite image
+        #Fixed above issue!
+        Char "Oh no no no no no, the pamphlets of eternal celestial ascension cannot be used for mortal card tricks."
+        Char "Unless you want to eternally ascend celestially that is, that would make a pretty good trick!"
+        Maya "Keep your crazy space mumbo jumbo to yourself, spaceman spiff."
+        Maya "Just do a regular magic trick."
         Char "I am afraid I am not currently equipped with such a thing. You’ll just have to choose something else."
         Maya "I carry cards in my backpack all the time. Poker club insists we all have our own deck."
         Maya "Here."
@@ -269,15 +283,15 @@ label chapter6:
         Char "It is fully necessary for this to happen in order for the trick to work. You'd be surprised how often people wish me to step on cards."
         Maya "I don't want to think about that. And I also don't want you to ruin my RED cards."
 
-        "Awkward silence."
+        "..."
 
         Kyou "Why did you just yell that Maya? I think my card was black anyway."
-        Rin "(Come on Kanna, hurry up.)"
+        "Come on, come on. hurry up, Kanna."
 
         Char "Hush, both of you! I'm spoon feeding myself the knowledge of this particular pack of cards."
         Char "It's telling a story. How it was created in a factory, played hundreds of hands of poker by the delicate and single eyebrowed Maya."
         Maya "Excuse me? I clearly have both my ey-"
-        Char " The cards are now telling me about the time, not long ago, when Kyousuke held one in his muscular fingers."
+        Char "The cards are now telling me about the time, not long ago, when Kyousuke held one in his muscular fingers."
         Char "Kyousuke! Your card is the red eight of..."
 
         #SFX Kanna crashing into Charlotte.
@@ -289,7 +303,7 @@ label chapter6:
         "Kanna lays on top of her, reeling from ramming headfirst into Charlotte."
         "Cards blast up into the air, causing a mini explosion of playing cards to erupt around them."
         # ART Maybe a CG of this, if possible?
-        "I leap out of Kyousuke's backpack, snagging a card out of midair, and hand it to Kyousuke."
+        "Just enough chaos for me to grab a card and hand it over to Kyousuke."
 
         Kyou "Good morning, Kanna! Where are you off to in such a hurry?"
         Char "Release your weight from my chest! The flow of mana cannot reach my lungs!"
@@ -299,9 +313,6 @@ label chapter6:
         Kyou "Sorry Charlotte, your guess is wrong."
         Char "{i}Excusez moi?{/i}"
         Kyou "I have the black three of clubs, see?"
-
-        "Kyousuke shows her the card."
-
         Char "What? The card I had - before this ten ton rerun of a girl body checked me - was definitely the correct card."
         Kyou "But look, see?"
         Char "Did you not grab that card when they exploded everywhere?"
@@ -328,8 +339,8 @@ label chapter6:
     #Back to the group.
 
 
-    Kan " Sorry for running into you Charlotte."
-    Char "Why exactly were you sprinting through the halls, anyway?"
+    Kan "Sorry for running into you Charlotte."
+    Char "Why exactly were you sprinting through the halls anyway?"
     Kan "I... was really excited to see Kyousuke. I just wanted to talk to you guys, that's all."
     Char "That's the most suspicious answer you could have given."
     Maya "Well now that Kanna's here, she's got to see some of your splendid magic right?"
@@ -345,7 +356,7 @@ label chapter6:
     Char "If by 'infant'  you mean 'starchild of the celestial spaceborne multi-dimensional witch-monk-lizard tribe' then yes, that's what it's like."
     Maya "O.K. So Ms. Lizard Wizard."
     Maya "You're supposed to be all-powerful and reality bending or whatever, right?"
-    Char " If by 'all-powerful' you mean-"
+    Char "If by 'all-powerful' you mean-"
     Maya "Just answer the question."
     Char "More or less, yeah."
     Maya" Alright. And Kyousuke here is like your wizard apprentice or something, right?"
@@ -388,7 +399,7 @@ label chapter6:
     Youk "But I don’t have the faintest clue what he means by thinking of two sodas."
     Youk"Is he that thirsty?"
     Rin "Man this is getting stupid."
-    Youk "You just now realized  that?"
+    Youk "You just now realized that?"
     Youk "Regardless, I believe you're up first this time."
     Rin "Aww, you’re actually playing by the rules?"
     Youk "Some of us have honor, Mr. Fortune."
@@ -397,7 +408,7 @@ label chapter6:
     Rin "Is it working?"
     Youk "Yes. And I will strike a deal with you for this choice and only this choice, Mr. Fortune."
     Youk "I won’t mettle in any way as long as you don’t change the choices. Only highlight them."
-    Youk "Let’s see if things really go your way for super strength or whatever the heck ‘two sodas’ means."
+    Youk "Let’s see if things really go your way for super strength or whatever the heck {i}‘two sodas’{/i} means."
     Rin "How do I know you’ll keep your end of the bargain?"
     Youk "Is my word not good enough?"
     Rin "Nope."
@@ -406,13 +417,13 @@ label chapter6:
     Rin "I think I’ve gotten plenty far in life without it, thank you very much."
     Youk "I’m sure you think that."
 
-    Rin "(We need to get the ball rolling on the fortune telling. But Charlotte needs to be the one to do it, not Kyousuke.)"
-    Rin "(We didn’t plan at all for a trick like this one.)"
-    Rin "(But this may be a chance to make Charlotte look even worse.)"
-    Rin "(Or a chance for Kanna to look good.)"
-    Rin "(Whatever I do or pick, even if Youko said he won’t do anything, who knows how that’s going to go.)"
-    Rin "(Not show why, but I got a feeling seeing whatever happens with super strength will turn out alright.)"
-    Rin "(But I know Youko is just as confused as I am about the soda thing. Maybe letting Kyousuke be Kyousuke will be chaotic enough to make Charlotte mess up.)"
+    "We need to get the ball rolling on the fortune telling. But Charlotte needs to be the one to do it, not Kyousuke."
+    "We didn’t plan at all for a trick like this one."
+    "But this may be a chance to make Charlotte look even worse."
+    "Or a chance for Kanna to look good."
+    "Whatever I do or pick, even if Youko said he won’t do anything, who knows how that’s going to go."
+    "Not show why, but I got a feeling seeing whatever happens with super strength will turn out alright."
+    "But I know Youko is just as confused as I am about the soda thing. Maybe letting Kyousuke be Kyousuke will be chaotic enough to make Charlotte mess up."
 
     # CODE
     menu:
@@ -440,7 +451,7 @@ label chapter6:
         Maya "Stop. Stop. Stop."
         Maya "Let's pump the breaks here guys."
         Char "She’s right. Becoming the strongest being in the cosmos takes time. Mars wasn’t built in a day after all."
-        Maya "The expression is `Rome wasn’t built in a day."
+        Maya "The expression is {i}`Rome wasn’t built in a day.'{/i}'"
         Char "That’s not correct. I was there when it was built and it only took a few hours."
         Kan "Kyousuke, you’re already super strong aren’t you?"
         Kan "Why do you want to be stronger?"
@@ -452,13 +463,14 @@ label chapter6:
         Char "Well I mean of course I can, but this is about your training, not about my magical ability."
         Char "So I will show you a technique to begin your journey of strength training!"
         Kan "Is it proper diet and exercise?"
-        Char " Nope. Don’t be ridiculous."
+        Char "Nope. Don’t be ridiculous."
         Maya "It’s going to be some over exaggerated over the top ritual, isn’t it?"
         Char "Exactly!"
         Char "Now Kyousuke. This incantation is a simple one."
         Char "And because you have a wizard learner's permit, you are free to practice incantations and sorceries like this one."
         Char "No hexes or pyromancies though, don’t want to get a head of ourselves after all."
         Char "But if you two try to learn this incantation without a learner's permit, then you’ll be pulled into the pancake dimension by the weight lifting Shinbou monks."
+        Char "This is only for those capable of magical excellence."
         Maya "Why are the weightlifters in the pancake dimension? That’s a lot of carbs isn’t it?"
         Kan "Is everything made out of pancakes there? Do they use the pancakes as weights?"
         Maya "If their monks, what do they believe in? The maple syrup God?"
@@ -473,13 +485,13 @@ label chapter6:
         Char "Excellent! Hand to me."
         Kyou "Alright."
         #Charlotte spits on the rock.
-        Char "*Ptooe.*"
+        Char "{i}*Ptooe.*{/i}"
         Maya "Eww, what the heck are you doing?"
         Char "Trust me, this is the easiest way to do the incantation."
         Char "Your turn Kyousuke! Let ‘er rip!"
         Kyou "Uh, alright."
         #Kyousuke spits on the rock.
-        Kyou "*Ptooe.*"
+        Kyou "{i}*Ptooe.*{/i}"
         Char "Now that we’ve moistened the eyes of Micolash, it’s time for the durability test."
         Char "Squeeze the mana capacitor as hard as you can!"
         Maya "That’s disgusting!"
@@ -496,13 +508,13 @@ label chapter6:
         Kyou "It’s still intact, but there’s a crack in the middle of it."
         Kyou "Does this mean I’ve gotten stronger?"
         Char "Precisely!"
-        Char "And you’ve absorbed .001 percent of my power."
+        Char "And you’ve absorbed point zero zero one percent of my power."
         Char "If we do this every day and you absorb my power bit by bit, you’ll soon be the strongest being in all of the cosmos!"
         Char "Well second strongest after me, but I’ll allow you to have the credit of being the strongest."
         Kan "N-now hold on! How do we know you didn’t do something with the rock?"
         Kan "How do we even know it’s a rock? You and Kyousuke were the only ones who touched it."
         Maya "Hey yeah! It could be made of papier-mâché or something. We make fake decorations all the time in arts and crafts club. How do we know you didn’t do the same?"
-        Char "Again, the mana capacitor that has been bestowed with the eyes of Micolash is not something to be taken lightly I assure you."
+        Char "Again, the mana capacitor that has been bestowed with the eyes of Micolash is not something to be taken lightly, I assure you."
         Char "While calling it a mere ‘rock’ is a stretch; I will admit it has similar qualities to a rock. But I did not tamper with it in any way."
         Maya "What’s it going to take for you to admit it’s just a stupid rock?"
         Char "I’ll be drawing my last breath in the fields of combat before I ever say such a thing."
@@ -534,7 +546,7 @@ label chapter6:
         Maya "Fine, geez."
         "Kan wraps her fist around the rock."
         Maya "Are you blushing?"
-        Kan "JUST LET ME LOOK AT IT O.K?"
+        Kan "JUST LET ME LOOK AT IT OKAY?!"
         "She starts squeezing the rock."
         "The spit coats her entire hand and the ink on the rock is completely faded."
         #"*Loud cracking noise*"
@@ -546,10 +558,10 @@ label chapter6:
         Kan "Nice try Charlotte! I knew this was some sort of fake!"
         Char "..."
         Maya "..."
-        Maya "I think uh...I think that was an actual rock."
+        Maya "I think um...I think that was an actual rock."
         Char "I uh..."
         Char "K-Kyousuke must have weakened it for you! His new strength must have damaged the structural integrity of the mana capacitor."
-        Maya " But it was really solid. There was just a small crack in it, but it felt sturdy."
+        Maya "But it was really solid. There was just a small crack in it, but it felt sturdy."
         Maya "She just turned it into dust like it was nothing."
         Kan "Make as many fake rocks or props as you want, we’re not falling for it!"
         Kyou "Wait, the rock was fake?"
@@ -586,35 +598,33 @@ label chapter6:
         Rin "Two sodas!"
         Youk "Well what on earth happens now?"
         Rin "I guess we’ll find ou-WOAH."
-
-        "Kyousuke begins to take off his backpack."
-
-        Rin "What does he think he’s doing?"
+        Rin "What does he think he’s doing? Why is he taking his backpack off?!"
         Rin "We gotta move if we don’t want to get spotted."
         Youk "I’m just going to blend into the shadows inside the backpack. Maybe he won’t notice you?"
         Youk "Just pretend to be a cute little teddy bear in his backpack."
         Rin "Shut up! Make me blend too!"
         Youk "No, I don’t think I will."
         Rin "Then I’m coming with you!"
-        Youk "What are yo-ahh  get off of me!"
+        Youk "What are yo-ahh get off of me!"
 
-        "Kyousuke removes his backpack, unzips the main pocket, and starts going through it."
-
+        "Oh God, if he catches us in here,it's game over."
+        "Just left him grab whatever he's grabbing and make it quick, please!"
         #Cut back to the group
 
         Kyou "I got it! I know exactly what you could teach me Charlotte!"
-        "Kyousuke pulls out a can of soda from his backpack."
+        #"Kyousuke pulls out a can of soda from his backpack."
         Kyou "Check it out!"
         Kyou "You can teach me this!"
         "..."
+        Kan "A soda can?"
         Char "Er...teach you what exactly?"
-        Maya "Of course you wouldn’t know, it’s behind your power Charlotte."
+        Maya "Of course you wouldn’t know, it’s beyond your power Charlotte."
         Char "I beg pardon? What are you talking about?"
         Maya "I know exactly what Kyousuke is asking."
         Maya "Right, Kanna?"
         Kan "Uh...o-of course, it’s simple what he’s asking for."
         Kan "Do you really not know Charlotte?"
-        Char "While I have spent a few years working as a jester for the King of the Moon-Dew mountains."
+        Char "While I {i}have{/i} spent a few years working as a jester for the King of the Moon-Dew mountains."
         Char "Do not treat me like a fool!"
         Char "Kyousuke, pray tell, can you be specific about what you would like to learn?"
         Kyou "Two sodas!"
@@ -622,7 +632,7 @@ label chapter6:
         Char "Two sodas?"
         Kan "Two sodas?"
         Maya "Two sodas."
-        Kan "Uh...I don’t get it."
+        Kan "Um...I don’t get it."
         Char "You would like to learn to create soda?"
         Maya "Duplication, you brainlets."
         Maya "Kyousuke wants to learn the art of duplication."
@@ -634,19 +644,21 @@ label chapter6:
         Maya "It’s easy. Anyone can do it."
         Char "No. We’re not going to waste any time with a feeble human’s attempt at the art of replication."
         Char "Kyousuke! You desire a second tonic, yes?"
-        Kyou "Right! I only have one can of  Dr. Amigo’s Jalapeno Desert Splash Blast. I think I need at least two, maybe three to quench this thirst."
-        Char "Really? But Dr. Amigo’s Jalapeno Desert Splash Blast is known to be the perfect drink for any occasion."
-        Char "I know I drink it in winter, fall, spring, and summer. Day or night. Work days, off days. Lazy afternoons or date nights. There’s never a time where the splash of Dr. Amigo's Jalapeno flavor isn't perfect!"
-        Char "Dr. Amigo’s Jalapeno Desert Splash Blast. Bring the heat of the desert and the splash of the ocean, wherever you go."
-        Char "Now with extra chunks of jalapeno gunk!"
+        Kyou "Right! I only have one can of {i}Dr. Amigo’s Jalapeno Desert Splash Blast.{/i} I think I need at least two, maybe three to quench this thirst."
+        #Voice delivery like reading an advertisement
+        Char "Really? But {i}Dr. Amigo’s Jalapeno Desert Splash Blast is known to be the perfect drink for any occasion!{/i}"
+        Char "{i}I know I drink it in winter, fall, spring, and summer. Day or night. Work days, off days. Lazy afternoons or date nights. There’s never a time where the splash of Dr. Amigo's Jalapeno flavor isn't perfect!{/i}"
+        Char "{i}Dr. Amigo’s Jalapeno Desert Splash Blast. Bring the heat of the desert and the splash of the ocean, wherever you go!{/i}"
+        Char "{i}Now with extra chunks of jalapeno gunk!{/i}"
         Kan "..."
         Maya "..."
+        Char "*{i}Cough, cough.{/i}*"
         Maya "So...are you gonna make another soda or..."
         Char "Yes of course."
-        Char "Kyousuke! Hand me the can of Dr. Amigo’s Jalapeno Desert Splash Blast, if you will."
-        Kyou "Here’s the can of Dr. Amigo’s Jalapeno Desert Splash Blast, Charlotte!"
+        Char "Kyousuke! Hand me the can of {i}Dr. Amigo’s Jalapeno Desert Splash Blast{/i}, if you will."
+        Kyou "Here’s the can of {i}Dr. Amigo’s Jalapeno Desert Splash Blast{/i}, Charlotte!"
         Kan "Can we...can we please just call it soda?"
-        Char "But calling it just soda would be an insult! Dr. Amigo’s Jalapeno De-"
+        Char "But calling it just soda would be an insult! {i}Dr. Amigo’s Jalapeno De-{/i}"
         Kan "NOW YOU HAVE THE SODA. WHAT HAPPENS NEXT?"
         Char "I’m not sure why you felt the need to raise your voice at me. But the next step would be this."
         Char "Kyousuke! Think incredibly hard about this can of...soda."
@@ -660,23 +672,24 @@ label chapter6:
         Kyou "Awesome! What should I do now? Do I pull the soda out?"
         Char "First shake your bag! As hard as you can!"
         Maya "Wouldn’t that make the soda explode when he opens it?"
-        Char "If it were a normal soda yes. But thanks to Dr. Amigo’s patented anti-fizz electric splash juice, we don’t need to worry about any carbonated explosions."
+        Char "If it were a normal soda yes. But thanks to {i}Dr. Amigo’s patented anti-fizz electric splash juice{/i}, we don’t need to worry about any carbonated explosions."
         Char "Now give it a good shake!"
-        "Kyousuke shakes the bag."
-        "The tinging of multiple pens, and pencils slamming into an aluminum can is heard."
+        "Wait, is he actually going to shake the ba-"
+        "AWAWAWAWAWAWA."
         Char "And now open the bag!"
+        "Oh God, I'm gonna puke."
         Kyou "Woah!"
         Kyou "There’s two cans of soda!"
         Char "Exactly I thought as much."
         Char "And what do the can’s say long-tan-and handsome Kyousuke?"
         Kan "Please don’t make him say it."
-        Kyou "Dr. Amigo’s Jalapeno Desert Splash Blast!"
+        Kyou "{i}Dr. Amigo’s Jalapeno Desert Splash Blast!{/i}"
         Char "And the other one Kyousuke?"
         Kan "Please, no more..."
-        Kyou "Dr. Amigo’s Jalapeno Dessert Splash Blast!"
+        Kyou "{i}Dr. Amigo’s Jalapeno{/i} Dessert {i}Splash Blast!{/i}"
         Char "Precisely! See how easy it was to-"
         Char "Wait, what did you say?"
-        Kyou "Dr. Amigo’s Jalapeno Dessert Splash Blast."
+        Kyou "{i}Dr. Amigo’s Jalapeno{/i} Dessert {i}Splash Blast.{/i}"
         Kyou "It’s the wrong flavor..."
         Maya "So you’re telling me. That sweet innocent Kyousuke, who only wanted the refreshingly cool yet crisp taste of the desert."
         Maya "Was given the sweet yet deceptively brisk taste of a dessert?"
@@ -689,38 +702,46 @@ label chapter6:
         Maya "Are you calling Kyousuke a liar?"
         Char "No! Of course not! I just feel that-"
         Maya "Don’t listen to her, Kyousuke. Here let me help you with the soda you wanted."
-        "Kyousuke hands the can of Dr. Amigo’s Jalapeno Desert Splash Blast to Maya."
+        Maya "Let me see the can of soda."
+        Kyou "Which one?"
+        Maya "...The desert one."
+        Kyou "Which desert one? From which company?"
+        Kan "Yeah Maya, what soda {i}are{/i} you asking for?"
+        Maya "..."
+        Maya "Please don't make me say it."
+        Kan "Come on, do it."
+        Kan "You know you want to~"
+        Kyou "i just want to make sure we're on the same page, i don't want any more soda related mishaps."
+        Maya "*{i}Sigh.{/i}*"
+        Maya "Kyousuke can you hand me the {i}Dr. Amigo’s Jalapeno Desert Splash Blast{/i},please?"
+        Kyou "Sure! Here you go!"
         Kan "What exactly are you going to do Maya?"
         Maya "Don’t worry about it."
         Maya "I figured this would happen anyway."
-        "Maya turns her back from the group. A ruffling sound can be heard."
+        "Maya turns her back from the group. Walks toward the vending machine. Puts a dollar in. Gets a soda. And walks back to the group."
         Maya "Here you go Kyousuke."
-        Kyou "Wow! Two cans of Dr. Amigo’s Jalapeno Desert Splash Blast you did that so fast!"
-        Maya "It’s easy. I do it all the time."
+        Kyou "Wow! Two cans of {i}Dr. Amigo’s Jalapeno Desert Splash Blast{/i} you did that so fast!"
+        Kyou "I wish I thought of that!"
+        Maya "It’s that easy. I do it all the time."
         Char "WHAT!?"
-        Kan "How did you do that?"
-        Maya "I know how to duplicate."
-        Char "What do you mean you know how to duplicate?"
-        Maya "I just told you, I know how to duplicate."
-        Char "Yes, I do too. I just did it."
-        Maya "If you just did it why are the cans different?"
-        Char "Well I don’t...they’re basically the same thing."
-        Maya "But they’re not."
-        Kan "Maya, how did you do that?"
-        Maya "Are you people not listening? I can duplicate things. It’s easy."
-        Kan "But HOW?"
-        Char "AND WITHOUT MAGIC NO LESS?"
+        Char "That's cheating!"
+        Maya "I told you it was easy to duplicate."
+        Char "But that's not magic! That's just buying a soda!"
+        Maya "Oh it's pretty magical alright. I just performed a ritual of exchanging a piece of paper for a soda."
         Maya "You guys could do it too if you tried."
         Char "I DID TRY. AND I SUCCEEDED."
-        Kan "Are you in some ‘duplication club’ or something?"
-        Maya "You guys are making a big deal over nothing. Anyone can do it."
+        Char "With real magic!"
+        Kan "Wow, Maya! Are you in some ‘duplication club’ or something?"
+        Char "Are you kidding me? Why are you on her side?"
+        Maya "You people are helpless."
+        Maya "And you guys are making a big deal over nothing. Anyone can do it."
         Maya "Do you want another one, Kyousuke?"
         Kyou "No thanks Maya!"
         Kyou "I really thought you could help teach me something Charlotte. Maybe next time I guess."
         Char "But I...Kyousuke you used your mental projection to-"
         Maya "Can we move on now?"
-        "Kanna and Charlotte" "NO!"
-        Maya "Let’s move on."
+        Char "NO!"
+        Maya "Let's move on."
 
         #Back to Ringo and Youko
         Rin "Whew that was a close one! He almost saw me."
@@ -739,6 +760,8 @@ label chapter6:
     Char "Alright, that's it. Everyone, gather around, for I, Charlotte Von Vega, will allow one and all to view a spectacle of magic no one can comprehend!"
 
     "A small crowd of other students begin to gather."
+    "Either Youko used magic to draw them in, or she's just that crazy that people just have to see what she's up to."
+    "Probably a little bit of both."
 
     #Cut back to Ringo and Youko in Kyousuke's bag".
 
@@ -757,7 +780,7 @@ label chapter6:
     Kyou "Isn't that kinda like mind reading? We did something like that already, didn't we?"
     Kan "Not if she doesn’t read my mind! It’s more like clairvoyance."
     Maya "That's kind of boring. What if you already told her?"
-    Char "Wha?"
+    Char "Wa?"
     Kan "What do you mean, Maya?"
     Maya "You could have easily told her what's in the lunchbox, shown her even! We need some sort of middleman to figure out what's in the lunchbox."
     Maya "Like, someone to say what Charlotte's thinking maybe."
@@ -772,8 +795,7 @@ label chapter6:
     Maya "I also attest that I didn't see Kanna before that, nor see Kyousuke talk to her."
     Char "Alright, I will now begin the thought transfer."
     Char "I will remain standing right here, so you can all see. I am now interacting with him purely through metaphysical cognitions."
-
-    "Charlotte places her fingers upon her forehead, and begins humming."
+    Char "Hummmmmmmmmmmmmm, A-hummmmmmmmmmmm."
 
     # CODE Show previous CG where Ringo and Youko talk on Kyousuke's backpack
     #Cut back to Ringo and Youko.
@@ -784,7 +806,9 @@ label chapter6:
     Youk "Oh, most surely."
     Rin "Just get it over with already."
 
-    "Youko places one single purple choice in front of Kyousuke. "
+    #Visuals, UI?
+    "Youko places one single purple choice in front of Kyousuke."
+    "So predictable."
 
     Youk "A banana, yogurt, rice balls, and sushi."
     Youk "Is this true? Quite the peculiar lunch box."
@@ -812,7 +836,6 @@ label chapter6:
     "The contents appear to be a banana, yogurt, rice balls, and sushi, just how it was predicted."
 
     # ART Charlotta sprite grinning.
-    "Charlotte breaks out into a massive grin."
 
     Char "WAHAHAHA!"
 
@@ -827,12 +850,14 @@ label chapter6:
     #ART Maybe a CG, if you guys want.
     "Kanna pulls out the contents of the lunchbox, to reveal a blanket. In the center of the blanket, is the picture of an ordinary lunch consisting of a banana, a cup of yogurt, rice ball, and sushi."
     "All around the center however, were small red and gold hearts, layered above the green fabric."
+    "And at the buttom of the lunchbox, under the blanket, a big red and gold heart shaped cookie."
     "It appears the blanket was folded in a way, so the picture of the lunch would be on top."
     "If one were to peek into the lunchbox, they could probably tell it was a blanket."
     "But if one were a small shadow, quickly peeking in and then looking away, they could easily mistake the picture on the blanket for real lunch items."
 
-    Kan "I made this for you, Kyousuke. I didn't have anything else to put it in, so I skipped lunch today to bring it to you!"
-    Maya "What? A present for Kyousuke?  Kanna, that's not fair!"
+    Kan "I made this blanket for you, Kyousuke. I didn't have anything else to put it in, so I skipped lunch today to bring it to you!"
+    Kan "The cookie is for you too. I was pretty tired after making the blanket, so it's just one small cookie for you."
+    Maya "What? A present for Kyousuke? Kanna, that's not fair!"
     Char "Wa?"
     Char "Waha?"
     Char "Waha... ha?"
@@ -841,10 +866,11 @@ label chapter6:
 
     Char "I..."
     Char "But..."
-    Char "..."
+    Char "She..."
 
     #SFX light laughter
     "Snickers and suppressed laughter can be heard from the kids watching."
+    Char "..."
     "Charlotte holds her head up, and without saying a word, walks away from the staring group."
 
     # CODE or ART
@@ -858,14 +884,16 @@ label chapter6:
     #Cut to Ringo and Youko in Kyousuke's bag one last time.
 
     Youk "You... you!"
-    Rin "Me, that's right."
+    Rin "That's right, me."
     Youk "In front of everyone, how dare you!?"
-    Rin " She's the one to blame. We were just planning on making her look dumb in front of Kyousuke and, maybe, Maya."
-    Rin " But little Miss Showoff wanted everyone to watch her perform your stupid, cheating trick."
+    Rin "She's the one to blame. We were just planning on making her look dumb in front of Kyousuke and, maybe, Maya."
+    Rin "But little Miss Showoff wanted everyone to watch her perform your stupid, cheating trick."
     Rin "This is how us, little guys, beat the big corporate boys."
     Youk "...Very well Mr. Fortune, I’ll cut you a deal"
     Youk "I won't override Kyousuke's mind, so long as you don't crush Charlotte's spirit like that ever again."
-    Rin "I'm telling you. She did it to herself. But, alright, deal."
+    Rin "I'm telling you. She did it to herself. And since when do you care how she feels?"
+    Youk "Do we have a deal or not?"
+    Youk "Alright, fine, deal."
     Rin "A healthy dose of social embarrassment never hurt anyone."
     Youk "Just remember we're here to bring these kids together, not apart."
     Rin "Ha! What’s a corporate slave like you know about bringing people together?"
@@ -876,13 +904,17 @@ label chapter6:
     #Cut back to the group.
 
     Maya "She didn't put up much of a fight, huh? I thought she would have like, laughed and stuff, given a massive soliloquy on how cool she is, and denied her loss."
-    Kyou "Thanks for the blanket, Kanna! That's so nice of you!"
+    Kyou "Thanks for the blanket and the cookie, Kanna! That's so nice of you!"
     Kan "Y-yeah, of course. I wasn't sure about your favorite color. I hope you like it."
+    Kan "A-and the cookie is just a sugar cookie. Nothing c-crazy."
     Maya "Alright, how did you know all this? How'd she know the picture on the blanket? What's the deal?"
     Kan "A good magician never reveals her secrets."
 
+    #screen tranistion
+
     #Day 6     Kanna's room.
     scene room night
+    Kan "..."
     Kan "Ringo, what if we're doing the wrong thing?"
     Kan "Are we manipulating Kyousuke like the other two girls are?"
     Rin "Yea, I guess we are. But this is what you wanted, ain't it?"
@@ -891,12 +923,15 @@ label chapter6:
     Kan "Even if the other two show up and get feisty.  I just want to talk to him, without you affecting him."
     Rin "Kid, we made a deal. You made a wish, and I need to grant it. I really, really can’t stand being a bear anymore."
     Kan "Please, Ringo, just tomorrow! We'll go back to normal after that."
-    Rin "{i}Sigh. {/i}"
-    Rin "Alright, kid, if it'll make you feel better."
+    Rin "{i}*Sigh.*{/i}"
+    Rin "Alright, alright, if it'll make you feel better."
+    Rin "But your wish is being granted, you should be happy."
+    Kan "..."
     Kan "You think Charlotte's alright?"
-    Rin "She was cheating, remember? I'm surprised our plan worked out so well. "
-    Kan "Same. See you tomorrow, Ringo."
-    Rin "Night, kid."
+    Rin "She was cheating, remember? I'm surprised our plan worked out so well."
+    Kan "I guess you're right...I guess."
+    Kan "See you tomorrow, Ringo."
+    Rin "Night, kiddo."
 
     #Everyone's scores with Kyousuke so far.
 
