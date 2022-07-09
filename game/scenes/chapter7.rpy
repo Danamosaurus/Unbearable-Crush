@@ -4,22 +4,35 @@ label chapter7:
     $ game_day = "Day 7"
 
     scene hallway
+
+    #Scene tranistion
+
+    "She wasn't has happy as I thought she would be taking Charlotte down a notch."
+    "But that's just the way the world works, there's always winners and losers."
+    "She'll forget all about Charlotte, Maya, heck even me when she's wrapped up snuggly in Kyousuke's arms."
+    "Teenagers are so simple."
+    "I better go better up Kyousuke while I have the chance."
+    "If she's not going to let me do anything when she's around, I better do it before I see her."
+
+    #Scene tranistion
+    "{i}In another part of the hallway.{/i}"
+
     Char "You're telling me Kanna has a spirit?"
     Char "Which is why the greatest embarrassment of all time has befallen me."
     Char "And why did you not mention this to me sooner?"
     Youk "I truthfully believed it wouldn’t matter."
-    Youk "I was under the impression getting Kyousuke to be your assistant would be a cakewalk,regardless of any spirit or human."
+    Youk "I was under the impression getting Kyousuke to be your assistant would be a cakewalk, regardless of any spirit or human."
     Char "Alright."
     Char "I've decided."
     Char "I am going to..."
     Char "Wait for it."
     Youk "..."
     Char "Try the old fashioned way!"
-    Char "While it may be uncouth and beneath someone who very literally has had her head in the clouds.The time for over the top shenanigans is over!"
+    Char "While it may be uncouth and beneath someone who very literally has had her head in the clouds. The time for over the top shenanigans is over!"
     Youk "I'm afraid I don't follow, Do you mean to just walk up to Kyousuke and ask him?"
     Char "Exactly!"
 
-    "In another part of the hallway."
+    "{i}In another part of the hallway.{/i}"
 
     Maya "You're not going to tell me how you knew what Charlotte was going to do?"
     Maya "Or how you so accidently bought a blanket for Kyousuke, folded it exactly how it needed to be to trick Charlotte and used me as bait to set all this up?"
@@ -39,9 +52,9 @@ label chapter7:
     Maya "I know you would do it too if you could."
     Kan "..."
 
-    "Charlotte appears."
+    #Enter Charlotte
 
-    Char "Is this where we are doing the cat fight, girls?"
+    Char "Good morning girls. Is this where we will be doing the cat fight?"
     Kan "Good morning, Charlotte."
     Kan "I...I'm sorry about yesterday."
     Char "It's quite alright. The shinobu monks trained me to never have my guard down. Looks like I was more concerned with my illustrious magic craft than with my discipline training."
@@ -51,7 +64,8 @@ label chapter7:
     Char "Alright, ladies, let's get down to business."
     Char "Who gets Kyousuke?"
 
-    "Both Kanna and Maya blush."
+    #Both character's blushing
+    "Kanna and Maya" "W-w-w-w-hat!?"
 
     Kan "Wha-whatever do you mean?"
     Maya "'Gets?' He's not a prize, he's a human being."
@@ -59,8 +73,8 @@ label chapter7:
     Char "You see him as an object, and not a beautiful instrument to be played."
     Char "An instrument that has the strongest, bulging biceps I've ever seen."
     Char "Amirite, ladies?"
-    "Kanna and Maya" "Yeah, he does. {i}sigh{/i}"
-    Maya "You shouldn't talk about him like that!"
+    "Kanna and Maya" "*{i}Sigh*{/i}. He sure does~"
+    Maya "But you shouldn't talk about him like that!"
     Char "I've been perfectly clear I want him to be my assistant, what's wrong with that? I pay a fair wage, and I'll waive his wizard training as long as he does everything I say."
     Char "And wizard training isn't exactly cheap now."
     Kan "I think you're both wrong! You should see Kyousuke as a person!"
@@ -71,19 +85,23 @@ label chapter7:
     Kan"That's not true! I just..."
     Char "Just what, Kanna? Surely, there isn't some mystical secret that we both share that you don't want others finding out and that may have been altering the course of events lately?"
     Char "Or {i}iiiissss thhhhere{/i}?"
-
-    "Maya glances over at Charlotte, then back to Kanna."
+    #Maya suspicious, changing sprites
+    Maya "..."
+    Maya "..."
 
     Maya "What exactly does she mean by that?"
     Kan "I, um..."
-    Kan "Think if something like that really did exist, and if one of us openly talked about it, then both of us would ruin our chances of succeeding in our goals."
+    Maya "Well, Kanna?"
+    Kan "I think if something like that really did exist, and if one of us openly talked about it, then both of us would ruin our chances of succeeding in our goals."
     Kan "You should know that, as a fellow shinobu monk, any mystical secrets we have must not be shared."
     Kan "It could spell doom for the entire cosmos, and unravel time itself."
     Kan "Hahahaha!"
 
-    "Charlotte squints at Kanna."
+    #Char suspicious, changing squinting at Kanna
 
-    Char "Fair enough I suppose, I somehow forgot you were in the monk fellowship. My apologies, Sister Kanna ."
+    Char "..."
+
+    Char "Fair enough I suppose, I somehow forgot you were in the monk fellowship. My apologies, Sister Kanna."
     Char "But you need to work on your laugh though, next time start from the bottom of the lungs."
     Maya "Do you guys think I'm an idiot or something? You are clearly hiding something from me."
     Kan "Don't worry about it."
@@ -109,25 +127,26 @@ label chapter7:
 
     # CODE
     #Change scenes to Kyousuke and Ringo, talking through the hall.
+    "{i}In another part of the hallway.{/i}"
 
     Kyou "Any luck yet on the whole girlfriend sitch?"
     Rin "It's uh, complicated. You have any feelings for any of them?"
     # CODE Replace the girl name in the line below.
     Kyou "Well, I've been thinking about [Girls name with most number of points here] more and more lately."
     Rin "Really?"
-    Kyou "Yea, but I really do like them all though. They are all pretty hot and fun to be around. Any one of them will work."
+    Kyou "Yea, but I really do like them all though. They are all pretty interesting and fun to be around. Any one of them will work."
     Kyou "Are you absolutely sure I can't have them all?"
     Kyou "Maya and Charlotte can alternate Monday through Friday, and I can have Kanna on the weekends."
     Rin "Seriously, that's not how it works, bub. Here, let's do a thought experiment."
     Kyou "Alright."
 
-    "(I know Kanna is starting to have doubts.)"
-    "(I feel for her, I really do. A Lot of people start to have doubts about their wishes.)"
-    "(I'm sorry Kanna, but I'm too close to retirement for you to have any ethical misgivings here.)"
-    "(Besides, when has what's right and wrong ever affected how business is done?)"
-    "(And if you're forbiddening me from influencing Kyousuke's choices when he sees you.)"
-    "(I'll just have to do it now.)"
-    "(You'll thank me later, Kanna.)"
+    "I know Kanna is starting to have doubts."
+    "I feel for her, I really do. A Lot of people start to have doubts about their wishes."
+    "I'm sorry Kanna, but I'm too close to no-bear-Ringo for you to have any ethical misgivings here."
+    "Besides, when has what's right and wrong ever affected how business is done?"
+    "And if you're forbiddening me from influencing Kyousuke's choices when he sees you."
+    "I'll just have to do it now."
+    "You'll thank me later, Kanna."
 
     Rin "You're at the beach, Kyousuke."
     Kyou "Wicked."
@@ -150,7 +169,7 @@ label chapter7:
     Rin "'Do you want those girls?'"
     Kyou "Um, duh, yeah, I do!"
     Kyou "What kind of swimsuits are they wearing?"
-    Rin "It's not that kind of thought experiment. Just shut up and drink your Kool aid."
+    Rin "It's not that kind of thought experiment! Just shut up and drink your Kool aid."
     Rin "You can have any one of those girls, but you can only pick one. Do you have three girls in mind?"
     Kyou "I think so, yea."
     Rin "Alright, who do you pick?"
@@ -160,8 +179,8 @@ label chapter7:
     #"The choices simply read: Kanna, Maya, Charlotte."
     #NOTE This should only happen if we need a tie breaker. This will need some coding.
 
-    Rin "Time to add a point to Kanna."
-    Rin "Ahh, ahhhhh..."
+    "Time to add a point to Kanna."
+    "Ahh, ahhhhh..."
 
     menu:
         "Choices for Kyousuke:"
@@ -171,7 +190,7 @@ label chapter7:
             Kyou "Bless you!"
             Rin "That was a close one, almost picked the wrong girl."
             Kyou "I think I'd pick Kanna!"
-            Rin "{i}Gasp!{/i} Really? I never would have thought."
+            Rin "{i}*Gasp!*{/i} Really? I never would have thought."
             Kyou "There's just something about her, I don't know."
             Kyou "She's just so... genuine, ya know? She's more relaxed and chill to talk to than the others."
             Kyou "Hey, speaking of Kanna, I think that's her over there, talking with the other girls."
@@ -180,35 +199,35 @@ label chapter7:
             # CODE
             #Choice 1.A ends
             # Kanna +1 Points.
-            $game_player.increaseRelationship("Kanna",1)   
+            $game_player.increaseRelationship("Kanna",1)
 
         "Highlight Maya.":
             #Choice 1.B : Highlight Maya
             Rin "CHOO!"
             Kyou "Bless you!"
-            Rin "Oh my god no! That's not Kanna!"
+            Rin "Oh my God no! That's not Kanna!"
             Kyou "Kanna's cool, I guess, but I've known Maya for like ever now."
             Kyou "She'd be pretty mad at me if I didn't go with her. I'd love to go to the beach with her, she'd look great in a swimsuit."
-            Rin "Son of a bi..."
+            Rin "Son of a bi-"
             Kyou "Hey, speaking of Maya, I think that's her over there, talking with the other girls."
             Kyou "That's so weird! I was just thinking of all three of them!"
-            Rin "{i}sigh{/i} Wow, that's pretty amazing, Kyousuke. Let's go over and talk to 'em."
+            Rin "{i}*Sigh*{/i} Wow, that's pretty amazing, Kyousuke. Let's go over and talk to 'em."
             # CODE
             #Choice 1.B ends
             #Maya +1 points.
-            $game_player.increaseRelationship("Maya",1) 
+            $game_player.increaseRelationship("Maya",1)
         "Highlight Charlotte.":
             ##Add 1 point to Charlotte
             #Choice 1.C.: Highlight Charlotte.
             Rin "CHOO!"
             Kyou "Bless you!"
-            Rin "Oh my god, no! That's not Kanna!"
+            Rin "Oh my God, no! That's not Kanna!"
             Kyou "Kanna's fine, I guess, but Charlotte seems so cool."
             Kyou "I wonder what beach magic she knows? Maybe she can talk to fish, that'd be kinda cool, wouldn't it?"
-            Rin "Son of a bi..."
+            Rin "Son of a bi-"
             Kyou "Hey, speaking of Charlotte, I think that's her over there, talking with the other girls."
             Kyou "That's so weird! I was just thinking of all three of them!"
-            Rin "{i}sigh{/i} Wow, that's pretty amazing, Kyousuke. Let's go over and talk to 'em."
+            Rin "{i}*Sigh*{/i} Wow, that's pretty amazing, Kyousuke. Let's go over and talk to 'em."
             # CODE
             #Choice 1.C ends
             #Charlotte +1 points
@@ -217,18 +236,21 @@ label chapter7:
 
 
     #The other three girls join the scene.
-    "Kyousuke and I walk up to the squabbling group."
 
     Char "In conclusion, yes, I am one eighth fox, but I really don't see how that's relevant to... Oh, hi, Kyousuke!"
     Maya "Hey Kyousuke."
     Kan "Good morning, Kyousuke!"
     Kyou "Good morning, everybody! What are all of you talking about?"
-    Kan "We were ju..."
-    Char "Kyousuke, would you like to accompany me to a social outing this weekend? I need to interview you for your assistant position, remember?"
-    Kyou "...You mean like a date or something?"
+    Kan "We were ju-"
+    Char "Kyousuke, would you like to accompany me to a social outing this weekend? Perhaps the festival?"
+    Char "I think the mortal of Kumamatsuri is what it's called. Plus I need to interview you for your assistant position, remember?"
+    Kyou "...You mean like on a date or something?"
 
     # ART Shocked sprite for Kanna and Maya
-    "The other two girls stare at Charlotte, jaws dropped, both blushing."
+
+
+    #"The other two girls stare at Charlotte, jaws dropped, both blushing."
+    "Kanna and Maya" "{i}WHHHHHAAAAAAAATTTTTTTTTTT!?{/i}"
 
     Maya "CHARLOTTE!!"
     Kan "Um, ever hear of 'a time and a place?' This isn't really appropriate to do here."
@@ -239,14 +261,20 @@ label chapter7:
     Maya "You should have more time to think, not be forced to answer."
     Kyou "Why not Maya?"
     Maya "Because...because...JUST DON'T ANSWER HER, KYOUSUKE!"
+    Maya "And inviting him to Kumamatsuri was my idea you harpy!"
+    Char "Then why have you not invited him yet?"
+    Maya "Be-be-because I...THERE'S BEEN A LOT GOING ON, OKAY?"
     Kan "I...I...think you should take it a step back, Charlotte."
 
-    "Ringo appears in Kannas backpack now."
-    "They begin whispering to each other."
+    Rin "{i}*Psst, psst!{/i}*"
+    Kan "S-so just...hold on a minute...while I get something from...my...backpack."
 
+    #Whispering
+
+    Kan "What!?"
     Rin "I really think I should step in here, kid."
     Kan "N-no. I told you, I'll handle it today."
-    Rin "If my spirit paradise is put on hold because you want to do this the 'right' way, then imma put a curse on you or something, I swear."
+    Rin "If my real spirit form is put on hold because you want to do this the 'right' way, then imma put a curse on you or something, I swear."
     Kan "It'll be fine. I trust he'll make the right call."
     Rin "You serious? I don't trust him to tie his own shoes, let alone trust his decisions in love and war."
     Kan "This is just love, don't be so dramatic."
@@ -255,10 +283,17 @@ label chapter7:
     # ART Kanna rolling eyes sprite
     "Kanna rolls her eyes."
 
+    Rin "Hey! Don't roll your eyes at me, lady!"
     Kan "I can handle this, trust me."
     Kan "He's been influenced by me and the other girls this whole time. It's time for him to make his own choices."
     Kan "I know he'll make the right one."
     Rin "Wait, Kanna no!"
+
+    Maya "I'm soooooooo glad we put ourselves on pause so you can check your FREAKING BACKPACK!"
+    Maya "CHARLOTTE, TAKE IT BACK!"
+    Char "No, I don't think I will."
+    Char "I want to go to Kumamatsuri festival with Kyousuke."
+    Char "And I'm sick of pretending I don't!"
 
     Kan "Everyone calm down."
     Kan "Let's...uh... make a game out of it."
@@ -268,25 +303,39 @@ label chapter7:
     Kan "Yes! But first, Charlotte, you have to take back what you just said."
     Char "What you just said."
     Kan "You know what I mean!"
-    Char "So be it! Kyousuke!"
+    Char "So be it. Kyousuke!"
     Kyou "Um, yeah?"
     Char "Nevermind!"
-    Kyou "Um, alright."
+    Kyou "Uh, alright."
     Maya "What's this little game of yours Kanna, and why should I care?"
     Kan "We've all been arguing at eachothers throats for like a week now. Today, we end it."
-    Kan "By the end of today, Kyousuke will put a letter in one of our lockers, picking a girl he would like to ask out."
+    Kan "By the end of today, Kyousuke will put a letter in one of our lockers, picking a girl he would like to ask out to the festival."
     Kan "Or which girl CAN ask him out."
-    Kan " Just a simple letter that says, 'I choose you,' or something."
+    Kan "Just a simple letter that says, 'I choose you,' or something."
     Maya "What?"
-    Char " WAHAHAHA!"
+    Char "WAHAHAHA!"
     Char "This will be the easiest contest ever!"
+    Maya "That's not fair! The festival was my idea in the first place!"
+    Kan "It's not about ideas, Maya, it's about the execution of said ideas."
+    Char "Wise words, wise words."
+    Maya "{i}WHAT!?{/i} YOU STOLE WHAT I WANTED TO DO IN THE FIRST PLACE AND EXECUTED IT WITHOUT MY SAY!"
+    Char "It's all water under the bridge, abrasive Maya, I forgive you and your lack of execution."
+    Maya "Oh you're five hundred percent DEAD GET OVER HERE."
+    Kan "IT'S UP TO KYOUSUKE! IT'S NOT UP TO US ANYMORE!"
+    Kan "ALRIGHT?"
+    Char "Fine with me!"
+    Maya "..."
+    Maya "You people deserve to be locked in a mental ward for the rest of your lives."
+    Kan "I-I'll take that as an agreement."
     Kan "And, Charlotte, neither one of us will be using our shinbou monk training in order to influence Kyousuke in any way."
     Char "And why would I agree to that?"
     Kan "Because then I would reveal our secrets to Kyousuke and Maya here. And we both know that would spell disaster for the mortals of this realm."
 
-    "The shadow below Charlotte begins to twitch slightly, Ringo is the only one to notice this."
+    "The shadow below Charlotte begins to twitch slightly."
+    "Come on pretty boy, do something."
+    "I dare you!"
 
-    Char "{i}scoff{/i} Fine."
+    Char "{i}*Scoff*{/i} Fine."
     Char "But remember, Sister Kanna, that includes you as well. No using your training on Kyousuke either."
     Kan "Deal."
     Maya "You guys are absolutely full of it."
@@ -297,6 +346,7 @@ label chapter7:
     "Everyone nods in agreement."
     Kyou "Well, I guess I'm fine with it. It sounds kinda fun!"
 
+    #Replace with a bell ringing sound
     "The bell rings."
 
     Char "It's decided! We'll all await your decision, Kyousuke!"
@@ -309,11 +359,11 @@ label chapter7:
     #Switch to Ringo and Youko in Kyousuke's backpack.
 
     Rin "You heard her, we're gonna follow the rules this time."
-    Youk "'Que sera, sera.' I guess the simpleton needs to choose for himself at some point."
+    Youk "{i}'Que sera, sera.'{/i} I guess the simpleton needs to choose for himself at some point."
     Youk "Best of luck to you, Mr. Fortune."
     Rin "Same to you, I guess."
 
-    Rin "I sure hope you know what you're doing, kid."
+    "I sure hope you know what you're doing, kid."
 
     #Day 7 ends.
     "***#Transition to date scenes."
