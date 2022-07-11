@@ -186,7 +186,7 @@ screen navigation():
         if main_menu:
 
             textbutton _("Start") action Start()
-
+                
         else:
 
             textbutton _("History") action ShowMenu("history")
@@ -262,12 +262,28 @@ screen main_menu():
     imagemap:
         auto "gui/overlay/main_menu_%s.png"
 
-        hotspot (1386, 561, 416, 82) action Start()
-        hotspot (1386, 646, 413, 82) action ShowMenu('load')
+        hotspot (1386, 561, 416, 82):
+            action Start()
+            activate_sound "audio/main_menu/game-start.ogg"
+            hover_sound "audio/main_menu/menu_hover2.ogg"
+        hotspot (1386, 646, 413, 82):            
+            action ShowMenu('load')
+            activate_sound "audio/main_menu/menu_select.wav"
+            hover_sound "audio/main_menu/menu_hover2.ogg"
         ##Reserved for gallery
-        hotspot (1388, 733, 411, 82) action ShowMenu('gallery')
-        hotspot (1392, 822, 404, 74) action ShowMenu('preferences')
-        hotspot (1386, 908, 402, 82) action Quit(confirm=not main_menu)
+        hotspot (1388, 733, 411, 82):
+            action ShowMenu('gallery')
+            activate_sound "audio/main_menu/menu_select.wav"
+            hover_sound "audio/main_menu/menu_hover2.ogg"
+        hotspot (1392, 822, 404, 74):
+            action ShowMenu('preferences')
+            activate_sound "audio/main_menu/menu_select.wav"
+            hover_sound "audio/main_menu/menu_hover2.ogg"
+
+        hotspot (1386, 908, 402, 82):
+            action Quit(confirm=not main_menu)
+            activate_sound "audio/main_menu/menu_select.wav"
+            hover_sound "audio/main_menu/menu_hover2.ogg"
 
     if gui.show_name:
 
