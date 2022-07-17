@@ -7,11 +7,11 @@ label chapter1:
         subpixel True xpos 0.52 ypos 0.52 xanchor 0.5 yanchor 0.5 xoffset 0 zoom 0.36 rotate None
     Rin "So this is your school. It's so...clean."
     Kan speaking curious "Why are you surprised by that?"
-    Rin laughing ec "You know, kids, teenagers, delinquents. Not exactly what I would call clean and tidey people."
+    Rin laughing ec "You know, kids, teenagers, delinquents. Not exactly what I would call clean and tidy people."
     Kan speaking sarcastic ec "Don't generalize! I'm a very clean and tidy person!"
     Rin laughing ec "Your room says otherwise."
-    Kan speaking sarcastic ec "What's wrong with my room!"
-    Kan speaking confident "Wait, we're on a Kyousuke hunt. You're not supposed to be seen or heard, otherwise our cover will be blown!"
+    Kan speaking sarcastic ec "What's wrong with my room!?"
+    Kan speaking confident "Wait, we're on a Kyousuke hunt. You're not supposed to be seen or heard, otherwise our cover will be blown!" #Exposition
     Kan speaking pleading "Quick! Get down, back in the pack!"
     Rin "What are you AH-"
     Kan speaking pleading "I can't let Kyousuke see me before we come up with a plan."
@@ -72,7 +72,7 @@ label chapter1:
     Rin speaking armout "Won't it be great to go home tonight knowing that today was the day you finally got to speak to Kyousuke?"
     Kan questioning embarrassed "What am I supposed to say?"
     Rin "It doesn't matter. Just start talking."
-    Kan questioning embarrassed "Just keep talking? About what? Ringo you gotta give me something!"
+    Kan questioning embarrassed "Just start talking? About what? Ringo you gotta give me something!"
     Rin "Just wing it, kid. He's right there waiting for you, come on, you got this!"
 
     camera:

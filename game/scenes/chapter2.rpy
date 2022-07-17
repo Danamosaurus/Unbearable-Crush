@@ -23,7 +23,7 @@ label chapter2:
 
     Kan "Can't. Go on. Stomach. Hurt. Let me sleep."
 
-    Rin "Who's fault is that?"
+    Rin "Whose fault is that?"
 
     "*{i}sigh{/i}*"
     "Looks like she’s gonna be a {i}ton{/i} of help today."
@@ -31,7 +31,7 @@ label chapter2:
     "Maybe I can take this opportunity for a solo mission. With Kanna bedridden, I can do a little sleuthing."
 
     "Dig up some dirt on Kyousuke - find something useful for granting Kanna's wish."
-    "Find out thar Maya girl's secrets - get her out of the way so he only thinks about Kanna."
+    "Find out Maya secrets - get her out of the way so he only thinks about Kanna."
 
     "Solo Ringo mode-o is a go."
 
